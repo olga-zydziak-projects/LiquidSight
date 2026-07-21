@@ -1,0 +1,19 @@
+{
+  "res": 96,
+  "frames": 30,
+  "seed": 40001,
+  "pybullet": 202010061,
+  "shadow1": {
+    "pass": true,
+    "per_buffer": {
+      "rgb": true,
+      "depth": true,
+      "seg": true
+    },
+    "hashes": {
+      "rgb": "aaabd3c3e8a3a2a9be25ca71ad7f1f77b02b7f2db1dba97449e5dfeab71b9d67",
+      "depth": "4743363cccf0e2fc9d1750b05ab9290734b876367784f8f5368934d355282d51",
+      "seg": "bd02a0639454815c446ce34b78470e7febd5a21ce7d16acb6e4a1645d543594d"
+    }
+  }
+}

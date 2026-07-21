@@ -1,0 +1,117 @@
+{
+  "config": {
+    "timestep": 0.004166666666666667,
+    "steps_per_tick": 5,
+    "control_hz": 48.0,
+    "sim_seconds": 20.0,
+    "n_ticks": 960,
+    "warmup_ticks": 96,
+    "scene_seed": 40003,
+    "cam_every": 4,
+    "cam_fps_nominal": 12.0,
+    "light_dir": [
+      0.4,
+      0.4,
+      1.0
+    ],
+    "n_runs": 2,
+    "pybullet_api": 202010061
+  },
+  "measurements": {
+    "A": {
+      "res": null,
+      "runs": [
+        {
+          "wall_s": 0.010022038000897737,
+          "ticks_per_s": 95788.90041267122,
+          "x_realtime": 1995.6020919306507,
+          "cam_frames": 0,
+          "cam_fps": null
+        },
+        {
+          "wall_s": 0.00979516900042654,
+          "ticks_per_s": 98007.49736509864,
+          "x_realtime": 2041.8228617728882,
+          "cam_frames": 0,
+          "cam_fps": null
+        }
+      ],
+      "median": {
+        "wall_s": 0.009908603500662139,
+        "ticks_per_s": 96898.19888888493,
+        "x_realtime": 2018.7124768517695
+      }
+    },
+    "B": {
+      "res": 64,
+      "runs": [
+        {
+          "wall_s": 0.20017151499996544,
+          "ticks_per_s": 4795.887167063534,
+          "x_realtime": 99.9143159804903,
+          "cam_frames": 240,
+          "cam_fps": 1198.9717917658836
+        },
+        {
+          "wall_s": 0.20042226700024912,
+          "ticks_per_s": 4789.886944043033,
+          "x_realtime": 99.78931133422985,
+          "cam_frames": 240,
+          "cam_fps": 1197.4717360107581
+        }
+      ],
+      "median": {
+        "wall_s": 0.20029689100010728,
+        "ticks_per_s": 4792.887055553283,
+        "x_realtime": 99.85181365736008,
+        "cam_fps": 1198.2217638883208
+      }
+    },
+    "C": {
+      "res": 96,
+      "runs": [
+        {
+          "wall_s": 0.4232400870005222,
+          "ticks_per_s": 2268.216148435901,
+          "x_realtime": 47.2545030924146,
+          "cam_frames": 240,
+          "cam_fps": 567.0540371089752
+        },
+        {
+          "wall_s": 0.40688394700009667,
+          "ticks_per_s": 2359.3951225600254,
+          "x_realtime": 49.154065053333866,
+          "cam_frames": 240,
+          "cam_fps": 589.8487806400063
+        }
+      ],
+      "median": {
+        "wall_s": 0.4150620170003094,
+        "ticks_per_s": 2313.805635497963,
+        "x_realtime": 48.20428407287423,
+        "cam_fps": 578.4514088744908
+      }
+    }
+  },
+  "overhead": {
+    "B_over_A": 20.21444202371429,
+    "C_over_A": 41.88905298032897
+  },
+  "derivations": {
+    "label": "przykladowy budzet demonstracji, nie decyzja",
+    "episode_seconds": 10.0,
+    "episode_wall_s": {
+      "B": 0.10014840626044953,
+      "C": 0.20745044122804954
+    },
+    "n_episodes": 300,
+    "projection_wall_s": {
+      "B": 30.04452187813486,
+      "C": 62.23513236841486
+    },
+    "projection_wall_min": {
+      "B": 0.5007420313022476,
+      "C": 1.0372522061402476
+    }
+  }
+}
