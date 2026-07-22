@@ -23,6 +23,12 @@ TARGET_RGBA = [0.85, 0.05, 0.05, 1.0]    # staly wyglad CELU przez wszystkie poz
 LIGHT_DIR = [0.4, 0.4, 1.0]              # jak S0
 K_DISTRACTORS_T3 = 4                     # D6: K=4 dystraktorow na T3
 
+# --- ANEKS-1 (2026-07-23): rewizja obserwowalnosci ------------------------
+CAM_LOOK_DZ = -0.41                      # Z1: look = eye + R@[1,0,-0.41] (pitch ~-22.3 st.)
+SPAWN_AZ_DEG = 25.0                      # Z2: azymut celu wzgledem +x w [-25,+25] st.
+SPAWN_D_MIN = 1.0                        # Z2: dystans poziomy od startu [m]
+SPAWN_D_MAX = 2.0
+
 # --- osie teksturowe D6 (poziom -> rodzina + pula seedow) -------------------
 LEVELS = {
     "T0": {"family": "A", "pool": list(range(41000, 41050)), "distractors": False},
@@ -98,12 +104,13 @@ def build_task_scene(client: int, plane_id: int, scene_seed: int, level,
     tex_plane = p.loadTexture(ppath, physicsClientId=client)
     p.changeVisualShape(plane_id, -1, textureUniqueId=tex_plane, physicsClientId=client)
 
-    # pozycja celu: w arenie, min. min_target_dist od startu (seedowany retry)
+    # pozycja celu (ANEKS-1 Z2): stozek czolowy wzgledem +x (dron patrzy na +x,
+    # yaw=0), azymut w [-25,+25] st., dystans poziomy [1.0,2.0] m od startu.
+    # Region startu (env) gwarantuje, ze cel miesci sie w arenie -> bez retry.
     lim = arena_half - 0.3
-    for _ in range(1000):
-        txy = rng.uniform(-lim, lim, size=2)
-        if np.linalg.norm(txy - start_xy) >= min_target_dist:
-            break
+    az = float(rng.uniform(-SPAWN_AZ_DEG, SPAWN_AZ_DEG)) * np.pi / 180.0
+    d = float(rng.uniform(SPAWN_D_MIN, SPAWN_D_MAX))
+    txy = start_xy + d * np.array([np.cos(az), np.sin(az)])
     target_pos = np.array([txy[0], txy[1], TARGET_HALF])
     tid = _box(client, [TARGET_HALF] * 3, target_pos.tolist(), TARGET_RGBA)
 
@@ -139,12 +146,12 @@ def _box(client: int, half, pos, rgba, mass: float = 0.0) -> int:
 def drone_camera(client: int, pos, quat, res: int, want_seg: bool = False):
     """Kamera przednia z pozy drona (D2). Flagi renderu IDENTYCZNE jak S0.
 
-    eye = pos + R@[0.10,0,0.02]; look = eye + R@[1,0,-0.15]; up = R@[0,0,1].
-    Zwraca (rgb uint8 res x res x 3, seg int32 res x res | None).
+    eye = pos + R@[0.10,0,0.02]; look = eye + R@[1,0,CAM_LOOK_DZ]; up = R@[0,0,1].
+    ANEKS-1 Z1: CAM_LOOK_DZ=-0.41 (pitch ~-22.3 st.). Zwraca (rgb uint8, seg|None).
     """
     R = np.array(p.getMatrixFromQuaternion(quat)).reshape(3, 3)
     eye = np.asarray(pos) + R @ np.array([0.10, 0.0, 0.02])
-    look = eye + R @ np.array([1.0, 0.0, -0.15])
+    look = eye + R @ np.array([1.0, 0.0, CAM_LOOK_DZ])   # ANEKS-1 Z1: pitch ~-22.3 st.
     up = R @ np.array([0.0, 0.0, 1.0])
     view = p.computeViewMatrix(eye.tolist(), look.tolist(), up.tolist())
     proj = p.computeProjectionMatrixFOV(60, 1.0, 0.05, 6.0)

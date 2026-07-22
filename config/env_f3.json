@@ -8,6 +8,17 @@
     "strojone_parametry": ["r_goal", "z_hover", "t_dwell", "v_max", "t_ramp_min"],
     "uwaga": "wartosci r_goal/z_hover/t_dwell = wartosci STARTOWE z DECYZJE_F3 D1 (0.25/0.5/2.0); prog osiagniety bez ich rozluzniania. Strojono jedynie potwierdzajaco parametry rampy (v_max, t_ramp_min)."
   },
+  "aneks_1": {
+    "data": "2026-07-23",
+    "opis": "Rewizja obserwowalnosci (ANEKS_1_OBSERWOWALNOSC.md): kamera pitch -22.3 st. + spawn celu w stozku czolowym +x. r_goal/z_hover/t_dwell BEZ ZMIAN. Progi P_SANITY bez zmian.",
+    "kamera_look_dz": -0.41,
+    "spawn_azymut_deg": 25.0,
+    "spawn_dystans_m": [1.0, 2.0],
+    "start_yaw": 0.0,
+    "start_x": [-1.5, -0.3],
+    "start_y_half": 0.85,
+    "uzasadnienie_regionu_startu": "spawn 'wzgledem +x' wymaga headingu +x od t=0 (brak yaw w akcji); region startu ograniczony do polowy -x, by cel 1-2 m w przod (az +-25 st.) zawsze miescil sie w arenie (lim=1.7)."
+  },
   "env": {
     "res": 64,
     "r_goal": 0.25,
@@ -15,8 +26,11 @@
     "t_dwell": 2.0,
     "arena_half": 2.0,
     "arena_z": 2.5,
-    "start_half": 1.5,
+    "start_x_lo": -1.5,
+    "start_x_hi": -0.3,
+    "start_y_half": 0.85,
     "start_z": 0.5,
+    "start_yaw": 0.0,
     "min_target_dist": 1.0,
     "episode_s": 10.0,
     "pyb_freq": 240,

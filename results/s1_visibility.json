@@ -1,0 +1,17 @@
+{
+  "n": 100,
+  "level": "T0",
+  "min_px": 3,
+  "dead_zone_m": 0.35,
+  "G1_t0_widoczny": "100/100",
+  "G1_pass": true,
+  "G2_mediana_udzialu_dolot": 1.0,
+  "G2_pass": true,
+  "G2_srednia": 0.997,
+  "G2_min": 0.938,
+  "pass": true,
+  "seeds": [
+    43000,
+    43099
+  ]
+}

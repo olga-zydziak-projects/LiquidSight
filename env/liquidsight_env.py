@@ -50,7 +50,12 @@ CONTROL_STEPS = int(EPISODE_S * CTRL_FREQ)      # 480
 POLICY_STEPS = CONTROL_STEPS // CAM_EVERY       # 120
 DT_OBS = CAM_EVERY * CTRL_DT                     # 1/12 s (dt miedzy klatkami)
 
-# --- parametry zadania D1 (start: strojone na ekspercie w I1) ---------------
+# --- parametry zadania D1 (r_goal/z_hover/t_dwell zamrozone w I1) -----------
+# ANEKS-1 (2026-07-23): dron patrzy na +x (yaw=0), cel w stozku czolowym +x
+# (scene_builder Z2). Region startu ograniczony do polowy -x tak, by cel 1-2 m
+# w przod zawsze miescil sie w arenie (lim=arena_half-0.3=1.7; d_max=2.0,
+# az=25 st. -> start_x<=-0.3, |start_y|<=1.7-2.0*sin25=0.855). Konieczna
+# realizacja rewizji D1/D2: "azymut wzgledem +x" wymaga headingu +x od t=0.
 DEFAULTS = {
     "res": 64,
     "r_goal": 0.25,
@@ -58,8 +63,11 @@ DEFAULTS = {
     "t_dwell": 2.0,
     "arena_half": 2.0,      # geofence xy: |x|,|y| <= 2.0 (arena 4x4)
     "arena_z": 2.5,         # geofence z:  z <= 2.5
-    "start_half": 1.5,      # start w centralnych 3x3 m
+    "start_x_lo": -1.5,     # ANEKS-1: start w polowie -x
+    "start_x_hi": -0.3,
+    "start_y_half": 0.85,   # ANEKS-1: |start_y| <= 0.85
     "start_z": 0.5,
+    "start_yaw": 0.0,       # ANEKS-1: heading +x (kamera na +x od t=0)
     "min_target_dist": 1.0,
 }
 
@@ -76,9 +84,11 @@ class LiquidSightEnv:
     def reset(self, scene_seed: int, level="T0"):
         self.close()
         rng = np.random.default_rng(scene_seed)
-        sh = self.cfg["start_half"]
-        start_xy = rng.uniform(-sh, sh, size=2)
-        start_yaw = float(rng.uniform(0.0, 2 * np.pi))
+        start_x = float(rng.uniform(self.cfg["start_x_lo"], self.cfg["start_x_hi"]))
+        yh = self.cfg["start_y_half"]
+        start_y = float(rng.uniform(-yh, yh))
+        start_xy = np.array([start_x, start_y])
+        start_yaw = float(self.cfg["start_yaw"])       # ANEKS-1: heading +x
         self.p0 = np.array([start_xy[0], start_xy[1], self.cfg["start_z"]])
         self.start_yaw = start_yaw
 

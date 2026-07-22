@@ -9,14 +9,14 @@
         "fail_type": null
       },
       "run1": {
-        "rgb": "8be08c8af252537847bab624e454bdf2059c5a4c6c5f32a75901360c1d5ae8ba",
-        "kin": "85ded8eaa30b1ae135a13885ca82f7883f23a2628d8da89e21d388f295701cd4",
-        "setpoint": "7d41fb0cadcfefc7fb7e46e4724121311ed166dea346306fded2e0c6a8fdeb78"
+        "rgb": "74e1e20d6e77644262b4f8f6d0f056c6e05bb5df8719ca03807a43bdd09bcaaf",
+        "kin": "7693634ea5d07e7dc01203d8976c061e58fe43aef72c1464cc38de492fb1cb35",
+        "setpoint": "9e63b2d3cb4d5f8efe864d1cae971419f8be41c4b0f9555834025378ba120ee1"
       },
       "run2": {
-        "rgb": "8be08c8af252537847bab624e454bdf2059c5a4c6c5f32a75901360c1d5ae8ba",
-        "kin": "85ded8eaa30b1ae135a13885ca82f7883f23a2628d8da89e21d388f295701cd4",
-        "setpoint": "7d41fb0cadcfefc7fb7e46e4724121311ed166dea346306fded2e0c6a8fdeb78"
+        "rgb": "74e1e20d6e77644262b4f8f6d0f056c6e05bb5df8719ca03807a43bdd09bcaaf",
+        "kin": "7693634ea5d07e7dc01203d8976c061e58fe43aef72c1464cc38de492fb1cb35",
+        "setpoint": "9e63b2d3cb4d5f8efe864d1cae971419f8be41c4b0f9555834025378ba120ee1"
       },
       "bit_w_bit": {
         "rgb": true,
@@ -34,14 +34,14 @@
         "fail_type": null
       },
       "run1": {
-        "rgb": "dceb0d5bfc6538bc2bc16ed3582e06d22647cfdaaee10b0fc8ac75c4d34cd12e",
-        "kin": "44bd304e4f50f14df4333d16aabfa93d1adc87c6e380b3bb8dcdbb69adfc1132",
-        "setpoint": "59af11b35cc5f8c51fd4a568b75749b68e577122f4abbb5ae3d85ea20e672cf5"
+        "rgb": "4b8da62a8c5a6e92c1613820b90eec448f0ffd899da3a2e931ee44ae8b68c49e",
+        "kin": "d3db4245646d363be98066c7a9652a6cd848ac0fff47592f8c109ddf82fa14e4",
+        "setpoint": "3ff276faa34f3d4ccfc1969c667e020430f6f02b055d36f24c9f53f38ff9df97"
       },
       "run2": {
-        "rgb": "dceb0d5bfc6538bc2bc16ed3582e06d22647cfdaaee10b0fc8ac75c4d34cd12e",
-        "kin": "44bd304e4f50f14df4333d16aabfa93d1adc87c6e380b3bb8dcdbb69adfc1132",
-        "setpoint": "59af11b35cc5f8c51fd4a568b75749b68e577122f4abbb5ae3d85ea20e672cf5"
+        "rgb": "4b8da62a8c5a6e92c1613820b90eec448f0ffd899da3a2e931ee44ae8b68c49e",
+        "kin": "d3db4245646d363be98066c7a9652a6cd848ac0fff47592f8c109ddf82fa14e4",
+        "setpoint": "3ff276faa34f3d4ccfc1969c667e020430f6f02b055d36f24c9f53f38ff9df97"
       },
       "bit_w_bit": {
         "rgb": true,
