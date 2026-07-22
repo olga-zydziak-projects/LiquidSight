@@ -23,7 +23,7 @@
     "wersja": "2.1.0",
     "uwaga": "zgodny z pinem w liquidflight/MANIFEST.json; instalacja -e --no-deps w .venv"
   },
-  "gate_arms": {
+  "gate_arms_v1": {
     "opis": "Dowod parytetu rdzeni ramion F3_GATE (I3a). Referencja = rdzen GRU 27648; pasmo +-2% [27095,28201]. Enkoder i glowa: definicje identyczne, nowe instancje (zero wspoldzielenia wag). Native ts=None (dt zadania stale).",
     "referencja_rdzen": 27648,
     "pasmo": [
@@ -58,6 +58,41 @@
         "enkoder_param": 126112,
         "glowa_param": 324,
         "razem_param": 154420
+      }
+    }
+  },
+  "gate_arms_v2": {
+    "opis": "Parytet rdzeni po ANEKS-3 (naprawa konstrukcji CfC). Glowy identyczne Linear(64->6)=390 (symetria twin). A_CFC: CfCCell z backbone, hidden=64/bb=69 (aneks Z1 proponowal 70/64 -> glowa 426; realizacja 64/69 zachowuje parytet ORAZ symetrie glow z Z3/T2). A_NCP: AutoNCP bez zmian (27571), readout stan pelny + ts=sekundy. ncps 1.0.1 (bug wrappera timespans batch>1 obchodzony manualnym krokowaniem komorki).",
+    "referencja_rdzen": 27648,
+    "pasmo": [
+      27095,
+      28201
+    ],
+    "ts_sekundy": 0.08333,
+    "ramiona": {
+      "A_GRU": {
+        "konfiguracja": "GRUCell(78->64)",
+        "rdzen_param": 27648,
+        "delta_pct": 0.0,
+        "w_pasmie": true,
+        "glowa_param": 390,
+        "razem_param": 154150
+      },
+      "A_NCP": {
+        "konfiguracja": "CfC(78, AutoNCP(units=64, out=6, seed=0)); readout stan pelny(64); ts=0.0833s manual",
+        "rdzen_param": 27571,
+        "delta_pct": -0.28,
+        "w_pasmie": true,
+        "glowa_param": 390,
+        "razem_param": 154073
+      },
+      "A_CFC": {
+        "konfiguracja": "CfCCell(78, hidden=64, backbone=69); ts=0.0833s manual",
+        "rdzen_param": 27787,
+        "delta_pct": 0.5,
+        "w_pasmie": true,
+        "glowa_param": 390,
+        "razem_param": 154289
       }
     }
   }

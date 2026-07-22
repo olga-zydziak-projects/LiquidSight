@@ -1,44 +1,66 @@
-"""core_cfc — rdzen ramienia A_CFC (dense CfC, ncps).
+"""core_cfc — rdzen ramienia A_CFC (dense CfC, po ANEKS-3: bug-fix do przepisu frozen C1).
 
-Ramie OPISOWE (F3_GATE par.1): izoluje wklad dynamiki ciaglej od wiringu.
-Dense CfC z biblioteki ncps (continuous-time cell; ciaglosc dynamiki z
-komorkami P0/C1). Wejscie rdzenia 78, wyjscie = units (do glowy Linear->6).
+Ramie OPISOWE. Komorka closed-form stylu frozen v1.0/models.CfCCell (Hasani 'default')
+z BACKBONE (naprawa: ncps.torch.CfC bez backbone nie dosiegal celu — RAPORT_DIAG_CFC).
+Krokowanie MANUALNE z jawnym ts w SEKUNDACH (0.0833 = 1/12 s), obchodzac bug wrappera
+ncps (odrzuca timespans przy batch>1).
 
-Parytet (I3a): units=53, backbone_layers=0 -> 27 984 param rdzenia (+1.22%
-wzgledem 27 648 GRU; w pasmie +-2% [27095, 28201]).
-
-Native ts: dt zadania jest STALE (12 Hz, regularne probkowanie) -> timespans
-podawane jako None (jednostkowy krok czasu = stala bramka czasu; kanal dt
-jest i tak obecny jako cecha w wejsciu 78). Regularne dt czyni native-ts
-inertnym; os OOD jest percepcyjna, nie czasowa.
+Parytet v2 (ANEKS-3 Z1): hidden=64, backbone=69 -> rdzen ~27 787 (+0.5%, pasmo +-2%).
+Uwaga: aneks Z1 proponowal units=70/backbone=64 (rdzen 27 736), ale Z3+T2 wymagaja
+glowy Linear(64->6)=390 identycznej we wszystkich ramionach -> hidden=64 (wyjscie 64),
+backbone dobrany pod parytet. Zachowany rdzen w pasmie ORAZ symetria glow.
 """
 from __future__ import annotations
 
 import torch
 import torch.nn as nn
-from ncps.torch import CfC
 
 IN_DIM = 78
-CFC_UNITS = 53          # dowod parytetu I3a: 27 984 param (+1.22%)
+CFC_UNITS = 64          # wyjscie rdzenia = 64 (glowa 64->6=390, symetria twin)
+CFC_BACKBONE = 69       # dobrany pod parytet: rdzen ~27 787 (+0.5%)
+TS_SEC = 1.0 / 12.0     # jawny ts w sekundach na tik kamery (ANEKS-3 Z2)
+
+
+def lecun_tanh(x):
+    return 1.7159 * torch.tanh(0.666 * x)
+
+
+class CfCCell(nn.Module):
+    """Closed-form CfC ('default', Hasani 2022) — przepis frozen v1.0/models.CfCCell.
+    h' = ff1(z)*(1-g) + ff2(z)*g, g=sigmoid(time_a(z)*ts + time_b(z)), z=lecun_tanh(bb([x,h]))."""
+
+    def __init__(self, input_size, hidden_size, backbone_units):
+        super().__init__()
+        self.backbone = nn.Linear(input_size + hidden_size, backbone_units)
+        self.ff1 = nn.Linear(backbone_units, hidden_size)
+        self.ff2 = nn.Linear(backbone_units, hidden_size)
+        self.time_a = nn.Linear(backbone_units, hidden_size)
+        self.time_b = nn.Linear(backbone_units, hidden_size)
+
+    def forward(self, x, h, ts):
+        z = lecun_tanh(self.backbone(torch.cat([x, h], dim=-1)))
+        ff1 = torch.tanh(self.ff1(z))
+        ff2 = torch.tanh(self.ff2(z))
+        g = torch.sigmoid(self.time_a(z) * ts + self.time_b(z))
+        return ff1 * (1.0 - g) + ff2 * g
 
 
 class CoreCfC(nn.Module):
     IN_DIM = IN_DIM
 
-    def __init__(self, units: int = CFC_UNITS):
+    def __init__(self, units: int = CFC_UNITS, backbone: int = CFC_BACKBONE):
         super().__init__()
-        self.units = units
         self.OUT_DIM = units
         self.state_size = units
-        self.cfc = CfC(IN_DIM, units, batch_first=True, backbone_layers=0)
+        self.cell = CfCCell(IN_DIM, units, backbone)
 
     def init_hidden(self, batch: int, device) -> torch.Tensor:
         return torch.zeros(batch, self.state_size, device=device)
 
     def step(self, x: torch.Tensor, h: torch.Tensor):
-        """x:(B,78), h:(B,units) -> (out(B,units), h(B,units)). timespans=None (dt stale)."""
-        out, h = self.cfc(x.unsqueeze(1), h)     # (B,1,units), (B,units)
-        return out.squeeze(1), h
+        ts = torch.full((x.shape[0], 1), TS_SEC, device=x.device, dtype=x.dtype)
+        h = self.cell(x, h, ts)
+        return h, h
 
     def core_params(self) -> int:
-        return sum(p.numel() for p in self.cfc.parameters())
+        return sum(p.numel() for p in self.cell.parameters())
