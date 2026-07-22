@@ -1,0 +1,56 @@
+{
+  "arm": "A_CFC",
+  "lr": 0.0003,
+  "seed": 45010,
+  "rdzen_param": 27787,
+  "nominal_sukces": 4,
+  "nominal_pct": 4.0,
+  "nominal_porazki": {
+    "dwell": 18,
+    "tilt": 78
+  },
+  "bc_curve": [
+    0.247667,
+    0.151313,
+    0.113082,
+    0.070359,
+    0.041751,
+    0.025521,
+    0.017942,
+    0.01426,
+    0.012638,
+    0.011716,
+    0.010804,
+    0.010022,
+    0.009302,
+    0.008584,
+    0.007887
+  ],
+  "bc_val": 0.007376,
+  "sec_bc": 74.6,
+  "dagger": [
+    {
+      "round": 1,
+      "rollout_succ_pct": 4.0,
+      "val_mse": 0.006017,
+      "sec_rollout": 63.1,
+      "sec_train": 73.0
+    },
+    {
+      "round": 2,
+      "rollout_succ_pct": 2.0,
+      "val_mse": 0.007406,
+      "sec_rollout": 56.3,
+      "sec_train": 86.7
+    },
+    {
+      "round": 3,
+      "rollout_succ_pct": 3.0,
+      "val_mse": 0.009317,
+      "sec_rollout": 33.3,
+      "sec_train": 105.4
+    }
+  ],
+  "sec_eval_nominal": 37.3,
+  "sec_cykl_treningu": 492.4
+}
