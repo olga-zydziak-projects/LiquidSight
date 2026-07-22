@@ -3,3 +3,7 @@
 external/
 __pycache__/
 *.pyc
+
+# I2: duze artefakty (odtwarzalne z seeda; nie do gita)
+data/
+ckpt/
