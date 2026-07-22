@@ -1,0 +1,20 @@
+{
+  "level": "T0",
+  "seeds": [
+    43000,
+    43099
+  ],
+  "n": 100,
+  "sukces": 100,
+  "sukces_pct": 100.0,
+  "porazki_typy": {},
+  "katastrofy": 0,
+  "brak_dolotu_dwell": 0,
+  "config": {
+    "r_goal": 0.25,
+    "z_hover": 0.5,
+    "t_dwell": 2.0,
+    "v_max": 1.0,
+    "t_ramp_min": 2.0
+  }
+}

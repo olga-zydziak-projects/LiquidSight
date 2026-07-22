@@ -1,0 +1,26 @@
+{
+  "opis": "Manifest warstwy wykonawczej skopiowanej VERBATIM do frozen_v1/ na potrzeby fazy 3a (liquidsight). Kopie sa 1:1 (bit-w-bit) z frozen liquidflight-v1.0 i po skopiowaniu READ-ONLY. Nowy kod (env/, expert/) importuje z frozen_v1/ przez dodanie katalogu do sys.path.",
+  "source": "liquidflight-v1.0",
+  "source_repo": "/home/olga/projects/liquidflight",
+  "source_commit": "ce0d662df2dbb3ef1536b976d070c835a897e5ca",
+  "utworzono": "2026-07-22",
+  "kopie": [
+    {
+      "plik": "frozen_v1/task.py",
+      "oryginal": "/home/olga/projects/liquidflight/src/task.py",
+      "sha256": "9ad8936353c9ef20afdd1fe6377c9cd99514e8d2b37e22acd26a7e061d884c20",
+      "bajtow": 5789,
+      "verbatim": true,
+      "uzycie": "warstwa wykonawcza: CTRL_DT, CTRL_FREQ, FAIL_TILT_DEG, FAIL_Z_MIN, make_expert, obs_kin, split_state, _smoothstep (rampa eksperta). Logika zadania okregu (reference/episode_init/CIRCLE_*) NIE jest importowana."
+    }
+  ],
+  "NIE_kopiowano": {
+    "c1_common.py": "Nieimportowany przez env/ ani expert/ (domkniecie importow env = {task.py}). Jego reuzywalne elementy (RampIntercept, rollout_expert_*, outage_mask) sa specyficzne dla zadania okregu + outage; wciagniecie ich do fly-to-target byloby przeciekiem logiki zadania (zakaz T5a). Prymityw gladkiej rampy (_smoothstep) jest w task.py."
+  },
+  "external_gym_pybullet_drones": {
+    "repo": "https://github.com/utiasDSL/gym-pybullet-drones.git",
+    "commit": "e712698a05a80728b06572819dcf044596707754",
+    "wersja": "2.1.0",
+    "uwaga": "zgodny z pinem w liquidflight/MANIFEST.json; instalacja -e --no-deps w .venv"
+  }
+}
