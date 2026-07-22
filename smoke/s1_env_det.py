@@ -19,7 +19,7 @@ from env.liquidsight_env import DT_OBS, POLICY_STEPS, LiquidSightEnv  # noqa: E4
 from expert.expert import make_expert_for  # noqa: E402
 
 CFG_PATH = os.path.join(os.path.dirname(__file__), "..", "config", "env_f3.json")
-CASES = [(43100, "T0"), (43149, "T3")]
+CASES = [(43100, "T0"), (43149, "T3"), (43125, "T2b")]  # T2b: nowa sciezka ANEKS-2
 
 
 def load_cfg():

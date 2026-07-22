@@ -29,14 +29,22 @@ SPAWN_AZ_DEG = 25.0                      # Z2: azymut celu wzgledem +x w [-25,+2
 SPAWN_D_MIN = 1.0                        # Z2: dystans poziomy od startu [m]
 SPAWN_D_MAX = 2.0
 
-# --- osie teksturowe D6 (poziom -> rodzina + pula seedow) -------------------
+# --- osie teksturowe D6 (poziom -> rodzina + pula seedow + K dystraktorow) ---
+# ANEKS-2 (2026-07-23): os dystraktorowa parametryczna w K. Miedzy T2 (K=0) a
+# T3 (K=4) drabina T2a/T2b/T2c (K=1/2/3). Dystraktory rodziny B, parametryzacja
+# jak T3 (kolor +-0.1, rozmiar +-20%, placement z seeda -> zagniezdzone).
+_B_POOL = list(range(42000, 42020))
 LEVELS = {
-    "T0": {"family": "A", "pool": list(range(41000, 41050)), "distractors": False},
-    "T1": {"family": "A", "pool": list(range(41500, 41520)), "distractors": False},
-    "T2": {"family": "B", "pool": list(range(42000, 42020)), "distractors": False},
-    "T3": {"family": "B", "pool": list(range(42000, 42020)), "distractors": True},
+    "T0":  {"family": "A", "pool": list(range(41000, 41050)), "K": 0},
+    "T1":  {"family": "A", "pool": list(range(41500, 41520)), "K": 0},
+    "T2":  {"family": "B", "pool": _B_POOL, "K": 0},
+    "T2a": {"family": "B", "pool": _B_POOL, "K": 1},
+    "T2b": {"family": "B", "pool": _B_POOL, "K": 2},
+    "T2c": {"family": "B", "pool": _B_POOL, "K": 3},
+    "T3":  {"family": "B", "pool": _B_POOL, "K": 4},
 }
-LEVEL_NAMES = ["T0", "T1", "T2", "T3"]
+LEVEL_NAMES = ["T0", "T1", "T2", "T3"]                       # bazowe (kompat. wstecz)
+LADDER_NAMES = ["T0", "T1", "T2", "T2a", "T2b", "T2c", "T3"]  # pelna drabina (ANEKS-2)
 
 
 def _norm_level(level) -> str:
@@ -114,11 +122,14 @@ def build_task_scene(client: int, plane_id: int, scene_seed: int, level,
     target_pos = np.array([txy[0], txy[1], TARGET_HALF])
     tid = _box(client, [TARGET_HALF] * 3, target_pos.tolist(), TARGET_RGBA)
 
-    # dystraktory: TYLKO T3 — kolor zblizony do celu (jitter +-0.1),
-    # rozmiar celu +-20%, pozycje w arenie z dala od celu i startu
+    # dystraktory (ANEKS-2): K wg poziomu (T2=0..T3=4) — kolor zblizony do celu
+    # (jitter +-0.1), rozmiar celu +-20%, placement z seeda sceny. Drabina
+    # zagniezdzona: dla danego scene_seed pierwsze K dystraktorow sa identyczne
+    # przez poziomy (tekstura i cel losowane wczesniej, wiec niezalezne od K).
     distractor_ids = []
-    if cfg["distractors"]:
-        for _ in range(K_DISTRACTORS_T3):
+    n_distractors = int(cfg.get("K", K_DISTRACTORS_T3 if cfg.get("distractors") else 0))
+    if n_distractors > 0:
+        for _ in range(n_distractors):
             for _ in range(1000):
                 dxy = rng.uniform(-lim, lim, size=2)
                 if (np.linalg.norm(dxy - txy) >= 0.4 and
@@ -132,7 +143,7 @@ def build_task_scene(client: int, plane_id: int, scene_seed: int, level,
 
     return {"target_id": tid, "target_pos": target_pos,
             "hover_xy": txy.astype(np.float64), "distractor_ids": distractor_ids,
-            "level": lname, "plane_tex_seed": plane_tex_seed}
+            "level": lname, "plane_tex_seed": plane_tex_seed, "K": n_distractors}
 
 
 def _box(client: int, half, pos, rgba, mass: float = 0.0) -> int:

@@ -1,0 +1,36 @@
+{
+  "nowe_poziomy": [
+    "T2a",
+    "T2b",
+    "T2c"
+  ],
+  "per_level": {
+    "T2a": {
+      "n": 50,
+      "sukces": 50,
+      "sukces_pct": 100.0,
+      "katastrofy": 0,
+      "porazki_typy": {}
+    },
+    "T2b": {
+      "n": 50,
+      "sukces": 50,
+      "sukces_pct": 100.0,
+      "katastrofy": 0,
+      "porazki_typy": {}
+    },
+    "T2c": {
+      "n": 50,
+      "sukces": 50,
+      "sukces_pct": 100.0,
+      "katastrofy": 0,
+      "porazki_typy": {}
+    }
+  },
+  "prog": ">=95% na kazdym nowym poziomie",
+  "werdykt": "PASS",
+  "seeds": [
+    43100,
+    43149
+  ]
+}

@@ -17,7 +17,7 @@ from PIL import Image
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from env.liquidsight_env import DT_OBS, LiquidSightEnv  # noqa: E402
-from env.scene_builder import LEVEL_NAMES  # noqa: E402
+from env.scene_builder import LADDER_NAMES  # noqa: E402
 from expert.expert import make_expert_for  # noqa: E402
 
 CFG_PATH = os.path.join(os.path.dirname(__file__), "..", "config", "env_f3.json")
@@ -36,7 +36,7 @@ def main():
     outdir = os.path.join(os.path.dirname(__file__), "..", "results", "axis_preview")
     os.makedirs(outdir, exist_ok=True)
     saved = []
-    for level in LEVEL_NAMES:
+    for level in LADDER_NAMES:
         for seed in SEEDS:
             obs, info = env.reset(scene_seed=seed, level=level)
             expert = make_expert_for(env, obs, info, cfg)
@@ -50,7 +50,7 @@ def main():
             saved.append(os.path.basename(path))
     env.close()
     print(f"zapisano {len(saved)} klatek do {outdir}")
-    print("  poziomy:", LEVEL_NAMES, "| seedy:", SEEDS, "| snapshot tik:", T_SNAP)
+    print("  poziomy:", LADDER_NAMES, "| seedy:", SEEDS, "| snapshot tik:", T_SNAP)
 
 
 if __name__ == "__main__":

@@ -28,9 +28,14 @@ DG_CKPT = os.path.join(_ROOT, "ckpt", "gru", "dagger.pt")
 RESDIR = os.path.join(_ROOT, "results")
 
 P1_SEEDS = list(range(43000, 43100))          # 100, T0
-P2_SEEDS = list(range(43100, 43150))          # 50, identyczne na T0-T3
+P2_SEEDS = list(range(43100, 43150))          # 50, identyczne na kazdym poziomie
 LEVELS = ["T0", "T1", "T2", "T3"]
+LADDER = ["T0", "T1", "T2", "T2a", "T2b", "T2c", "T3"]   # ANEKS-2: pelna drabina
+NEW_LEVELS = ["T2a", "T2b", "T2c"]                       # ANEKS-2: nowe poziomy
 BAND = (30.0, 85.0)
+
+from env.scene_builder import LEVELS as _SB_LEVELS  # noqa: E402
+SCENE_K = {l: _SB_LEVELS[l]["K"] for l in LADDER}
 
 
 def load_policy(ckpt, device):
@@ -138,12 +143,71 @@ def run_p3(args):
     print(f"P3 (ekspert, >=95%/poziom): {'PASS' if allpass else 'FAIL -> STOP'}")
 
 
+def run_p2r(args):
+    """ANEKS-2: P2 ewaluacyjne na PELNEJ drabinie (istniejacy checkpoint, zero treningu)."""
+    device = get_device()
+    cfg = load_cfg()
+    model = load_policy(args.ckpt, device)
+    env = make_env(cfg)
+    per_level = {}
+    for l in LADDER:
+        per_level[l] = eval_policy_set(model, env, P2_SEEDS, l, cfg, device)
+        print(f"  P2R {l} (K={SCENE_K.get(l,'?')}): {per_level[l]['sukces_pct']}% "
+              f"(katastrofy={per_level[l]['katastrofy']})")
+    env.close()
+    pct = {l: per_level[l]["sukces_pct"] for l in LADDER}
+    in_band = [l for l in LADDER if BAND[0] <= pct[l] <= BAND[1]]
+    verdict = "PASS" if len(in_band) >= 2 else "FAIL (mniej niz 2 poziomy w pasmie)"
+    hardest = None
+    for l in reversed(LADDER):            # najciezszy = najdalszy w drabinie w pasmie
+        if l in in_band:
+            hardest = l
+            break
+    out = {"drabina": LADDER, "K": SCENE_K, "per_level": per_level, "sukces_pct": pct,
+           "pasmo": list(BAND), "poziomy_w_pasmie": in_band,
+           "kandydat_bramki_najciezszy_w_pasmie": hardest,
+           "werdykt": verdict, "seeds": [P2_SEEDS[0], P2_SEEDS[-1]]}
+    with open(os.path.join(RESDIR, "psanity_p2r.json"), "w") as f:
+        json.dump(out, f, indent=2)
+    print(f"P2R drabina: w pasmie={in_band} -> {verdict} | kandydat bramki={hardest}")
+
+
+def run_p3r(args):
+    """ANEKS-2: P3 eksperta na NOWYCH poziomach (T0-T3 cytowane z R1)."""
+    cfg = load_cfg()
+    env = make_env(cfg)
+    per_level = {}
+    for l in NEW_LEVELS:
+        succ, fails, cat = 0, collections.Counter(), 0
+        for s in P2_SEEDS:
+            r = run_expert_episode(env, s, l, cfg)
+            if r["success"]:
+                succ += 1
+            else:
+                fails[r["fail_type"]] += 1
+                cat += int(r["catastrophe"])
+        n = len(P2_SEEDS)
+        per_level[l] = {"n": n, "sukces": succ, "sukces_pct": round(100 * succ / n, 1),
+                        "katastrofy": cat, "porazki_typy": dict(fails)}
+        print(f"  P3R {l} (ekspert): {per_level[l]['sukces_pct']}%")
+    env.close()
+    allpass = all(per_level[l]["sukces_pct"] >= 95.0 for l in NEW_LEVELS)
+    out = {"nowe_poziomy": NEW_LEVELS, "per_level": per_level,
+           "prog": ">=95% na kazdym nowym poziomie",
+           "werdykt": "PASS" if allpass else "FAIL -> STOP, diagnoza sceny",
+           "seeds": [P2_SEEDS[0], P2_SEEDS[-1]]}
+    with open(os.path.join(RESDIR, "psanity_p3r.json"), "w") as f:
+        json.dump(out, f, indent=2)
+    print(f"P3R (ekspert, >=95%/poziom): {'PASS' if allpass else 'FAIL -> STOP'}")
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("phase", choices=["p1", "p2", "p3"])
+    ap.add_argument("phase", choices=["p1", "p2", "p3", "p2r", "p3r"])
     ap.add_argument("--ckpt", default=DG_CKPT)
     args = ap.parse_args()
-    {"p1": run_p1, "p2": run_p2, "p3": run_p3}[args.phase](args)
+    {"p1": run_p1, "p2": run_p2, "p3": run_p3,
+     "p2r": run_p2r, "p3r": run_p3r}[args.phase](args)
 
 
 if __name__ == "__main__":

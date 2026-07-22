@@ -19,6 +19,13 @@
     "start_y_half": 0.85,
     "uzasadnienie_regionu_startu": "spawn 'wzgledem +x' wymaga headingu +x od t=0 (brak yaw w akcji); region startu ograniczony do polowy -x, by cel 1-2 m w przod (az +-25 st.) zawsze miescil sie w arenie (lim=1.7)."
   },
+  "aneks_2": {
+    "data": "2026-07-23",
+    "opis": "Drabina dystraktorowa osi (ANEKS_2_DRABINA_OSI.md): os parametryczna w K. Powtorka P2 WYLACZNIE ewaluacyjna (istniejacy checkpoint, zero treningu). Progi P_SANITY bez zmian.",
+    "drabina": {"T0": 0, "T1": 0, "T2": 0, "T2a": 1, "T2b": 2, "T2c": 3, "T3": 4},
+    "ladder_names": ["T0", "T1", "T2", "T2a", "T2b", "T2c", "T3"],
+    "dystraktor_parametryzacja": "rodzina B, kolor czerwien +-0.1, rozmiar celu +-20%, placement z seeda sceny (drabina zagniezdzona)"
+  },
   "env": {
     "res": 64,
     "r_goal": 0.25,

@@ -49,6 +49,31 @@
         "setpoint": true
       },
       "pass": true
+    },
+    {
+      "scene_seed": 43125,
+      "level": "T2b",
+      "n_tikow": 120,
+      "wynik": {
+        "success": true,
+        "fail_type": null
+      },
+      "run1": {
+        "rgb": "a9e477d16b3de1f324fc221069454f1eb059a3365656c5870548766aecc488c5",
+        "kin": "3145e7ae19c5f3c1f459a5ffbc8b10353b26d73767a6a641b5b7b83e1b33c60a",
+        "setpoint": "6539c2668fa344421b98a3aad840eca489b9f3749ab2b83b89b8501dc7078405"
+      },
+      "run2": {
+        "rgb": "a9e477d16b3de1f324fc221069454f1eb059a3365656c5870548766aecc488c5",
+        "kin": "3145e7ae19c5f3c1f459a5ffbc8b10353b26d73767a6a641b5b7b83e1b33c60a",
+        "setpoint": "6539c2668fa344421b98a3aad840eca489b9f3749ab2b83b89b8501dc7078405"
+      },
+      "bit_w_bit": {
+        "rgb": true,
+        "kin": true,
+        "setpoint": true
+      },
+      "pass": true
     }
   ],
   "pass": true
