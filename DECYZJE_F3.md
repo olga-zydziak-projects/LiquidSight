@@ -44,3 +44,6 @@ P_SANITY bez zmian.
 ANEKS-2 (2026-07-23): D6 zrewidowane wg ANEKS_2_DRABINA_OSI.md —
 os rozszerzona o poziomy T2a/T2b/T2c (K=1/2/3 dystraktory); progi
 P_SANITY bez zmian.
+ANEKS-3 (2026-07-24): konstrukcja rdzeni CfC naprawiona wg
+ANEKS_3_KONSTRUKCJA_RDZENI.md (bug-fix do przepisu frozen C1);
+progi/budzety/poziom/n F3_GATE bez zmian.
