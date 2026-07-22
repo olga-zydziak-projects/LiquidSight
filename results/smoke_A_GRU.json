@@ -1,0 +1,53 @@
+{
+  "arm": "A_GRU",
+  "lr": 0.001,
+  "seed": 45010,
+  "rdzen_param": 27648,
+  "nominal_sukces": 100,
+  "nominal_pct": 100.0,
+  "nominal_porazki": {},
+  "bc_curve": [
+    0.155613,
+    0.031594,
+    0.01494,
+    0.009248,
+    0.00599,
+    0.004047,
+    0.00291,
+    0.002362,
+    0.002018,
+    0.001801,
+    0.001716,
+    0.001661,
+    0.001483,
+    0.001352,
+    0.001329
+  ],
+  "bc_val": 0.00136,
+  "sec_bc": 59.6,
+  "dagger": [
+    {
+      "round": 1,
+      "rollout_succ_pct": 2.0,
+      "val_mse": 0.002771,
+      "sec_rollout": 58.7,
+      "sec_train": 55.5
+    },
+    {
+      "round": 2,
+      "rollout_succ_pct": 57.0,
+      "val_mse": 0.001546,
+      "sec_rollout": 60.1,
+      "sec_train": 67.8
+    },
+    {
+      "round": 3,
+      "rollout_succ_pct": 100.0,
+      "val_mse": 0.000778,
+      "sec_rollout": 60.9,
+      "sec_train": 80.9
+    }
+  ],
+  "sec_eval_nominal": 58.2,
+  "sec_cykl_treningu": 443.5
+}
