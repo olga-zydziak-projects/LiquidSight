@@ -22,5 +22,43 @@
     "commit": "e712698a05a80728b06572819dcf044596707754",
     "wersja": "2.1.0",
     "uwaga": "zgodny z pinem w liquidflight/MANIFEST.json; instalacja -e --no-deps w .venv"
+  },
+  "gate_arms": {
+    "opis": "Dowod parytetu rdzeni ramion F3_GATE (I3a). Referencja = rdzen GRU 27648; pasmo +-2% [27095,28201]. Enkoder i glowa: definicje identyczne, nowe instancje (zero wspoldzielenia wag). Native ts=None (dt zadania stale).",
+    "referencja_rdzen": 27648,
+    "pasmo": [
+      27095,
+      28201
+    ],
+    "ncps_wersja": "1.0.1",
+    "ramiona": {
+      "A_GRU": {
+        "konfiguracja": "GRUCell(78->64)",
+        "rdzen_param": 27648,
+        "delta_pct": 0.0,
+        "w_pasmie": true,
+        "enkoder_param": 126112,
+        "glowa_param": 390,
+        "razem_param": 154150
+      },
+      "A_NCP": {
+        "konfiguracja": "CfC(78, AutoNCP(units=64, out=6, seed=0))",
+        "rdzen_param": 27571,
+        "delta_pct": -0.28,
+        "w_pasmie": true,
+        "enkoder_param": 126112,
+        "glowa_param": 42,
+        "razem_param": 153725
+      },
+      "A_CFC": {
+        "konfiguracja": "CfC(78, units=53, backbone_layers=0)",
+        "rdzen_param": 27984,
+        "delta_pct": 1.22,
+        "w_pasmie": true,
+        "enkoder_param": 126112,
+        "glowa_param": 324,
+        "razem_param": 154420
+      }
+    }
   }
 }
