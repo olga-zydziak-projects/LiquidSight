@@ -1,0 +1,27 @@
+{
+  "core": "cfc_ncps",
+  "label": "cfc_ncps",
+  "epochs": 8,
+  "rdzen_param": 27984,
+  "bc_curve": [
+    0.12759,
+    0.03629,
+    0.01364,
+    0.00798,
+    0.00581,
+    0.00422,
+    0.00369,
+    0.00292
+  ],
+  "sec_bc": 45.1,
+  "nominal_n": 50,
+  "nominal_sukces": 0,
+  "nominal_pct": 0.0,
+  "porazki": {
+    "dwell": 50
+  },
+  "dolecialo_do_rgoal": 8,
+  "hover_sp_var_mean": 0.0094,
+  "hover_sp_var_fail": 0.0094,
+  "rgoal_crossings_mean": 0.36
+}

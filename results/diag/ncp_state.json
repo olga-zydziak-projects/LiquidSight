@@ -1,0 +1,27 @@
+{
+  "core": "ncp_state",
+  "label": "ncp_state",
+  "epochs": 8,
+  "rdzen_param": 27571,
+  "bc_curve": [
+    0.14325,
+    0.05379,
+    0.02661,
+    0.01428,
+    0.0104,
+    0.00788,
+    0.0062,
+    0.00472
+  ],
+  "sec_bc": 70.1,
+  "nominal_n": 50,
+  "nominal_sukces": 1,
+  "nominal_pct": 2.0,
+  "porazki": {
+    "dwell": 49
+  },
+  "dolecialo_do_rgoal": 26,
+  "hover_sp_var_mean": 0.0082,
+  "hover_sp_var_fail": 0.0082,
+  "rgoal_crossings_mean": 1.64
+}

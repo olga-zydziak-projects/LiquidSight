@@ -1,0 +1,27 @@
+{
+  "core": "cfc_frozen:sec",
+  "label": "cfc_frozen_sec",
+  "epochs": 8,
+  "rdzen_param": 27736,
+  "bc_curve": [
+    0.14283,
+    0.03258,
+    0.01523,
+    0.00996,
+    0.00719,
+    0.00526,
+    0.00353,
+    0.00236
+  ],
+  "sec_bc": 43.5,
+  "nominal_n": 50,
+  "nominal_sukces": 2,
+  "nominal_pct": 4.0,
+  "porazki": {
+    "dwell": 48
+  },
+  "dolecialo_do_rgoal": 39,
+  "hover_sp_var_mean": 0.0046,
+  "hover_sp_var_fail": 0.0047,
+  "rgoal_crossings_mean": 2.22
+}

@@ -1,0 +1,27 @@
+{
+  "core": "ncp_motor",
+  "label": "ncp_motor",
+  "epochs": 8,
+  "rdzen_param": 27571,
+  "bc_curve": [
+    0.23644,
+    0.13734,
+    0.09564,
+    0.06809,
+    0.04813,
+    0.0337,
+    0.02551,
+    0.02199
+  ],
+  "sec_bc": 73.3,
+  "nominal_n": 50,
+  "nominal_sukces": 3,
+  "nominal_pct": 6.0,
+  "porazki": {
+    "dwell": 47
+  },
+  "dolecialo_do_rgoal": 8,
+  "hover_sp_var_mean": 0.0007,
+  "hover_sp_var_fail": 0.0007,
+  "rgoal_crossings_mean": 0.24
+}

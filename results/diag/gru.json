@@ -1,0 +1,28 @@
+{
+  "core": "gru",
+  "label": "gru",
+  "epochs": 8,
+  "rdzen_param": 27648,
+  "bc_curve": [
+    0.14613,
+    0.04525,
+    0.02236,
+    0.01274,
+    0.00889,
+    0.00602,
+    0.00356,
+    0.0026
+  ],
+  "sec_bc": 32.5,
+  "nominal_n": 50,
+  "nominal_sukces": 2,
+  "nominal_pct": 4.0,
+  "porazki": {
+    "dwell": 45,
+    "tilt": 3
+  },
+  "dolecialo_do_rgoal": 37,
+  "hover_sp_var_mean": 0.0075,
+  "hover_sp_var_fail": 0.0078,
+  "rgoal_crossings_mean": 1.82
+}
