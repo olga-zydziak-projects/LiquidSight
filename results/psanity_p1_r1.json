@@ -1,0 +1,13 @@
+{
+  "n": 100,
+  "sukces": 100,
+  "sukces_pct": 100.0,
+  "katastrofy": 0,
+  "porazki_typy": {},
+  "prog": ">=90%",
+  "werdykt": "PASS",
+  "seeds": [
+    43000,
+    43099
+  ]
+}
