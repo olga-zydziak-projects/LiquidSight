@@ -38,3 +38,6 @@ Pule seedow fazy 3 (rozlaczne z v1.0 i LiquidWatch): 40001-40003 S0
 (zuzyte); 41xxx tekstury rodz. A; 42xxx rodz. B; 43000-43099 sceny eval
 nominal; 43100-43149 sceny sweep osi (te same sceny na kazdym poziomie);
 44xxx sceny treningowe; 45xxx rezerwa (maski dropout).
+ANEKS-1 (2026-07-23): D1/D2 zrewidowane wg ANEKS_1_OBSERWOWALNOSC.md
+— spawn celu w stozku czolowym, kamera pitch -22.3 st.; progi
+P_SANITY bez zmian.
