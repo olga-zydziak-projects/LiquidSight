@@ -1,0 +1,32 @@
+{
+  "opis": "Zamrozona konfiguracja zadania fly-to-target (F3/liquidsight) po strojeniu na ekspercie privileged (T6/I1). Zmiana wartosci po tym commicie zabroniona (zasada MIERZE=RAPORTUJE). env/liquidsight_env.py DEFAULTS sa lustrem tego pliku; smoke i I2 buduja env z tych wartosci.",
+  "zamrozono": "2026-07-22",
+  "strojenie": {
+    "cel": ">=95% sukcesu eksperta na 100 epizodach T0 (sceny 43000-43099)",
+    "wynik": "100/100 = 100.0%",
+    "porazki": {},
+    "strojone_parametry": ["r_goal", "z_hover", "t_dwell", "v_max", "t_ramp_min"],
+    "uwaga": "wartosci r_goal/z_hover/t_dwell = wartosci STARTOWE z DECYZJE_F3 D1 (0.25/0.5/2.0); prog osiagniety bez ich rozluzniania. Strojono jedynie potwierdzajaco parametry rampy (v_max, t_ramp_min)."
+  },
+  "env": {
+    "res": 64,
+    "r_goal": 0.25,
+    "z_hover": 0.5,
+    "t_dwell": 2.0,
+    "arena_half": 2.0,
+    "arena_z": 2.5,
+    "start_half": 1.5,
+    "start_z": 0.5,
+    "min_target_dist": 1.0,
+    "episode_s": 10.0,
+    "pyb_freq": 240,
+    "ctrl_freq": 48,
+    "cam_hz": 12
+  },
+  "ekspert": {
+    "profil": "smoothstep (frozen_v1/task.py::_smoothstep, 3a^2-2a^3)",
+    "v_max": 1.0,
+    "t_ramp_min": 2.0,
+    "opis": "gladki najazd start->[target_xy, z_hover] z pelnym feedforwardem predkosci; T_ramp=max(t_ramp_min, 1.5*dystans/v_max); privileged (GT celu, bez pikseli)"
+  }
+}
