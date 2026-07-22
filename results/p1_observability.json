@@ -1,0 +1,26 @@
+{
+  "n_scen": 100,
+  "level": "T0",
+  "seeds": [
+    43000,
+    43099
+  ],
+  "cel_widoczny_scen": 27,
+  "cel_widoczny_pct": 27.0,
+  "klatek_z_celem_srednia": 2.6,
+  "klatek_z_celem_mediana": 0,
+  "klatek_z_celem_max": 34,
+  "sufit_widocznosci_pct": 27.0,
+  "bc": {
+    "sukces": 0,
+    "sukces_pct": 0.0,
+    "sukces_przy_widocznym": 0,
+    "sukces_przy_niewidocznym": 0
+  },
+  "dagger": {
+    "sukces": 7,
+    "sukces_pct": 7.0,
+    "sukces_przy_widocznym": 2,
+    "sukces_przy_niewidocznym": 5
+  }
+}

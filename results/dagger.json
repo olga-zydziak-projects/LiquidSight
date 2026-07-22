@@ -1,0 +1,86 @@
+{
+  "stage": "dagger",
+  "rounds": [
+    {
+      "round": 1,
+      "policy_success_rollout": "0/100",
+      "policy_success_pct": 0.0,
+      "store_size": 370,
+      "train_curve": [
+        0.138327,
+        0.13172,
+        0.130709,
+        0.12736,
+        0.126799,
+        0.124556,
+        0.121829,
+        0.114981,
+        0.110659,
+        0.10294
+      ],
+      "val_mse": 0.024127,
+      "sec_rollout": 54.6,
+      "sec_train": 50.7,
+      "sec_round": 105.3
+    },
+    {
+      "round": 2,
+      "policy_success_rollout": "2/100",
+      "policy_success_pct": 2.0,
+      "store_size": 470,
+      "train_curve": [
+        0.146442,
+        0.144324,
+        0.136965,
+        0.129493,
+        0.125553,
+        0.120861,
+        0.113127,
+        0.103895,
+        0.099108,
+        0.09574
+      ],
+      "val_mse": 0.019127,
+      "sec_rollout": 49.0,
+      "sec_train": 65.2,
+      "sec_round": 114.1
+    },
+    {
+      "round": 3,
+      "policy_success_rollout": "0/100",
+      "policy_success_pct": 0.0,
+      "store_size": 570,
+      "train_curve": [
+        0.116671,
+        0.105519,
+        0.099585,
+        0.096774,
+        0.090299,
+        0.083786,
+        0.085745,
+        0.074405,
+        0.069513,
+        0.068086
+      ],
+      "val_mse": 0.0366,
+      "sec_rollout": 41.3,
+      "sec_train": 77.2,
+      "sec_round": 118.5
+    }
+  ],
+  "sec_dagger_total": 337.9,
+  "round_seeds": [
+    [
+      44300,
+      44399
+    ],
+    [
+      44400,
+      44499
+    ],
+    [
+      44500,
+      44599
+    ]
+  ]
+}

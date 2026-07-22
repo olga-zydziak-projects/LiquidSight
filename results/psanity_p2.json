@@ -1,0 +1,61 @@
+{
+  "per_level": {
+    "T0": {
+      "n": 50,
+      "sukces": 4,
+      "sukces_pct": 8.0,
+      "katastrofy": 13,
+      "porazki_typy": {
+        "dwell": 33,
+        "tilt": 13
+      }
+    },
+    "T1": {
+      "n": 50,
+      "sukces": 1,
+      "sukces_pct": 2.0,
+      "katastrofy": 16,
+      "porazki_typy": {
+        "dwell": 33,
+        "tilt": 15,
+        "geofence": 1
+      }
+    },
+    "T2": {
+      "n": 50,
+      "sukces": 2,
+      "sukces_pct": 4.0,
+      "katastrofy": 13,
+      "porazki_typy": {
+        "dwell": 35,
+        "tilt": 13
+      }
+    },
+    "T3": {
+      "n": 50,
+      "sukces": 1,
+      "sukces_pct": 2.0,
+      "katastrofy": 31,
+      "porazki_typy": {
+        "tilt": 31,
+        "dwell": 18
+      }
+    }
+  },
+  "sukces_pct": {
+    "T0": 8.0,
+    "T1": 2.0,
+    "T2": 4.0,
+    "T3": 2.0
+  },
+  "pasmo": [
+    30.0,
+    85.0
+  ],
+  "poziomy_w_pasmie": [],
+  "werdykt": "FAIL (mniej niz 2 poziomy w pasmie [30,85])",
+  "seeds": [
+    43100,
+    43149
+  ]
+}

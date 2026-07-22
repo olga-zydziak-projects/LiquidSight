@@ -1,0 +1,16 @@
+{
+  "n": 100,
+  "sukces": 7,
+  "sukces_pct": 7.0,
+  "katastrofy": 23,
+  "porazki_typy": {
+    "tilt": 23,
+    "dwell": 70
+  },
+  "prog": ">=90%",
+  "werdykt": "FAIL",
+  "seeds": [
+    43000,
+    43099
+  ]
+}

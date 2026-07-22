@@ -1,0 +1,38 @@
+{
+  "per_level": {
+    "T0": {
+      "n": 50,
+      "sukces": 50,
+      "sukces_pct": 100.0,
+      "katastrofy": 0,
+      "porazki_typy": {}
+    },
+    "T1": {
+      "n": 50,
+      "sukces": 50,
+      "sukces_pct": 100.0,
+      "katastrofy": 0,
+      "porazki_typy": {}
+    },
+    "T2": {
+      "n": 50,
+      "sukces": 50,
+      "sukces_pct": 100.0,
+      "katastrofy": 0,
+      "porazki_typy": {}
+    },
+    "T3": {
+      "n": 50,
+      "sukces": 50,
+      "sukces_pct": 100.0,
+      "katastrofy": 0,
+      "porazki_typy": {}
+    }
+  },
+  "prog": ">=95% na kazdym poziomie",
+  "werdykt": "PASS",
+  "seeds": [
+    43100,
+    43149
+  ]
+}
