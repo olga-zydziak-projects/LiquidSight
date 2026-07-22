@@ -41,3 +41,6 @@ nominal; 43100-43149 sceny sweep osi (te same sceny na kazdym poziomie);
 ANEKS-1 (2026-07-23): D1/D2 zrewidowane wg ANEKS_1_OBSERWOWALNOSC.md
 — spawn celu w stozku czolowym, kamera pitch -22.3 st.; progi
 P_SANITY bez zmian.
+ANEKS-2 (2026-07-23): D6 zrewidowane wg ANEKS_2_DRABINA_OSI.md —
+os rozszerzona o poziomy T2a/T2b/T2c (K=1/2/3 dystraktory); progi
+P_SANITY bez zmian.
