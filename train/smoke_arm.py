@@ -1,11 +1,13 @@
-"""smoke_arm — smoke nominalny pipeline'u dla ramienia CfC (I3a T3).
+"""smoke_arm — smoke nominalny pelnocyklowy (I3a-R2 / ANEKS-4).
 
-Pelny cykl BC + DAgger x3 dla jednego ramienia (seed 45010, hiperparametry
-F3_GATE par.3), ewaluacja WYLACZNIE nominal (43000-43099). Checkpointy smoke
-NIE wchodza do biegu wiazacego (I3b trenuje wszystkie seedy od zera).
-Patologie (NaN, brak spadku straty, ~0% nominal) -> STOP z diagnoza.
+Pelny cykl treningu wg ZUNIFIKOWANEJ procedury C1 (train/procedure.run_cycle):
+4 etapy OD ZERA (BC=runda0 + DAgger 1..3), best-val, 120 epok/etap. Jeden kod
+dla wszystkich ramion. Ewaluacja WYLACZNIE nominal (43000-43099). Checkpointy
+smoke NIE wchodza do biegu wiazacego (I3b trenuje wszystkie seedy od zera).
+Patologie (NaN, ~0% nominal) -> STOP z diagnoza. Warunek T4: A_GRU<90% ->
+FLAGA STOP (aneks nie moze pogarszac referencji).
 
-Uzycie: python -m train.smoke_arm A_NCP|A_CFC [--lr 3e-4] [--seed 45010]
+Uzycie: python -m train.smoke_arm A_NCP|A_CFC|A_GRU [--lr 3e-4] [--seed 45010]
 Wynik: results/smoke_<arm>.json
 """
 import argparse
@@ -20,42 +22,14 @@ import torch
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from models.arms import build_arm, core_params  # noqa: E402
-from train.common import (EpisodeStore, collect_dagger_episode, eval_policy_episode,
-                          get_device, load_cfg, make_env, masked_mse)  # noqa: E402
+from train.common import (EpisodeStore, eval_policy_episode, get_device,  # noqa: E402
+                          load_cfg, make_env)
+from train.procedure import run_cycle  # noqa: E402
 
 _ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 BCDIR = os.path.join(_ROOT, "data", "bc")
 DGDIR = os.path.join(_ROOT, "data", "dagger_smoke")
 NOMINAL = list(range(43000, 43100))
-ROUND_SEEDS = [range(44300, 44400), range(44400, 44500), range(44500, 44600)]
-BATCH, CLIP, BC_EPOCHS, DG_EPOCHS = 16, 1.0, 15, 10
-
-
-def train_epochs(model, store, val_store, device, rng, opt, epochs):
-    curve = []
-    for _ in range(epochs):
-        order = rng.permutation(len(store))
-        tl, nb = 0.0, 0
-        for i in range(0, len(order), BATCH):
-            idx = order[i:i + BATCH].tolist()
-            rgb, kin, dt, sp, mask = store.batch(idx, device)
-            loss = masked_mse(model(rgb, kin, dt), sp, mask)
-            if torch.isnan(loss):
-                raise RuntimeError("NaN w stracie -> STOP (patologia)")
-            opt.zero_grad(); loss.backward()
-            torch.nn.utils.clip_grad_norm_(model.parameters(), CLIP)
-            opt.step()
-            tl += float(loss); nb += 1
-        curve.append(round(tl / nb, 6))
-    model.eval()
-    vtot, vn = 0.0, 0
-    with torch.no_grad():
-        for i in range(0, len(val_store), BATCH):
-            idx = list(range(i, min(i + BATCH, len(val_store))))
-            rgb, kin, dt, sp, mask = val_store.batch(idx, device)
-            vtot += float(masked_mse(model(rgb, kin, dt), sp, mask)) * len(idx); vn += len(idx)
-    model.train()
-    return curve, vtot / max(vn, 1)
 
 
 def main():
@@ -67,8 +41,6 @@ def main():
 
     cfg = load_cfg()
     device = get_device()
-    torch.manual_seed(args.seed)
-    rng = np.random.default_rng(args.seed)
 
     with open(os.path.join(BCDIR, "split.json")) as f:
         split = json.load(f)
@@ -79,47 +51,21 @@ def main():
     for s in split["val"]:
         val_store.add_npz(os.path.join(BCDIR, f"ep_{s}.npz"))
 
-    model = build_arm(args.arm).to(device)
-    print(f"{args.arm} | rdzen {core_params(model)} param | lr {args.lr} | device {device}")
+    print(f"{args.arm} | rdzen {core_params(build_arm(args.arm))} param | lr {args.lr} | "
+          f"seed {args.seed} | device {device} | store {len(store)}tr/{len(val_store)}val")
 
-    # --- BC ---
-    t0 = time.perf_counter()
-    opt = torch.optim.Adam(model.parameters(), lr=args.lr)
-    bc_curve, bc_val = train_epochs(model, store, val_store, device, rng, opt, BC_EPOCHS)
-    t_bc = time.perf_counter() - t0
-    if bc_curve[-1] >= bc_curve[0]:
-        raise RuntimeError(f"BC bez spadku straty {bc_curve[0]}->{bc_curve[-1]} -> STOP")
-    print(f"  BC {BC_EPOCHS} epok: train_mse {bc_curve[0]:.4f}->{bc_curve[-1]:.4f} val {bc_val:.4f} | {t_bc:.0f}s")
-
-    # --- DAgger x3 ---
+    # --- pelny cykl wg procedury C1 (Z1-Z3) ---
     env = make_env(cfg)
-    dg = []
-    for r, seeds in enumerate(ROUND_SEEDS, 1):
-        seeds = list(seeds)
-        rdir = os.path.join(DGDIR, args.arm, f"round{r}")
-        os.makedirs(rdir, exist_ok=True)
-        tr = time.perf_counter()
-        model.eval(); n_succ = 0
-        for s in seeds:
-            ep = collect_dagger_episode(env, model, s, "T0", cfg, device)
-            n_succ += int(ep["success"])
-            np.savez_compressed(os.path.join(rdir, f"ep_{s}.npz"), rgb=ep["rgb"], kin=ep["kin"],
-                                dt=ep["dt"], setpoint=ep["setpoint"], length=ep["length"], success=ep["success"])
-            store.add_npz(os.path.join(rdir, f"ep_{s}.npz"))
-        model.train()
-        tr = time.perf_counter() - tr
-        tt = time.perf_counter()
-        opt = torch.optim.Adam(model.parameters(), lr=args.lr)
-        _, vl = train_epochs(model, store, val_store, device, rng, opt, DG_EPOCHS)
-        tt = time.perf_counter() - tt
-        dg.append({"round": r, "rollout_succ_pct": round(100 * n_succ / len(seeds), 1),
-                   "val_mse": round(vl, 6), "sec_rollout": round(tr, 1), "sec_train": round(tt, 1)})
-        print(f"  DAgger r{r}: rollout {dg[-1]['rollout_succ_pct']}% | val {vl:.4f} | "
-              f"{tr:.0f}+{tt:.0f}s")
+    t0 = time.perf_counter()
+    model, stages = run_cycle(args.arm, args.lr, args.seed, cfg, env, store,
+                              val_store, device, DGDIR)
+    sec_cykl = time.perf_counter() - t0
 
     # --- ewaluacja NOMINAL (43000-43099) ---
     te = time.perf_counter()
-    model.eval(); succ = 0; fails = collections.Counter()
+    model.eval()
+    succ = 0
+    fails = collections.Counter()
     for s in NOMINAL:
         r = eval_policy_episode(env, model, s, "T0", cfg, device)
         if r["success"]:
@@ -132,17 +78,29 @@ def main():
     if nom_pct < 1.0:
         raise RuntimeError(f"nominal ~0% ({nom_pct}) -> STOP (patologia)")
 
-    total = t_bc + sum(x["sec_rollout"] + x["sec_train"] for x in dg)
+    bc = stages[0]
+    dagger = [{"round": s["round"], "rollout_succ_pct": s["rollout_succ_pct"],
+               "best_val": s["best_val"], "best_epoch": s["best_epoch"],
+               "sec_rollout": s["sec_rollout"], "sec_train": s["sec_train"]}
+              for s in stages if s["round"] > 0]
     out = {"arm": args.arm, "lr": args.lr, "seed": args.seed,
+           "procedura": "C1/ANEKS-4 (od-zera x4 etapy, best-val, 120 epok)",
            "rdzen_param": core_params(model),
-           "nominal_sukces": succ, "nominal_pct": nom_pct, "nominal_porazki": dict(fails),
-           "bc_curve": bc_curve, "bc_val": round(bc_val, 6), "sec_bc": round(t_bc, 1),
-           "dagger": dg, "sec_eval_nominal": round(te, 1),
-           "sec_cykl_treningu": round(total, 1)}
+           "nominal_sukces": succ, "nominal_pct": nom_pct,
+           "nominal_porazki": dict(fails),
+           "bc": {"best_val": bc["best_val"], "best_epoch": bc["best_epoch"],
+                  "train_mse_start_end": bc["train_mse_start_end"],
+                  "sec_train": bc["sec_train"]},
+           "dagger": dagger,
+           "sec_cykl_treningu": round(sec_cykl, 1),
+           "sec_eval_nominal": round(te, 1)}
+    if args.arm == "A_GRU" and nom_pct < 90.0:
+        out["FLAGA"] = f"A_GRU<90% ({nom_pct}) -> STOP par.T4 (aneks pogarsza referencje)"
     with open(os.path.join(_ROOT, "results", f"smoke_{args.arm}.json"), "w") as f:
         json.dump(out, f, indent=2)
-    print(f"{args.arm} NOMINAL: {succ}/{len(NOMINAL)} = {nom_pct}% | cykl treningu {total:.0f}s | "
-          f"porazki={dict(fails)}")
+    traj = "->".join(str(d["rollout_succ_pct"]) for d in dagger)
+    print(f"{args.arm} NOMINAL: {succ}/{len(NOMINAL)} = {nom_pct}% | DAgger {traj} | "
+          f"cykl {sec_cykl:.0f}s | porazki={dict(fails)}")
 
 
 if __name__ == "__main__":

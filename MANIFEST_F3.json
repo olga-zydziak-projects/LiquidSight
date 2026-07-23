@@ -95,5 +95,38 @@
         "razem_param": 154289
       }
     }
+  },
+  "gate_training_v2": {
+    "opis": "Procedura treningu ujednolicona z frozen C1 (ANEKS-4, ANEKS_4_PROCEDURA_TRENINGU.md). JEDEN kod (train/procedure.py) dla wszystkich ramion. Zastepuje procedure v1 (BC-15 kontynuacja + DAgger-10 final-epoch), ktora destabilizowala CfC.",
+    "zrodlo_przepisu": "liquidflight-v1.0 src/c1_train.py",
+    "Z1_tryb_rund": {
+      "wartosc": "retrening OD ZERA na pelnym agregacie kazda runde",
+      "prowieniencja": "c1_train.py:181-196 (petla rnd0..3, agregacja dataset=dataset+new); c1_train.py:127-131 (swiezy model+Adam, init seed co runda)"
+    },
+    "Z2_selekcja_checkpointu": {
+      "wartosc": "best-val (min val_mse) na kazdym etapie",
+      "split_val": "data/bc/split.json['val'] — 30 epizodow (co 10-ty z 44000-44299), ekspertowe, staly dla wszystkich ramion i seedow",
+      "prowieniencja": "c1_train.py:135,151-156; analog walidacji-eksperta c1_train.py:85-95 / c1_common.py:67 (C1_VAL)"
+    },
+    "Z3_epoki": {
+      "BC": 120,
+      "runda_DAgger": 120,
+      "ROUNDS": 3,
+      "prowieniencja": "c1_train.py:37 (EPOCHS=120), :39 (ROUNDS=3), :181 (petla obejmuje runde 0 i 1..3 ta sama funkcja)"
+    },
+    "hiperparametry_wspolne": {
+      "batch_epizodow": 16,
+      "grad_clip": 1.0,
+      "optymalizator": "Adam",
+      "prowieniencja": "c1_train.py:40,149,131"
+    },
+    "lr_per_ramie": {
+      "A_GRU": 0.001,
+      "A_NCP": 0.0003,
+      "A_CFC": 0.0003,
+      "uwaga": "F3_GATE par.4 BEZ ZMIAN; frozen uniform 1e-3 NIE adoptowany"
+    },
+    "bez_zmian": "dane/sceny/poziom T2b/n=10/prog par.5/wskazniki par.6/konstrukcja rdzeni (ANEKS-3)/normalizacja wejsc",
+    "regula_stopu": "ostatni aneks instrumentalny fazy 3a"
   }
 }
