@@ -1,0 +1,92 @@
+{
+  "faza": "A",
+  "matrix": {
+    "A_NCP|0.0003|0": {
+      "arm": "A_NCP",
+      "lr": 0.0003,
+      "verdict": "FAIL_EARLY",
+      "k": 2,
+      "S": 33.0,
+      "mean_partial": 16.5,
+      "seeds": [
+        [
+          45010,
+          22.0
+        ],
+        [
+          45011,
+          11.0
+        ]
+      ]
+    },
+    "A_NCP|0.001|0": {
+      "arm": "A_NCP",
+      "lr": 0.001,
+      "verdict": "FAIL_EARLY",
+      "k": 4,
+      "S": 289.0,
+      "mean_partial": 72.2,
+      "seeds": [
+        [
+          45010,
+          92.0
+        ],
+        [
+          45011,
+          79.0
+        ],
+        [
+          45012,
+          69.0
+        ],
+        [
+          45013,
+          49.0
+        ]
+      ]
+    },
+    "A_CFC|0.0003|0": {
+      "arm": "A_CFC",
+      "lr": 0.0003,
+      "verdict": "FAIL_EARLY",
+      "k": 2,
+      "S": 54.0,
+      "mean_partial": 27.0,
+      "seeds": [
+        [
+          45010,
+          18.0
+        ],
+        [
+          45011,
+          36.0
+        ]
+      ]
+    },
+    "A_CFC|0.001|0": {
+      "arm": "A_CFC",
+      "lr": 0.001,
+      "verdict": "FAIL_EARLY",
+      "k": 3,
+      "S": 166.0,
+      "mean_partial": 55.3,
+      "seeds": [
+        [
+          45010,
+          44.0
+        ],
+        [
+          45011,
+          57.0
+        ],
+        [
+          45012,
+          65.0
+        ]
+      ]
+    }
+  },
+  "oper_lr": {},
+  "any_cfc_pass": false,
+  "bramka": "GRANICA (pomin B,C; FAZA D wariant GRANICA; STOP par.4)"
+}

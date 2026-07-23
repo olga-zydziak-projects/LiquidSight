@@ -1,0 +1,50 @@
+{
+  "arm": "A_NCP",
+  "lr": 0.0003,
+  "seed": 45010,
+  "procedura": "C1/ANEKS-4 (od-zera x4 etapy, best-val, 120 epok)",
+  "rdzen_param": 27571,
+  "nominal_sukces": 22,
+  "nominal_pct": 22.0,
+  "nominal_porazki": {
+    "dwell": 76,
+    "tilt": 2
+  },
+  "bc": {
+    "best_val": 0.000566,
+    "best_epoch": 115,
+    "train_mse_start_end": [
+      0.272201,
+      0.00059
+    ],
+    "sec_train": 1666.9
+  },
+  "dagger": [
+    {
+      "round": 1,
+      "rollout_succ_pct": 22.0,
+      "best_val": 0.001791,
+      "best_epoch": 46,
+      "sec_rollout": 118.7,
+      "sec_train": 2529.3
+    },
+    {
+      "round": 2,
+      "rollout_succ_pct": 13.0,
+      "best_val": 0.001973,
+      "best_epoch": 47,
+      "sec_rollout": 119.9,
+      "sec_train": 2757.1
+    },
+    {
+      "round": 3,
+      "rollout_succ_pct": 25.0,
+      "best_val": 0.001843,
+      "best_epoch": 34,
+      "sec_rollout": 62.2,
+      "sec_train": 1487.8
+    }
+  ],
+  "sec_cykl_treningu": 8742.0,
+  "sec_eval_nominal": 54.3
+}
