@@ -47,3 +47,6 @@ P_SANITY bez zmian.
 ANEKS-3 (2026-07-24): konstrukcja rdzeni CfC naprawiona wg
 ANEKS_3_KONSTRUKCJA_RDZENI.md (bug-fix do przepisu frozen C1);
 progi/budzety/poziom/n F3_GATE bez zmian.
+ANEKS-4 (2026-07-24): procedura treningu ujednolicona z frozen C1
+wg ANEKS_4_PROCEDURA_TRENINGU.md, symetrycznie dla wszystkich ramion;
+REGULA STOPU: ostatni aneks instrumentalny fazy 3a.
