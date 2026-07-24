@@ -1,0 +1,135 @@
+% references.bib
+% BibTeX reference list for the LiquidSight preprint.
+% Entries verified against primary sources where possible.
+% Fields that could not be verified are marked with the token [BIB:verify].
+
+% --- CONFIRMED ENTRIES (verbatim from primary source reference list) ---
+
+@inproceedings{hasani2021ltc,
+  author    = {Hasani, Ramin and Lechner, Mathias and Amini, Alexander and Rus, Daniela and Grosu, Radu},
+  title     = {Liquid Time-constant Networks},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  year      = {2021}
+}
+% verified: confirmed by task (primary source reference list); pages/volume not added
+
+@article{hasani2022cfc,
+  author  = {Hasani, Ramin and Lechner, Mathias and Amini, Alexander and Liebenwein, Lucas and Ray, Aaron and Tschaikowski, Max and Teschl, Gerald and Rus, Daniela},
+  title   = {Closed-form continuous-time neural networks},
+  journal = {Nature Machine Intelligence},
+  year    = {2022}
+}
+% verified: confirmed by task (primary source reference list); full author list from Nature Machine Intelligence 2022
+
+@inproceedings{garnot2021pastis,
+  author    = {Sainte Fare Garnot, Vivien and Landrieu, Loic},
+  title     = {Panoptic Segmentation of Satellite Image Time Series with Convolutional Temporal Attention Networks},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year      = {2021}
+}
+% verified: confirmed by task (primary source reference list)
+
+@article{chahine2023flight,
+  author  = {Chahine, Makram and Hasani, Ramin and Kao, Patrick and Ray, Aaron and Shubert, Ryan and Lechner, Mathias and Amini, Alexander and Rus, Daniela},
+  title   = {Robust flight navigation out of distribution with liquid neural networks},
+  journal = {Science Robotics},
+  year    = {2023}
+}
+% verified: confirmed by task (primary source reference list); full author list from Science Robotics 2023
+
+% --- COMPANION TECHNICAL REPORT (no external verification; use exactly) ---
+
+@techreport{zydziak2026p0,
+  author      = {{\.Z}ydziak, Olga},
+  title       = {Temporal Robustness of Liquid Neural Networks under Irregular Observation Dropout: A Controlled Null Result on Satellite Image Time Series},
+  institution = {Independent Research},
+  type        = {Technical Report},
+  month       = jul,
+  year        = {2026}
+}
+% verified: provided verbatim by task
+
+% --- WEB-VERIFIED ENTRIES ---
+
+@misc{gu2023mamba,
+  author       = {Gu, Albert and Dao, Tri},
+  title        = {Mamba: Linear-Time Sequence Modeling with Selective State Spaces},
+  year         = {2023},
+  eprint       = {2312.00752},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.LG}
+}
+% verified: 2026-07-24 (arXiv:2312.00752, arxiv.org)
+
+@inproceedings{gu2022s4,
+  author    = {Gu, Albert and Goel, Karan and R{\'e}, Christopher},
+  title     = {Efficiently Modeling Long Sequences with Structured State Spaces},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2022},
+  note      = {arXiv:2111.00396}
+}
+% verified: 2026-07-24 (ICLR 2022 oral, iclr.cc; arXiv:2111.00396)
+
+@inproceedings{hasani2023liquids4,
+  author    = {Hasani, Ramin and Lechner, Mathias and Wang, Tsun-Hsuan and Chahine, Makram and Amini, Alexander and Rus, Daniela},
+  title     = {Liquid Structural State-Space Models},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2023},
+  note      = {arXiv:2209.12951}
+}
+% verified: 2026-07-24 (ICLR 2023 poster, iclr.cc/virtual/2023/poster/11537; arXiv:2209.12951; openreview id g4OTKRKfS7R)
+
+@inproceedings{ross2011dagger,
+  author    = {Ross, St{\'e}phane and Gordon, Geoffrey J. and Bagnell, J. Andrew},
+  title     = {A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning},
+  booktitle = {Proceedings of the 14th International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {15},
+  pages     = {627--635},
+  year      = {2011}
+}
+% verified: 2026-07-24 (PMLR v15, proceedings.mlr.press/v15/ross11a.html; pages 627-635)
+
+@article{lechner2020ncps,
+  author  = {Lechner, Mathias and Hasani, Ramin and Amini, Alexander and Henzinger, Thomas A. and Rus, Daniela and Grosu, Radu},
+  title   = {Neural circuit policies enabling auditable autonomy},
+  journal = {Nature Machine Intelligence},
+  volume  = {2},
+  pages   = {642--652},
+  year    = {2020},
+  doi     = {10.1038/s42256-020-00237-3}
+}
+% verified: 2026-07-24 (Nature Machine Intelligence vol 2, pp 642-652, 2020; DOI 10.1038/s42256-020-00237-3; nature.com)
+
+@inproceedings{panerati2021gym,
+  author    = {Panerati, Jacopo and Zheng, Hehui and Zhou, SiQi and Xu, James and Prorok, Amanda and Schoellig, Angela P.},
+  title     = {Learning to Fly---a Gym Environment with PyBullet Physics for Reinforcement Learning of Multi-agent Quadcopter Control},
+  booktitle = {2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages     = {[BIB:verify]},
+  year      = {2021},
+  note      = {arXiv:2103.02142}
+}
+% verified: 2026-07-24 (IROS 2021, IEEE Xplore doc 9635857; arXiv:2103.02142)
+% [BIB:verify]: pages (IROS proceedings page range not confirmed)
+
+% --- REPRODUCIBILITY / PREREGISTRATION IN ML ---
+
+@article{pineau2021reproducibility,
+  author  = {Pineau, Joelle and Vincent-Lamarre, Philippe and Sinha, Koustuv and Larivi{\`e}re, Vincent and Beygelzimer, Alina and d'Alch{\'e}-Buc, Florence and Fox, Emily and Larochelle, Hugo},
+  title   = {Improving Reproducibility in Machine Learning Research (A Report from the NeurIPS 2019 Reproducibility Program)},
+  journal = {Journal of Machine Learning Research},
+  volume  = {22},
+  number  = {164},
+  pages   = {1--20},
+  year    = {2021}
+}
+% verified: 2026-07-24 (JMLR vol 22, no 164, pp 1-20, 2021; jmlr.org/papers/v22/20-303.html)
+
+@inproceedings{sogaard2023preregistration,
+  author    = {S{\o}gaard, Anders and Hershcovich, Daniel and de Lhoneux, Miryam},
+  title     = {A Two-Sided Discussion of Preregistration of {NLP} Research},
+  booktitle = {Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics (EACL)},
+  year      = {2023},
+  note      = {ACL Anthology 2023.eacl-main.6; arXiv:2302.10086}
+}
+% verified: 2026-07-24 (EACL 2023, aclanthology.org/2023.eacl-main.6; arXiv:2302.10086)

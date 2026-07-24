@@ -41,17 +41,29 @@ Backup liquidwatch jest z **2026-07-04** i konczy sie na etapie E2; RAPORT_E6
 (jesli powstal) jest pozniejszy i nie znajduje sie na tej maszynie w zadnej z
 przeszukanych lokalizacji.
 
-**Konsekwencja (zgodnie z pkt 4 promptu T0 i T1 promptu W3):** caly rezim R2
-(`DRAFT_EN.md §5.2`) pozostaje na placeholderach `[E6:TODO-src]` — trzy sporne
-wartosci (jednostka delty opoznienia, sens parametru d, mianownik FAR)
-nierozstrzygniete. **NIE blokuje reszty W3.**
+**Rozwiazanie (aneks T1b, W3): qualitative fallback.** Skoro raport pierwotny
+niedostepny, rezim R2 (`DRAFT_EN.md §5.2` + wiersz mapy R2 w §5) przepisany na
+forme **jakosciowa**: kierunek ujemny przy niskim FAR, **zrodlo wtorne = program
+compendium** (`Portfolio_kompendium_pomiarow.docx`, Downloads), oznaczone w
+prozie „as recorded in the program compendium; primary E6 report not preserved
+in the project archive". Trzy sporne wartosci **wykluczone** z prozy; markery
+`[E6:TODO-src]` usuniete. Rozdzielczosc mapy R2 = „qualitative (secondary
+source)".
 
-**Do decyzji Olgi:** wskazac plik RAPORT_E6 recznie (np. dorzucic do
-`paper/sources/`), wtedy R2 domkniemy w W3.
+**⚠ Kompendium NIE skopiowane do sources/:** w Downloads sa **dwie wersje**
+(`Portfolio_kompendium_pomiarow.docx` 2026-07-21 00:21 oraz
+`Portfolio_kompendium_pomiarow (1).docx` 00:34) — nie kopiuje, by nie wybrac
+niewlasciwej. Olga: wskaz wersje autorytatywna, jesli kopia ma trafic do
+`sources/`. Cytat wtorny w prozie dziala bez kopii (nie podaje liczb).
+
+**Do decyzji Olgi:** wskazac plik RAPORT_E6 pierwotny recznie → wtedy R2 do
+formy ilosciowej.
 
 ---
 
 ## Podsumowanie
 
-- Znalezione: **1/2** — P0 PDF (sha256 zgodne).
-- Otwarte: **1/2** — RAPORT_E6 (brak na maszynie; punkt dla Olgi).
+- Znalezione: **1/2** — P0 PDF (sha256 zgodne) → domyka GAP-1 (weryfikacja W3).
+- E6: **qualitative fallback** (aneks T1b) — raport pierwotny niedostepny; R2
+  jakosciowe ze zrodla wtornego (compendium). GAP-3 rozwiazany jakosciowo;
+  promocja do formy ilosciowej tylko gdy Olga wskaze raport pierwotny.

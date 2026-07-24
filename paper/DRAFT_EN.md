@@ -1,8 +1,8 @@
-# Mapping the Boundary: A Pre-Registered Measurement Program of the Liquid-Network Temporal Advantage Across Task Regimes
+# Where Liquid Networks Help, Hurt, and Fail to Train: A Pre-Registered Boundary Map
 
-*Working title — candidates in §Front-matter notes. Draft EN v1 (W2, 2026-07-24). Independent Research. Target venue: arXiv cs.LG/cs.RO (companion P0 as PDF/arXiv).*
+*Olga Żydziak — Independent Research — 2026-07-24. Draft EN v1 (W2) + W3 revisions. Target venue: arXiv cs.LG/cs.RO (companion P0 as PDF/arXiv).*
 
-> **Draft conventions.** Every quantitative value traces to `paper/NUMBERS.md` (canonical tables T1–T9). Values without a confirmed in-repo source are marked `[TODO-src: …]` and listed in the closing TODO section. Fixed terminology (used throughout): **arms** (A_GRU, A_NCP = AutoNCP-wired CfC, A_CFC = dense CfC); **lr legs** (an arm evaluated at one learning rate); **gates** (frozen criteria: P-SANITY, F3-GATE); **annexes** (sanctioned, provenanced unfreezes, Annex 1–4); **stop rule** (Annex-4's rule ending instrumental annexes in phase 3a); **trainability tax** (the capability gradient observed at core-parameter parity). Effect differences are reported in **percentage points (pp)**. Figures are placeholders here (generation deferred to W3); captions are final.
+> **Draft conventions.** Every quantitative value traces to `paper/NUMBERS.md` (canonical tables T1–T10). Fixed terminology (used throughout): **arms** (A_GRU, A_NCP = AutoNCP-wired CfC, A_CFC = dense CfC); **lr legs** (an arm evaluated at one learning rate); **gates** (frozen criteria: P-SANITY, F3-GATE); **annexes** (sanctioned, provenanced unfreezes, Annex 1–4); **fixes F1–F4** (the four recipe restorations that made a CfC trainable at all, §6 — distinct from the regime rows R1–R4 of the boundary map, §5); **stop rule** (Annex-4's rule ending instrumental annexes in phase 3a); **trainability tax** (the capability gradient observed at core-parameter parity). Effect differences are reported in **percentage points (pp)**. Figures are generated (`paper/figures/*.pdf`); captions are final.
 
 ---
 
@@ -18,7 +18,7 @@ Liquid neural networks — continuous-time cores such as LTCs and their closed-f
 
 *(~1 page)*
 
-Continuous-time recurrent networks have become an attractive substrate for embodied perception and control. Liquid Time-Constant networks (LTCs) and their closed-form counterpart (CfC), especially when wired with Neural Circuit Policies (NCP/AutoNCP), have been reported to yield policies that generalize better under distribution shift than conventional gated recurrences such as GRUs. The most cited demonstration in the flight domain reports that a compact liquid policy attends to the task-relevant part of the visual scene and holds up under perceptual perturbation `[TODO-src: [4] Chahine et al., Sci. Robotics 2023 — bib]`.
+Continuous-time recurrent networks have become an attractive substrate for embodied perception and control. Liquid Time-Constant networks (LTCs) and their closed-form counterpart (CfC), especially when wired with Neural Circuit Policies (NCP/AutoNCP), have been reported to yield policies that generalize better under distribution shift than conventional gated recurrences such as GRUs. The most cited demonstration in the flight domain reports that a compact liquid policy attends to the task-relevant part of the visual scene and holds up under perceptual perturbation \citep{chahine2023flight}.
 
 Two properties of that literature motivate this work. First, demonstrations are typically reported **without core-parameter parity** against a matched baseline and **without pre-registration** of the success criterion; a favorable curve is shown, but the counterfactual — a same-budget, same-data baseline under a criterion fixed in advance — is often absent. Second, the field does not report a **trainability layer**: whether the liquid core can be brought to competence at all, at parity, under a fixed budget, before any robustness question is even asked.
 
@@ -36,13 +36,13 @@ We take the claim seriously enough to try to falsify it under conditions it shou
 
 ## 2. Related Work
 
-*(~0.75 page)*
+*(~0.4 page)*
 
-**Liquid networks.** LTCs cast the hidden state as a continuous-time dynamical system with input-dependent time constants; CfC replaces the ODE solve with a closed-form update, retaining the continuous-time gate while removing solver cost `[TODO-src: LTC/CfC bib — [1][2]]`. Neural Circuit Policies and AutoNCP impose a sparse, structured wiring on the recurrent core `[TODO-src: NCP/AutoNCP bib — [3]]`. Robustness claims in perception-and-control derive largely from `[TODO-src: [4]]`; we treat that claim as the hypothesis under test and its lineage as the object we attempt to reproduce at parity.
+**Liquid networks.** Liquid Time-Constant networks model the hidden state as a continuous-time dynamical system whose time constants are themselves input-dependent, giving the network a natively continuous notion of elapsed time \citep{hasani2021ltc}. Their closed-form successor, the CfC, replaces the numerical ODE solve with a closed-form update that preserves the continuous-time gate while removing solver cost, making the family practical at scale \citep{hasani2022cfc}. Neural Circuit Policies and their automatic wiring (AutoNCP) impose a sparse, structured connectivity on the recurrent core, inspired by biological circuits and reported to improve auditability and compactness \citep{lechner2020ncps}. The robustness claim we test derives largely from a flight-navigation demonstration in which a small wired liquid policy generalizes out of distribution and attends to task-relevant structure \citep{chahine2023flight}; we treat that claim as the hypothesis under test and its lineage as the object we reproduce at parity. Two of our arms — a wired CfC (A_NCP) and a dense CfC (A_CFC) — are chosen precisely to isolate the contribution of the wiring from that of the continuous dynamics.
 
-**Continuous-time and state-space cousins.** Deep state-space models (S4/Mamba) share the continuous-time framing and provide context for why a small, well-wired recurrence might retain information efficiently `[TODO-src: SSM/Mamba bib]`; we do not evaluate them here.
+**Continuous-time and state-space cousins.** Deep state-space models share the continuous-time framing: S4 parameterizes long-range dependencies through a structured state-space kernel \citep{gu2022s4}, Mamba adds input-dependent selectivity for linear-time sequence modeling \citep{gu2023mamba}, and Liquid-S4 connects the liquid formulation to this family \citep{hasani2023liquids4}. These situate our small recurrences within a broader continuous-time lineage; we do not evaluate them here.
 
-**Pre-registration, replication, and imitation learning.** Our methodology borrows the discipline of pre-registered criteria and honest baselines from the reproducibility literature `[TODO-src: pre-registration bib]`, and the training procedure follows DAgger `[TODO-src: Ross et al. 2011 bib]`; a central engineering finding concerns the interaction between the DAgger update mode and continuous-time cores (§6).
+**Pre-registration, reproducibility, and imitation learning.** Our methodology adopts the discipline of freezing success criteria before measurement and reporting honest baselines, in the spirit of the machine-learning reproducibility and pre-registration literature \citep{pineau2021reproducibility,sogaard2023preregistration}. Training uses behavioral cloning followed by DAgger, the canonical no-regret reduction of imitation learning to online learning \citep{ross2011dagger}; a central engineering finding of this work concerns the interaction between the DAgger update mode and continuous-time cores (§6). The vision harness is built on gym-pybullet-drones \citep{panerati2021gym}, and the companion open-loop regime uses the PASTIS satellite time-series benchmark \citep{garnot2021pastis}.
 
 ---
 
@@ -72,15 +72,24 @@ The program is a house methodology applied uniformly across regimes.
 
 The portfolio uses three instruments, one per regime.
 
-**4.1 PASTIS twin (P0).** Sentinel-2 crop classification (wheat/maize), observation dropout, shared CNN encoder, CfC vs GRU. Open-loop, day-scale. Companion; numbers in Table T9 `[TODO-src: P0 PDF]`.
+**4.1 PASTIS twin (P0).** Sentinel-2 crop classification of a phenologically confusable pair (soft winter wheat vs. corn) under test-time observation dropout, with a shared CNN encoder (28,752 parameters) and only the recurrent core swapped between CfC and GRU. Open-loop, day-scale. Companion; numbers in Table T9, verified against the companion report \citep{zydziak2026p0}.
 
-**4.2 LiquidFlight (state-loop, v1.0).** Setpoint→DSL-PID at 48 Hz, position-hold with a safety cliff; OOD axes of latency and dropout; a time-constant panel. Frozen reference `[TODO-src: v1.0 docs]`. The vision-loop harness reuses this execution layer verbatim (sha256-pinned copies).
+**4.2 LiquidFlight (state-loop, v1.0).** A closed-loop drone flight twin (gym-pybullet-drones \citep{panerati2021gym}) with a setpoint→DSL-PID inner loop at 48 Hz, an observation-dropout OOD axis and a gap-length (latency) axis, and a time-constant (τ) inspection panel; CfC(32) vs. GRU at core parity, everything but the core bit-identical between arms. Frozen reference (Table T10). The vision-loop harness reuses this execution layer verbatim (sha256-pinned copies).
 
 **4.3 LiquidSight (vision-loop, phase 3 — this work).** A fly-to-target task from a 64×64×3 forward camera plus kinematics: reach a ground marker and hold a hover within `r_goal` for the final dwell window. Physics at 240 Hz, control at 48 Hz, camera and policy tick at 12 Hz; the target lives only in pixels. A privileged DSL-PID expert supplies behavioral cloning (BC) labels; three DAgger rounds follow. The perceptual-shift axis is a distractor ladder T0–T3 (T2/T2a/T2b/T2c = K∈{0,1,2,3} distractors on structured backgrounds), with P-SANITY establishing that the axis resolves difficulty and that the expert ceiling is reachable at every level (§7). The gate level is T2b.
 
 ---
 
 ## 5. Results Across Regimes
+
+The boundary map summarizes the direction and measurement resolution of the effect in each regime. No measurement crosses its pre-registered threshold.
+
+| row | regime / harness | effect direction | verdict / resolution |
+|---|---|---|---|
+| R1 | open-loop classification, day-scale (P0) | weak positive under dropout | null (margin < pooled std); quantitative (Table T9, \citep{zydziak2026p0}) |
+| **R2** | open-loop onset detection, low FAR (E6) | **negative** (unfavorable to the liquid core) | directional; **qualitative (secondary source)** |
+| R3 | state-loop control, ms-scale (LiquidFlight v1.0) | zero (neither help nor harm from the core) | quantitative (Table T10) |
+| R4 | vision-loop, this work (LiquidSight) | untestable under our precondition | precondition FAIL at parity; quantitative (NUMBERS.md T1–T8) |
 
 ### 5.4 Vision-loop (phase 3) — the primary result
 
@@ -94,7 +103,7 @@ This is deliberately *not* a falsification of the thesis. A test requires a qual
 
 **5.4b — A trainability tax at parity (C2).** At identical data, budget, and procedure, and with cores matched to ±2%, nominal capability forms a gradient: **A_GRU 100%** (stable; dwell failures 0) > **wired CfC** (A_NCP; peak 92% at seed 45010/1e-3; per-leg mean 72.2% at k=4) > **dense CfC** (A_CFC; cap 65% at seed 45012/1e-3). Core-parameter parity alone does not buy capability; the continuous-time core pays a trainability tax at this budget. The dominant residual failure is **dwell** — the drone reaches the marker but does not hold the hover precisely — while catastrophic **tilt is eliminated** at 1e-3 (0 tilt across all CfC cycles, versus 78/100 for the dense CfC under the pre-Annex-4 procedure).
 
-**5.4c — The boundary is variance, not mean (C3).** The wired arm at 1e-3 spans **49–92% across seeds — a 43 pp spread** — under one fixed procedure, while the GRU control is a stable 100%. Reporting only the k=4 mean (72.2%) understates the phenomenon; the **full six-seed characterization (75.3%, spread 43 pp)** shows the boundary is a property of the between-seed distribution, not a sample-size artifact. The CfC at parity does not "fail to learn"; it learns **unstably and dwell-limited, on average below 90%**. This mirrors the companion P0 result, where the retention margin and its pooled standard deviation are nearly invariant between n=3 and n=15 (Table T9) — population spread that does not shrink with n `[TODO-src: P0 PDF]`.
+**5.4c — The boundary is variance, not mean (C3).** The wired arm at 1e-3 spans **49–92% across seeds — a 43 pp spread** — under one fixed procedure, while the GRU control is a stable 100%. Reporting only the k=4 mean (72.2%) understates the phenomenon; the **full six-seed characterization (75.3%, spread 43 pp)** shows the boundary is a property of the between-seed distribution, not a sample-size artifact. The CfC at parity does not "fail to learn"; it learns **unstably and dwell-limited, on average below 90%**. This mirrors the companion P0 result \citep{zydziak2026p0}, where the retention margin (+0.1127) and its pooled standard deviation (0.1759) are nearly invariant between n=3 and n=15 (Table T9) — population spread that does not shrink with n.
 
 **5.4d — Wiring attribution (C4).** The contrast between arms attributes trainability to the wiring: the AutoNCP-wired CfC reaches a 92% peak and per-leg means up to 75.3%, whereas the dense CfC caps at 65%, across seeds and at the 1e-3 lever. The attribution holds on the 1e-3 lever; at 3e-4 the ordering inverts (dense 27.0% > wired 16.5%), so the wiring benefit is itself learning-rate dependent and we report it as such. A historical, single-seed diagnostic corroborates the readout dimension: reading the full state rather than six motor neurons raises reach from 8/50 to 26/50 (§6).
 
@@ -104,19 +113,19 @@ This is deliberately *not* a falsification of the thesis. A test requires a qual
 
 *(~0.5 page, condensed; C3 linkage)*
 
-The PASTIS twin gives a directional-but-null signal: at full cadence the GRU leads on macro-F1 (0.9073 ±0.0137 vs 0.8802 ±0.0121), but under observation dropout the CfC retains more — retention R(0.6) of 0.6415 ±0.1138 vs 0.5288 ±0.0622, a **+0.1127 margin against a pooled std of 0.1759, i.e. null** by the pre-registered rule. An absolute-F1 crossover appears at d=0.6 (CfC 0.5642 ±0.0985 above GRU 0.4798 ±0.0567, despite a −0.027 start), and the degradation slope is gentler for the CfC (−0.5095 vs −0.6936). Crucially, margin and pooled std are near-invariant from n=3 to n=15 — the boundary is population spread, not sampling noise. All P0 numbers are `[TODO-src: P0 PDF]` (Table T9).
+The PASTIS twin gives a directional-but-null signal: at full cadence the GRU leads on macro-F1 (0.9073 ±0.0137 vs 0.8802 ±0.0121), but under observation dropout the CfC retains more — retention R(0.6) of 0.6415 ±0.1138 vs 0.5288 ±0.0622, a **+0.1127 margin against a pooled std of 0.1759, i.e. null** by the pre-registered rule. An absolute-F1 crossover appears at d=0.6 (CfC 0.5642 ±0.0985 above GRU 0.4798 ±0.0567, despite a −0.027 start), and the degradation slope is gentler for the CfC (−0.5095 vs −0.6936). Crucially, margin and pooled std are near-invariant from n=3 to n=15 — the boundary is population spread, not sampling noise. All P0 numbers are verified against the companion report \citep{zydziak2026p0} (Table T9).
 
 ### 5.2 Open-loop onset detection, low FAR (E6) — companion
 
-*(~0.4 page)*
+*(~0.3 page; qualitative)*
 
-The onset-detection regime contributes the negative direction of the map: the effect sign is unfavorable to the liquid core under a low false-alarm-rate operating point `[E6:TODO-src]`. Three quantities require confirmation against the source report before this subsection can state them: the **unit of the detection-delay delta** (days?), the **meaning of the sweep parameter d**, and the **denominator of the FAR** `[E6:TODO-src]`. These are flagged in the TODO section; RAPORT_E6 is not present in this repository.
+The onset-detection regime contributes the **negative direction** of the map: at a low false-alarm-rate operating point the effect sign is **unfavorable to the liquid core**, as recorded in the program compendium; the primary E6 report is not preserved in the project archive. We therefore state this regime **qualitatively only** and report no numerical values for it — in particular the detection-delay delta, the sweep parameter, and the false-alarm-rate definition are not carried into the prose, since their primary source could not be verified. The regime enters the boundary map as a directional cell (§5, row R2), not as a quantitative result.
 
 ### 5.3 State-loop control, millisecond-scale (LiquidFlight v1.0) — companion
 
 *(~0.4 page)*
 
-In the state-loop regime the continuous-time lever (Δt) is not behaviorally load-bearing: the execution architecture yields zero attitude blow-ups from the core, and the time-constant τ functions as an explainability handle rather than a source of advantage `[TODO-src: v1.0 docs]`. The regime contributes a **zero** to the map: neither help nor harm attributable to the liquid core at this horizon.
+In the state-loop regime the continuous-time lever (Δt) is not behaviorally load-bearing (Table T10). With a setpoint action abstraction the CfC-32 policy flies under 500–1300 ms observation gaps and the episode-failure cliff moves from ~102 ms (raw-RPM stabilization) to ~779 ms; the Δt mechanism is *visible* in the state dynamics (recovery after a gap) but yields **no behavioral edge** — ablating the Δt channel flies identically. The fitted time constants are short (median τ ≈ 35 ms, IQR 24–69 ms), so a 500 ms gap is ≈14× τ and the model does not bridge gaps with long memory; τ serves as an explainability handle, not a source of advantage. Under the A1 perturbation grid there were **0 tip-overs**. The regime contributes a **zero** to the map: neither help nor harm attributable to the liquid core at this horizon.
 
 ---
 
@@ -124,15 +133,15 @@ In the state-loop regime the continuous-time lever (Δt) is not behaviorally loa
 
 *(~1 page; C5, C6)*
 
-Bringing a CfC to the point where it will run at all in this harness required restoring a known-good recipe in four provenanced steps; each is an **engineering finding, established by single-seed controlled probes (diagnostic, not statistical)** — not a statistically powered ablation.
+Bringing a CfC to the point where it will run at all in this harness required restoring a known-good recipe in four provenanced steps (fixes **F1–F4**); each is an **engineering finding, established by single-seed controlled probes (diagnostic, not statistical)** — not a statistically powered ablation.
 
-**Backbone (R1).** The dense CfC built without a backbone under the parity constraint does not reach the target (reach 8/50); adding a frozen-style backbone restores it (35/50, ≈ GRU) (Annex-3).
+**F1 — Backbone.** The dense CfC built without a backbone under the parity constraint does not reach the target (reach 8/50); adding a frozen-style backbone restores it (35/50, ≈ GRU) (Annex-3).
 
-**The Δt path and its units (R2; C5).** The continuous-time core — the sole locus of the thesis mechanism — is load-bearing only after two corrections. First, the time-span scale sets the gate regime: with an explicit `ts` in **seconds** (0.0833 s per 12 Hz tick) reach is 39/50, versus 15/50 at ts=1.0 (ticks) and 9/50 at ts=4.0; the post-init gate drive `|t_a·ts|` scales accordingly (0.010 / 0.125 / 0.501), so a mis-scaled `ts` freezes or destabilizes the cell. Second, we found a **library bug**: `ncps.torch.CfC` rejects explicit `timespans` when the batch size exceeds one (scalar, `(B,1)`, and `(B,)` all raise; only `None`=1.0 works), which had trapped the arms at `ts=1.0`. We work around it by stepping the cell manually. The auxiliary thesis is therefore: **Δt is load-bearing implementationally, not advantageously** — in this harness we could not measure an advantage because the precondition was never met.
+**F2 — The Δt path and its units (C5).** The continuous-time core — the sole locus of the thesis mechanism — is load-bearing only after two corrections. First, the time-span scale sets the gate regime: with an explicit `ts` in **seconds** (0.0833 s per 12 Hz tick) reach is 39/50, versus 15/50 at ts=1.0 (ticks) and 9/50 at ts=4.0; the post-init gate drive `|t_a·ts|` scales accordingly (0.010 / 0.125 / 0.501), so a mis-scaled `ts` freezes or destabilizes the cell. Second, we found a **library bug**: `ncps.torch.CfC` rejects explicit `timespans` when the batch size exceeds one (scalar, `(B,1)`, and `(B,)` all raise; only `None`=1.0 works), which had trapped the arms at `ts=1.0`. We work around it by stepping the cell manually. The auxiliary thesis is therefore: **Δt is load-bearing implementationally, not advantageously** — in this harness we could not measure an advantage because the precondition was never met.
 
-**Full-state readout (R3).** Reading the wired core's full state rather than six motor neurons lowers BC error (0.0047 vs 0.0220) and raises reach (26/50 vs 8/50) (Annex-3, §S3).
+**F3 — Full-state readout.** Reading the wired core's full state rather than six motor neurons lowers BC error (0.0047 vs 0.0220) and raises reach (26/50 vs 8/50) (Annex-3, §S3).
 
-**DAgger update mode (R4; C6).** Continuous-time cells are sensitive to the DAgger update procedure. Under the gate's original v1 mode (continue from the previous weights + final-epoch checkpoint), the dense CfC becomes unstable (tilt 78/100) and the wired CfC collapses its rollouts (1→0→0); the dense CfC is stable after BC alone (0 tilt), so the instability is **induced by the procedure**, not the construction. Adopting the frozen-C1 mode symmetrically (retrain from scratch each round + best-validation checkpoint, 120 epochs per stage; Annex-4) removes the tilt (78→0 at 1e-3). The **GRU is robust to both procedures** (100% either way).
+**F4 — DAgger update mode (C6).** Continuous-time cells are sensitive to the DAgger update procedure. Under the gate's original v1 mode (continue from the previous weights + final-epoch checkpoint), the dense CfC becomes unstable (tilt 78/100) and the wired CfC collapses its rollouts (1→0→0); the dense CfC is stable after BC alone (0 tilt), so the instability is **induced by the procedure**, not the construction. Adopting the frozen-C1 mode symmetrically (retrain from scratch each round + best-validation checkpoint, 120 epochs per stage; Annex-4) removes the tilt (78→0 at 1e-3) and follows the canonical DAgger formulation \citep{ross2011dagger}. The **GRU is robust to both procedures** (100% either way).
 
 A mechanistic signature accompanies this (C6a): for every CfC arm the best validation error after BC alone is low (~0.00012–0.0009) but **rises** after the DAgger aggregate (rounds r1–r3), and the best epoch moves early (e.g., wired at 1e-3, seed 45013: 119→41→26→37) — the core does not close the fit to the policy-visited distribution as well as it fits the clean expert. The GRU holds its best validation low across all rounds (.000168→.000112) — a different regime.
 
@@ -158,9 +167,9 @@ A mechanistic signature accompanies this (C6a): for every CfC arm the best valid
 
 **Synthesis.** Across the regimes we map, the sign of the effect depends on the task: a weak positive in sparse open-loop observation (P0), a negative under low-FAR onset detection (E6), a zero in state-loop control (LiquidFlight), and — in the richest regime, vision-in-the-loop — a question that never reaches the conditions of measurement, because the advantage is preceded by a trainability tax at parity. No measurement crosses its pre-registered threshold. The unifying reading is that **task construction decides whether the mechanism can reveal itself at all**: the continuous-time core needs a regime whose dependencies it is positioned to exploit, and at parity it must first be trainable there.
 
-**Demonstration culture vs. falsification.** A pre-registered null carries evidential weight that a single favorable curve does not. The map says where to look and where not to — it does not claim the mechanism is absent, only that under parity, fixed budget, and frozen criteria we did not measure it in these harnesses.
+**Demonstration culture vs. falsification.** A pre-registered null carries evidential weight that a single favorable curve does not. Much of the liquid-network robustness literature is demonstrated rather than falsified: a favorable model is shown on a task chosen after the fact, without a same-budget parity baseline and without a criterion fixed in advance. Our program inverts that stance — it commits to a threshold, a level, and a seed count before any out-of-distribution scene is seen, and it reports whatever the instrument returns, including a boundary. The cost of this discipline is that we sometimes conclude "untestable" rather than "wins" or "loses"; the benefit is that the three cells we *can* state (weak-positive, negative, zero) are not artifacts of selective reporting. The map says where to look and where not to — it does not claim the mechanism is absent, only that under parity, fixed budget, and frozen criteria we did not measure it in these harnesses.
 
-**When the twin re-arms.** The vision-loop cell would re-enter measurement under conditions that unlock trainability without breaking parity — chiefly a **symmetric budget increase** for all arms until the deciding arm meets the precondition (the wired arm at 1e-3 is the natural starting point: 92% best seed, 75.3% mean). The sensitivity of continuous-time cells to the DAgger update mode is an open research problem worth isolating.
+**When the twin re-arms.** The vision-loop cell would re-enter measurement under conditions that unlock trainability without breaking parity. The cleanest such condition is a **symmetric budget increase** for all arms — more epochs, more DAgger rounds, or more data applied identically to GRU and CfC — carried until the deciding arm (A_NCP) meets the precondition; the wired arm at 1e-3 is the natural starting point, already at 92% best seed and 75.3% mean. Because the increase is symmetric, the duel remains fair: if the GRU also improves, the parity contract is preserved. Two subsidiary questions gate the value of that rerun. First, the sensitivity of continuous-time cells to the DAgger update mode (F4) is an open research problem worth isolating on its own — why does retrain-from-scratch with best-validation selection stabilize a CfC that continuation destabilizes, when a GRU is indifferent to both? Second, whether the residual dwell failure reflects a precision limit of the continuous-time state under this readout, or merely under-training, is answerable only once the precondition is met. Until then, we resist reading the boundary as evidence about the mechanism itself.
 
 **Next habitat.** The mechanism's most plausible next habitat is a regime with genuinely variable time steps or asynchronous/event-stream sensing, where the continuous-time gate has something to integrate — offered as a direction, not a promise.
 
@@ -175,11 +184,11 @@ A mechanistic signature accompanies this (C6a): for every CfC arm the best valid
 - **Parity at ~27k core parameters.** Findings are stated at this capacity; other capacities are untested.
 - **n=10 with a finality rule.** Seeds 45010–45015 were used (early resolution); increasing n, or changing the level or threshold after seeing any OOD result, is forbidden by the gate.
 - **No OOD measurement in the vision-loop regime.** This is a *consequence* of the unmet precondition, not a design choice.
-- **Engineering findings are single-seed probes.** The four recipe restorations (R1–R4) are diagnostic controlled probes (n=1 for most), illustrative rather than statistically powered (GAP-4).
+- **Engineering findings are single-seed probes.** The four recipe restorations (fixes F1–F4) are diagnostic controlled probes (n=1 for most), illustrative rather than statistically powered (GAP-4).
 - **Determinism is within-machine**, not cross-machine.
 - **Fixed training budget.** The trainability tax is measured at BC-120 + DAgger×3; a higher symmetric budget is unmeasured.
 - **Single-operator program**; one task family per regime.
-- **Companion E6 has three quantities pending source confirmation** (§5.2) `[E6:TODO-src]`.
+- **Companion E6 primary report not preserved.** The onset-detection regime (R2) is stated qualitatively from a secondary source (program compendium); its primary report is absent from the project archive, so R2 carries no numerical values and its direction should be read as directional evidence, not a measured effect size.
 
 ---
 
@@ -187,7 +196,7 @@ A mechanistic signature accompanies this (C6a): for every CfC arm the best valid
 
 *(~0.3 page)*
 
-We release the liquidflight v1.0 and liquidsight repositories (tags and gate commits), the frozen documents (F3_PRE0, DECYZJE_F3 and Annexes 1–4, P-SANITY, F3-GATE), sha256 manifests of the execution layer, the seed pools, the per-cycle logs (`results/i3b/progress.jsonl`), and the reports. The companion P0 ships as a separate PDF/arXiv artifact `[TODO-src: P0 PDF]`. Instrument determinism is within-machine bit-exact (`s1_env_det`).
+We release the liquidflight v1.0 and liquidsight repositories (tags and gate commits), the frozen documents (F3_PRE0, DECYZJE_F3 and Annexes 1–4, P-SANITY, F3-GATE), sha256 manifests of the execution layer, the seed pools, the per-cycle logs (`results/i3b/progress.jsonl`), and the reports. The companion P0 ships as a separate PDF/arXiv artifact \citep{zydziak2026p0}. Instrument determinism is within-machine bit-exact (`s1_env_det`); bit-for-bit reproduction across different GPUs is not guaranteed (inherent to CUDA).
 
 ---
 
@@ -269,21 +278,12 @@ Applied to the four legs: A_NCP@3e-4 FAIL at k=2 (S=33; 833<900); A_NCP@1e-3 FAI
 
 ---
 
-## TODO — source markers to resolve (W3)
+## TODO — items not closable inside the repository
 
-**P0 companion (Table T9 / §5.1 / §10) — `[TODO-src: P0 PDF]`.** All P0 numbers currently trace to the W2 prompt (`[P0:prompt]`), not to an in-repo source; `paper/sources/` contains no P0 PDF. Confirm against RAPORT_P0, Tab. 1–3 + par. 5, in W3:
-- macro-F1 (full cadence): CfC 0.8802 ±0.0121, GRU 0.9073 ±0.0137.
-- retention R(0.6): CfC 0.6415 ±0.1138, GRU 0.5288 ±0.0622; margin +0.1127, pooled std 0.1759 → null.
-- absolute-F1 crossover @ d=0.6: 0.5642 ±0.0985 vs 0.4798 ±0.0567.
-- slope: −0.5095 vs −0.6936.
-- n-stability: n=3 (+0.1099 / 0.1706), n=15 (+0.1127 / 0.1759).
+Everything sourceable in-repo is closed. The following require an artifact or a human decision that does not live in this repository:
 
-**E6 companion (§5.2) — `[E6:TODO-src]`.** RAPORT_E6 is not in the repo; the entire §5.2 is written on placeholders. Resolve three disputed quantities in W3: (1) unit of the detection-delay delta (days?); (2) meaning of the sweep parameter d; (3) denominator of the FAR.
+1. **E6 primary report (§5.2 / map row R2) — external artifact missing.** The primary RAPORT_E6 could not be located (T0: no liquidwatch repo; absent from home/Downloads/Documents/Desktop; the liquidwatch backup holds only E1/E2). R2 is stated qualitatively from the program compendium (secondary source), with no numerical values. *To close:* Olga supplies the primary E6 report → promote R2 to a quantitative cell.
 
-**Bibliography — `[TODO-src: … bib]`.** Reference keys pending a bib file: [1][2] LTC/CfC lineage; [3] NCP/AutoNCP; [4] Chahine et al. (Sci. Robotics 2023); SSM/Mamba; pre-registration; Ross et al. 2011 (DAgger).
+2. **`panerati2021gym` bib field — `[BIB:verify]` on `pages`.** The IROS-2021 proceedings page range for gym-pybullet-drones could not be confirmed online; venue, year, authors, and arXiv id are verified. *To close:* confirm page numbers from the IEEE Xplore record.
 
-**LiquidFlight/v1.0 docs (§4.2, §5.3, §10) — `[TODO-src: v1.0 docs]`.** State-loop τ-panel and zero-blow-up claims to be cited against v1.0 reports/manifests.
-
-**Front-matter — title decision (W2/Olga).** Three candidates in SZKIELET_PREPRINT.md; abstract accent (map vs trainability tax) pending.
-
-*Note: no `[TODO-src]` marks a phase-3 (liquidsight) number — all C1–C8 quantities are sourced in NUMBERS.md T1–T8. Open markers are companion-regime (P0/E6/v1.0) and bibliography only.*
+*Closed in W3:* all P0 numbers verified against the companion PDF (Table T9, zero discrepancies); v1.0 numbers sourced from the frozen liquidflight reports (Table T10); title selected (candidate 2); bibliography written (`paper/latex/references.bib`, 13 entries). No `[TODO-src]` marker remains anywhere in the prose. All C1–C8 quantities are sourced in NUMBERS.md T1–T10.

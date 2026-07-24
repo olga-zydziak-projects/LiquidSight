@@ -1,0 +1,8 @@
+# LaTeX build artifacts (source is tracked; built PDF lives at ../PREPRINT_v1.pdf)
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.toc
+main.pdf

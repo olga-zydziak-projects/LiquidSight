@@ -196,7 +196,7 @@ GRU v2 SOLO (6 080 s) << CfC v2 (~13–19,5 k s): CfC per-step (petla Pythona po
 | commity (liquidsight, faza 3) | **24** | `git rev-list --count HEAD` |
 | aneksy instrumentalne | **4** (A1 obserwowalnosc, A2 drabina osi, A3 konstrukcja rdzeni, A4 procedura) | `DECYZJE_F3.md`; commity fadc6fe/82f163a/a29df7f/c499ad1 |
 | bramki zamrozone | **P-SANITY** (f897bf0) + **F3_GATE kryterium** (c0b2367) + parytet v1 (9e4f57d) + parytet v2 (c332a90) | `git log` |
-| restauracje przepisu | **4** (R1 backbone, R2 ts=s, R3 readout, R4 procedura) + dzwignia lr | `RF §5` |
+| restauracje przepisu (fixes) | **4** (F1 backbone, F2 ts=s, F3 readout, F4 procedura) + dzwignia lr | `RF §5` |
 | pelne cykle treningu I3b | **13** (+1 kontrola A_GRU) | `prog` (13 rekordow); `RF §3` |
 | checkpointy zapisane (i3b) | **9** (4 rekordy z ckpt=null = zaimportowane ze smoke) | `prog`; `RF §3` |
 | cykle dla pelnego n=10 (4 nogi) | **40** (hipotetyczne bez wczesnego rozstrzygania) | `RF §2`; C7 |
@@ -208,32 +208,68 @@ GRU v2 SOLO (6 080 s) << CfC v2 (~13–19,5 k s): CfC per-step (petla Pythona po
 
 ## T9 — P0 (companion, PASTIS twin) — domkniecie GAP-1
 
-**⚠ ZRODLO TYMCZASOWE.** Ponizsze liczby pochodza z **promptu W2** (dyktowane),
-oznaczone `[P0:prompt]`. `paper/sources/` **nie zawiera** RAPORT_P0 (sprawdzone
-W2). **Do potwierdzenia z PDF w W3**: `RAPORT_P0, Tab. 1-3 + par. 5`. Do tego
-czasu w prozie EN traktowac jako **[TODO-src: P0 PDF]**. Rezim: open-loop
-klasyfikacja Sentinel-2 (pszenica/kukurydza), CfC vs GRU, wspolny enkoder CNN,
-dropout obserwacji.
+**✓ ZWERYFIKOWANE (W3) wzgledem PDF** `paper/sources/liquid_temporal_robustness_
+technical_report.pdf` (Żydziak, "Temporal Robustness of Liquid Neural Networks
+under Irregular Observation Dropout", Independent Research, VII 2026). **Wszystkie
+liczby zgodne CO DO CYFRY** — zero rozbieznosci (poprzedni znacznik `[P0:prompt]`
+usuniety). Rezim: open-loop klasyfikacja Sentinel-2 PASTIS, para Soft winter wheat
+vs Corn; wspolny enkoder CNN **28 752 param**; rdzen CfC vs GRU; lr CfC 3e-4 /
+GRU 1e-3; split 626 patchy (Fold train{1,2,3}/val{4}/test{5}); os dropoutu
+d∈{0,0.2,0.4,0.6}; 15 seedow × 10 masek = 150 pomiarow/punkt.
 
-| metryka | CfC | GRU | uwaga | zrodlo |
+| metryka | CfC | GRU | uwaga | zrodlo (PDF) |
 |---|---|---|---|---|
-| macro-F1 @ full cadence | 0,8802 ±0,0121 | 0,9073 ±0,0137 | GRU wyzej w nominale | `[P0:prompt]` |
-| retencja R(0,6) | 0,6415 ±0,1138 | 0,5288 ±0,0622 | CfC wyzej pod dropoutem | `[P0:prompt]` |
-| — margines retencji | \+0,1127 | — | pooled std 0,1759 → **null** (margines < pooled) | `[P0:prompt]` |
-| crossover abs. F1 @ d=0,6 | 0,5642 ±0,0985 | 0,4798 ±0,0567 | CfC wyzej mimo startu −0,027 | `[P0:prompt]` |
-| slope (F1 vs d) | −0,5095 | −0,6936 | CfC degraduje wolniej | `[P0:prompt]` |
+| macro-F1 @ full cadence | 0,8802 ±0,0121 | 0,9073 ±0,0137 | GRU wyzej w nominale (start −0,027) | Tab. 2 / §4 (s.2-3) |
+| retencja R(0,6) | 0,6415 ±0,1138 | 0,5288 ±0,0622 | CfC wyzej pod dropoutem | Tab. 1 (s.2) |
+| — margines retencji | \+0,1127 | — | pooled std 0,1759 → **null** (margines < pooled) | §4 „Primary indicator" (s.2) |
+| crossover abs. F1 @ d=0,6 | 0,5642 ±0,0985 | 0,4798 ±0,0567 | CfC wyzej mimo startu −0,027 | Tab. 2 (s.3) |
+| slope (F1 vs d) | −0,5095 | −0,6936 | CfC degraduje wolniej | §4 (s.2), §5 (s.3) |
 
 **Stabilnosc rozrzutu wzgledem n (GAP-1: „granica = rozrzut populacyjny odporny
-na n"):**
+na n"):** — PDF Tab. 3 (s.3)
 | n | margines retencji | pooled std | werdykt |
 |---|---|---|---|
 | 3 | \+0,1099 | 0,1706 | null (margines < pooled) |
 | 15 | \+0,1127 | 0,1759 | null (margines < pooled) |
 
 Interpretacja (lacznik do C3): margines i pooled std sa **niemal niezmienne
-miedzy n=3 a n=15** — rozrzut populacyjny nie kurczy sie z n (to nie SEM);
-granica jest wlasnoscia rozkladu miedzy-seedowego, nie brakiem probek. To ten
-sam podpis, co w fazie 3 (A_NCP@1e-3 rozstep 43 pp). `[P0:prompt]`.
+miedzy n=3 a n=15** — rozrzut populacyjny (nie SEM) nie kurczy sie z n; granica
+jest wlasnoscia rozkladu miedzy-seedowego, nie brakiem probek. Ten sam podpis co
+w fazie 3 (A_NCP@1e-3 rozstep 43 pp). PDF §5 (s.3): „Margin (≈0.11) and spread
+(≈0.18) are stable across the fivefold increase in n."
+
+**Kontekst zadaniowy (PDF §6):** gap CfC−GRU na 4-klasowym dominant-crop = 0,072
+(strukturalny) vs na parze trajektoryjnej = 0,028; full-cadence GRU lepszy
+(0,907 vs 0,880). Referencje PDF: [1] Hasani LTC AAAI 2021; [2] Hasani CfC Nature
+MI 2022; [3] Garnot & Landrieu PASTIS ICCV 2021; [4] Chahine Sci. Robotics 2023.
+
+---
+
+## T10 — LiquidFlight v1.0 (companion, state-loop) — marker v1.0 domkniety (W3)
+
+Zrodla (READ-ONLY, `~/projects/liquidflight`): `RD`=README.en.md (angielskie
+streszczenie 1-str, autorytatywne liczby); `C01`=RAPORT_C01.md. Rezim: closed-loop
+fly (gym-pybullet-drones), CfC vs GRU parytet rdzenia ±2%, enkoder/glowa/dane/BC
+bit-identyczne miedzy ramionami.
+
+| pozycja | wartosc | zrodlo |
+|---|---|---|
+| rdzenie | CfC(32) vs GRU(h), parytet rdzenia ±2%; Δt jako znormalizowana cecha wejscia dla OBU, CfC dodatkowo natywnie | `RD` „What is actually under test" |
+| enkoder (P0, dla kontrastu) | — | patrz T9 |
+| **C0** (dropout obs. Bernoulli p) | UNDECIDED (FLOOR): oba ramiona padaja przy **p≈0,11–0,13** | `RD` tab.; `C01` §4 (p50 grup 0,107–0,125) |
+| C0-diag | floor = wlasnosc BC (covariate shift); natywne `ts` **4–18× slabsze** od wspolnej cechy Δt | `RD`; `C01` §4 |
+| **H0** (headroom pre-check) | HEADROOM YES: natywne/cecha = **431%** @150 ms (prog 50%) | `RD`; `C01` §4 (commit 9102829) |
+| **C0.1** (os „dlugosc przerwy") | INFEASIBLE: kwant osi **20,83 ms** > prog ΔL50 **≈13,5 ms** (L50≈90 ms); obwiednia eksperta L50_PID=**102,3 ms** | `RD`; `C01` §1, §4 |
+| fizyka klifu | stala czasowa stabilizacji attitude **~100 ms** (ZOH-RPM); dominujaca porazka tilt | `C01` §2 |
+| **C1-demo** (setpoint + petla 48 Hz) | DEMO (nie bramka): CfC-32 **lata** pod przerwami **500–1300 ms**; Δt **widoczny** w dynamice stanu, **zero przewagi behawioralnej** (ablacja kanalu Δt lata identycznie); wartosc = inspekcyjnosc procesu (τ) | `RD` tab. |
+| **klif (onset porazki)** | **~102 ms** (C0.1, raw-RPM) → **~779 ms** (C1, abstrakcja setpoint) | `RD` „Key numbers" |
+| **τ CfC** | mediana **≈35 ms** (skala kontroli), IQR **24–69 ms**; przerwa 500 ms ≈ **14×τ** → brak mostkowania dluga pamiecia | `RD` „Key numbers" |
+| **A1** (charakteryzacja perturbacji, eval-only) | szum GENERALIZUJE, wiatr GENERALIZUJE, **0 wywrotek** na siatce | `RD` tab. + „Key numbers" |
+| determinizm | per-seed na stalej konfiguracji hw/lib; bit-w-bit miedzy GPU **niegwarantowany** (CUDA) | `RD` „Methodology" |
+| autor / licencja | Olga Żydziak / Apache-2.0 © 2026 | `RD` |
+
+Rola w mapie (R3): **zero** — Δt nosne implementacyjnie (widoczne w τ), nie
+przewagowo (ablacja identyczna); τ = uchwyt wyjasnialnosci, nie zrodlo przewagi.
 
 ---
 
@@ -246,5 +282,7 @@ sam podpis, co w fazie 3 (A_NCP@1e-3 rozstep 43 pp). `[P0:prompt]`.
    licznik seedow; werdykt na k4 (T2).
 4. **Determinizm miedzy maszynami** — ROZWIAZANE (W2): szkielet i C8 poprawione
    na within-machine; cross-machine usuniete (`S0_NOTES.md:51-53`). Patrz GAP-2.
-5. **Liczby P0 (T9)** — zrodlo tymczasowe `[P0:prompt]`; do potwierdzenia z
-   RAPORT_P0 PDF w W3 (`paper/sources/` nie zawiera PDF). Patrz GAP-1.
+5. **Liczby P0 (T9)** — ZWERYFIKOWANE (W3) wzgledem PDF w `paper/sources/`,
+   zero rozbieznosci; znacznik `[P0:prompt]` usuniety. Patrz GAP-1 (rozwiazany).
+6. **Liczby v1.0 (T10)** — sourced z frozen liquidflight (README.en.md +
+   RAPORT_C01.md); marker `[TODO-src: v1.0 docs]` domkniety.

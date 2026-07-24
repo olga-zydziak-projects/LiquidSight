@@ -163,7 +163,7 @@ z pojedynczych przebiegow BC-only vs BC+DAgger).
   k=2/4/2/3; **13 pelnych cykli** wykonanych vs **40** dla pelnego n=10 na 4
   nogach; batch 45016–45019 nigdy nieuruchomiony
   (`RAPORT_F3.md §1-2`; `fazaA_wynik.json`; `progress.jsonl` = 13 rekordow).
-- Cztery restauracje (R1 backbone / R2 ts=s / R3 readout pelny / R4 procedura)
+- Cztery restauracje/fixes (F1 backbone / F2 ts=s / F3 readout pelny / F4 procedura)
   + dzwignia lr, kazda z prowieniencja frozen (`RAPORT_F3.md §5`;
   `ANEKS_3...md`; `ANEKS_4...md`; `RAPORT_DIAG_CFC.md`).
 - Regula stopu: ANEKS-4 = ostatni aneks instrumentalny fazy 3a
@@ -211,21 +211,26 @@ rzutu moneta (`P_SANITY.md`); sceny sweep 43100–43149 (50), nie pelny nominal.
 
 ## LUKI (twierdzenia z niepelnym dowodem — do domkniecia w W2)
 
-- **GAP-1 (C3 → P0) — CZESCIOWO (W2).** Liczby P0 dopisane do `NUMBERS.md T9`
-  (margines retencji +0,1127 / pooled 0,1759 → null; stabilnosc n=3 vs n=15).
-  **Zrodlo tymczasowe = prompt W2** (`[P0:prompt]`), `paper/sources/` bez PDF.
-  Status: **do potwierdzenia z RAPORT_P0 PDF w W3** (`[TODO-src: P0 PDF]`).
+- **GAP-1 (C3 → P0) — ROZWIAZANY (W3).** Wszystkie liczby P0 (`NUMBERS.md T9`)
+  **zweryfikowane CO DO CYFRY** wzgledem `paper/sources/liquid_temporal_robustness_
+  technical_report.pdf` (Tab. 1-3 + §4-5) — zero rozbieznosci; margines retencji
+  +0,1127 / pooled 0,1759 → null; stabilnosc n=3 vs n=15 potwierdzona. Znacznik
+  `[P0:prompt]` usuniety; w prozie cytat `\citep{zydziak2026p0}`.
 - **GAP-2 (C8 → determinizm cross-machine) — ROZWIAZANY (W2).** Poprawiono
   szkielet i C8 na „bit-exact determinism within a machine"; twierdzenie cross-
   machine usuniete (zrodlo `S0_NOTES.md:51-53`). Domkniete.
-- **GAP-3 (R2/E6, spoza fazy 3).** Szkielet §5.2 flaguje trzy punkty E6
-  (jednostka delty opoznienia, sens parametru d, mianownik FAR) jako
-  „WERYFIKACJA z RAPORT_E6". **RAPORT_E6 nie jest w repo liquidsight** — to
-  material portfolio spoza fazy 3. Status: **poza zakresem W1**; wymaga zrodla
-  E6 w W2.
-- **GAP-4 (C5/C6/C7 „cztery restauracje" — kompletnosc dowodu R1–R4) —
-  OZNACZONY (W2).** Efekty R1–R3 (backbone/ts/readout) dowiedzione sondami BC-8
-  w DIAG; R4 (procedura) smoke'ami I3a-R vs I3a-R2. Wszystkie z prowieniencja, ale
+- **GAP-3 (R2/E6, spoza fazy 3) — ROZWIAZANY qualitative fallback (W3).**
+  RAPORT_E6 pierwotny **niedostepny** (potwierdzone T0: brak repo liquidwatch;
+  brak w home/Downloads/Documents/Desktop; backup liquidwatch ma tylko E1/E2).
+  Per aneks T1b: §5.2 przepisane na forme **jakosciowa** (kierunek ujemny, niski
+  FAR), zrodlo wtorne = **program compendium** (oznaczone wprost); trzy sporne
+  wartosci (jednostka delty, parametr sweep, mianownik FAR) **nie wchodza** do
+  prozy. Wiersz mapy R2 = werdykt kierunkowy, rozdzielczosc „qualitative
+  (secondary source)". Markery `[E6:TODO-src]` usuniete. Opcjonalnie: gdy Olga
+  wskaze raport pierwotny → R2 do formy ilosciowej.
+- **GAP-4 (C5/C6/C7 „cztery restauracje/fixes" — kompletnosc dowodu F1–F4) —
+  OZNACZONY (W2).** Efekty F1–F3 (backbone/ts/readout) dowiedzione sondami BC-8
+  w DIAG; F4 (procedura) smoke'ami I3a-R vs I3a-R2. Wszystkie z prowieniencja, ale
   **pojedyncze sondy (n=1 seed dla wiekszosci)**. Zakres dopisany wprost do C5 i
   C6 („engineering findings; single-seed controlled probes, diagnostic not
   statistical") oraz do prozy §6/Limitations. Zrodlo: `RAPORT_DIAG_CFC.md §3`.
@@ -234,11 +239,13 @@ rzutu moneta (`P_SANITY.md`); sceny sweep 43100–43149 (50), nie pelny nominal.
 
 ## PODSUMOWANIE REJESTRU
 
-- Twierdzen glownych: **4** (C1–C4) — wszystkie z pelnym dowodem w repo,
-  z zastrzezeniem **GAP-1** przy laczniku P0 dla C3.
+- Twierdzen glownych: **4** (C1–C4) — wszystkie z pelnym dowodem w repo; lacznik
+  P0 dla C3 domkniety (GAP-1 zweryfikowany z PDF w W3).
 - Twierdzen wtornych: **4** (C5–C8) — dowiedzione; **GAP-2 ROZWIAZANY** (C8 =
   within-machine), **GAP-4 OZNACZONY** (n=1 sondy, zakres dopisany do C5/C6).
 - Kandydaci spoza C1–C8 znalezieni i zapisani jako **footnote**: C2a (dwell/
   tilt), C6a (sygnatura BC-vs-agregat), C7a (ekonomia ~57,1 h).
-- Luki wymagajace zrodel spoza repo: **GAP-1 (P0)**, **GAP-3 (E6)** — oba to
-  material companion/portfolio, nie faza 3.
+- Stan luk po W3: **GAP-1 ROZWIAZANY** (P0 PDF zweryfikowany), **GAP-2
+  ROZWIAZANY** (within-machine), **GAP-3 ROZWIAZANY jakosciowo** (E6 fallback;
+  raport pierwotny wciaz poza repo), **GAP-4 OZNACZONY** (sondy n=1). Jedyny
+  otwarty marker w repo: `panerati2021gym` `pages` = `[BIB:verify]`.
