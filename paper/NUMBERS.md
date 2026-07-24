@@ -206,6 +206,37 @@ GRU v2 SOLO (6 080 s) << CfC v2 (~13–19,5 k s): CfC per-step (petla Pythona po
 
 ---
 
+## T9 — P0 (companion, PASTIS twin) — domkniecie GAP-1
+
+**⚠ ZRODLO TYMCZASOWE.** Ponizsze liczby pochodza z **promptu W2** (dyktowane),
+oznaczone `[P0:prompt]`. `paper/sources/` **nie zawiera** RAPORT_P0 (sprawdzone
+W2). **Do potwierdzenia z PDF w W3**: `RAPORT_P0, Tab. 1-3 + par. 5`. Do tego
+czasu w prozie EN traktowac jako **[TODO-src: P0 PDF]**. Rezim: open-loop
+klasyfikacja Sentinel-2 (pszenica/kukurydza), CfC vs GRU, wspolny enkoder CNN,
+dropout obserwacji.
+
+| metryka | CfC | GRU | uwaga | zrodlo |
+|---|---|---|---|---|
+| macro-F1 @ full cadence | 0,8802 ±0,0121 | 0,9073 ±0,0137 | GRU wyzej w nominale | `[P0:prompt]` |
+| retencja R(0,6) | 0,6415 ±0,1138 | 0,5288 ±0,0622 | CfC wyzej pod dropoutem | `[P0:prompt]` |
+| — margines retencji | \+0,1127 | — | pooled std 0,1759 → **null** (margines < pooled) | `[P0:prompt]` |
+| crossover abs. F1 @ d=0,6 | 0,5642 ±0,0985 | 0,4798 ±0,0567 | CfC wyzej mimo startu −0,027 | `[P0:prompt]` |
+| slope (F1 vs d) | −0,5095 | −0,6936 | CfC degraduje wolniej | `[P0:prompt]` |
+
+**Stabilnosc rozrzutu wzgledem n (GAP-1: „granica = rozrzut populacyjny odporny
+na n"):**
+| n | margines retencji | pooled std | werdykt |
+|---|---|---|---|
+| 3 | \+0,1099 | 0,1706 | null (margines < pooled) |
+| 15 | \+0,1127 | 0,1759 | null (margines < pooled) |
+
+Interpretacja (lacznik do C3): margines i pooled std sa **niemal niezmienne
+miedzy n=3 a n=15** — rozrzut populacyjny nie kurczy sie z n (to nie SEM);
+granica jest wlasnoscia rozkladu miedzy-seedowego, nie brakiem probek. To ten
+sam podpis, co w fazie 3 (A_NCP@1e-3 rozstep 43 pp). `[P0:prompt]`.
+
+---
+
 ## Rozbieznosci zbiorczo (⚠)
 
 1. **A_CFC rdzen v1 27 984 vs v2 27 787** — rozna konstrukcja, oba w pasmie (T1).
@@ -213,5 +244,7 @@ GRU v2 SOLO (6 080 s) << CfC v2 (~13–19,5 k s): CfC per-step (petla Pythona po
    udokumentowane (symetria glow); rozwiazane (T1 ⚠2; `I3AR §1`).
 3. **A_NCP@1e-3 srednia: 72,2% (k4) vs 75,3% (6 seedow)** — obie prawdziwe, rozny
    licznik seedow; werdykt na k4 (T2).
-4. **Determinizm miedzy maszynami** — patrz CLAIMS GAP-2: szkielet twierdzi
-   „takze miedzy maszynami", `S0_NOTES.md:51-53` przeczy (tylko w obrebie maszyny).
+4. **Determinizm miedzy maszynami** — ROZWIAZANE (W2): szkielet i C8 poprawione
+   na within-machine; cross-machine usuniete (`S0_NOTES.md:51-53`). Patrz GAP-2.
+5. **Liczby P0 (T9)** — zrodlo tymczasowe `[P0:prompt]`; do potwierdzenia z
+   RAPORT_P0 PDF w W3 (`paper/sources/` nie zawiera PDF). Patrz GAP-1.

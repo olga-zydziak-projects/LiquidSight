@@ -111,8 +111,10 @@ inzynierskie (C5/C6) -> wniosek syntezy.
 
 ## 7. Instrument Characterization & Protocol Economics
 - C8: drabina GRU-sanity 100/100/64/46/36/24/16; sufit eksperta 100%
-  na calej drabinie; determinizm bit-w-bit (takze miedzy maszynami
-  jako bonus); s1_visibility jako bramka obserwowalnosci (lekcja
+  na calej drabinie; determinizm bit-w-bit W OBREBIE JEDNEJ MASZYNY
+  (within-machine; cross-machine NIE twierdzony — S0_NOTES.md:51-53:
+  hashe miedzy maszynami moga sie roznic i to nie jest FAIL);
+  s1_visibility jako bramka obserwowalnosci (lekcja
   ANEKS-1).
 - Ekonomia: 13 pelnych cykli zamiast 40; batch nigdy nieodpalony;
   koszt jednostkowy cykli. [NUMBERS.md]
