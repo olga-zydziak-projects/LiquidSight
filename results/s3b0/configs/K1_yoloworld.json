@@ -1,0 +1,96 @@
+{
+  "name": "K1_yoloworld",
+  "model_id": "yolov8s-worldv2.pt (ultralytics YOLO-World)",
+  "prompt_template": "set_classes=[\"{color} {shape}\"]; top-1 box po conf",
+  "score_threshold": 0.0,
+  "iou_thr_metric": 0.5,
+  "thr_grid": [
+    0.0,
+    0.01,
+    0.02,
+    0.03,
+    0.05,
+    0.07,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.4
+  ],
+  "dev_trace": [
+    {
+      "thr": 0.0,
+      "precision@1": 0.75,
+      "wrong_object": 0.1458,
+      "no_detection": 0.0833
+    },
+    {
+      "thr": 0.01,
+      "precision@1": 0.5833,
+      "wrong_object": 0.0833,
+      "no_detection": 0.3333
+    },
+    {
+      "thr": 0.02,
+      "precision@1": 0.375,
+      "wrong_object": 0.0833,
+      "no_detection": 0.5417
+    },
+    {
+      "thr": 0.03,
+      "precision@1": 0.3125,
+      "wrong_object": 0.0833,
+      "no_detection": 0.6042
+    },
+    {
+      "thr": 0.05,
+      "precision@1": 0.2292,
+      "wrong_object": 0.0625,
+      "no_detection": 0.7083
+    },
+    {
+      "thr": 0.07,
+      "precision@1": 0.1875,
+      "wrong_object": 0.0417,
+      "no_detection": 0.7708
+    },
+    {
+      "thr": 0.1,
+      "precision@1": 0.125,
+      "wrong_object": 0.0417,
+      "no_detection": 0.8333
+    },
+    {
+      "thr": 0.15,
+      "precision@1": 0.0833,
+      "wrong_object": 0.0417,
+      "no_detection": 0.875
+    },
+    {
+      "thr": 0.2,
+      "precision@1": 0.0208,
+      "wrong_object": 0.0417,
+      "no_detection": 0.9375
+    },
+    {
+      "thr": 0.25,
+      "precision@1": 0.0208,
+      "wrong_object": 0.0208,
+      "no_detection": 0.9583
+    },
+    {
+      "thr": 0.3,
+      "precision@1": 0.0208,
+      "wrong_object": 0.0208,
+      "no_detection": 0.9583
+    },
+    {
+      "thr": 0.4,
+      "precision@1": 0.0208,
+      "wrong_object": 0.0,
+      "no_detection": 0.9792
+    }
+  ],
+  "frozen": true
+}

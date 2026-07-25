@@ -1,0 +1,108 @@
+{
+  "name": "K3_lfm2vl",
+  "model_id": "LiquidAI/LFM2.5-VL-450M",
+  "dnf": false,
+  "score_threshold": 0.0,
+  "eval": {
+    "overall": {
+      "n": 144,
+      "precision@1": 0.1389,
+      "wrong_object": 0.0069,
+      "no_detection": 0.0,
+      "other_miss": 0.8542,
+      "des_invisible": 0
+    },
+    "per_K": {
+      "3": {
+        "n": 48,
+        "precision@1": 0.2083,
+        "wrong_object": 0.0,
+        "no_detection": 0.0,
+        "other_miss": 0.7917,
+        "des_invisible": 0
+      },
+      "5": {
+        "n": 48,
+        "precision@1": 0.125,
+        "wrong_object": 0.0,
+        "no_detection": 0.0,
+        "other_miss": 0.875,
+        "des_invisible": 0
+      },
+      "8": {
+        "n": 48,
+        "precision@1": 0.0833,
+        "wrong_object": 0.0208,
+        "no_detection": 0.0,
+        "other_miss": 0.8958,
+        "des_invisible": 0
+      }
+    },
+    "per_A": {
+      "A0": {
+        "n": 72,
+        "precision@1": 0.125,
+        "wrong_object": 0.0,
+        "no_detection": 0.0,
+        "other_miss": 0.875,
+        "des_invisible": 0
+      },
+      "A1": {
+        "n": 72,
+        "precision@1": 0.1528,
+        "wrong_object": 0.0139,
+        "no_detection": 0.0,
+        "other_miss": 0.8333,
+        "des_invisible": 0
+      }
+    },
+    "per_dist": {
+      "0.5": {
+        "n": 36,
+        "precision@1": 0.0,
+        "wrong_object": 0.0278,
+        "no_detection": 0.0,
+        "other_miss": 0.9722,
+        "des_invisible": 0
+      },
+      "0.9": {
+        "n": 36,
+        "precision@1": 0.5,
+        "wrong_object": 0.0,
+        "no_detection": 0.0,
+        "other_miss": 0.5,
+        "des_invisible": 0
+      },
+      "1.4": {
+        "n": 36,
+        "precision@1": 0.0556,
+        "wrong_object": 0.0,
+        "no_detection": 0.0,
+        "other_miss": 0.9444,
+        "des_invisible": 0
+      },
+      "2.0": {
+        "n": 36,
+        "precision@1": 0.0,
+        "wrong_object": 0.0,
+        "no_detection": 0.0,
+        "other_miss": 1.0,
+        "des_invisible": 0
+      }
+    }
+  },
+  "latency": {
+    "measured": true,
+    "n": 100,
+    "mean_ms": 235.06,
+    "p95_ms": 335.94,
+    "min_ms": 165.77,
+    "max_ms": 397.98,
+    "peak_vram_mib": 897.1
+  },
+  "variantB": {
+    "n": 32,
+    "precision@1": 0.25
+  },
+  "load_s": 46.3
+}

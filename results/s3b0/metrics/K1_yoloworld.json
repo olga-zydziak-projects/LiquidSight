@@ -1,0 +1,108 @@
+{
+  "name": "K1_yoloworld",
+  "model_id": "yolov8s-worldv2.pt (ultralytics YOLO-World)",
+  "dnf": false,
+  "score_threshold": 0.0,
+  "eval": {
+    "overall": {
+      "n": 144,
+      "precision@1": 0.8681,
+      "wrong_object": 0.0833,
+      "no_detection": 0.0347,
+      "other_miss": 0.0139,
+      "des_invisible": 0
+    },
+    "per_K": {
+      "3": {
+        "n": 48,
+        "precision@1": 0.8958,
+        "wrong_object": 0.0417,
+        "no_detection": 0.0208,
+        "other_miss": 0.0417,
+        "des_invisible": 0
+      },
+      "5": {
+        "n": 48,
+        "precision@1": 0.8542,
+        "wrong_object": 0.125,
+        "no_detection": 0.0208,
+        "other_miss": 0.0,
+        "des_invisible": 0
+      },
+      "8": {
+        "n": 48,
+        "precision@1": 0.8542,
+        "wrong_object": 0.0833,
+        "no_detection": 0.0625,
+        "other_miss": 0.0,
+        "des_invisible": 0
+      }
+    },
+    "per_A": {
+      "A0": {
+        "n": 72,
+        "precision@1": 0.875,
+        "wrong_object": 0.0556,
+        "no_detection": 0.0556,
+        "other_miss": 0.0139,
+        "des_invisible": 0
+      },
+      "A1": {
+        "n": 72,
+        "precision@1": 0.8611,
+        "wrong_object": 0.1111,
+        "no_detection": 0.0139,
+        "other_miss": 0.0139,
+        "des_invisible": 0
+      }
+    },
+    "per_dist": {
+      "0.5": {
+        "n": 36,
+        "precision@1": 0.8611,
+        "wrong_object": 0.0833,
+        "no_detection": 0.0,
+        "other_miss": 0.0556,
+        "des_invisible": 0
+      },
+      "0.9": {
+        "n": 36,
+        "precision@1": 0.9167,
+        "wrong_object": 0.0833,
+        "no_detection": 0.0,
+        "other_miss": 0.0,
+        "des_invisible": 0
+      },
+      "1.4": {
+        "n": 36,
+        "precision@1": 0.9722,
+        "wrong_object": 0.0278,
+        "no_detection": 0.0,
+        "other_miss": 0.0,
+        "des_invisible": 0
+      },
+      "2.0": {
+        "n": 36,
+        "precision@1": 0.7222,
+        "wrong_object": 0.1389,
+        "no_detection": 0.1389,
+        "other_miss": 0.0,
+        "des_invisible": 0
+      }
+    }
+  },
+  "latency": {
+    "measured": true,
+    "n": 100,
+    "mean_ms": 16.36,
+    "p95_ms": 25.91,
+    "min_ms": 11.57,
+    "max_ms": 28.17,
+    "peak_vram_mib": 710.3
+  },
+  "variantB": {
+    "n": 32,
+    "precision@1": 0.9375
+  },
+  "load_s": 18.6
+}

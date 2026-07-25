@@ -1,0 +1,96 @@
+{
+  "name": "K3_lfm2vl",
+  "model_id": "LiquidAI/LFM2.5-VL-450M",
+  "prompt_template": "[shikra] Please provide the bounding box coordinate of the region this sentence describes: {phrase}.",
+  "score_threshold": 0.0,
+  "iou_thr_metric": 0.5,
+  "thr_grid": [
+    0.0,
+    0.01,
+    0.02,
+    0.03,
+    0.05,
+    0.07,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.4
+  ],
+  "dev_trace": [
+    {
+      "thr": 0.0,
+      "precision@1": 0.2083,
+      "wrong_object": 0.0,
+      "no_detection": 0.0
+    },
+    {
+      "thr": 0.01,
+      "precision@1": 0.2083,
+      "wrong_object": 0.0,
+      "no_detection": 0.0
+    },
+    {
+      "thr": 0.02,
+      "precision@1": 0.2083,
+      "wrong_object": 0.0,
+      "no_detection": 0.0
+    },
+    {
+      "thr": 0.03,
+      "precision@1": 0.2083,
+      "wrong_object": 0.0,
+      "no_detection": 0.0
+    },
+    {
+      "thr": 0.05,
+      "precision@1": 0.2083,
+      "wrong_object": 0.0,
+      "no_detection": 0.0
+    },
+    {
+      "thr": 0.07,
+      "precision@1": 0.2083,
+      "wrong_object": 0.0,
+      "no_detection": 0.0
+    },
+    {
+      "thr": 0.1,
+      "precision@1": 0.2083,
+      "wrong_object": 0.0,
+      "no_detection": 0.0
+    },
+    {
+      "thr": 0.15,
+      "precision@1": 0.2083,
+      "wrong_object": 0.0,
+      "no_detection": 0.0
+    },
+    {
+      "thr": 0.2,
+      "precision@1": 0.2083,
+      "wrong_object": 0.0,
+      "no_detection": 0.0
+    },
+    {
+      "thr": 0.25,
+      "precision@1": 0.2083,
+      "wrong_object": 0.0,
+      "no_detection": 0.0
+    },
+    {
+      "thr": 0.3,
+      "precision@1": 0.2083,
+      "wrong_object": 0.0,
+      "no_detection": 0.0
+    },
+    {
+      "thr": 0.4,
+      "precision@1": 0.2083,
+      "wrong_object": 0.0,
+      "no_detection": 0.0
+    }
+  ],
+  "frozen": true
+}

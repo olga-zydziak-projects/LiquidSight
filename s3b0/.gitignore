@@ -1,0 +1,8 @@
+# S3b0 — artefakty srodowiska i wag (odtwarzalne; nie do gita)
+.venv_s3b0/
+__pycache__/
+*.pyc
+.weights/
+.hf_cache/
+*.pt
+*.onnx

@@ -1,0 +1,108 @@
+{
+  "name": "K2_owlv2",
+  "model_id": "google/owlv2-base-patch16-ensemble",
+  "dnf": false,
+  "score_threshold": 0.0,
+  "eval": {
+    "overall": {
+      "n": 144,
+      "precision@1": 0.9583,
+      "wrong_object": 0.0417,
+      "no_detection": 0.0,
+      "other_miss": 0.0,
+      "des_invisible": 0
+    },
+    "per_K": {
+      "3": {
+        "n": 48,
+        "precision@1": 1.0,
+        "wrong_object": 0.0,
+        "no_detection": 0.0,
+        "other_miss": 0.0,
+        "des_invisible": 0
+      },
+      "5": {
+        "n": 48,
+        "precision@1": 0.9792,
+        "wrong_object": 0.0208,
+        "no_detection": 0.0,
+        "other_miss": 0.0,
+        "des_invisible": 0
+      },
+      "8": {
+        "n": 48,
+        "precision@1": 0.8958,
+        "wrong_object": 0.1042,
+        "no_detection": 0.0,
+        "other_miss": 0.0,
+        "des_invisible": 0
+      }
+    },
+    "per_A": {
+      "A0": {
+        "n": 72,
+        "precision@1": 0.9861,
+        "wrong_object": 0.0139,
+        "no_detection": 0.0,
+        "other_miss": 0.0,
+        "des_invisible": 0
+      },
+      "A1": {
+        "n": 72,
+        "precision@1": 0.9306,
+        "wrong_object": 0.0694,
+        "no_detection": 0.0,
+        "other_miss": 0.0,
+        "des_invisible": 0
+      }
+    },
+    "per_dist": {
+      "0.5": {
+        "n": 36,
+        "precision@1": 0.9167,
+        "wrong_object": 0.0833,
+        "no_detection": 0.0,
+        "other_miss": 0.0,
+        "des_invisible": 0
+      },
+      "0.9": {
+        "n": 36,
+        "precision@1": 1.0,
+        "wrong_object": 0.0,
+        "no_detection": 0.0,
+        "other_miss": 0.0,
+        "des_invisible": 0
+      },
+      "1.4": {
+        "n": 36,
+        "precision@1": 0.9722,
+        "wrong_object": 0.0278,
+        "no_detection": 0.0,
+        "other_miss": 0.0,
+        "des_invisible": 0
+      },
+      "2.0": {
+        "n": 36,
+        "precision@1": 0.9444,
+        "wrong_object": 0.0556,
+        "no_detection": 0.0,
+        "other_miss": 0.0,
+        "des_invisible": 0
+      }
+    }
+  },
+  "latency": {
+    "measured": true,
+    "n": 100,
+    "mean_ms": 559.66,
+    "p95_ms": 642.07,
+    "min_ms": 461.07,
+    "max_ms": 768.84,
+    "peak_vram_mib": 780.4
+  },
+  "variantB": {
+    "n": 32,
+    "precision@1": 1.0
+  },
+  "load_s": 268.3
+}

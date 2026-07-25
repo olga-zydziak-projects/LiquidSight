@@ -1,0 +1,101 @@
+{
+  "config": {
+    "n_ticks": 960,
+    "control_hz": 48.0,
+    "sim_seconds": 20.0,
+    "scene_seed": 46970,
+    "n_runs": 2,
+    "pybullet_api": 202010061
+  },
+  "base": {
+    "cfg": {
+      "lo_res": 64,
+      "lo_every": 4,
+      "hi_res": null,
+      "hi_every": 0
+    },
+    "runs": [
+      {
+        "wall_s": 0.3534717359998467,
+        "ticks_per_s": 2715.917291900296,
+        "x_realtime": 56.58161024792283,
+        "lo_frames": 240,
+        "hi_frames": 0
+      },
+      {
+        "wall_s": 0.3547066270002688,
+        "ticks_per_s": 2706.461979914665,
+        "x_realtime": 56.38462458155552,
+        "lo_frames": 240,
+        "hi_frames": 0
+      }
+    ],
+    "median": {
+      "wall_s": 0.35408918150005775,
+      "ticks_per_s": 2711.1896359074804,
+      "x_realtime": 56.483117414739176
+    }
+  },
+  "dual_256_1hz": {
+    "cfg": {
+      "lo_res": 64,
+      "lo_every": 4,
+      "hi_res": 256,
+      "hi_every": 48
+    },
+    "runs": [
+      {
+        "wall_s": 0.7961043310006062,
+        "ticks_per_s": 1205.8720981876797,
+        "x_realtime": 25.122335378909995,
+        "lo_frames": 240,
+        "hi_frames": 20
+      },
+      {
+        "wall_s": 0.8085639290002291,
+        "ticks_per_s": 1187.2901641642834,
+        "x_realtime": 24.735211753422572,
+        "lo_frames": 240,
+        "hi_frames": 20
+      }
+    ],
+    "median": {
+      "wall_s": 0.8023341300004176,
+      "ticks_per_s": 1196.5811311759817,
+      "x_realtime": 24.928773566166285
+    }
+  },
+  "dual_224_0.5hz": {
+    "cfg": {
+      "lo_res": 64,
+      "lo_every": 4,
+      "hi_res": 224,
+      "hi_every": 96
+    },
+    "runs": [
+      {
+        "wall_s": 0.533772405999116,
+        "ticks_per_s": 1798.519348715808,
+        "x_realtime": 37.469153098246004,
+        "lo_frames": 240,
+        "hi_frames": 10
+      },
+      {
+        "wall_s": 0.5400808770009462,
+        "ticks_per_s": 1777.5115559189076,
+        "x_realtime": 37.031490748310574,
+        "lo_frames": 240,
+        "hi_frames": 10
+      }
+    ],
+    "median": {
+      "wall_s": 0.5369266415000311,
+      "ticks_per_s": 1788.0154523173578,
+      "x_realtime": 37.25032192327829
+    }
+  },
+  "overhead": {
+    "dual_over_base": 2.265909753586433,
+    "dual224_over_base": 1.5163599159550813
+  }
+}
