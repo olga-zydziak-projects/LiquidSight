@@ -5,8 +5,8 @@ Train: A Pre-Registered Boundary Map"**.
 
 ## Files
 - `main.tex` — the article (single-column `article`, `natbib`, `graphicx`).
-- `references.bib` — bibliography (13 entries; one `[BIB:verify]` on
-  `panerati2021gym` page range).
+- `references.bib` — bibliography (13 entries; all fields verified, no
+  `[BIB:verify]` markers remaining).
 - Figures are pulled from `../figures/*.pdf` via `\graphicspath`.
 
 ## Compile
@@ -26,6 +26,6 @@ XeTeX/LuaTeX it loads `fontspec`. Unicode glyphs in the prose (Δ, τ, μ, ±, �
 →, ×, °, Ż) are mapped to portable macros via `newunicodechar`, so both engines
 compile the same source.
 
-The build was verified with tectonic 0.15.0 → `main.pdf`, 13 pages, zero
+The build was verified with tectonic 0.15.0 → `main.pdf`, 14 pages (W3.1), zero
 undefined citations/references. A copy of the built PDF is at
 `../PREPRINT_v1.pdf`.

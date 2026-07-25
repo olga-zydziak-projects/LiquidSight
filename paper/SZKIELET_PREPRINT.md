@@ -155,8 +155,9 @@ D. Formula wczesnego rozstrzygania + zapis oszczednosci.
 ---
 
 ## Mapa twierdzen -> sekcje (dla W1/T4)
-C1->5.4a | C2->5.4b | C3->5.4c | C4->5.4d | C5->6 | C6->6 | C7->3,7,D
-| C8->7. Figury: a->App A | b->5.4 | c->5.4/6 | d->7 | e->6.
+C1->5.1(C1) | C2->5.1(C2) | C3->5.1(C3) | C4->5.1(C4) | C5->6 | C6->6 | C7->3,7,D
+| C8->7. Figury: a->App A | b->5.1 | c->5.1/6 | d->7 | e->6.
+(W3.1: vision-loop = §5.1; naglowki wyniku glownego nienumerowane, oznaczone (C1)-(C4).)
 
 ## Decyzje otwarte (Olga, przy W2)
 - tytul (1-3) i abstrakt-akcent (mapa vs podatek trenowalnosci);

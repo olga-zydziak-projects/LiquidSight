@@ -18,22 +18,22 @@ material R1–R3 (P0/E6/v1.0) to companion/portfolio — patrz LUKI w CLAIMS.md
 
 | twierdzenie | ranga | sekcja szkieletu | zgodnosc z „Mapa" szkieletu (l.155-157) |
 |---|---|---|---|
-| **C1** teza [4] nietestowalna przy parytecie | glowne | **§5.4a** (+ §1 wklady, §8 Discussion) | ✓ (C1→5.4a) |
-| **C2** podatek trenowalnosci | glowne | **§5.4b** (+ §0 Abstract, §1) | ✓ (C2→5.4b) |
-| **C3** granica = wariancja | glowne | **§5.4c** (+ §8 synteza, lacznik P0) | ✓ (C3→5.4c) |
-| **C4** atrybucja wiringu | glowne | **§5.4d** | ✓ (C4→5.4d) |
+| **C1** teza [4] nietestowalna przy parytecie | glowne | **§5.1 akapit (C1)** (+ §1 wklady, §8 Discussion) | ✓ (W3.1: naglowki nienumerowane) |
+| **C2** podatek trenowalnosci | glowne | **§5.1 akapit (C2)** (+ §0 Abstract, §1) | ✓ |
+| **C3** granica = wariancja | glowne | **§5.1 akapit (C3)** (+ §8 synteza, lacznik P0) | ✓ |
+| **C4** atrybucja wiringu | glowne | **§5.1 akapit (C4)** | ✓ |
 | **C5** Δt nosne implementacyjnie | wtorne | **§6** (Engineering) | ✓ (C5→6) |
 | **C6** wrazliwosc CT na DAgger | wtorne | **§6** (Engineering) | ✓ (C6→6) |
 | **C7** metodologia jako wklad | wtorne | **§3** (Program), **§7** (Protocol economics), **App D** | ✓ (C7→3,7,D) |
 | **C8** charakteryzacja instrumentu | wtorne | **§7** (Instrument charakteryzacja) | ✓ (C8→7) |
 
 **Footnote'y** (z CLAIMS.md) — miejsca:
-- C2a (dwell/tilt): §5.4b, przy fig. b.
+- C2a (dwell/tilt): §5.1 akapit (C2), przy fig. b.
 - C6a (BC vs agregat): §6 + fig. e; sygnatura mechanizmu.
 - C7a (ekonomia ~57,1 h): §7 + App D.
 
 **⚠ Uwagi do mapy szkieletu:**
-1. C3 → §5.4c wymaga **GAP-1** (cytat P0 dla „rozrzut populacyjny odporny na n").
+1. C3 → §5.1 akapit (C3) wymaga **GAP-1** (cytat P0 dla „rozrzut populacyjny odporny na n").
    Bez P0 czesc lacznikowa §8 zostaje jako teza syntezy bez liczby-mostu.
 2. C7 rozlewa sie na 3 miejsca (§3 metodologia domu, §7 ekonomia, App D formula) —
    spojnosc: definicja formuly wczesnego rozstrzygania raz (App D), reszta cytuje.

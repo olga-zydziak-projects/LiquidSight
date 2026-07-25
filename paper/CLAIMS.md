@@ -17,7 +17,10 @@ Liczby kanoniczne — patrz `paper/NUMBERS.md` (tam pelna prowieniencja per komo
 precondition ≥90% sukcesu nominalnego** na calej dozwolonej siatce lr
 {3e-4, 1e-3}. Poniewaz ramie orzekajace (A_NCP) nie spelnia precondition,
 teza F3_PRE0 / [4] (liquid > GRU na przesuniecie percepcyjne) **nie jest
-testowalna** w tym harnessie — **zero ewaluacji OOD** w calej fazie 3.
+testowalna** w tym harnessie — **zero ewaluacji OOD zadnego ramienia
+bramkowego** w calej fazie 3 (etapy B/C pominiete przez galaz). Jedyne dane
+OOD w calej fazie to **przedbramkowa kalibracja sanity osi** (drabina P-SANITY),
+ktora jest kontrola instrumentu, nie pomiarem tezy.
 
 **Dowod.** Wszystkie 4 nogi FAIL (arytmetyka na zamrozonym kryterium):
 A_NCP 3e-4=16,5% (k2), A_NCP 1e-3=72,2% (k4) / 75,3% (6 seedow),
@@ -247,5 +250,7 @@ rzutu moneta (`P_SANITY.md`); sceny sweep 43100–43149 (50), nie pelny nominal.
   tilt), C6a (sygnatura BC-vs-agregat), C7a (ekonomia ~57,1 h).
 - Stan luk po W3: **GAP-1 ROZWIAZANY** (P0 PDF zweryfikowany), **GAP-2
   ROZWIAZANY** (within-machine), **GAP-3 ROZWIAZANY jakosciowo** (E6 fallback;
-  raport pierwotny wciaz poza repo), **GAP-4 OZNACZONY** (sondy n=1). Jedyny
-  otwarty marker w repo: `panerati2021gym` `pages` = `[BIB:verify]`.
+  raport pierwotny wciaz poza repo), **GAP-4 OZNACZONY** (sondy n=1).
+  Wszystkie markery `[BIB:verify]` **zamkniete** (W3.1: `panerati2021gym`
+  pages 7512--7519 + DOI 10.1109/IROS51168.2021.9635857). **Brak otwartych
+  markerow w repo**; jedyna luka pozostaje zewnetrzna (raport pierwotny E6).

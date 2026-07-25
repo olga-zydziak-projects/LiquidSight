@@ -171,21 +171,35 @@ restauracja przesuwala ku frozen, lacznie niewystarczajaco do precondition
 **rownoleglych 3–6-way** na jednym GPU (RTX 5070 Ti) — sa **niemiarodajne jako
 koszt-per-ramie** (rywalizacja o GPU). Miarodajne per-ramie sa czasy SOLO ponizej.
 
-### Koszt SOLO per cykl (jeden bieg na GPU)
-| procedura | ramie | sec_cykl | uwaga | zrodlo |
+### Koszt per cykl — SOLO vs KONTENCJA (audyt W3.1 A1)
+
+**⚠ Sprostowanie prowieniencji (W3.1):** we wczesniejszej wersji wiersze v2
+A_NCP/A_CFC @1e-3 (~5,2–5,4 h / ~3,6–4,2 h) byly opisane jako „mix solo/
+rownolegly" — **to sa czasy Z KONTENCJA, nie solo**. Genuine solo (procedura v2)
+istnieje **wylacznie** dla trzech smoke'ow `*_proc2*`: GRU@1e-3, NCP@3e-4,
+CFC@3e-4. Dowod: `smoke_A_NCP.json` (1e-3) ma per-round `sec_train` r1=5005 s vs
+`smoke_A_NCP_proc2_lr3e-4` (solo) r1=2529 s — ~2× przy identycznej architekturze
+i 120 epokach ⇒ rywalizacja o GPU. `sec_cykl` tych plikow = pierwszy cykl batcha
+I3b w `prog`. **Solo dla nog 1e-3 pozostaje niezmierzony.**
+
+| procedura | ramie | sec_cykl | reżim | zrodlo |
 |---|---|---|---|---|
-| v1 (BC-15+DAgger-10×3) | A_GRU | ~444 s (7,4 min) | zgodny z P-SANITY R1 (~420 s) | `I3A §3` |
-| v1 | A_NCP | ~662–675 s (11,2 min) | ncps per-step, launch-bound | `I3A §3` |
-| v1 | A_CFC | ~492–544 s (8,7 min) | ncps per-step dense | `I3A §3` |
-| v1 (pelny e2e z collect) | A_GRU | ~7,0 min (collect 113+BC 58,6+DAgger 362 s); e2e ~8,9 min | | `PR2 §5` |
-| **v2** (od-zera×4, 120 ep) | A_GRU | **6 079,6 s (1,69 h)** SOLO | kontrola | `Gru2` |
-| v2 | A_NCP | ~18 900–19 500 s (5,2–5,4 h) | z biegow I3b (mix solo/rownolegly) | `prog` |
-| v2 | A_CFC | ~12 800–15 100 s (3,6–4,2 h) | jw. | `prog` |
+| v1 (BC-15+DAgger-10×3) | A_GRU | ~444 s (7,4 min) | solo (zgodny z P-SANITY R1 ~420 s) | `I3A §3` |
+| v1 | A_NCP | ~662–675 s (11,2 min) | solo; ncps per-step, launch-bound | `I3A §3` |
+| v1 | A_CFC | ~492–544 s (8,7 min) | solo; ncps per-step dense | `I3A §3` |
+| v1 (pelny e2e z collect) | A_GRU | ~7,0 min (collect 113+BC 58,6+DAgger 362 s); e2e ~8,9 min | solo | `PR2 §5` |
+| **v2** (od-zera×4, 120 ep) | A_GRU 1e-3 | **6 079,6 s (1,69 h)** | **SOLO** | `Gru2` = `smoke_A_GRU_proc2` |
+| v2 | A_NCP 3e-4 | **8 742,0 s (2,43 h)** | **SOLO** | `smoke_A_NCP_proc2_lr3e-4` |
+| v2 | A_CFC 3e-4 | **7 154,3 s (1,99 h)** | **SOLO** | `smoke_A_CFC_proc2_lr3e-4` |
+| v2 | A_NCP 1e-3 | ~18 900–19 500 s (5,2–5,4 h) | **KONTENCJA** (batch I3b 3–6-way); solo niezmierzony | `prog` |
+| v2 | A_CFC 1e-3 | ~12 800–15 100 s (3,6–4,2 h) | **KONTENCJA** (jw.); solo niezmierzony | `prog` |
+
+**Zakres solo v2 (miarodajny): 1,69–2,43 h/cykl** (GRU 1,69 h; CFC@3e-4 1,99 h;
+NCP@3e-4 2,43 h) — do prozy jako „1,7–2,4 h". Nogi 1e-3 tylko pod kontencja.
 
 Skala v1→v2: koszt cyklu rosnie ~10× (retrening od zera ×4 etapy po 120 ep vs
 BC-15+DAgger-10×3), symetrycznie dla wszystkich ramion (`ANEKS_4 §Koszt`).
-GRU v2 SOLO (6 080 s) << CfC v2 (~13–19,5 k s): CfC per-step (petla Pythona po
-120 tikach) ~1,5× wolniejszy + wiecej ep efektywnych.
+57,1 h (T3/T8) = **suma sec_cykl 13 cykli z kontencja**, nie szeregowy wall-clock.
 
 ---
 

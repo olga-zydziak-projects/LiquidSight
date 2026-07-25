@@ -10,7 +10,7 @@
 
 *(~200 words)*
 
-Liquid neural networks — continuous-time cores such as LTCs and their closed-form successor (CfC), wired with NCP/AutoNCP — are claimed to grant perception-and-control policies greater robustness under distribution shift. We subject that claim to a pre-registered measurement program spanning three task regimes at core-parameter parity and equal training budget: open-loop classification (companion P0, PASTIS), open-loop onset detection (companion E6), and closed-loop control (state-loop, LiquidFlight v1.0; vision-loop, this work). In the richest regime — a vision-in-the-loop fly-to-target twin with a perceptual-shift ladder — no CfC arm reaches our pre-registered nominal-capability precondition (mean ≥90% success at core parity of 27,648 ±2%) on either allowed learning rate, so the robustness claim is **untestable under our precondition** and we ran **zero out-of-distribution (OOD) evaluations**. Beneath that boundary we measure a **trainability tax**: at identical budget, a GRU control reaches 100% while the wired CfC peaks at 92% (per-leg means up to 75.3%, a 43 pp seed spread) and the dense CfC caps at 65%. We attribute trainability to wiring, localize a continuous-time Δt implementation dependency, and contribute a reusable gate/precondition methodology with an arithmetic early-stopping rule. A negative result, pre-registered, maps where the mechanism can and cannot be measured.
+Liquid neural networks — continuous-time cores such as LTCs and their closed-form successor (CfC), wired with NCP/AutoNCP — are claimed to grant perception-and-control policies greater robustness under distribution shift. We subject that claim to a pre-registered measurement program spanning three task regimes at core-parameter parity and equal training budget: open-loop classification (companion P0, PASTIS), open-loop onset detection (companion E6), and closed-loop control (state-loop, LiquidFlight v1.0; vision-loop, this work). In the richest regime — a vision-in-the-loop fly-to-target twin with a perceptual-shift ladder — no CfC arm reaches our pre-registered nominal-capability precondition (mean ≥90% success at core parity of 27,648 ±2%) on either allowed learning rate, so the robustness claim is **untestable under our precondition** and no gate arm was ever evaluated out of distribution (OOD) under the frozen criterion; the only OOD data is the pre-registered sanity calibration (§7). Beneath that boundary we measure a **trainability tax**: at identical budget, a GRU control reaches 100% while the wired CfC peaks at 92% (per-leg means up to 75.3%, a 43 pp seed spread) and the dense CfC caps at 65%. We attribute trainability to wiring, localize a continuous-time Δt implementation dependency, and contribute a reusable gate/precondition methodology with an arithmetic early-stopping rule. A negative result, pre-registered, maps where the mechanism can and cannot be measured.
 
 ---
 
@@ -25,7 +25,7 @@ Two properties of that literature motivate this work. First, demonstrations are 
 We take the claim seriously enough to try to falsify it under conditions it should survive. We build an honest twin — identical encoder, identical head, identical data and budget, cores matched to within ±2% — and we freeze the success criterion before measuring. This paper reports the vision-loop regime (phase 3) as the primary result and folds it into a portfolio-level **boundary map** with two companion regimes.
 
 **Contributions**, mapped to our claim register (C1–C8):
-- A pre-registered vision-loop twin in which the robustness claim is **untestable under our precondition** — the deciding arm never qualifies, and we hold to zero OOD evaluations (C1).
+- A pre-registered vision-loop twin in which the robustness claim is **untestable under our precondition** — the deciding arm never qualifies, and we hold to zero OOD evaluations of any gate arm (C1).
 - A measured **trainability tax** at parity: GRU 100% vs wired-CfC (peak 92%, per-leg means up to 75.3%) vs dense-CfC (cap 65%), at identical budget (C2).
 - The finding that the boundary is **variance, not mean** — seed instability is the object of measurement, echoing the companion P0 population spread (C3).
 - A **wiring attribution**: AutoNCP makes the CfC trainable where the dense CfC caps (C4).
@@ -54,7 +54,7 @@ The program is a house methodology applied uniformly across regimes.
 
 **Honest twin.** Each arm shares the same encoder, the same `Linear(64→6)` head with identical output scaling, the same training data and budget; cores are matched to a reference of 27,648 core parameters to within ±2% (Table T1). The only sanctioned inter-arm difference is the learning rate, whose provenance is documented.
 
-**Frozen criteria; MEASURE = REPORT.** Success criteria are frozen in a gate document before any measurement; whatever is measured is reported, including nulls and boundaries. The vision-loop gate (F3-GATE) fixes the OOD level (T2b), the primary metric, the decision threshold, and n before a single OOD scene is rendered.
+**Frozen criteria; MEASURE = REPORT.** Success criteria are frozen in a gate document before any measurement; whatever is measured is reported, including nulls and boundaries. The vision-loop gate (F3-GATE) fixes the OOD level (T2b), the primary metric, the decision threshold, and n before any thesis measurement.
 
 **Gates and preconditions.** A capability **precondition** (nominal success ≥90% per arm) must pass before the thesis metric is evaluated; the precondition is *not* the thesis. Failing it triggers a sanctioned, nominal-only repair (a learning rate from the pre-registered fallback grid — nothing else) and a full retrain, logged; exhaustion is a STOP for a human decision, not a verdict on the thesis.
 
@@ -91,37 +91,37 @@ The boundary map summarizes the direction and measurement resolution of the effe
 | R3 | state-loop control, ms-scale (LiquidFlight v1.0) | zero (neither help nor harm from the core) | quantitative (Table T10) |
 | R4 | vision-loop, this work (LiquidSight) | untestable under our precondition | precondition FAIL at parity; quantitative (NUMBERS.md T1–T8) |
 
-### 5.4 Vision-loop (phase 3) — the primary result
+### 5.1 Vision-loop (phase 3) — the primary result
 
 *(~1.5 pages; C1–C4)*
 
-**5.4a — The robustness claim is untestable under our precondition (C1).** After restoring the known-good recipe in full (core construction, Annex-3; training procedure, Annex-4) and exhausting the only sanctioned lever — the learning-rate grid {3e-4, 1e-3} — **no CfC arm reaches the pre-registered precondition** of mean ≥90% nominal success at core parity (Table T2). All four lr legs resolve to FAIL by arithmetic early resolution: A_NCP at 3e-4 = 16.5% (resolved at k=2), A_NCP at 1e-3 = **72.2% (k=4)**, A_CFC at 3e-4 = 27.0% (k=2), A_CFC at 1e-3 = 55.3% (k=3). Because the **deciding arm** (A_NCP, the AutoNCP-wired CfC faithful to the wiring in the cited claim) does not qualify, the thesis metric — a T2b margin of A_NCP over A_GRU with threshold `M > pooled_std`, n=10 — is **untestable under our precondition**. We therefore ran **zero OOD evaluations** in the entire phase: gate stages B (the A_GRU precondition sweep) and C (the OOD ladder) were skipped by the branch, so the pre-registered verdict remains untouched and unprejudiced.
+**The robustness claim is untestable under our precondition (C1).** After restoring the known-good recipe in full (core construction, Annex-3; training procedure, Annex-4) and exhausting the only sanctioned lever — the learning-rate grid {3e-4, 1e-3} — **no CfC arm reaches the pre-registered precondition** of mean ≥90% nominal success at core parity (Table T2). All four lr legs resolve to FAIL by arithmetic early resolution: A_NCP at 3e-4 = 16.5% (resolved at k=2), A_NCP at 1e-3 = **72.2% (k=4)**, A_CFC at 3e-4 = 27.0% (k=2), A_CFC at 1e-3 = 55.3% (k=3). Because the **deciding arm** (A_NCP, the AutoNCP-wired CfC faithful to the wiring in the cited claim) does not qualify, the thesis metric — a T2b margin of A_NCP over A_GRU with threshold `M > pooled_std`, n=10 — is **untestable under our precondition**. We therefore ran **zero OOD evaluations of any gate arm** in the entire phase: gate stages B (the A_GRU precondition sweep) and C (the OOD ladder) were skipped by the branch, so the pre-registered verdict remains untouched and unprejudiced. The only out-of-distribution data seen anywhere in the phase is the pre-registered sanity calibration of the perceptual-shift axis (the P-SANITY ladder), which is a pre-gate instrument check, not a thesis measurement (§7).
 
 This is deliberately *not* a falsification of the thesis. A test requires a qualifying deciding arm; without the precondition there is no test. The result is a cell in the boundary map, not a verdict on the mechanism.
 
 [FIGURE b — *Per-seed nominal success for each lr leg.* Points show nominal success (100 scenes, level T0) for every trained seed across the four CfC lr legs (A_NCP and A_CFC × {3e-4, 1e-3}); horizontal bars mark per-leg means; a dashed rule marks the 90% precondition. The A_GRU control (100%) is shown for reference. The wired arm at 1e-3 spans 49–92% (43 pp); no leg mean crosses 90%.]
 
-**5.4b — A trainability tax at parity (C2).** At identical data, budget, and procedure, and with cores matched to ±2%, nominal capability forms a gradient: **A_GRU 100%** (stable; dwell failures 0) > **wired CfC** (A_NCP; peak 92% at seed 45010/1e-3; per-leg mean 72.2% at k=4) > **dense CfC** (A_CFC; cap 65% at seed 45012/1e-3). Core-parameter parity alone does not buy capability; the continuous-time core pays a trainability tax at this budget. The dominant residual failure is **dwell** — the drone reaches the marker but does not hold the hover precisely — while catastrophic **tilt is eliminated** at 1e-3 (0 tilt across all CfC cycles, versus 78/100 for the dense CfC under the pre-Annex-4 procedure).
+**A trainability tax at parity (C2).** At identical data, budget, and procedure, and with cores matched to ±2%, nominal capability forms a gradient: **A_GRU 100%** (stable; dwell failures 0; 100% in every GRU training of the program: P-SANITY, procedure-v2 smoke, and the binding control) > **wired CfC** (A_NCP; peak 92% at seed 45010/1e-3; per-leg mean 72.2% at k=4) > **dense CfC** (A_CFC; cap 65% at seed 45012/1e-3). Core-parameter parity alone does not buy capability; the continuous-time core pays a trainability tax at this budget. The dominant residual failure is **dwell** — the drone reaches the marker but does not hold the hover precisely — while catastrophic **tilt is eliminated** at 1e-3 (0 tilt across all CfC cycles, versus 78/100 for the dense CfC under the pre-Annex-4 procedure).
 
-**5.4c — The boundary is variance, not mean (C3).** The wired arm at 1e-3 spans **49–92% across seeds — a 43 pp spread** — under one fixed procedure, while the GRU control is a stable 100%. Reporting only the k=4 mean (72.2%) understates the phenomenon; the **full six-seed characterization (75.3%, spread 43 pp)** shows the boundary is a property of the between-seed distribution, not a sample-size artifact. The CfC at parity does not "fail to learn"; it learns **unstably and dwell-limited, on average below 90%**. This mirrors the companion P0 result \citep{zydziak2026p0}, where the retention margin (+0.1127) and its pooled standard deviation (0.1759) are nearly invariant between n=3 and n=15 (Table T9) — population spread that does not shrink with n.
+**The boundary is variance, not mean (C3).** The wired arm at 1e-3 spans **49–92% across seeds — a 43 pp spread** — under one fixed procedure, while the GRU control is a stable 100%. Reporting only the k=4 mean (72.2%) understates the phenomenon; the **full six-seed characterization (75.3%, spread 43 pp)** shows the boundary is a property of the between-seed distribution, not a sample-size artifact. The CfC at parity does not "fail to learn"; it learns **unstably and dwell-limited, on average below 90%**. This mirrors the companion P0 result \citep{zydziak2026p0}, where the retention margin (+0.1127) and its pooled standard deviation (0.1759) are nearly invariant between n=3 and n=15 (Table T9) — population spread that does not shrink with n.
 
-**5.4d — Wiring attribution (C4).** The contrast between arms attributes trainability to the wiring: the AutoNCP-wired CfC reaches a 92% peak and per-leg means up to 75.3%, whereas the dense CfC caps at 65%, across seeds and at the 1e-3 lever. The attribution holds on the 1e-3 lever; at 3e-4 the ordering inverts (dense 27.0% > wired 16.5%), so the wiring benefit is itself learning-rate dependent and we report it as such. A historical, single-seed diagnostic corroborates the readout dimension: reading the full state rather than six motor neurons raises reach from 8/50 to 26/50 (§6).
+**Wiring attribution (C4).** The contrast between arms attributes trainability to the wiring: the AutoNCP-wired CfC reaches a 92% peak and per-leg means up to 75.3%, whereas the dense CfC caps at 65%, across seeds and at the 1e-3 lever. The attribution holds on the 1e-3 lever; at 3e-4 the ordering inverts (dense 27.0% > wired 16.5%), so the wiring benefit is itself learning-rate dependent and we report it as such. A historical, single-seed diagnostic corroborates the readout dimension: reading the full state rather than six motor neurons raises reach from 8/50 to 26/50 (§6).
 
 [FIGURE c — *DAgger rollout dynamics per round.* Success rate of on-policy rollouts across DAgger rounds r1→r2→r3 for each arm. The GRU control climbs 18→100→100; CfC arms stay low or flat (e.g., wired at 1e-3, seed 45010: 44→32→53; dense at 1e-3, seed 45012: 0→34→44), illustrating that the aggregate does not close for the continuous-time cores.]
 
-### 5.1 Open-loop classification, day-scale (P0) — companion
+### 5.2 Open-loop classification, day-scale (P0) — companion
 
 *(~0.5 page, condensed; C3 linkage)*
 
 The PASTIS twin gives a directional-but-null signal: at full cadence the GRU leads on macro-F1 (0.9073 ±0.0137 vs 0.8802 ±0.0121), but under observation dropout the CfC retains more — retention R(0.6) of 0.6415 ±0.1138 vs 0.5288 ±0.0622, a **+0.1127 margin against a pooled std of 0.1759, i.e. null** by the pre-registered rule. An absolute-F1 crossover appears at d=0.6 (CfC 0.5642 ±0.0985 above GRU 0.4798 ±0.0567, despite a −0.027 start), and the degradation slope is gentler for the CfC (−0.5095 vs −0.6936). Crucially, margin and pooled std are near-invariant from n=3 to n=15 — the boundary is population spread, not sampling noise. All P0 numbers are verified against the companion report \citep{zydziak2026p0} (Table T9).
 
-### 5.2 Open-loop onset detection, low FAR (E6) — companion
+### 5.3 Open-loop onset detection, low FAR (E6) — companion
 
 *(~0.3 page; qualitative)*
 
 The onset-detection regime contributes the **negative direction** of the map: at a low false-alarm-rate operating point the effect sign is **unfavorable to the liquid core**, as recorded in the program compendium; the primary E6 report is not preserved in the project archive. We therefore state this regime **qualitatively only** and report no numerical values for it — in particular the detection-delay delta, the sweep parameter, and the false-alarm-rate definition are not carried into the prose, since their primary source could not be verified. The regime enters the boundary map as a directional cell (§5, row R2), not as a quantitative result.
 
-### 5.3 State-loop control, millisecond-scale (LiquidFlight v1.0) — companion
+### 5.4 State-loop control, millisecond-scale (LiquidFlight v1.0) — companion
 
 *(~0.4 page)*
 
@@ -157,7 +157,7 @@ A mechanistic signature accompanies this (C6a): for every CfC arm the best valid
 
 [FIGURE d — *Sanity ladder and expert ceiling.* Policy success across the distractor ladder (T0→T3: 100/100/64/46/36/24/16) with the [30,85] band shaded and the T2b gate level marked; the expert ceiling (100% at every level) overlaid.]
 
-**Protocol economics (C7a).** The binding run comprised **13 full training cycles** (plus one GRU control), ~**57.1 h** of cumulative compute (sum of per-cycle wall time; parallel wall-clock was shorter but is not an authoritative per-arm cost — Table T7). Arithmetic early resolution spared a complete four-seed batch relative to the 40 cycles a full n=10 over four legs would have required.
+**Protocol economics (C7a).** The binding run comprised **13 full training cycles** (plus one GRU control), ~**57.1 h** of cumulative compute. Per-cycle wall times in the binding run are inflated by GPU contention (3–6 concurrent processes on one GPU). Solo-cycle costs were measured only for the GRU control and the 3e-4 legs (**1.7–2.4 h per cycle**); the 1e-3 CfC legs ran only under contention, so their solo cost is unmeasured. The 57.1 h figure is therefore a *sum of contention-inflated per-cycle times*, not a serial wall-clock (Table T7). Arithmetic early resolution spared a complete four-seed batch relative to the 40 cycles a full n=10 over four legs would have required.
 
 ---
 
@@ -183,7 +183,8 @@ A mechanistic signature accompanies this (C6a): for every CfC arm the best valid
 - **One harness per regime.** A single fly-to-target task family at 64×64; results may not generalize across task families.
 - **Parity at ~27k core parameters.** Findings are stated at this capacity; other capacities are untested.
 - **n=10 with a finality rule.** Seeds 45010–45015 were used (early resolution); increasing n, or changing the level or threshold after seeing any OOD result, is forbidden by the gate.
-- **No OOD measurement in the vision-loop regime.** This is a *consequence* of the unmet precondition, not a design choice.
+- **No OOD measurement of any gate arm in the vision-loop regime.** This is a *consequence* of the unmet precondition, not a design choice; the only OOD data anywhere in the phase is the pre-gate sanity calibration.
+- **Single-cycle GRU control.** The binding-run GRU control is a single cycle, corroborated by two earlier independent 100% cycles.
 - **Engineering findings are single-seed probes.** The four recipe restorations (fixes F1–F4) are diagnostic controlled probes (n=1 for most), illustrative rather than statistically powered (GAP-4).
 - **Determinism is within-machine**, not cross-machine.
 - **Fixed training budget.** The trainability tax is measured at BC-120 + DAgger×3; a higher symmetric budget is unmeasured.
@@ -196,7 +197,7 @@ A mechanistic signature accompanies this (C6a): for every CfC arm the best valid
 
 *(~0.3 page)*
 
-We release the liquidflight v1.0 and liquidsight repositories (tags and gate commits), the frozen documents (F3_PRE0, DECYZJE_F3 and Annexes 1–4, P-SANITY, F3-GATE), sha256 manifests of the execution layer, the seed pools, the per-cycle logs (`results/i3b/progress.jsonl`), and the reports. The companion P0 ships as a separate PDF/arXiv artifact \citep{zydziak2026p0}. Instrument determinism is within-machine bit-exact (`s1_env_det`); bit-for-bit reproduction across different GPUs is not guaranteed (inherent to CUDA).
+The liquidflight v1.0 and liquidsight repositories (tags and gate commits), the frozen documents (F3_PRE0, DECYZJE_F3 and Annexes 1–4, P-SANITY, F3-GATE), sha256 manifests of the execution layer, the seed pools, the per-cycle logs (`results/i3b/progress.jsonl`), and the reports **will be released upon publication**. The companion P0 ships as a separate PDF/arXiv artifact \citep{zydziak2026p0}. Instrument determinism is within-machine bit-exact (`s1_env_det`); bit-for-bit reproduction across different GPUs is not guaranteed (inherent to CUDA).
 
 ---
 
@@ -282,8 +283,8 @@ Applied to the four legs: A_NCP@3e-4 FAIL at k=2 (S=33; 833<900); A_NCP@1e-3 FAI
 
 Everything sourceable in-repo is closed. The following require an artifact or a human decision that does not live in this repository:
 
-1. **E6 primary report (§5.2 / map row R2) — external artifact missing.** The primary RAPORT_E6 could not be located (T0: no liquidwatch repo; absent from home/Downloads/Documents/Desktop; the liquidwatch backup holds only E1/E2). R2 is stated qualitatively from the program compendium (secondary source), with no numerical values. *To close:* Olga supplies the primary E6 report → promote R2 to a quantitative cell.
-
-2. **`panerati2021gym` bib field — `[BIB:verify]` on `pages`.** The IROS-2021 proceedings page range for gym-pybullet-drones could not be confirmed online; venue, year, authors, and arXiv id are verified. *To close:* confirm page numbers from the IEEE Xplore record.
+1. **E6 primary report (§5.3 / map row R2) — external artifact missing.** The primary RAPORT_E6 could not be located (T0: no liquidwatch repo; absent from home/Downloads/Documents/Desktop; the liquidwatch backup holds only E1/E2). R2 is stated qualitatively from the program compendium (secondary source), with no numerical values. *To close:* Olga supplies the primary E6 report → promote R2 to a quantitative cell. **This is now the only open item.**
 
 *Closed in W3:* all P0 numbers verified against the companion PDF (Table T9, zero discrepancies); v1.0 numbers sourced from the frozen liquidflight reports (Table T10); title selected (candidate 2); bibliography written (`paper/latex/references.bib`, 13 entries). No `[TODO-src]` marker remains anywhere in the prose. All C1–C8 quantities are sourced in NUMBERS.md T1–T10.
+
+*Closed in W3.1:* `panerati2021gym` page range resolved to pp. 7512–7519 with DOI 10.1109/IROS51168.2021.9635857 (last `[BIB:verify]` removed); zero-OOD claim rescoped to *no gate arm evaluated OOD under the frozen criterion* (the pre-gate sanity calibration is the only OOD data); §5 main-result headers made unnumbered (C1)–(C4); GRU-control single-cycle caveat added; §7 economics annotated for GPU contention (T7 provenance corrected: the 1e-3 CfC per-cycle times are contention-inflated, not solo).
