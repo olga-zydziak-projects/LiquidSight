@@ -1,0 +1,18 @@
+{
+  "a_idle_gap": {
+    "median_ms": 63.1,
+    "mean_ms": 63.6,
+    "p95_ms": 78.3,
+    "min_ms": 50.7,
+    "max_ms": 80.0,
+    "n": 30
+  },
+  "b_parallel_policy": {
+    "median_ms": 56.0,
+    "mean_ms": 58.9,
+    "p95_ms": 75.7,
+    "min_ms": 49.0,
+    "max_ms": 78.5,
+    "n": 30
+  }
+}

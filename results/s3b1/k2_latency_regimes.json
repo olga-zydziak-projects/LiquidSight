@@ -1,0 +1,27 @@
+{
+  "policy_net_params": 142756,
+  "a_idle_gap": {
+    "median_ms": 1606.7,
+    "mean_ms": 1626.9,
+    "p95_ms": 1947.4,
+    "min_ms": 1296.1,
+    "max_ms": 2146.3,
+    "n": 30
+  },
+  "b_parallel_policy": {
+    "median_ms": 1647.7,
+    "mean_ms": 1681.5,
+    "p95_ms": 2161.0,
+    "min_ms": 1192.4,
+    "max_ms": 2278.3,
+    "n": 30
+  },
+  "c_keepalive": {
+    "median_ms": 1613.2,
+    "mean_ms": 1726.0,
+    "p95_ms": 2283.3,
+    "min_ms": 1150.5,
+    "max_ms": 2359.8,
+    "n": 30
+  }
+}

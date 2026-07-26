@@ -1,0 +1,9 @@
+{
+  "cadence": "1Hz (1.0s idle gap/call)",
+  "n": 15,
+  "median_ms": 1309.17,
+  "mean_ms": 1308.01,
+  "p95_ms": 1430.09,
+  "min_ms": 1101.22,
+  "max_ms": 1562.25
+}
