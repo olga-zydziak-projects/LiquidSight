@@ -1,0 +1,9 @@
+{
+  "n_frames": 72000,
+  "n_deliveries": 1342,
+  "delivery_frame_ok": true,
+  "age_monotonic_ok": true,
+  "reset_on_delivery_ok": true,
+  "n_episodes": 600,
+  "example_violations": []
+}

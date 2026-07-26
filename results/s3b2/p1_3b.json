@@ -1,0 +1,51 @@
+{
+  "tag": "P1-3b (eval 46500-46599)",
+  "n": 100,
+  "sukces": 100,
+  "sukces_pct": 100.0,
+  "wrong_lock": 0,
+  "wrong_lock_pct": 0.0,
+  "no_arrival": 0,
+  "dwell": 0,
+  "katastrofy": 0,
+  "fail_types": {},
+  "per_cell": {
+    "K3_A0": {
+      "n": 17,
+      "sukces": 17,
+      "sukces_pct": 100.0,
+      "wrong_lock": 0
+    },
+    "K3_A1": {
+      "n": 17,
+      "sukces": 17,
+      "sukces_pct": 100.0,
+      "wrong_lock": 0
+    },
+    "K5_A0": {
+      "n": 17,
+      "sukces": 17,
+      "sukces_pct": 100.0,
+      "wrong_lock": 0
+    },
+    "K5_A1": {
+      "n": 16,
+      "sukces": 16,
+      "sukces_pct": 100.0,
+      "wrong_lock": 0
+    },
+    "K8_A0": {
+      "n": 17,
+      "sukces": 17,
+      "sukces_pct": 100.0,
+      "wrong_lock": 0
+    },
+    "K8_A1": {
+      "n": 16,
+      "sukces": 16,
+      "sukces_pct": 100.0,
+      "wrong_lock": 0
+    }
+  },
+  "verdict": "PASS"
+}

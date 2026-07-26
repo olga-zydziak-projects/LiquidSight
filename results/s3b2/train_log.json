@@ -1,0 +1,80 @@
+{
+  "seed": 45020,
+  "lr": 0.001,
+  "params": {
+    "encoder": 126112,
+    "rdzen_gru_gc": 28800,
+    "glowa": 390,
+    "razem": 155302,
+    "in_dim": 84,
+    "target_dim": 6
+  },
+  "bc_collect_s": 180.7,
+  "stages": [
+    {
+      "round": 0,
+      "store": 270,
+      "rollout_succ_pct": null,
+      "best_val": 0.000408,
+      "best_epoch": 117,
+      "train_mse_start_end": [
+        0.111114,
+        0.000217
+      ],
+      "sec_rollout": 0.0,
+      "sec_train": 473.2
+    },
+    {
+      "round": 1,
+      "store": 370,
+      "rollout_succ_pct": 10.0,
+      "best_val": 0.001356,
+      "best_epoch": 116,
+      "train_mse_start_end": [
+        0.092496,
+        0.000433
+      ],
+      "sec_rollout": 91.2,
+      "sec_train": 555.3
+    },
+    {
+      "round": 2,
+      "store": 470,
+      "rollout_succ_pct": 78.0,
+      "best_val": 0.001189,
+      "best_epoch": 118,
+      "train_mse_start_end": [
+        0.07962,
+        0.000305
+      ],
+      "sec_rollout": 88.9,
+      "sec_train": 615.9
+    },
+    {
+      "round": 3,
+      "store": 570,
+      "rollout_succ_pct": 94.0,
+      "best_val": 0.000796,
+      "best_epoch": 114,
+      "train_mse_start_end": [
+        0.072935,
+        0.000335
+      ],
+      "sec_rollout": 87.6,
+      "sec_train": 738.7
+    }
+  ],
+  "total_cycle_s": 2831.5,
+  "total_cycle_h": 0.79,
+  "contract_asserts": {
+    "n_frames": 72000,
+    "n_deliveries": 1342,
+    "delivery_frame_ok": true,
+    "age_monotonic_ok": true,
+    "reset_on_delivery_ok": true,
+    "n_episodes": 600,
+    "example_violations": []
+  },
+  "ckpt": "/home/olga/projects/liquidsight/ckpt/s3b2/policy_gc.pt",
+  "known_diff_train_live": "conf=1.0 (GT-fed); grounder live conf<1 \u2014 G1"
+}
