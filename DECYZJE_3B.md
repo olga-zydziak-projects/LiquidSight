@@ -82,6 +82,17 @@ k2_latency_regimes.json`, `k1_latency_regimes.json`.
 
 Pule 3a (43000–43149, 41000+, 42000+, 45010–45019) i sondy 46900+ **nietknięte**.
 
+### D8 — uzupełnienie (S3b2, 2026-07-26, addytywne)
+Rundy DAgger polityki 3b (retrening od zera na agregacie, ANEKS-4):
+| runda | pula rolloutów |
+|---|---|
+| DAgger r1 | **46300–46399** |
+| DAgger r2 | **46400–46499** |
+| DAgger r3 | **47000–47099** |
+
+**Seed treningu polityki 3b = 45020** (init modelu + shuffle; rozłączny z 45010–45019
+używanymi w fazie 3a). Pule treningu BC (46000–46299) i eval (46500–46599) — bez zmian.
+
 ---
 
 ## Rozbieżności odnotowane (jawnie)
