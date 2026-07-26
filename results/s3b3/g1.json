@@ -1,0 +1,93 @@
+{
+  "n": 50,
+  "sukces_pct": 12.0,
+  "wrong_lock_pct": 20.0,
+  "no_arrival": 31,
+  "dwell": 3,
+  "katastrofy": 0,
+  "verdict": "FAIL",
+  "progi": {
+    "sukces_min": 85.0,
+    "wrong_lock_max": 8.0
+  },
+  "per_cell": {
+    "K3_A0": {
+      "n": 8,
+      "sukces_pct": 12.5,
+      "wrong_lock": 1,
+      "sufit_pct": 100.0
+    },
+    "K3_A1": {
+      "n": 8,
+      "sukces_pct": 0.0,
+      "wrong_lock": 0,
+      "sufit_pct": 100.0
+    },
+    "K5_A0": {
+      "n": 8,
+      "sukces_pct": 0.0,
+      "wrong_lock": 4,
+      "sufit_pct": 100.0
+    },
+    "K5_A1": {
+      "n": 9,
+      "sukces_pct": 22.2,
+      "wrong_lock": 2,
+      "sufit_pct": 100.0
+    },
+    "K8_A0": {
+      "n": 8,
+      "sukces_pct": 37.5,
+      "wrong_lock": 1,
+      "sufit_pct": 100.0
+    },
+    "K8_A1": {
+      "n": 9,
+      "sukces_pct": 0.0,
+      "wrong_lock": 2,
+      "sufit_pct": 100.0
+    }
+  },
+  "sufit_ogolem_pct": 100.0,
+  "strata_vs_sufit_pp": 88.0,
+  "tick_precision_pct": {
+    "designated": 48.0,
+    "other": 16.8,
+    "background": 0.0,
+    "no_detection": 35.2
+  },
+  "n_ticks": 500,
+  "flip_rate_median": 0.0,
+  "flip_rate_mean": 0.38,
+  "offline_precision_at1": 86.8,
+  "hipoteza_odswiezania": "NIE kompensuje (live <= offline)",
+  "conf_hist_bins": [
+    0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.01
+  ],
+  "conf_hist": [
+    302,
+    8,
+    5,
+    4,
+    2,
+    2,
+    1,
+    0,
+    0,
+    0
+  ],
+  "conf_median": 0.013,
+  "wall_median_ms": 25.4,
+  "wall_p95_ms": 42.8,
+  "wall_L_deliver_s": 0.1
+}

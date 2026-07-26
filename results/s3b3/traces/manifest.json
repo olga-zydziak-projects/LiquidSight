@@ -1,0 +1,14 @@
+{
+  "sukces": {
+    "seed": 46604,
+    "n_frames": 6
+  },
+  "wrong_lock": {
+    "seed": 46601,
+    "n_frames": 6
+  },
+  "min_conf": {
+    "seed": 46602,
+    "n_frames": 6
+  }
+}

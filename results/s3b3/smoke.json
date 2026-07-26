@@ -1,0 +1,79 @@
+{
+  "episodes": [
+    {
+      "seed": 46500,
+      "success": false,
+      "n_det": 10,
+      "n_ticks": 10,
+      "min_conf": 0.01483366172760725
+    },
+    {
+      "seed": 46501,
+      "success": false,
+      "n_det": 7,
+      "n_ticks": 10,
+      "min_conf": 0.00493636867031455
+    },
+    {
+      "seed": 46502,
+      "success": false,
+      "n_det": 2,
+      "n_ticks": 10,
+      "min_conf": 0.10781659185886383
+    },
+    {
+      "seed": 46503,
+      "success": false,
+      "n_det": 2,
+      "n_ticks": 10,
+      "min_conf": 0.33889925479888916
+    },
+    {
+      "seed": 46504,
+      "success": false,
+      "n_det": 3,
+      "n_ticks": 10,
+      "min_conf": 0.001010963344015181
+    },
+    {
+      "seed": 46505,
+      "success": false,
+      "n_det": 10,
+      "n_ticks": 10,
+      "min_conf": 0.0033407947048544884
+    },
+    {
+      "seed": 46506,
+      "success": false,
+      "n_det": 9,
+      "n_ticks": 10,
+      "min_conf": 0.004420617129653692
+    },
+    {
+      "seed": 46507,
+      "success": false,
+      "n_det": 2,
+      "n_ticks": 10,
+      "min_conf": 0.07982560992240906
+    },
+    {
+      "seed": 46508,
+      "success": false,
+      "n_det": 10,
+      "n_ticks": 10,
+      "min_conf": 0.005198521073907614
+    },
+    {
+      "seed": 46509,
+      "success": false,
+      "n_det": 3,
+      "n_ticks": 10,
+      "min_conf": 0.0025855100248008966
+    }
+  ],
+  "n_calls": 100,
+  "wall_median_ms": 26.1,
+  "wall_p95_ms": 43.4,
+  "wall_ref_f1_ms": 63.1,
+  "anomalies": []
+}

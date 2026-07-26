@@ -1,0 +1,502 @@
+[
+  {
+    "seed": 46600,
+    "K": 5,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 1,
+    "n_detections": 2,
+    "min_conf": 0.007462596520781517
+  },
+  {
+    "seed": 46601,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "flips": 0,
+    "n_detections": 9,
+    "min_conf": 0.0010770951630547643
+  },
+  {
+    "seed": 46602,
+    "K": 3,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 10,
+    "min_conf": 0.001031882013194263
+  },
+  {
+    "seed": 46603,
+    "K": 5,
+    "A": "A0",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "flips": 0,
+    "n_detections": 10,
+    "min_conf": 0.0010586995631456375
+  },
+  {
+    "seed": 46604,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "flips": 1,
+    "n_detections": 10,
+    "min_conf": 0.002439073985442519
+  },
+  {
+    "seed": 46605,
+    "K": 3,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 8,
+    "min_conf": 0.004177119582891464
+  },
+  {
+    "seed": 46606,
+    "K": 5,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 1,
+    "n_detections": 9,
+    "min_conf": 0.0017616499681025743
+  },
+  {
+    "seed": 46607,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 1,
+    "n_detections": 10,
+    "min_conf": 0.004060210660099983
+  },
+  {
+    "seed": 46608,
+    "K": 3,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "flips": 0,
+    "n_detections": 2,
+    "min_conf": 0.4437007009983063
+  },
+  {
+    "seed": 46609,
+    "K": 5,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 8,
+    "min_conf": 0.0014395014150068164
+  },
+  {
+    "seed": 46610,
+    "K": 8,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 10,
+    "min_conf": 0.0021888501942157745
+  },
+  {
+    "seed": 46611,
+    "K": 3,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 2,
+    "min_conf": 0.0015489690704271197
+  },
+  {
+    "seed": 46612,
+    "K": 5,
+    "A": "A1",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "flips": 0,
+    "n_detections": 2,
+    "min_conf": 0.0035752812400460243
+  },
+  {
+    "seed": 46613,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "flips": 0,
+    "n_detections": 7,
+    "min_conf": 0.0010621085530146956
+  },
+  {
+    "seed": 46614,
+    "K": 3,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 2,
+    "min_conf": 0.0019296768587082624
+  },
+  {
+    "seed": 46615,
+    "K": 5,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 9,
+    "min_conf": 0.00123989162966609
+  },
+  {
+    "seed": 46616,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "flips": 4,
+    "n_detections": 10,
+    "min_conf": 0.0018307752907276154
+  },
+  {
+    "seed": 46617,
+    "K": 3,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 2,
+    "min_conf": 0.0015761047834530473
+  },
+  {
+    "seed": 46618,
+    "K": 5,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 3,
+    "min_conf": 0.01123718824237585
+  },
+  {
+    "seed": 46619,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 6,
+    "min_conf": 0.002218622248619795
+  },
+  {
+    "seed": 46620,
+    "K": 3,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 2,
+    "min_conf": 0.012750997208058834
+  },
+  {
+    "seed": 46621,
+    "K": 5,
+    "A": "A0",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "flips": 4,
+    "n_detections": 10,
+    "min_conf": 0.002338401973247528
+  },
+  {
+    "seed": 46622,
+    "K": 8,
+    "A": "A0",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "flips": 0,
+    "n_detections": 8,
+    "min_conf": 0.0015242419904097915
+  },
+  {
+    "seed": 46623,
+    "K": 3,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 3,
+    "min_conf": 0.0011568536283448339
+  },
+  {
+    "seed": 46624,
+    "K": 5,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 10,
+    "min_conf": 0.015244977548718452
+  },
+  {
+    "seed": 46625,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 1,
+    "n_detections": 8,
+    "min_conf": 0.002766710240393877
+  },
+  {
+    "seed": 46626,
+    "K": 3,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 10,
+    "min_conf": 0.008517223410308361
+  },
+  {
+    "seed": 46627,
+    "K": 5,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 10,
+    "min_conf": 0.011239922605454922
+  },
+  {
+    "seed": 46628,
+    "K": 8,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 10,
+    "min_conf": 0.017388679087162018
+  },
+  {
+    "seed": 46629,
+    "K": 3,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 10,
+    "min_conf": 0.005026982165873051
+  },
+  {
+    "seed": 46630,
+    "K": 5,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 10,
+    "min_conf": 0.0012848599581047893
+  },
+  {
+    "seed": 46631,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 1,
+    "n_detections": 7,
+    "min_conf": 0.006257514003664255
+  },
+  {
+    "seed": 46632,
+    "K": 3,
+    "A": "A0",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "flips": 0,
+    "n_detections": 4,
+    "min_conf": 0.002177070127800107
+  },
+  {
+    "seed": 46633,
+    "K": 5,
+    "A": "A0",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "flips": 0,
+    "n_detections": 8,
+    "min_conf": 0.0016025726217776537
+  },
+  {
+    "seed": 46634,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "flips": 0,
+    "n_detections": 2,
+    "min_conf": 0.47658538818359375
+  },
+  {
+    "seed": 46635,
+    "K": 3,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 1,
+    "n_detections": 10,
+    "min_conf": 0.004628526978194714
+  },
+  {
+    "seed": 46636,
+    "K": 5,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "flips": 1,
+    "n_detections": 8,
+    "min_conf": 0.0023966191802173853
+  },
+  {
+    "seed": 46637,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 5,
+    "min_conf": 0.0012744294945150614
+  },
+  {
+    "seed": 46638,
+    "K": 3,
+    "A": "A0",
+    "success": false,
+    "fail_type": "dwell",
+    "flips": 0,
+    "n_detections": 2,
+    "min_conf": 0.012031716294586658
+  },
+  {
+    "seed": 46639,
+    "K": 5,
+    "A": "A0",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "flips": 0,
+    "n_detections": 10,
+    "min_conf": 0.0020998918917030096
+  },
+  {
+    "seed": 46640,
+    "K": 8,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 4,
+    "min_conf": 0.06259053200483322
+  },
+  {
+    "seed": 46641,
+    "K": 3,
+    "A": "A1",
+    "success": false,
+    "fail_type": "dwell",
+    "flips": 0,
+    "n_detections": 2,
+    "min_conf": 0.36017468571662903
+  },
+  {
+    "seed": 46642,
+    "K": 5,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "flips": 0,
+    "n_detections": 2,
+    "min_conf": 0.03685872256755829
+  },
+  {
+    "seed": 46643,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 3,
+    "min_conf": 0.0016262478893622756
+  },
+  {
+    "seed": 46644,
+    "K": 3,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 9,
+    "min_conf": 0.0032115911599248648
+  },
+  {
+    "seed": 46645,
+    "K": 5,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 7,
+    "min_conf": 0.002345679560676217
+  },
+  {
+    "seed": 46646,
+    "K": 8,
+    "A": "A0",
+    "success": false,
+    "fail_type": "dwell",
+    "flips": 3,
+    "n_detections": 10,
+    "min_conf": 0.03325061872601509
+  },
+  {
+    "seed": 46647,
+    "K": 3,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 4,
+    "min_conf": 0.0017203021561726928
+  },
+  {
+    "seed": 46648,
+    "K": 5,
+    "A": "A1",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "flips": 0,
+    "n_detections": 2,
+    "min_conf": 0.0022405185736715794
+  },
+  {
+    "seed": 46649,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "flips": 0,
+    "n_detections": 3,
+    "min_conf": 0.0018271409207955003
+  }
+]
