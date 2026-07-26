@@ -41,6 +41,7 @@ from task import (CTRL_DT, CTRL_FREQ, FAIL_TILT_DEG, FAIL_Z_MIN, make_expert,
                   obs_kin, split_state)
 
 from env.scene_builder import build_task_scene, drone_camera  # noqa: E402
+from env.scene_attr import bbox_from_mask, build_attr_scene    # noqa: E402  (3b)
 
 # --- takt (D3) --------------------------------------------------------------
 PYB_FREQ = 240
@@ -49,6 +50,10 @@ EPISODE_S = 10.0
 CONTROL_STEPS = int(EPISODE_S * CTRL_FREQ)      # 480
 POLICY_STEPS = CONTROL_STEPS // CAM_EVERY       # 120
 DT_OBS = CAM_EVERY * CTRL_DT                     # 1/12 s (dt miedzy klatkami)
+
+# --- kamera semantyczna 3b (D2): 256^2 z tej samej pozy, tick 1 Hz ----------
+SEM_RES = 256
+SEM_EVERY = 12                           # co 12. klatke polityki (12 Hz / 12 = 1 Hz)
 
 # --- parametry zadania D1 (r_goal/z_hover/t_dwell zamrozone w I1) -----------
 # ANEKS-1 (2026-07-23): dron patrzy na +x (yaw=0), cel w stozku czolowym +x
@@ -81,7 +86,8 @@ class LiquidSightEnv:
         self._tmpdir = None
 
     # -- reset ---------------------------------------------------------------
-    def reset(self, scene_seed: int, level="T0"):
+    def reset(self, scene_seed: int, level="T0", scene_type: str = "3a"):
+        self.scene_type = scene_type
         self.close()
         rng = np.random.default_rng(scene_seed)
         start_x = float(rng.uniform(self.cfg["start_x_lo"], self.cfg["start_x_hi"]))
@@ -103,7 +109,8 @@ class LiquidSightEnv:
             )
             self.env.reset(seed=int(scene_seed))
 
-        self.scene = build_task_scene(
+        builder = build_attr_scene if scene_type == "3b" else build_task_scene
+        self.scene = builder(
             client=self.env.CLIENT, plane_id=self.env.PLANE_ID,
             scene_seed=int(scene_seed), level=level, start_xy=start_xy,
             tmpdir=self._tmpdir, arena_half=self.cfg["arena_half"],
@@ -119,6 +126,9 @@ class LiquidSightEnv:
         self.in_goal: list[bool] = []
         self.fail_type = None
         self.done = False
+        self._pk = 0                     # licznik krokow polityki (kadencja 3b)
+        self._sem_now = None             # ostatnia klatka semantyczna (3b) lub None
+        self.pos_hist: list = []         # historia xy drona (3b: wrong-lock)
 
         state = self.env._getDroneStateVector(0)
         return self._obs(state), self._info(None)
@@ -139,8 +149,10 @@ class LiquidSightEnv:
             self.env.step(np.clip(rpm, 0.0, self.env.MAX_RPM).reshape(1, 4))
             self.ctick += 1
             state = self.env._getDroneStateVector(0)
-            dist = float(np.linalg.norm(split_state(state)["pos"] - self.hover))
-            self.in_goal.append(dist <= self.cfg["r_goal"])
+            pos = split_state(state)["pos"]
+            self.in_goal.append(float(np.linalg.norm(pos - self.hover)) <= self.cfg["r_goal"])
+            if self.scene_type == "3b":                 # historia xy (wrong-lock)
+                self.pos_hist.append(np.asarray(pos[:2], dtype=np.float64))
             ft = self._check_cliff(state)
             if ft is not None:
                 self.fail_type, self.done = ft, True
@@ -152,7 +164,17 @@ class LiquidSightEnv:
         state = self.env._getDroneStateVector(0)
         if self.done and self.fail_type is None:        # dojechalo bez katastrofy -> dwell
             if not self._eval_dwell():
-                self.fail_type = "dwell"
+                if self.scene_type == "3b":             # D5: wrong-lock vs no-arrival vs dwell
+                    self.fail_type = ("wrong_lock" if self._wrong_lock()
+                                      else ("no_arrival" if not any(self.in_goal) else "dwell"))
+                else:
+                    self.fail_type = "dwell"
+
+        # kamera semantyczna 256^2 (D2): co SEM_EVERY krok polityki, ta sama poza
+        self._sem_now = None
+        if self.scene_type == "3b" and (self._pk % SEM_EVERY == 0):
+            self._sem_now = self._render_semantic(state)
+        self._pk += 1
         return self._obs(state, want_seg), self._info(want_seg), self.done
 
     # -- klif D1b: v1.0 (z, tilt) z frozen + geofence areny + kontakt --------
@@ -179,6 +201,33 @@ class LiquidSightEnv:
             return False
         return all(self.in_goal[w0:CONTROL_STEPS])
 
+    def _wrong_lock(self) -> bool:
+        """3b (D5): czy dron utrzymal zawis (dwell) w r_goal WOKOL innego obiektu."""
+        dwell_ticks = int(round(self.cfg["t_dwell"] * CTRL_FREQ))
+        w0 = CONTROL_STEPS - dwell_ticks
+        if len(self.pos_hist) < CONTROL_STEPS:
+            return False
+        window = self.pos_hist[w0:CONTROL_STEPS]
+        rg = self.cfg["r_goal"]
+        for obj in self.scene["objects"]:
+            if obj["designated"]:
+                continue
+            oxy = np.asarray(obj["pos"][:2], dtype=np.float64)
+            if all(np.linalg.norm(pxy - oxy) <= rg for pxy in window):
+                return True
+        return False
+
+    def _render_semantic(self, state) -> dict:
+        """Kamera semantyczna 256^2 z tej samej pozy (D2) + GT bbox wskazanego."""
+        s = split_state(state)
+        rgb256, seg256 = drone_camera(self.env.CLIENT, s["pos"], s["quat"],
+                                      SEM_RES, want_seg=True)
+        _, seg64 = drone_camera(self.env.CLIENT, s["pos"], s["quat"],
+                                self.res, want_seg=True)
+        did = self.scene["designated_id"]
+        return {"rgb256": rgb256, "gt_bbox_256": bbox_from_mask(seg256, did),
+                "gt_bbox_64": bbox_from_mask(seg64, did), "pk": self._pk}
+
     # -- kategoryzacja porazki (D1b): katastrofa vs brak-dolotu/dwell --------
     @staticmethod
     def is_catastrophe(fail_type) -> bool:
@@ -195,6 +244,14 @@ class LiquidSightEnv:
         info = {"success": (self.done and self.fail_type is None),
                 "fail_type": self.fail_type,
                 "gt_target_pos": self.target_pos.copy()}
+        if self.scene_type == "3b":                     # rozszerzenia 3b (T2)
+            info["designated_id"] = self.scene["designated_id"]
+            info["command"] = self.scene["command"]
+            info["objects"] = self.scene["objects"]
+            sem = self._sem_now
+            info["rgb256"] = sem["rgb256"] if sem else None
+            info["gt_bbox_256"] = sem["gt_bbox_256"] if sem else None
+            info["gt_bbox_64"] = sem["gt_bbox_64"] if sem else None
         if want_seg and self.env is not None:
             state = self.env._getDroneStateVector(0)
             _, seg = drone_camera(self.env.CLIENT, split_state(state)["pos"],

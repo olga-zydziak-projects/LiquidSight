@@ -1,0 +1,15 @@
+{
+  "env_3b_dualcam": {
+    "episodes": 6,
+    "wall_s": 7.3,
+    "x_realtime": 8.22
+  },
+  "env_3a_singlecam": {
+    "episodes": 6,
+    "wall_s": 4.86,
+    "x_realtime": 12.34
+  },
+  "overhead_3b_over_3a": 1.501,
+  "s3b0_prognoza_dual_render_only_xrt": 24.9,
+  "uwaga": "env mierzy pelny lancuch (fizyka 240Hz + ekspert + render); S3b0 24.9x = sam render (bez fizyki), wiec nizsze x-realtime env oczekiwane"
+}

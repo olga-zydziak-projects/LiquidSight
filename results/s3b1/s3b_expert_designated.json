@@ -1,0 +1,18 @@
+{
+  "n": 100,
+  "sukces": 100,
+  "sukces_pct": 100.0,
+  "wrong_lock": 0,
+  "no_arrival": 0,
+  "dwell": 0,
+  "katastrofy": 0,
+  "fail_types": {},
+  "per_cell": {
+    "K3_A0": "17/17",
+    "K3_A1": "17/17",
+    "K5_A0": "17/17",
+    "K5_A1": "16/16",
+    "K8_A0": "17/17",
+    "K8_A1": "16/16"
+  }
+}

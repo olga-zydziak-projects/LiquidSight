@@ -1,0 +1,121 @@
+{
+  "cases": [
+    {
+      "scene_seed": 46600,
+      "K": 5,
+      "A": "A1",
+      "wynik": {
+        "success": true,
+        "fail_type": null,
+        "n_sem": 10
+      },
+      "run1": {
+        "rgb64": "1357d65b0159364b300d13241b662a5f2667bcc0231e01249ef5974dbb0b8ff6",
+        "rgb256": "909e9adb167642c50aff5eb817c55e479ef29483135dcb78cc414fbf65ada8ea",
+        "kin": "eff8a2c9e4b87abe7226e62eec73dcb2350b36b703d42492ab749c7f05d478f0",
+        "setpoint": "f28fb38789bc8ca1a81417f1f4e5fee715e2bfd674f9752c8572a4e5f01a69a0"
+      },
+      "run2": {
+        "rgb64": "1357d65b0159364b300d13241b662a5f2667bcc0231e01249ef5974dbb0b8ff6",
+        "rgb256": "909e9adb167642c50aff5eb817c55e479ef29483135dcb78cc414fbf65ada8ea",
+        "kin": "eff8a2c9e4b87abe7226e62eec73dcb2350b36b703d42492ab749c7f05d478f0",
+        "setpoint": "f28fb38789bc8ca1a81417f1f4e5fee715e2bfd674f9752c8572a4e5f01a69a0"
+      },
+      "bit_w_bit": {
+        "rgb64": true,
+        "rgb256": true,
+        "kin": true,
+        "setpoint": true
+      },
+      "pass": true
+    },
+    {
+      "scene_seed": 46648,
+      "K": 5,
+      "A": "A1",
+      "wynik": {
+        "success": true,
+        "fail_type": null,
+        "n_sem": 10
+      },
+      "run1": {
+        "rgb64": "51ce83005678fc040b1a34c28a91b8cc7b872d6885acd24aff036f2b70e8c3db",
+        "rgb256": "69aa6827e5319e877d7dac8ad4cb0f397ea4d4c4ce7f978203c786b8e11678bf",
+        "kin": "aa13bb8311fc821ee1f88a530d57771e050579302fc620ae9bab9c06c3c574ef",
+        "setpoint": "7e98d4027c2de735e11e06e6f7cc7e3b27a4c1ed992d7c088c3ca5c504cab1d5"
+      },
+      "run2": {
+        "rgb64": "51ce83005678fc040b1a34c28a91b8cc7b872d6885acd24aff036f2b70e8c3db",
+        "rgb256": "69aa6827e5319e877d7dac8ad4cb0f397ea4d4c4ce7f978203c786b8e11678bf",
+        "kin": "aa13bb8311fc821ee1f88a530d57771e050579302fc620ae9bab9c06c3c574ef",
+        "setpoint": "7e98d4027c2de735e11e06e6f7cc7e3b27a4c1ed992d7c088c3ca5c504cab1d5"
+      },
+      "bit_w_bit": {
+        "rgb64": true,
+        "rgb256": true,
+        "kin": true,
+        "setpoint": true
+      },
+      "pass": true
+    },
+    {
+      "scene_seed": 46602,
+      "K": 3,
+      "A": "A0",
+      "wynik": {
+        "success": true,
+        "fail_type": null,
+        "n_sem": 10
+      },
+      "run1": {
+        "rgb64": "7dfbafc8fedc835e93ea4c151bc7013a0e53bf254454d097ad7d740c627d8c90",
+        "rgb256": "7b8dbb61b4baabc1a584aeee386884216cb8a9e694c066bed62beda8c91911e9",
+        "kin": "b13c427e63d6a585da31fed4c4b8bba5c173d3e6bfbe8d862c59842dac8424cc",
+        "setpoint": "ebb60953159851bd27b7c4ffcfb2251b0a0da6ea61ba44e41d2a828597f81ee6"
+      },
+      "run2": {
+        "rgb64": "7dfbafc8fedc835e93ea4c151bc7013a0e53bf254454d097ad7d740c627d8c90",
+        "rgb256": "7b8dbb61b4baabc1a584aeee386884216cb8a9e694c066bed62beda8c91911e9",
+        "kin": "b13c427e63d6a585da31fed4c4b8bba5c173d3e6bfbe8d862c59842dac8424cc",
+        "setpoint": "ebb60953159851bd27b7c4ffcfb2251b0a0da6ea61ba44e41d2a828597f81ee6"
+      },
+      "bit_w_bit": {
+        "rgb64": true,
+        "rgb256": true,
+        "kin": true,
+        "setpoint": true
+      },
+      "pass": true
+    },
+    {
+      "scene_seed": 46601,
+      "K": 8,
+      "A": "A1",
+      "wynik": {
+        "success": true,
+        "fail_type": null,
+        "n_sem": 10
+      },
+      "run1": {
+        "rgb64": "44e1c702d79a347a25e55e9d336156ee27b7063763fe115d34bfa4f588079446",
+        "rgb256": "d78a52f7daa952fe19ca1f9e6b4e1afac1bd81f735c323208e67d474ecabc230",
+        "kin": "2029e0455b49c3218b2a0f630a372a891112c2251d8548635a86eb0df3d99a6d",
+        "setpoint": "d7efb5344126717d0ede1a967910e5889c3a6aeb900959179cedb5bfdbbe2c87"
+      },
+      "run2": {
+        "rgb64": "44e1c702d79a347a25e55e9d336156ee27b7063763fe115d34bfa4f588079446",
+        "rgb256": "d78a52f7daa952fe19ca1f9e6b4e1afac1bd81f735c323208e67d474ecabc230",
+        "kin": "2029e0455b49c3218b2a0f630a372a891112c2251d8548635a86eb0df3d99a6d",
+        "setpoint": "d7efb5344126717d0ede1a967910e5889c3a6aeb900959179cedb5bfdbbe2c87"
+      },
+      "bit_w_bit": {
+        "rgb64": true,
+        "rgb256": true,
+        "kin": true,
+        "setpoint": true
+      },
+      "pass": true
+    }
+  ],
+  "pass": true
+}

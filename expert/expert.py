@@ -69,9 +69,13 @@ def make_expert_for(env, obs, info, cfg: dict) -> HoverExpert:
     return HoverExpert(start_pos, hover, cfg["v_max"], cfg["t_ramp_min"])
 
 
-def run_expert_episode(env, scene_seed: int, level: str, cfg: dict) -> dict:
-    """Jeden epizod pod kontrola eksperta. Zwraca {success, fail_type, catastrophe}."""
-    obs, info = env.reset(scene_seed=scene_seed, level=level)
+def run_expert_episode(env, scene_seed: int, level: str, cfg: dict,
+                       scene_type: str = "3a") -> dict:
+    """Jeden epizod pod kontrola eksperta. Zwraca {success, fail_type, catastrophe}.
+
+    scene_type='3b' -> scena atrybutowa; ekspert celuje w GT wskazanego (info
+    gt_target_pos = designated), logika najazdu bez zmian."""
+    obs, info = env.reset(scene_seed=scene_seed, level=level, scene_type=scene_type)
     expert = make_expert_for(env, obs, info, cfg)
     done = False
     for k in range(POLICY_STEPS):
