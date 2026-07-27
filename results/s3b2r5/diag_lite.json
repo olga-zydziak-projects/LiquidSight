@@ -1,0 +1,45 @@
+{
+  "n_ep": 100,
+  "n_fail": 42,
+  "kubelki": {
+    "B1": {
+      "epizody": 5,
+      "pp": 5.0
+    },
+    "B2": {
+      "epizody": 0,
+      "pp": 0.0
+    },
+    "B3": {
+      "epizody": 4,
+      "pp": 4.0
+    },
+    "B4": {
+      "epizody": 33,
+      "pp": 33.0
+    }
+  },
+  "other_tick_dist": {
+    "n": 97,
+    "median": 0.28,
+    "frac_w_martwym_polu_<0.7": 0.825,
+    "hist": [
+      56,
+      14,
+      10,
+      3,
+      8,
+      6
+    ],
+    "bins": [
+      0,
+      0.35,
+      0.5,
+      0.7,
+      1.0,
+      1.5,
+      3.0
+    ]
+  },
+  "uwaga": "wzbogacony audyt (1 przebieg, frozen model) \u2014 oryginalny log bez dist/wyniku"
+}
