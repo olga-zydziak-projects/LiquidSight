@@ -1,0 +1,68 @@
+{
+  "params": {
+    "encoder": 126112,
+    "rdzen_gru5": 28608,
+    "glowa": 390,
+    "razem": 155110,
+    "in_dim": 83,
+    "target_dim": 5
+  },
+  "bc_collect_s": 251.5,
+  "stages": [
+    {
+      "round": 0,
+      "store": 270,
+      "rollout_succ_pct": null,
+      "best_val": 0.000462,
+      "best_epoch": 117,
+      "sec_rollout": 0.0,
+      "sec_train": 419.1
+    },
+    {
+      "round": 1,
+      "store": 370,
+      "rollout_succ_pct": 7.0,
+      "best_val": 0.003479,
+      "best_epoch": 119,
+      "sec_rollout": 103.4,
+      "sec_train": 736.9
+    },
+    {
+      "round": 2,
+      "store": 470,
+      "rollout_succ_pct": 47.0,
+      "best_val": 0.003964,
+      "best_epoch": 96,
+      "sec_rollout": 100.8,
+      "sec_train": 797.1
+    },
+    {
+      "round": 3,
+      "store": 570,
+      "rollout_succ_pct": 55.0,
+      "best_val": 0.005624,
+      "best_epoch": 113,
+      "sec_rollout": 106.2,
+      "sec_train": 990.3
+    },
+    {
+      "round": 4,
+      "store": 670,
+      "rollout_succ_pct": 72.0,
+      "best_val": 0.005935,
+      "best_epoch": 6,
+      "sec_rollout": 105.7,
+      "sec_train": 956.4
+    }
+  ],
+  "total_cycle_s": 4567.4,
+  "total_cycle_h": 1.27,
+  "contract_asserts": {
+    "n_frames": 84000,
+    "n_deliveries": 1964,
+    "delivery_frame_ok": true,
+    "age_monotonic_ok": true,
+    "conf_nie_w_wejsciu": true
+  },
+  "ckpt": "/home/olga/projects/liquidsight/ckpt/s3b2r4/policy_gc5.pt"
+}

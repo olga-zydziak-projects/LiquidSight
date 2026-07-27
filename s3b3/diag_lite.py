@@ -59,6 +59,12 @@ def bucket(ep):
 
 
 def main():
+    # opcjonalny tag (np. 's3b2r4') przekierowuje CKPT/OUT — reszta bez zmian
+    global OUT, CKPT
+    if len(sys.argv) > 1:
+        tag = sys.argv[1]
+        OUT = os.path.join(_ROOT, "results", tag)
+        CKPT = os.path.join(_ROOT, "ckpt", tag, "policy_gc5.pt")
     device = get_device(); cfg = load_cfg(); env = make_env(cfg)
     model = PolicyGC5().to(device); model.load_state_dict(torch.load(CKPT, map_location=device)); model.eval()
     client = GrounderClient()
