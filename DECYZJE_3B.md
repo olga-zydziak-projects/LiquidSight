@@ -106,3 +106,4 @@ używanymi w fazie 3a). Pule treningu BC (46000–46299) i eval (46500–46599) 
 
 **ANEKS-3B (2026-07-26):** D3 zrewidowane — conf usuniety z wejscia polityki, dane live-fed; wg ANEKS_3B_KANAL.md.
 **ANEKS-3B-2 (2026-07-27):** DIAG-lite dekomponuje porazki PRECONDITION-R (B4=27 pp dominuje: lock poprawny, epizod przegrany); dzwignie L1 nieaktywna / L2 marginalna → reguła L3 STOP (bez treningu); wg ANEKS_3B2_PERCEPCJA.md.
+**ANEKS-3B-3 (2026-07-27):** DIAG-B4 — B4 (27 pp) to precyzja dwell (near-miss 96%, box dokladny ~0.5px, korelacja Δbox↔Δhover 0.22); dzwignie F1 nieaktywna, F2 gating + F3 (+1 runda DAgger, pula 47100-47199) aktywne; wg ANEKS_3B3_PRECYZJA.md.
