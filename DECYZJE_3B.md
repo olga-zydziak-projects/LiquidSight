@@ -105,3 +105,4 @@ używanymi w fazie 3a). Pule treningu BC (46000–46299) i eval (46500–46599) 
    (realne K5/A1) **oraz** 46602 (K3/A0) i 46601 (K8/A1) realizujących intencję etykiet.
 
 **ANEKS-3B (2026-07-26):** D3 zrewidowane — conf usuniety z wejscia polityki, dane live-fed; wg ANEKS_3B_KANAL.md.
+**ANEKS-3B-2 (2026-07-27):** DIAG-lite dekomponuje porazki PRECONDITION-R (B4=27 pp dominuje: lock poprawny, epizod przegrany); dzwignie L1 nieaktywna / L2 marginalna → reguła L3 STOP (bez treningu); wg ANEKS_3B2_PERCEPCJA.md.

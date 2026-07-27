@@ -1,0 +1,802 @@
+[
+  {
+    "seed": 46500,
+    "K": 3,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46501,
+    "K": 5,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46502,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46503,
+    "K": 3,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46504,
+    "K": 5,
+    "A": "A1",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "bucket": "B3"
+  },
+  {
+    "seed": 46505,
+    "K": 8,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46506,
+    "K": 3,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46507,
+    "K": 5,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46508,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46509,
+    "K": 3,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46510,
+    "K": 5,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46511,
+    "K": 8,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46512,
+    "K": 3,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46513,
+    "K": 5,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46514,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46515,
+    "K": 3,
+    "A": "A1",
+    "success": false,
+    "fail_type": "dwell",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46516,
+    "K": 5,
+    "A": "A1",
+    "success": false,
+    "fail_type": "dwell",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46517,
+    "K": 8,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46518,
+    "K": 3,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46519,
+    "K": 5,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46520,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46521,
+    "K": 3,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46522,
+    "K": 5,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46523,
+    "K": 8,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46524,
+    "K": 3,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46525,
+    "K": 5,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46526,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46527,
+    "K": 3,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46528,
+    "K": 5,
+    "A": "A1",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46529,
+    "K": 8,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46530,
+    "K": 3,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46531,
+    "K": 5,
+    "A": "A0",
+    "success": false,
+    "fail_type": "dwell",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46532,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46533,
+    "K": 3,
+    "A": "A1",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "bucket": "B1"
+  },
+  {
+    "seed": 46534,
+    "K": 5,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46535,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46536,
+    "K": 3,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46537,
+    "K": 5,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46538,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46539,
+    "K": 3,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46540,
+    "K": 5,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46541,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46542,
+    "K": 3,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46543,
+    "K": 5,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46544,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46545,
+    "K": 3,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46546,
+    "K": 5,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46547,
+    "K": 8,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46548,
+    "K": 3,
+    "A": "A0",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46549,
+    "K": 5,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46550,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46551,
+    "K": 3,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46552,
+    "K": 5,
+    "A": "A1",
+    "success": false,
+    "fail_type": "dwell",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46553,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "dwell",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46554,
+    "K": 3,
+    "A": "A0",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46555,
+    "K": 5,
+    "A": "A0",
+    "success": false,
+    "fail_type": "dwell",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46556,
+    "K": 8,
+    "A": "A0",
+    "success": false,
+    "fail_type": "dwell",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46557,
+    "K": 3,
+    "A": "A1",
+    "success": false,
+    "fail_type": "dwell",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46558,
+    "K": 5,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46559,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "dwell",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46560,
+    "K": 3,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46561,
+    "K": 5,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46562,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46563,
+    "K": 3,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46564,
+    "K": 5,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46565,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "bucket": "B3"
+  },
+  {
+    "seed": 46566,
+    "K": 3,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46567,
+    "K": 5,
+    "A": "A0",
+    "success": false,
+    "fail_type": "dwell",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46568,
+    "K": 8,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46569,
+    "K": 3,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46570,
+    "K": 5,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46571,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46572,
+    "K": 3,
+    "A": "A0",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46573,
+    "K": 5,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46574,
+    "K": 8,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46575,
+    "K": 3,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46576,
+    "K": 5,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46577,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "bucket": "B3"
+  },
+  {
+    "seed": 46578,
+    "K": 3,
+    "A": "A0",
+    "success": false,
+    "fail_type": "wrong_lock",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46579,
+    "K": 5,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46580,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46581,
+    "K": 3,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46582,
+    "K": 5,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46583,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46584,
+    "K": 3,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46585,
+    "K": 5,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "bucket": "B1"
+  },
+  {
+    "seed": 46586,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46587,
+    "K": 3,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46588,
+    "K": 5,
+    "A": "A1",
+    "success": false,
+    "fail_type": "dwell",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46589,
+    "K": 8,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "bucket": "B1"
+  },
+  {
+    "seed": 46590,
+    "K": 3,
+    "A": "A0",
+    "success": false,
+    "fail_type": "no_arrival",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46591,
+    "K": 5,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46592,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46593,
+    "K": 3,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46594,
+    "K": 5,
+    "A": "A1",
+    "success": false,
+    "fail_type": "no_arrival",
+    "bucket": "B4"
+  },
+  {
+    "seed": 46595,
+    "K": 8,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46596,
+    "K": 3,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46597,
+    "K": 5,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46598,
+    "K": 8,
+    "A": "A0",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  },
+  {
+    "seed": 46599,
+    "K": 3,
+    "A": "A1",
+    "success": true,
+    "fail_type": null,
+    "bucket": "OK"
+  }
+]
