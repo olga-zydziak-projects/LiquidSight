@@ -1,0 +1,46 @@
+{
+  "sufit_GTfed_pct": 100.0,
+  "live_pct": 12.0,
+  "strata_total_pp": 88.0,
+  "i_pozaFOV_falszywe_locki_pp": 0.0,
+  "ii_bledy_groundera_wFOV_pp": 0.0,
+  "iii_conf_shift_polityka_pp": 88.0,
+  "modes": {
+    "live": {
+      "mode": "live",
+      "sukces_pct": 12.0,
+      "wrong_lock": 10,
+      "no_arrival": 31,
+      "dwell": 3,
+      "fail_types": {
+        "no_arrival": 31,
+        "wrong_lock": 10,
+        "dwell": 3
+      }
+    },
+    "gate_infov": {
+      "mode": "gate_infov",
+      "sukces_pct": 12.0,
+      "wrong_lock": 11,
+      "no_arrival": 31,
+      "dwell": 2,
+      "fail_types": {
+        "no_arrival": 31,
+        "wrong_lock": 11,
+        "dwell": 2
+      }
+    },
+    "oracle": {
+      "mode": "oracle",
+      "sukces_pct": 12.0,
+      "wrong_lock": 9,
+      "no_arrival": 31,
+      "dwell": 4,
+      "fail_types": {
+        "no_arrival": 31,
+        "wrong_lock": 9,
+        "dwell": 4
+      }
+    }
+  }
+}

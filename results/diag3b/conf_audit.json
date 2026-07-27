@@ -1,0 +1,13 @@
+{
+  "yolo_frozen_threshold": 0.0,
+  "conf_transform_w_kanale": "RAW (bez normalizacji/klipu) \u2014 target[4]=surowy score; trening GT-fed conf=1.0",
+  "conf_median": {
+    "trening_GTfed": 1.0,
+    "s3b0_offline_yolo": 0.0239,
+    "live_yolo_in_fov": 0.017,
+    "live_yolo_out_fov": 0.0046,
+    "live_owlv2_in_fov": 0.1766,
+    "live_owlv2_out_fov": 0.0002
+  },
+  "wniosek": "conf-shift trening(1.0) vs live(~0.02 YOLO / ~0.18 OWLv2) \u2014 polityka OOD na kanale conf; niska conf NIE psuje precyzji@1 groundera (top-1 box poprawny), psuje WEJSCIE polityki"
+}

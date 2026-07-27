@@ -1,0 +1,182 @@
+{
+  "YOLO_World": {
+    "in_fov": {
+      "n": 104,
+      "designated": 85.6,
+      "other": 9.6,
+      "background": 0.0,
+      "no_detection": 4.8
+    },
+    "out_fov": {
+      "n": 396,
+      "designated": 0.0,
+      "other": 11.1,
+      "background": 0.0,
+      "no_detection": 88.9
+    },
+    "per_cell_in_fov": {
+      "K3_A0": {
+        "n": 16,
+        "designated": 100.0,
+        "other": 0.0,
+        "background": 0.0,
+        "no_detection": 0.0
+      },
+      "K3_A1": {
+        "n": 17,
+        "designated": 64.7,
+        "other": 23.5,
+        "background": 0.0,
+        "no_detection": 11.8
+      },
+      "K5_A0": {
+        "n": 16,
+        "designated": 75.0,
+        "other": 6.2,
+        "background": 0.0,
+        "no_detection": 18.8
+      },
+      "K5_A1": {
+        "n": 19,
+        "designated": 94.7,
+        "other": 5.3,
+        "background": 0.0,
+        "no_detection": 0.0
+      },
+      "K8_A0": {
+        "n": 17,
+        "designated": 100.0,
+        "other": 0.0,
+        "background": 0.0,
+        "no_detection": 0.0
+      },
+      "K8_A1": {
+        "n": 19,
+        "designated": 78.9,
+        "other": 21.1,
+        "background": 0.0,
+        "no_detection": 0.0
+      }
+    },
+    "conf_median_in_fov": 0.017,
+    "conf_median_out_fov": 0.0046,
+    "conf_hist_bins": [
+      0,
+      0.05,
+      0.1,
+      0.2,
+      0.3,
+      0.5,
+      0.7,
+      1.01
+    ],
+    "conf_hist_in_fov": [
+      71,
+      7,
+      9,
+      2,
+      5,
+      5,
+      0
+    ],
+    "conf_hist_out_fov": [
+      39,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "OWLv2": {
+    "in_fov": {
+      "n": 104,
+      "designated": 99.0,
+      "other": 1.0,
+      "background": 0.0,
+      "no_detection": 0.0
+    },
+    "out_fov": {
+      "n": 396,
+      "designated": 0.0,
+      "other": 21.2,
+      "background": 78.8,
+      "no_detection": 0.0
+    },
+    "per_cell_in_fov": {
+      "K3_A0": {
+        "n": 16,
+        "designated": 100.0,
+        "other": 0.0,
+        "background": 0.0,
+        "no_detection": 0.0
+      },
+      "K3_A1": {
+        "n": 17,
+        "designated": 100.0,
+        "other": 0.0,
+        "background": 0.0,
+        "no_detection": 0.0
+      },
+      "K5_A0": {
+        "n": 16,
+        "designated": 100.0,
+        "other": 0.0,
+        "background": 0.0,
+        "no_detection": 0.0
+      },
+      "K5_A1": {
+        "n": 19,
+        "designated": 100.0,
+        "other": 0.0,
+        "background": 0.0,
+        "no_detection": 0.0
+      },
+      "K8_A0": {
+        "n": 17,
+        "designated": 100.0,
+        "other": 0.0,
+        "background": 0.0,
+        "no_detection": 0.0
+      },
+      "K8_A1": {
+        "n": 19,
+        "designated": 94.7,
+        "other": 5.3,
+        "background": 0.0,
+        "no_detection": 0.0
+      }
+    },
+    "conf_median_in_fov": 0.1766,
+    "conf_median_out_fov": 0.0002,
+    "conf_hist_bins": [
+      0,
+      0.05,
+      0.1,
+      0.2,
+      0.3,
+      0.5,
+      0.7,
+      1.01
+    ],
+    "conf_hist_in_fov": [
+      11,
+      23,
+      20,
+      7,
+      8,
+      14,
+      21
+    ],
+    "conf_hist_out_fov": [
+      381,
+      0,
+      7,
+      7,
+      1,
+      0,
+      0
+    ]
+  }
+}

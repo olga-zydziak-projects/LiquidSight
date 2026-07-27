@@ -1,0 +1,9 @@
+{
+  "mode": "oracle_conf1.0",
+  "sukces_pct": 80.0,
+  "fails": {
+    "dwell": 3,
+    "wrong_lock": 3,
+    "no_arrival": 4
+  }
+}

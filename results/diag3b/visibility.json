@@ -1,0 +1,39 @@
+{
+  "n_ticks": 500,
+  "n_frames_saved": 500,
+  "T2_widocznosc_per_cell": {
+    "K3_A0": 0.2,
+    "K3_A1": 0.212,
+    "K5_A0": 0.2,
+    "K5_A1": 0.211,
+    "K8_A0": 0.212,
+    "K8_A1": 0.211
+  },
+  "T2_widocznosc_min": 0.2,
+  "T2_widocznosc_max": 0.212,
+  "T2_widocznosc_srednia": 0.208,
+  "T2_profil_vs_dystans": {
+    "0.0m": 0.015,
+    "0.5m": 1.0,
+    "1.0m": 1.0,
+    "1.5m": 1.0,
+    "2.0m": 1.0
+  },
+  "T2_profil_vs_czas": {
+    "t0.0s": 1.0,
+    "t1.0s": 1.0,
+    "t2.0s": 0.08,
+    "t3.0s": 0.0,
+    "t4.0s": 0.0,
+    "t5.0s": 0.0,
+    "t6.0s": 0.0,
+    "t7.0s": 0.0,
+    "t8.0s": 0.0,
+    "t9.0s": 0.0
+  },
+  "T1_frac_tickow_wskazany_w_FOV": 0.208,
+  "T1_tickow_poza_FOV": 396,
+  "T1_poza_FOV_z_lockiem_ZOH": 396,
+  "T1_poza_FOV_no_lock": 0,
+  "T1_werdykt_kanal_GT": "FIZYCZNY (poza FOV kana\u0142 niesie ZOH ostatniego widocznego locka lub no-lock; NIGDY pozycji poza-FOV)"
+}

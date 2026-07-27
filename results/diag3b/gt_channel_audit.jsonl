@@ -1,0 +1,500 @@
+{"seed": 46600, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46600, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46600, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46600, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46600, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46600, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46600, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46600, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46600, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46600, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46601, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46601, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46601, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46601, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46601, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46601, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46601, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46601, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46601, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46601, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46602, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46602, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46602, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46602, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46602, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46602, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46602, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46602, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46602, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46602, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46603, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46603, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46603, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46603, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46603, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46603, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46603, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46603, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46603, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46603, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46604, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46604, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46604, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46604, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46604, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46604, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46604, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46604, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46604, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46604, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46605, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46605, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46605, "k": 24, "in_fov": true, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46605, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46605, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46605, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46605, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46605, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46605, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46605, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46606, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46606, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46606, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46606, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46606, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46606, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46606, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46606, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46606, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46606, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46607, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46607, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46607, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46607, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46607, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46607, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46607, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46607, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46607, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46607, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46608, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46608, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46608, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46608, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46608, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46608, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46608, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46608, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46608, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46608, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46609, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46609, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46609, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46609, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46609, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46609, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46609, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46609, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46609, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46609, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46610, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46610, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46610, "k": 24, "in_fov": true, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46610, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46610, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46610, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46610, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46610, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46610, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46610, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46611, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46611, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46611, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46611, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46611, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46611, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46611, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46611, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46611, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46611, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46612, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46612, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46612, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46612, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46612, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46612, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46612, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46612, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46612, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46612, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46613, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46613, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46613, "k": 24, "in_fov": true, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46613, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46613, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46613, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46613, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46613, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46613, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46613, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46614, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46614, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46614, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46614, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46614, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46614, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46614, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46614, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46614, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46614, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46615, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46615, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46615, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46615, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46615, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46615, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46615, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46615, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46615, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46615, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46616, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46616, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46616, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46616, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46616, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46616, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46616, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46616, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46616, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46616, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46617, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46617, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46617, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46617, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46617, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46617, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46617, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46617, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46617, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46617, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46618, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46618, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46618, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46618, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46618, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46618, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46618, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46618, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46618, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46618, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46619, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46619, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46619, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46619, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46619, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46619, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46619, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46619, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46619, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46619, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46620, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46620, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46620, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46620, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46620, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46620, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46620, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46620, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46620, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46620, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46621, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46621, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46621, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46621, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46621, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46621, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46621, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46621, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46621, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46621, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46622, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46622, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46622, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46622, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46622, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46622, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46622, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46622, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46622, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46622, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46623, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46623, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46623, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46623, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46623, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46623, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46623, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46623, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46623, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46623, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46624, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46624, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46624, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46624, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46624, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46624, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46624, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46624, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46624, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46624, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46625, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46625, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46625, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46625, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46625, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46625, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46625, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46625, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46625, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46625, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46626, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46626, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46626, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46626, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46626, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46626, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46626, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46626, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46626, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46626, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46627, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46627, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46627, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46627, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46627, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46627, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46627, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46627, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46627, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46627, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46628, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46628, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46628, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46628, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46628, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46628, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46628, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46628, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46628, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46628, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46629, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46629, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46629, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46629, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46629, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46629, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46629, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46629, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46629, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46629, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46630, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46630, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46630, "k": 24, "in_fov": true, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46630, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46630, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46630, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46630, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46630, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46630, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46630, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 24, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46631, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46631, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46631, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46631, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46631, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46631, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46631, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46631, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46631, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46631, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46632, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46632, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46632, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46632, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46632, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46632, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46632, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46632, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46632, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46632, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46633, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46633, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46633, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46633, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46633, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46633, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46633, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46633, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46633, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46633, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46634, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46634, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46634, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46634, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46634, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46634, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46634, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46634, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46634, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46634, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46635, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46635, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46635, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46635, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46635, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46635, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46635, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46635, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46635, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46635, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46636, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46636, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46636, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46636, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46636, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46636, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46636, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46636, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46636, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46636, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46637, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46637, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46637, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46637, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46637, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46637, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46637, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46637, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46637, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46637, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46638, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46638, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46638, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46638, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46638, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46638, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46638, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46638, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46638, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46638, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46639, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46639, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46639, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46639, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46639, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46639, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46639, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46639, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46639, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46639, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46640, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46640, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46640, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46640, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46640, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46640, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46640, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46640, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46640, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46640, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46641, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46641, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46641, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46641, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46641, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46641, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46641, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46641, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46641, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46641, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46642, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46642, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46642, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46642, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46642, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46642, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46642, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46642, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46642, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46642, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46643, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46643, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46643, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46643, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46643, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46643, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46643, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46643, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46643, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46643, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46644, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46644, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46644, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46644, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46644, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46644, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46644, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46644, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46644, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46644, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46645, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46645, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46645, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46645, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46645, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46645, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46645, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46645, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46645, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46645, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46646, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46646, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46646, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46646, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46646, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46646, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46646, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46646, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46646, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46646, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46647, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46647, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46647, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46647, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46647, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46647, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46647, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46647, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46647, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46647, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46648, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46648, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46648, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46648, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46648, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46648, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46648, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46648, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46648, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46648, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
+{"seed": 46649, "k": 0, "in_fov": true, "channel": "no_lock", "age_s": null}
+{"seed": 46649, "k": 12, "in_fov": true, "channel": "lock", "lock_src_k": 0, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46649, "k": 24, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 1.0, "src_was_infov": true}
+{"seed": 46649, "k": 36, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 2.0, "src_was_infov": true}
+{"seed": 46649, "k": 48, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 3.0, "src_was_infov": true}
+{"seed": 46649, "k": 60, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 4.0, "src_was_infov": true}
+{"seed": 46649, "k": 72, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 5.0, "src_was_infov": true}
+{"seed": 46649, "k": 84, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 6.0, "src_was_infov": true}
+{"seed": 46649, "k": 96, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 7.0, "src_was_infov": true}
+{"seed": 46649, "k": 108, "in_fov": false, "channel": "lock", "lock_src_k": 12, "age_s": 8.0, "src_was_infov": true}
