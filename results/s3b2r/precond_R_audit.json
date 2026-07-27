@@ -1,0 +1,63 @@
+{
+  "tag": "precond_R_audit",
+  "n": 100,
+  "sukces_pct": 67.0,
+  "wrong_lock_pct": 10.0,
+  "no_arrival": 12,
+  "dwell": 11,
+  "katastrofy": 0,
+  "per_cell": {
+    "K3_A0": {
+      "n": 17,
+      "sukces_pct": 64.7,
+      "wrong_lock": 4
+    },
+    "K3_A1": {
+      "n": 17,
+      "sukces_pct": 82.4,
+      "wrong_lock": 1
+    },
+    "K5_A0": {
+      "n": 17,
+      "sukces_pct": 76.5,
+      "wrong_lock": 0
+    },
+    "K5_A1": {
+      "n": 16,
+      "sukces_pct": 50.0,
+      "wrong_lock": 2
+    },
+    "K8_A0": {
+      "n": 17,
+      "sukces_pct": 82.4,
+      "wrong_lock": 0
+    },
+    "K8_A1": {
+      "n": 16,
+      "sukces_pct": 43.8,
+      "wrong_lock": 3
+    }
+  },
+  "tick_precision_pct": {
+    "designated": 20.8,
+    "other": 10.1,
+    "background": 0.0,
+    "no_detection": 69.1
+  },
+  "flip_rate_median": 0.0,
+  "age_hist_bins": [
+    0,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.01
+  ],
+  "age_hist": [
+    2472,
+    2178,
+    2148,
+    2046,
+    3156
+  ]
+}

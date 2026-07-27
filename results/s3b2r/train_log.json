@@ -1,0 +1,59 @@
+{
+  "params": {
+    "encoder": 126112,
+    "rdzen_gru5": 28608,
+    "glowa": 390,
+    "razem": 155110,
+    "in_dim": 83,
+    "target_dim": 5
+  },
+  "bc_collect_s": 230.8,
+  "stages": [
+    {
+      "round": 0,
+      "store": 270,
+      "rollout_succ_pct": null,
+      "best_val": 0.000461,
+      "best_epoch": 117,
+      "sec_rollout": 0.0,
+      "sec_train": 304.9
+    },
+    {
+      "round": 1,
+      "store": 370,
+      "rollout_succ_pct": 8.0,
+      "best_val": 0.003619,
+      "best_epoch": 99,
+      "sec_rollout": 95.7,
+      "sec_train": 460.1
+    },
+    {
+      "round": 2,
+      "store": 470,
+      "rollout_succ_pct": 46.0,
+      "best_val": 0.004913,
+      "best_epoch": 106,
+      "sec_rollout": 94.2,
+      "sec_train": 731.9
+    },
+    {
+      "round": 3,
+      "store": 570,
+      "rollout_succ_pct": 55.0,
+      "best_val": 0.004525,
+      "best_epoch": 115,
+      "sec_rollout": 95.0,
+      "sec_train": 685.3
+    }
+  ],
+  "total_cycle_s": 2697.9,
+  "total_cycle_h": 0.75,
+  "contract_asserts": {
+    "n_frames": 72000,
+    "n_deliveries": 1887,
+    "delivery_frame_ok": true,
+    "age_monotonic_ok": true,
+    "conf_nie_w_wejsciu": true
+  },
+  "ckpt": "/home/olga/projects/liquidsight/ckpt/s3b2r/policy_gc5.pt"
+}
