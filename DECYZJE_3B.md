@@ -103,3 +103,5 @@ używanymi w fazie 3a). Pule treningu BC (46000–46299) i eval (46500–46599) 
 2. **Etykiety seedów T4 promptu.** Prompt oznaczył 46600=(K3/A0), 46648=(K8/A1); formuła D4
    mapuje **oba na K=5/A1**. Formuła jest wiążąca; s3b_env_det uruchomiono na 46600/46648
    (realne K5/A1) **oraz** 46602 (K3/A0) i 46601 (K8/A1) realizujących intencję etykiet.
+
+**ANEKS-3B (2026-07-26):** D3 zrewidowane — conf usuniety z wejscia polityki, dane live-fed; wg ANEKS_3B_KANAL.md.
