@@ -1,0 +1,42 @@
+{
+  "tag": "precond_R",
+  "n": 100,
+  "sukces_pct": 53.0,
+  "wrong_lock_pct": 17.0,
+  "no_arrival": 16,
+  "dwell": 14,
+  "katastrofy": 0,
+  "per_cell": {
+    "K3_A0": {
+      "n": 17,
+      "sukces_pct": 58.8,
+      "wrong_lock": 2
+    },
+    "K3_A1": {
+      "n": 17,
+      "sukces_pct": 70.6,
+      "wrong_lock": 1
+    },
+    "K5_A0": {
+      "n": 17,
+      "sukces_pct": 64.7,
+      "wrong_lock": 2
+    },
+    "K5_A1": {
+      "n": 16,
+      "sukces_pct": 25.0,
+      "wrong_lock": 5
+    },
+    "K8_A0": {
+      "n": 17,
+      "sukces_pct": 64.7,
+      "wrong_lock": 3
+    },
+    "K8_A1": {
+      "n": 16,
+      "sukces_pct": 31.2,
+      "wrong_lock": 4
+    }
+  },
+  "verdict": "FAIL"
+}
