@@ -79,7 +79,8 @@ class Tracker5:
         return np.array([cx, cy, w, h, age_n], np.float32)
 
 
-def episode_live(env, client, seed, cfg, controller, model=None, device=None, conf_log=None):
+def episode_live(env, client, seed, cfg, controller, model=None, device=None, conf_log=None,
+                 box_source="live"):
     obs, info = env.reset(scene_seed=seed, level="T0", scene_type="3b")
     command, did = info["command"], info["designated_id"]
     expert = make_expert_for(env, obs, info, cfg) if controller in ("expert", "dagger") else None
@@ -101,10 +102,14 @@ def episode_live(env, client, seed, cfg, controller, model=None, device=None, co
             action, h = model.act(obs, target5, h, device)
         obs, info, done = env.step(action)
         if k % TICK_EVERY == 0 and info.get("rgb256") is not None:
-            box, conf, _ = client.query(info["rgb256"], command)
-            tr.observe(k, box)                     # conf NIE wchodzi
+            if box_source == "gt":                 # Z2' GT-fed: box zrodlowy = gt_bbox_256
+                box, conf = info.get("gt_bbox_256"), None
+            else:                                  # live: zywy YOLO
+                box, conf, _ = client.query(info["rgb256"], command)
+            tr.observe(k, box)                     # conf NIE wchodzi (kanal 5-dim)
             if conf_log is not None:
-                conf_log.append({"seed": seed, "k": k, "conf": conf, "det": box is not None})
+                conf_log.append({"seed": seed, "k": k, "conf": conf, "det": box is not None,
+                                 "src": box_source})
         if done:
             break
     out = {"length": len(rgb) if rgb else (k + 1), "success": bool(info["success"]),
