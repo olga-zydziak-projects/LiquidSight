@@ -1,0 +1,97 @@
+{
+  "params": {
+    "encoder": 126112,
+    "rdzen_gru5": 28608,
+    "glowa": 390,
+    "razem": 155110,
+    "in_dim": 83,
+    "target_dim": 5
+  },
+  "val_zrodla": {
+    "BC_live": 24,
+    "BC_gt": 8,
+    "r1": 8,
+    "r2": 8,
+    "r3": 8
+  },
+  "vel_profil": {
+    "BC_live": {
+      "median": 0.0,
+      "p95": 0.924
+    },
+    "BC_gt": {
+      "median": 0.0,
+      "p95": 0.921
+    },
+    "r1": {
+      "median": 0.0,
+      "p95": 0.919
+    },
+    "r2": {
+      "median": 0.0,
+      "p95": 0.936
+    },
+    "r3": {
+      "median": 0.0,
+      "p95": 0.924
+    }
+  },
+  "best_epochs": [
+    116,
+    100,
+    119,
+    105
+  ],
+  "stages": [
+    {
+      "round": 0,
+      "train": 368,
+      "val": 32,
+      "rollout_succ_pct": null,
+      "best_val": 0.000181,
+      "best_epoch": 116,
+      "sec_rollout": 0.0,
+      "sec_train": 974.9
+    },
+    {
+      "round": 1,
+      "train": 460,
+      "val": 40,
+      "rollout_succ_pct": 10.0,
+      "best_val": 0.006221,
+      "best_epoch": 100,
+      "sec_rollout": 119.6,
+      "sec_train": 563.8
+    },
+    {
+      "round": 2,
+      "train": 552,
+      "val": 48,
+      "rollout_succ_pct": 49.0,
+      "best_val": 0.00917,
+      "best_epoch": 119,
+      "sec_rollout": 114.2,
+      "sec_train": 681.9
+    },
+    {
+      "round": 3,
+      "train": 644,
+      "val": 56,
+      "rollout_succ_pct": 59.0,
+      "best_val": 0.010842,
+      "best_epoch": 105,
+      "sec_rollout": 114.4,
+      "sec_train": 823.3
+    }
+  ],
+  "total_cycle_s": 3969.0,
+  "total_cycle_h": 1.1,
+  "contract_asserts": {
+    "n_frames": 84000,
+    "delivery_frame_ok": true,
+    "age_monotonic_ok": true,
+    "conf_nie_w_wejsciu": true,
+    "F2_off_0_odrzucen": true,
+    "profil_predkosci_zgodny": true
+  }
+}

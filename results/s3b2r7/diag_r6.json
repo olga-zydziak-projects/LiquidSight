@@ -1,0 +1,32 @@
+{
+  "n_ep": 100,
+  "n_fail": 40,
+  "kubelki": {
+    "B1": {
+      "ep": 5,
+      "pp": 5.0
+    },
+    "B2": {
+      "ep": 0,
+      "pp": 0.0
+    },
+    "B3": {
+      "ep": 6,
+      "pp": 6.0
+    },
+    "B4": {
+      "ep": 29,
+      "pp": 29.0
+    }
+  },
+  "wrong_lock": {
+    "total": 12,
+    "pierwszy_lock_zly": 2,
+    "kradziez_w_locie": 6,
+    "inne": 4,
+    "pierwszy_zly_pp": 2.0,
+    "kradziez_pp": 6.0
+  },
+  "other_tick_dist_median": 0.305,
+  "near_miss_B4_pct": 89.7
+}

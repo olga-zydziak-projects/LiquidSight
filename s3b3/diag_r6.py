@@ -25,8 +25,9 @@ from task import split_state  # noqa: E402
 from train.s3b2r import DT, EVAL_SEEDS, Tracker5  # noqa: E402
 from s3b3.live_grounder import TICK_EVERY, GrounderClient, iou  # noqa: E402
 
-OUT = os.path.join(_ROOT, "results", "s3b2r6")
-CKPT = os.path.join(_ROOT, "ckpt", "s3b2r6", "policy_gc5.pt")
+TAG = sys.argv[1] if len(sys.argv) > 1 else "s3b2r6"   # np. s3b2r7
+OUT = os.path.join(_ROOT, "results", TAG)
+CKPT = os.path.join(_ROOT, "ckpt", TAG, "policy_gc5.pt")
 BLIND, LATE_S, NEAR = 0.7, 3.0, 0.5
 
 
