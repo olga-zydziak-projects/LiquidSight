@@ -1,0 +1,9 @@
+{
+  "levels": ["p0.00", "p0.25", "p0.50", "p0.75", "L2", "L5"],
+  "korekta_z_T1": null,
+  "decyzja_T1": "siatka bazowa bez zmian (p0.5=30% L5=40%; poza pasmem [62,67] i poza klifem <=15%)",
+  "seeds_pomiar": [46500, 46549],
+  "n_per_level": 50,
+  "model": "ckpt/s3b2r/policy_gc5.pt",
+  "mask_map": {"p0.00": 45100, "p0.25": 45101, "p0.50": 45102, "p0.75": 45103, "L2": 45104, "L5": 45105}
+}

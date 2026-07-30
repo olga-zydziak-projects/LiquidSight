@@ -1,0 +1,11 @@
+{
+  "probe_p0.50_pct": 30.0,
+  "probe_L5_pct": 40.0,
+  "base_pct": 67.0,
+  "band": [
+    62.0,
+    67.0
+  ],
+  "extra_level": null,
+  "decyzja": "siatka bazowa bez zmian"
+}

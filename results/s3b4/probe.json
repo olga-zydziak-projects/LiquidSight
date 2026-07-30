@@ -1,0 +1,664 @@
+{
+  "model": "/home/olga/projects/liquidsight/ckpt/s3b2r/policy_gc5.pt",
+  "seeds": [
+    46550,
+    46569
+  ],
+  "n_per_level": 20,
+  "mask_pool": "45100+",
+  "mask_map": {
+    "probe_p0.50": 45150,
+    "probe_L5": 45151
+  },
+  "base_pct": 67.0,
+  "results": {
+    "probe_p0.50": {
+      "level": "probe_p0.50",
+      "mask_seed": 45150,
+      "n": 20,
+      "sukces_pct": 30.0,
+      "sd_binom_pp": 10.2,
+      "wrong_lock_pct": 20.0,
+      "wrong_lock_decomp": {
+        "pierwszy_zly": 2,
+        "kradziez": 0,
+        "inne": 2,
+        "pierwszy_zly_pp": 10.0,
+        "kradziez_pp": 0.0
+      },
+      "no_arrival": 3,
+      "dwell": 7,
+      "katastrofy": 0,
+      "near_miss_pct_of_fails": 85.7,
+      "eff_no_det_pct": 82.0,
+      "natural_no_det_pct": 64.5,
+      "dropout_pct": 50.5,
+      "n_entered_dwell": 14,
+      "age_at_dwell_entry_hist": {
+        "bins": [
+          0,
+          0.1,
+          0.25,
+          0.5,
+          0.75,
+          1.01
+        ],
+        "counts": [
+          4,
+          8,
+          2,
+          0,
+          0
+        ]
+      },
+      "per_cell": {
+        "K3_A0": {
+          "n": 3,
+          "sukces_pct": 66.7,
+          "wrong_lock": 1
+        },
+        "K3_A1": {
+          "n": 4,
+          "sukces_pct": 25.0,
+          "wrong_lock": 0
+        },
+        "K5_A0": {
+          "n": 3,
+          "sukces_pct": 0.0,
+          "wrong_lock": 0
+        },
+        "K5_A1": {
+          "n": 3,
+          "sukces_pct": 0.0,
+          "wrong_lock": 1
+        },
+        "K8_A0": {
+          "n": 4,
+          "sukces_pct": 75.0,
+          "wrong_lock": 1
+        },
+        "K8_A1": {
+          "n": 3,
+          "sukces_pct": 0.0,
+          "wrong_lock": 1
+        }
+      },
+      "episodes": [
+        {
+          "seed": 46550,
+          "K": 8,
+          "A": "A0",
+          "success": true,
+          "fail_type": null,
+          "min_dist": 0.053,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": 0.0625
+        },
+        {
+          "seed": 46551,
+          "K": 3,
+          "A": "A1",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.045,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": 0.1979166716337204
+        },
+        {
+          "seed": 46552,
+          "K": 5,
+          "A": "A1",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.235,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": 0.3020833432674408
+        },
+        {
+          "seed": 46553,
+          "K": 8,
+          "A": "A1",
+          "success": false,
+          "fail_type": "no_arrival",
+          "min_dist": 0.33,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": null
+        },
+        {
+          "seed": 46554,
+          "K": 3,
+          "A": "A0",
+          "success": false,
+          "fail_type": "wrong_lock",
+          "min_dist": 0.035,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": 0.1145833358168602
+        },
+        {
+          "seed": 46555,
+          "K": 5,
+          "A": "A0",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.159,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": 0.1041666641831398
+        },
+        {
+          "seed": 46556,
+          "K": 8,
+          "A": "A0",
+          "success": false,
+          "fail_type": "wrong_lock",
+          "min_dist": 0.406,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": null
+        },
+        {
+          "seed": 46557,
+          "K": 3,
+          "A": "A1",
+          "success": false,
+          "fail_type": "no_arrival",
+          "min_dist": 0.425,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": null
+        },
+        {
+          "seed": 46558,
+          "K": 5,
+          "A": "A1",
+          "success": false,
+          "fail_type": "wrong_lock",
+          "min_dist": 0.277,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": null
+        },
+        {
+          "seed": 46559,
+          "K": 8,
+          "A": "A1",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.21,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": 0.1354166716337204
+        },
+        {
+          "seed": 46560,
+          "K": 3,
+          "A": "A0",
+          "success": true,
+          "fail_type": null,
+          "min_dist": 0.121,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": 0.1041666641831398
+        },
+        {
+          "seed": 46561,
+          "K": 5,
+          "A": "A0",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.186,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": 0.1354166716337204
+        },
+        {
+          "seed": 46562,
+          "K": 8,
+          "A": "A0",
+          "success": true,
+          "fail_type": null,
+          "min_dist": 0.131,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": 0.2708333432674408
+        },
+        {
+          "seed": 46563,
+          "K": 3,
+          "A": "A1",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.053,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": 0.1875
+        },
+        {
+          "seed": 46564,
+          "K": 5,
+          "A": "A1",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.087,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": 0.1875
+        },
+        {
+          "seed": 46565,
+          "K": 8,
+          "A": "A1",
+          "success": false,
+          "fail_type": "wrong_lock",
+          "min_dist": 0.546,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": null
+        },
+        {
+          "seed": 46566,
+          "K": 3,
+          "A": "A0",
+          "success": true,
+          "fail_type": null,
+          "min_dist": 0.039,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": 0.0625
+        },
+        {
+          "seed": 46567,
+          "K": 5,
+          "A": "A0",
+          "success": false,
+          "fail_type": "no_arrival",
+          "min_dist": 0.652,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": null
+        },
+        {
+          "seed": 46568,
+          "K": 8,
+          "A": "A0",
+          "success": true,
+          "fail_type": null,
+          "min_dist": 0.02,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": 0.0833333358168602
+        },
+        {
+          "seed": 46569,
+          "K": 3,
+          "A": "A1",
+          "success": true,
+          "fail_type": null,
+          "min_dist": 0.003,
+          "first_lock": null,
+          "burst_window": null,
+          "age_at_dwell_entry": 0.0625
+        }
+      ]
+    },
+    "probe_L5": {
+      "level": "probe_L5",
+      "mask_seed": 45151,
+      "n": 20,
+      "sukces_pct": 40.0,
+      "sd_binom_pp": 11.0,
+      "wrong_lock_pct": 10.0,
+      "wrong_lock_decomp": {
+        "pierwszy_zly": 0,
+        "kradziez": 0,
+        "inne": 2,
+        "pierwszy_zly_pp": 0.0,
+        "kradziez_pp": 0.0
+      },
+      "no_arrival": 1,
+      "dwell": 9,
+      "katastrofy": 0,
+      "near_miss_pct_of_fails": 100.0,
+      "eff_no_det_pct": 79.5,
+      "natural_no_det_pct": 68.5,
+      "dropout_pct": 50.0,
+      "n_entered_dwell": 18,
+      "age_at_dwell_entry_hist": {
+        "bins": [
+          0,
+          0.1,
+          0.25,
+          0.5,
+          0.75,
+          1.01
+        ],
+        "counts": [
+          8,
+          9,
+          1,
+          0,
+          0
+        ]
+      },
+      "per_cell": {
+        "K3_A0": {
+          "n": 3,
+          "sukces_pct": 66.7,
+          "wrong_lock": 1
+        },
+        "K3_A1": {
+          "n": 4,
+          "sukces_pct": 50.0,
+          "wrong_lock": 0
+        },
+        "K5_A0": {
+          "n": 3,
+          "sukces_pct": 33.3,
+          "wrong_lock": 0
+        },
+        "K5_A1": {
+          "n": 3,
+          "sukces_pct": 66.7,
+          "wrong_lock": 0
+        },
+        "K8_A0": {
+          "n": 4,
+          "sukces_pct": 25.0,
+          "wrong_lock": 0
+        },
+        "K8_A1": {
+          "n": 3,
+          "sukces_pct": 0.0,
+          "wrong_lock": 1
+        }
+      },
+      "episodes": [
+        {
+          "seed": 46550,
+          "K": 8,
+          "A": "A0",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.046,
+          "first_lock": 0,
+          "burst_window": [
+            1,
+            6
+          ],
+          "age_at_dwell_entry": 0.1875
+        },
+        {
+          "seed": 46551,
+          "K": 3,
+          "A": "A1",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.045,
+          "first_lock": 0,
+          "burst_window": [
+            1,
+            6
+          ],
+          "age_at_dwell_entry": 0.1979166716337204
+        },
+        {
+          "seed": 46552,
+          "K": 5,
+          "A": "A1",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.235,
+          "first_lock": 0,
+          "burst_window": [
+            4,
+            9
+          ],
+          "age_at_dwell_entry": 0.3020833432674408
+        },
+        {
+          "seed": 46553,
+          "K": 8,
+          "A": "A1",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.057,
+          "first_lock": 0,
+          "burst_window": [
+            4,
+            9
+          ],
+          "age_at_dwell_entry": 0.0520833320915699
+        },
+        {
+          "seed": 46554,
+          "K": 3,
+          "A": "A0",
+          "success": false,
+          "fail_type": "wrong_lock",
+          "min_dist": 0.035,
+          "first_lock": 0,
+          "burst_window": [
+            4,
+            9
+          ],
+          "age_at_dwell_entry": 0.1145833358168602
+        },
+        {
+          "seed": 46555,
+          "K": 5,
+          "A": "A0",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.172,
+          "first_lock": 0,
+          "burst_window": [
+            1,
+            6
+          ],
+          "age_at_dwell_entry": 0.21875
+        },
+        {
+          "seed": 46556,
+          "K": 8,
+          "A": "A0",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.025,
+          "first_lock": 0,
+          "burst_window": [
+            2,
+            7
+          ],
+          "age_at_dwell_entry": 0.0625
+        },
+        {
+          "seed": 46557,
+          "K": 3,
+          "A": "A1",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.219,
+          "first_lock": 0,
+          "burst_window": [
+            4,
+            9
+          ],
+          "age_at_dwell_entry": 0.1145833358168602
+        },
+        {
+          "seed": 46558,
+          "K": 5,
+          "A": "A1",
+          "success": true,
+          "fail_type": null,
+          "min_dist": 0.081,
+          "first_lock": 0,
+          "burst_window": [
+            2,
+            7
+          ],
+          "age_at_dwell_entry": 0.0833333358168602
+        },
+        {
+          "seed": 46559,
+          "K": 8,
+          "A": "A1",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.21,
+          "first_lock": 0,
+          "burst_window": [
+            3,
+            8
+          ],
+          "age_at_dwell_entry": 0.1354166716337204
+        },
+        {
+          "seed": 46560,
+          "K": 3,
+          "A": "A0",
+          "success": true,
+          "fail_type": null,
+          "min_dist": 0.08,
+          "first_lock": 0,
+          "burst_window": [
+            3,
+            8
+          ],
+          "age_at_dwell_entry": 0.09375
+        },
+        {
+          "seed": 46561,
+          "K": 5,
+          "A": "A0",
+          "success": true,
+          "fail_type": null,
+          "min_dist": 0.018,
+          "first_lock": 0,
+          "burst_window": [
+            3,
+            8
+          ],
+          "age_at_dwell_entry": 0.1041666641831398
+        },
+        {
+          "seed": 46562,
+          "K": 8,
+          "A": "A0",
+          "success": true,
+          "fail_type": null,
+          "min_dist": 0.118,
+          "first_lock": 0,
+          "burst_window": [
+            3,
+            8
+          ],
+          "age_at_dwell_entry": 0.1458333283662796
+        },
+        {
+          "seed": 46563,
+          "K": 3,
+          "A": "A1",
+          "success": true,
+          "fail_type": null,
+          "min_dist": 0.065,
+          "first_lock": 0,
+          "burst_window": [
+            4,
+            9
+          ],
+          "age_at_dwell_entry": 0.0625
+        },
+        {
+          "seed": 46564,
+          "K": 5,
+          "A": "A1",
+          "success": true,
+          "fail_type": null,
+          "min_dist": 0.021,
+          "first_lock": 0,
+          "burst_window": [
+            4,
+            9
+          ],
+          "age_at_dwell_entry": 0.0625
+        },
+        {
+          "seed": 46565,
+          "K": 8,
+          "A": "A1",
+          "success": false,
+          "fail_type": "wrong_lock",
+          "min_dist": 0.432,
+          "first_lock": 0,
+          "burst_window": [
+            1,
+            6
+          ],
+          "age_at_dwell_entry": null
+        },
+        {
+          "seed": 46566,
+          "K": 3,
+          "A": "A0",
+          "success": true,
+          "fail_type": null,
+          "min_dist": 0.016,
+          "first_lock": 0,
+          "burst_window": [
+            1,
+            6
+          ],
+          "age_at_dwell_entry": 0.1875
+        },
+        {
+          "seed": 46567,
+          "K": 5,
+          "A": "A0",
+          "success": false,
+          "fail_type": "dwell",
+          "min_dist": 0.199,
+          "first_lock": 0,
+          "burst_window": [
+            2,
+            7
+          ],
+          "age_at_dwell_entry": 0.0625
+        },
+        {
+          "seed": 46568,
+          "K": 8,
+          "A": "A0",
+          "success": false,
+          "fail_type": "no_arrival",
+          "min_dist": 0.297,
+          "first_lock": 0,
+          "burst_window": [
+            1,
+            6
+          ],
+          "age_at_dwell_entry": null
+        },
+        {
+          "seed": 46569,
+          "K": 3,
+          "A": "A1",
+          "success": true,
+          "fail_type": null,
+          "min_dist": 0.003,
+          "first_lock": 0,
+          "burst_window": [
+            3,
+            8
+          ],
+          "age_at_dwell_entry": 0.0625
+        }
+      ]
+    }
+  }
+}
