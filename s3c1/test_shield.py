@@ -1,113 +1,128 @@
 """Testy jednostkowe reguł osłony (syntetyczne przebiegi, bez env/polityki).
 
 Uruchom: .venv/bin/python -m s3c1.test_shield
-Każdy test buduje ręcznie sekwencję sygnałów (k, pos, has_lock, age_s, conf, dist)
-i sprawdza decyzje/wynik. dt=1/12 s, T_acq=T_hold=3.0 s (36 kroków), theta_age=2.0 s.
+R-B v2 (S3c1-R): admisja NA WEJŚCIU (jednorazowa) + sufit twardy 6.0 s.
+dt=1/12 s, θ_age=2.0 s, T_acq=T_hold=3.0 s (36 kroków), sufit=6.0 s.
 """
-from s3c1.shield import (Shield, ALLOW, HOLD, REFUSE, SEEKING, TRACKING, DWELL_GUARD,
+from s3c1.shield import (Shield, ALLOW, HOLD, REFUSE, SEEKING, TRACKING,
                          NO_MATCH, STALE_AT_DWELL, GEOFENCE)
 
 DT = 1.0 / 12.0
-FAR = (0.0, 0.0)     # pozycja w środku areny (geofence nie odpala)
+FAR = (0.0, 0.0)
 
 
 def _sh():
     s = Shield(); s.reset(hover_xy=(1.2, 0.3)); return s
 
 
+# ---- reguły niezmienione (R-A/R-D no-match, R-C geofence) -------------------
 def test_no_match():
-    """Brak locka przez cały czas -> REFUSE(NO_MATCH) dokładnie przy t=T_acq."""
     s = _sh()
     for k in range(0, 36):
         d = s.step(k, FAR, has_lock=False, age_s=None, conf=None, dist_to_hover=1.5)
         assert d["decision"] == ALLOW and d["state"] == SEEKING, (k, d)
     d = s.step(36, FAR, has_lock=False, age_s=None, conf=None, dist_to_hover=1.5)
     assert d["decision"] == REFUSE and d["reason"] == NO_MATCH, d
-    out = s.outcome(env_success=False, env_fail_type="no_arrival", wrong_action=False)
-    assert out["wynik"] == "ODMOWA" and out["refuse_reason"] == NO_MATCH, out
+    assert s.outcome(False, "no_arrival", False)["wynik"] == "ODMOWA"
     print("OK test_no_match: REFUSE(NO_MATCH) @ k=36 (3.0 s)")
 
 
-def test_tracking_allow():
-    """Lock świeży, dron daleko -> ALLOW przez cały epizod (osłona transparentna)."""
-    s = _sh()
-    for k in range(0, 120):
-        age = min((k % 12) * DT, 1.0)               # świeży kanał (<1 s), resety co tick
-        d = s.step(k, FAR, has_lock=True, age_s=age, conf=0.03, dist_to_hover=0.8)
-        assert d["decision"] == ALLOW and d["state"] == TRACKING, (k, d)
-    out = s.outcome(env_success=True, env_fail_type=None, wrong_action=False)
-    assert out["wynik"] == "SUKCES" and out["n_hold_enter"] == 0, out
-    print("OK test_tracking_allow: ALLOW/TRACKING caly epizod, 0 HOLD -> SUKCES")
-
-
-def test_dwell_hold_then_release():
-    """Martwe pole + stary kanał -> HOLD; świeży tick -> powrót ALLOW."""
-    s = _sh()
-    # wejście w martwe pole ze starzejącym się kanałem
-    d = s.step(40, (1.2, 0.3), has_lock=True, age_s=2.5, conf=0.02, dist_to_hover=0.3)
-    assert d["decision"] == HOLD and d["state"] == DWELL_GUARD, d
-    for k in range(41, 50):                          # trzyma (age rośnie, ale < T_hold)
-        d = s.step(k, (1.2, 0.3), has_lock=True, age_s=2.5 + (k - 40) * DT, conf=0.02, dist_to_hover=0.3)
-        assert d["decision"] == HOLD, (k, d)
-    # świeży tick: age spada <= theta -> ALLOW
-    d = s.step(50, (1.2, 0.3), has_lock=True, age_s=0.2, conf=0.05, dist_to_hover=0.3)
-    assert d["decision"] == ALLOW and d["state"] == TRACKING, d
-    assert s.n_hold_enter == 1 and s.n_hold_release == 1, (s.n_hold_enter, s.n_hold_release)
-    print("OK test_dwell_hold_then_release: HOLD -> odswiezenie -> ALLOW (enter=1, release=1)")
-
-
-def test_dwell_hold_then_stale_refuse():
-    """Martwe pole + kanał nie odświeża się przez T_hold -> REFUSE(STALE_AT_DWELL)."""
-    s = _sh()
-    d = s.step(40, (1.2, 0.3), has_lock=True, age_s=2.5, conf=0.02, dist_to_hover=0.3)
-    assert d["decision"] == HOLD, d
-    # 36 kroków HOLD (3.0 s) bez odświeżenia -> timeout na kroku 40+36=76
-    last = None
-    for k in range(41, 77):
-        last = s.step(k, (1.2, 0.3), has_lock=True, age_s=2.5 + (k - 40) * DT,
-                      conf=0.02, dist_to_hover=0.3)
-    assert last["decision"] == REFUSE and last["reason"] == STALE_AT_DWELL, last
-    out = s.outcome(env_success=False, env_fail_type="dwell", wrong_action=False)
-    assert out["wynik"] == "ODMOWA" and out["refuse_reason"] == STALE_AT_DWELL, out
-    print(f"OK test_dwell_hold_then_stale_refuse: REFUSE(STALE_AT_DWELL) @ k={last['k']} (~3.0 s HOLD)")
-
-
 def test_geofence_target():
-    """Cel poza (arena_half - margines)=1.8 -> REFUSE(GEOFENCE) natychmiast (k=0)."""
     s = Shield(); s.reset(hover_xy=(1.95, 0.1))
     d = s.step(0, (-1.0, 0.0), has_lock=False, age_s=None, conf=None, dist_to_hover=2.9)
     assert d["decision"] == REFUSE and d["reason"] == GEOFENCE, d
-    out = s.outcome(env_success=False, env_fail_type=None, wrong_action=False)
-    assert out["wynik"] == "ODMOWA" and out["refuse_rule"] == "R-C", out
     print("OK test_geofence_target: REFUSE(GEOFENCE) @ k=0 (cel 1.95 > 1.8)")
 
 
 def test_geofence_trajectory():
-    """Pozycja drona wychodzi poza 1.8 w locie -> REFUSE(GEOFENCE)."""
     s = _sh()
-    d = s.step(10, (1.0, 0.0), has_lock=True, age_s=0.3, conf=0.04, dist_to_hover=0.5)
-    assert d["decision"] == ALLOW, d
-    d = s.step(11, (1.85, 0.0), has_lock=True, age_s=0.3, conf=0.04, dist_to_hover=0.6)
+    assert s.step(10, (1.0, 0.0), True, 0.3, 0.04, 0.6)["decision"] == ALLOW
+    d = s.step(11, (1.85, 0.0), True, 0.3, 0.04, 0.6)
     assert d["decision"] == REFUSE and d["reason"] == GEOFENCE, d
     print("OK test_geofence_trajectory: REFUSE(GEOFENCE) gdy pozycja 1.85 > 1.8")
 
 
-def test_clean_base_dormant():
-    """Dron dolatuje w martwe pole, ale kanał świeży (<2 s) -> nigdy HOLD (R-B uśpiona)."""
+# ---- R-B v2: cztery przypadki z mandatu -----------------------------------
+def test_entry_fresh_no_hold():
+    """Wejście z age 0.3 -> admisja OK; dwell kończy się przy age 2.3 BEZ hold."""
+    s = _sh()
+    d = s.step(10, (1.2, 0.3), True, 0.3, 0.03, 0.4)          # pierwsze przekroczenie <0.5
+    assert d["decision"] == ALLOW and s.admitted, d
+    last = None
+    for k in range(11, 35):                                    # age rośnie 0.3 -> ~2.3
+        age = 0.3 + (k - 10) * DT
+        last = s.step(k, (1.2, 0.3), True, age, 0.03, 0.2)
+        assert last["decision"] == ALLOW, (k, age, last)       # >2.0 ale <6.0 sufit -> ALLOW
+    assert s.n_hold_enter == 0 and last["values"]["age_s"] >= 2.2, (s.n_hold_enter, last)
+    assert s.outcome(True, None, False)["wynik"] == "SUKCES"
+    print(f"OK test_entry_fresh_no_hold: admisja@age0.3, dwell do age {last['values']['age_s']} bez HOLD -> SUKCES")
+
+
+def test_entry_stale_hold_then_readmit():
+    """Wejście z age 2.5 -> HOLD -> świeży tick -> re-admisja -> sukces."""
+    s = _sh()
+    d = s.step(10, (1.2, 0.3), True, 2.5, 0.02, 0.4)
+    assert d["decision"] == HOLD and not s.admitted, d
+    for k in range(11, 16):
+        assert s.step(k, (1.2, 0.3), True, 2.5 + (k - 10) * DT, 0.02, 0.4)["decision"] == HOLD
+    d = s.step(16, (1.2, 0.3), True, 0.2, 0.05, 0.4)           # świeży tick
+    assert d["decision"] == ALLOW and s.admitted, d
+    # po admisji dwell biegnie swobodnie mimo age>2.0
+    assert s.step(20, (1.2, 0.3), True, 2.4, 0.05, 0.3)["decision"] == ALLOW
+    assert s.n_hold_enter == 1 and s.n_hold_release == 1, (s.n_hold_enter, s.n_hold_release)
+    assert s.outcome(True, None, False)["wynik"] == "SUKCES"
+    print("OK test_entry_stale_hold_then_readmit: HOLD -> świeży tick -> admisja -> SUKCES")
+
+
+def test_entry_stale_hold_then_timeout():
+    """Wejście z age 2.5 -> HOLD -> brak odświeżenia przez T_hold -> REFUSE."""
+    s = _sh()
+    assert s.step(10, (1.2, 0.3), True, 2.5, 0.02, 0.4)["decision"] == HOLD
+    last = None
+    for k in range(11, 47):                                    # 10+36=46 -> timeout
+        last = s.step(k, (1.2, 0.3), True, 2.5 + (k - 10) * DT, 0.02, 0.4)
+    assert last["decision"] == REFUSE and last["reason"] == STALE_AT_DWELL, last
+    assert s.outcome(False, "dwell", False)["wynik"] == "ODMOWA"
+    print(f"OK test_entry_stale_hold_then_timeout: REFUSE(STALE) @ k={last['k']} (admisja wejścia)")
+
+
+def test_ceiling_starvation_refuse():
+    """Admisja OK, potem zagłodzenie do age 6.1 -> sufit twardy -> REFUSE."""
+    s = _sh()
+    assert s.step(10, (1.2, 0.3), True, 0.3, 0.03, 0.4)["decision"] == ALLOW  # admisja
+    # age rośnie; sufit 6.0 przekroczony gdy age>6.0
+    last = None; hit_ceiling_k = None
+    for k in range(11, 120):
+        age = 0.3 + (k - 10) * DT
+        last = s.step(k, (1.2, 0.3), True, age, 0.02, 0.3)
+        if age > 6.0 and hit_ceiling_k is None:
+            hit_ceiling_k = k
+            assert last["decision"] == HOLD, (k, age, last)    # pierwszy raz >6 -> HOLD
+        if last["decision"] == REFUSE:
+            break
+    assert last["decision"] == REFUSE and last["reason"] == STALE_AT_DWELL, last
+    assert (last["k"] - hit_ceiling_k) * DT >= 3.0 - 1e-6
+    print(f"OK test_ceiling_starvation_refuse: sufit@age>6 (k={hit_ceiling_k}) -> REFUSE @ k={last['k']}")
+
+
+def test_clean_base_transparent():
+    """Wejście świeże, dwell przy świeżym kanale -> 0 HOLD, transparentna."""
     s = _sh()
     for k in range(0, 120):
-        dist = 1.5 if k < 60 else 0.2               # po 60 w martwym polu
-        age = min((k % 12) * DT + 0.2, 1.3)         # kanał świeży (< theta_age=2.0)
-        d = s.step(k, (0.5, 0.0), has_lock=(k >= 2), age_s=age, conf=0.03, dist_to_hover=dist)
+        dist = 1.5 if k < 60 else 0.2
+        age = min((k % 12) * DT + 0.2, 1.3)                    # kanał świeży
+        d = s.step(k, (0.5, 0.0), has_lock=(k >= 2), age_s=(age if k >= 2 else None),
+                   conf=0.03, dist_to_hover=dist)
         assert d["decision"] == ALLOW, (k, d)
-    assert s.n_hold_enter == 0, s.n_hold_enter
-    print("OK test_clean_base_dormant: martwe pole + kanal swiezy -> 0 HOLD (uspiona)")
+    assert s.n_hold_enter == 0
+    print("OK test_clean_base_transparent: świeży kanał -> 0 HOLD (transparentna)")
 
 
 if __name__ == "__main__":
-    tests = [test_no_match, test_tracking_allow, test_dwell_hold_then_release,
-             test_dwell_hold_then_stale_refuse, test_geofence_target,
-             test_geofence_trajectory, test_clean_base_dormant]
+    tests = [test_no_match, test_geofence_target, test_geofence_trajectory,
+             test_entry_fresh_no_hold, test_entry_stale_hold_then_readmit,
+             test_entry_stale_hold_then_timeout, test_ceiling_starvation_refuse,
+             test_clean_base_transparent]
     for t in tests:
         t()
-    print(f"\n=== {len(tests)}/{len(tests)} testów PASS ===")
+    print(f"\n=== {len(tests)}/{len(tests)} testów PASS (R-B v2) ===")

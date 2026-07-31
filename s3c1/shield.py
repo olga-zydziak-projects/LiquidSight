@@ -27,10 +27,11 @@ NO_MATCH, STALE_AT_DWELL, GEOFENCE, LOW_CONF_LOCK = \
 
 class Shield:
     def __init__(self, arena_half=2.0, margin=0.2, near=0.5, theta_age_s=2.0,
-                 t_acq_s=3.0, t_hold_s=3.0, dt=1.0 / 12.0):
+                 t_acq_s=3.0, t_hold_s=3.0, dt=1.0 / 12.0, age_ceiling_s=6.0):
         self.geo_lim = arena_half - margin           # 1.8 m
         self.near = near
         self.theta_age_s = theta_age_s
+        self.age_ceiling_s = age_ceiling_s           # sufit twardy (S3c1-R); G2: 0 sukcesow >6s
         self.t_acq_s = t_acq_s
         self.t_hold_s = t_hold_s
         self.dt = dt
@@ -40,7 +41,11 @@ class Shield:
         self.hover = (float(hover_xy[0]), float(hover_xy[1]))
         self.state = SEEKING
         self.terminal = None            # (reason, rule) po REFUSE
-        self.hold_start_k = None
+        # R-B v2: admisja na wejsciu (jednorazowa) + sufit twardy
+        self.entered = False            # czy przekroczono dist<near (przy locku)
+        self.admitted = False           # czy admisja dwell przyznana
+        self.entry_hold_start_k = None  # HOLD admisji wejscia
+        self.ceiling_hold_start_k = None  # HOLD sufitu twardego
         self.n_hold_enter = 0
         self.n_hold_release = 0
         self.trace = []                 # log decyzji per tick (pod overlay dema)
@@ -81,27 +86,54 @@ class Shield:
                         "rule": "R-A"}
             return {"k": k, "state": SEEKING, "decision": ALLOW, "reason": None, "rule": None}
 
-        # lock aktywny — R-B dwell-guard
-        guard = (dist < self.near) and (age_s is not None and age_s > self.theta_age_s)
-        if self.hold_start_k is not None:            # jesteśmy w HOLD
-            if not guard:                            # świeży tick lub wyjście z martwego pola
-                self.hold_start_k = None; self.n_hold_release += 1
-                self.state = TRACKING
+        # lock aktywny — R-B v2: admisja NA WEJSCIU (jednorazowa) + sufit twardy
+        old = (age_s is not None and age_s > self.theta_age_s)
+        # (a) wejscie: pierwsze przekroczenie dist<near w epizodzie (przy locku)
+        if not self.entered:
+            if dist < self.near:
+                self.entered = True
+                if old:                              # admisja odroczona -> HOLD
+                    self.entry_hold_start_k = k; self.n_hold_enter += 1
+                    self.state = DWELL_GUARD
+                    return {"k": k, "state": DWELL_GUARD, "decision": HOLD, "reason": None,
+                            "rule": "R-B", "detail": "admisja na wejściu: kanał stary"}
+                self.admitted = True; self.state = TRACKING
                 return {"k": k, "state": TRACKING, "decision": ALLOW, "reason": None,
-                        "rule": "R-B", "detail": "HOLD zwolniony (kanał odświeżony)"}
-            if (k - self.hold_start_k) * self.dt >= self.t_hold_s:
+                        "rule": "R-B", "detail": "admisja na wejściu OK"}
+            self.state = TRACKING                    # jeszcze poza martwym polem
+            return {"k": k, "state": TRACKING, "decision": ALLOW, "reason": None, "rule": None}
+        # (a2) HOLD admisji wejscia — czekamy na swiezy tick
+        if not self.admitted:
+            if not old:                              # swiezy tick -> admisja przyznana
+                self.admitted = True; self.entry_hold_start_k = None
+                self.n_hold_release += 1; self.state = TRACKING
+                return {"k": k, "state": TRACKING, "decision": ALLOW, "reason": None,
+                        "rule": "R-B", "detail": "admisja przyznana (świeży tick)"}
+            if (k - self.entry_hold_start_k) * self.dt >= self.t_hold_s:
                 self.terminal = (STALE_AT_DWELL, "R-B"); self.state = DONE
                 return {"k": k, "state": DONE, "decision": REFUSE, "reason": STALE_AT_DWELL,
-                        "rule": "R-B"}
+                        "rule": "R-B", "detail": "admisja na wejściu — timeout"}
             self.state = DWELL_GUARD
             return {"k": k, "state": DWELL_GUARD, "decision": HOLD, "reason": None, "rule": "R-B"}
-        else:
-            if guard:
-                self.hold_start_k = k; self.n_hold_enter += 1; self.state = DWELL_GUARD
+        # (b) po admisji: tylko sufit twardy age > age_ceiling
+        over_ceiling = (age_s is not None and age_s > self.age_ceiling_s)
+        if self.ceiling_hold_start_k is None:
+            if over_ceiling:
+                self.ceiling_hold_start_k = k; self.n_hold_enter += 1; self.state = DWELL_GUARD
                 return {"k": k, "state": DWELL_GUARD, "decision": HOLD, "reason": None,
-                        "rule": "R-B", "detail": "wejście HOLD (martwe pole + stary kanał)"}
-            self.state = TRACKING
+                        "rule": "R-B", "detail": "sufit twardy (age>6 s)"}
+            self.state = TRACKING                    # dwell biegnie swobodnie
             return {"k": k, "state": TRACKING, "decision": ALLOW, "reason": None, "rule": None}
+        if not over_ceiling:                         # sufit zwolniony (odswiezenie <=6 s)
+            self.ceiling_hold_start_k = None; self.n_hold_release += 1; self.state = TRACKING
+            return {"k": k, "state": TRACKING, "decision": ALLOW, "reason": None,
+                    "rule": "R-B", "detail": "sufit zwolniony"}
+        if (k - self.ceiling_hold_start_k) * self.dt >= self.t_hold_s:
+            self.terminal = (STALE_AT_DWELL, "R-B"); self.state = DONE
+            return {"k": k, "state": DONE, "decision": REFUSE, "reason": STALE_AT_DWELL,
+                    "rule": "R-B", "detail": "sufit twardy — timeout"}
+        self.state = DWELL_GUARD
+        return {"k": k, "state": DWELL_GUARD, "decision": HOLD, "reason": None, "rule": "R-B"}
 
     # -- podsumowanie epizodu -----------------------------------------------
     def outcome(self, env_success, env_fail_type, wrong_action):
