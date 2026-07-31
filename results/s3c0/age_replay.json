@@ -1,0 +1,297 @@
+{
+ "T3_age": {
+  "note": "age_at_dwell_entry znormalizowane (age_s/8.0). Tylko epizody ktore weszly w dwell.",
+  "bins_norm": [
+   0,
+   0.1,
+   0.25,
+   0.5,
+   0.75,
+   1.01
+  ],
+  "bins_sekundy": [
+   0.0,
+   0.8,
+   2.0,
+   4.0,
+   6.0,
+   8.08
+  ],
+  "per_level": {
+   "p0.00": {
+    "n_dwell": 45,
+    "succ_n": 40,
+    "fail_n": 5,
+    "succ_hist": [
+     19,
+     21,
+     0,
+     0,
+     0
+    ],
+    "fail_hist": [
+     1,
+     4,
+     0,
+     0,
+     0
+    ],
+    "succ_med": 0.1042,
+    "fail_med": 0.1042,
+    "succ_max": 0.1562,
+    "fail_min": 0.0625
+   },
+   "p0.25": {
+    "n_dwell": 44,
+    "succ_n": 33,
+    "fail_n": 11,
+    "succ_hist": [
+     11,
+     20,
+     2,
+     0,
+     0
+    ],
+    "fail_hist": [
+     3,
+     5,
+     0,
+     1,
+     2
+    ],
+    "succ_med": 0.1146,
+    "fail_med": 0.1667,
+    "succ_max": 0.2812,
+    "fail_min": 0.0417
+   },
+   "p0.50": {
+    "n_dwell": 38,
+    "succ_n": 22,
+    "fail_n": 16,
+    "succ_hist": [
+     7,
+     11,
+     4,
+     0,
+     0
+    ],
+    "fail_hist": [
+     3,
+     5,
+     0,
+     0,
+     8
+    ],
+    "succ_med": 0.1198,
+    "fail_med": 0.6146,
+    "succ_max": 0.2812,
+    "fail_min": 0.0417
+   },
+   "p0.75": {
+    "n_dwell": 30,
+    "succ_n": 15,
+    "fail_n": 15,
+    "succ_hist": [
+     1,
+     9,
+     5,
+     0,
+     0
+    ],
+    "fail_hist": [
+     1,
+     3,
+     0,
+     0,
+     11
+    ],
+    "succ_med": 0.1979,
+    "fail_med": 1.0,
+    "succ_max": 0.2917,
+    "fail_min": 0.0938
+   },
+   "L2": {
+    "n_dwell": 45,
+    "succ_n": 40,
+    "fail_n": 5,
+    "succ_hist": [
+     17,
+     20,
+     3,
+     0,
+     0
+    ],
+    "fail_hist": [
+     0,
+     5,
+     0,
+     0,
+     0
+    ],
+    "succ_med": 0.1094,
+    "fail_med": 0.1667,
+    "succ_max": 0.2917,
+    "fail_min": 0.1042
+   },
+   "L5": {
+    "n_dwell": 44,
+    "succ_n": 38,
+    "fail_n": 6,
+    "succ_hist": [
+     12,
+     23,
+     3,
+     0,
+     0
+    ],
+    "fail_hist": [
+     1,
+     5,
+     0,
+     0,
+     0
+    ],
+    "succ_med": 0.1198,
+    "fail_med": 0.1875,
+    "succ_max": 0.2917,
+    "fail_min": 0.0625
+   }
+  },
+  "pooled_all_levels": {
+   "succ_n": 188,
+   "fail_n": 58,
+   "succ_hist": [
+    67,
+    104,
+    17,
+    0,
+    0
+   ],
+   "fail_hist": [
+    9,
+    27,
+    0,
+    1,
+    21
+   ],
+   "succ_med": 0.1146,
+   "fail_med": 0.1927,
+   "succ_p95": 0.25,
+   "fail_min": 0.0417
+  },
+  "base_p0": {
+   "succ_n": 40,
+   "fail_n": 5,
+   "succ_hist": [
+    19,
+    21,
+    0,
+    0,
+    0
+   ],
+   "fail_hist": [
+    1,
+    4,
+    0,
+    0,
+    0
+   ],
+   "succ_med": 0.1042,
+   "succ_max": 0.1562
+  },
+  "theta_candidates": {
+   "theta_p95_succ": 0.25,
+   "theta_p90_succ": 0.2323
+  },
+  "proposals": [
+   {
+    "theta_age_norm": 0.2323,
+    "theta_age_s": 1.86,
+    "succ_lost": 19,
+    "succ_lost_pct_pooled": 10.1,
+    "fail_caught": 22,
+    "fail_caught_pct_pooled": 37.9,
+    "base_p0_episodes_touched": 0,
+    "base_p0_dwell_n": 45
+   },
+   {
+    "theta_age_norm": 0.25,
+    "theta_age_s": 2.0,
+    "succ_lost": 9,
+    "succ_lost_pct_pooled": 4.8,
+    "fail_caught": 22,
+    "fail_caught_pct_pooled": 37.9,
+    "base_p0_episodes_touched": 0,
+    "base_p0_dwell_n": 45
+   }
+  ]
+ },
+ "T4_replay": {
+  "R_A": {
+   "note": "ESTYMATA na logach bazy S3b2-R (100 epizodow, 46500-46599). NIE pomiar.",
+   "source_conf": "results/s3b2r/precond_R_audit_tick_audit.jsonl",
+   "source_outcome": "results/s3b2r/diag_lite_episodes.json",
+   "matrix": [
+    {
+     "theta_conf": 0.0023,
+     "n_episodes": 100,
+     "success_unchanged": 64,
+     "success_to_refuse": 3,
+     "wrong_to_refuse": 0,
+     "wrong_unchanged": 10,
+     "otherfail_to_refuse": 1,
+     "otherfail_unchanged": 22,
+     "no_lock_episode": 0
+    },
+    {
+     "theta_conf": 0.0042,
+     "n_episodes": 100,
+     "success_unchanged": 61,
+     "success_to_refuse": 6,
+     "wrong_to_refuse": 1,
+     "wrong_unchanged": 9,
+     "otherfail_to_refuse": 4,
+     "otherfail_unchanged": 19,
+     "no_lock_episode": 0
+    },
+    {
+     "theta_conf": 0.0145,
+     "n_episodes": 100,
+     "success_unchanged": 52,
+     "success_to_refuse": 15,
+     "wrong_to_refuse": 6,
+     "wrong_unchanged": 4,
+     "otherfail_to_refuse": 8,
+     "otherfail_unchanged": 15,
+     "no_lock_episode": 0
+    }
+   ]
+  },
+  "R_B": {
+   "note": "ESTYMATA na logach bazy p0.00 (50 epizodow 46500-46549, frozen S3b2-R; offset +13pp vs pop 67%). NIE pomiar.",
+   "source": "results/s3b4/measure.json [p0.00]",
+   "matrix": [
+    {
+     "theta_age_norm": 0.2323,
+     "theta_age_s": 1.86,
+     "n_episodes": 50,
+     "success_unchanged": 40,
+     "success_to_refuse": 0,
+     "fail_unchanged": 5,
+     "fail_to_refuse": 0,
+     "no_dwell_entry": 5
+    },
+    {
+     "theta_age_norm": 0.25,
+     "theta_age_s": 2.0,
+     "n_episodes": 50,
+     "success_unchanged": 40,
+     "success_to_refuse": 0,
+     "fail_unchanged": 5,
+     "fail_to_refuse": 0,
+     "no_dwell_entry": 5
+    }
+   ]
+  }
+ }
+}
