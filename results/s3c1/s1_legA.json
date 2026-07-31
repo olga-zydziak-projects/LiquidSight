@@ -1,0 +1,742 @@
+{
+  "leg": "A_clean",
+  "n": 100,
+  "p_drop": 0.0,
+  "base": {
+    "SUKCES": 67,
+    "wrong_action": 10,
+    "PORAZKA": 33,
+    "sukces_pct": 67.0,
+    "wrong_action_pct": 10.0
+  },
+  "shield": {
+    "SUKCES": 9,
+    "ODMOWA": 83,
+    "PORAZKA": 8,
+    "wrong_action": 1,
+    "sukces_pct": 9.0,
+    "odmowa_pct": 83.0,
+    "wrong_action_pct": 1.0
+  },
+  "konwersje": {
+    "wrong_action->odmowa": 9,
+    "porazka->odmowa": 16,
+    "sukces->odmowa": 58,
+    "bez_zmian": 17
+  },
+  "odmowy_per_powod": {
+    "STALE_AT_DWELL": 83
+  },
+  "n_hold_enter": 89,
+  "n_hold_release": 5,
+  "macierz_konwersji": {
+    "PORAZKA(inne) -> ODMOWA(STALE_AT_DWELL)": 16,
+    "PORAZKA(inne) -> PORAZKA": 7,
+    "PORAZKA(wrong_action) -> ODMOWA(STALE_AT_DWELL)": 9,
+    "PORAZKA(wrong_action) -> PORAZKA": 1,
+    "SUKCES -> ODMOWA(STALE_AT_DWELL)": 58,
+    "SUKCES -> SUKCES": 9
+  },
+  "episodes": [
+    {
+      "seed": 46500,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46501,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46502,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46503,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46504,
+      "base": "PORAZKA(wrong_action)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46505,
+      "base": "SUKCES",
+      "shield": "SUKCES",
+      "n_hold_enter": 0,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46506,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46507,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46508,
+      "base": "SUKCES",
+      "shield": "SUKCES",
+      "n_hold_enter": 1,
+      "n_hold_release": 1
+    },
+    {
+      "seed": 46509,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46510,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46511,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46512,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46513,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46514,
+      "base": "SUKCES",
+      "shield": "SUKCES",
+      "n_hold_enter": 1,
+      "n_hold_release": 1
+    },
+    {
+      "seed": 46515,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46516,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46517,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46518,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46519,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46520,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46521,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46522,
+      "base": "PORAZKA(inne)",
+      "shield": "PORAZKA",
+      "n_hold_enter": 0,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46523,
+      "base": "SUKCES",
+      "shield": "SUKCES",
+      "n_hold_enter": 2,
+      "n_hold_release": 1
+    },
+    {
+      "seed": 46524,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46525,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46526,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46527,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46528,
+      "base": "PORAZKA(wrong_action)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46529,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46530,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46531,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46532,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46533,
+      "base": "PORAZKA(wrong_action)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46534,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46535,
+      "base": "PORAZKA(wrong_action)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46536,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46537,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46538,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46539,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46540,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46541,
+      "base": "PORAZKA(inne)",
+      "shield": "PORAZKA",
+      "n_hold_enter": 0,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46542,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46543,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46544,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46545,
+      "base": "SUKCES",
+      "shield": "SUKCES",
+      "n_hold_enter": 0,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46546,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46547,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46548,
+      "base": "PORAZKA(wrong_action)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46549,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46550,
+      "base": "SUKCES",
+      "shield": "SUKCES",
+      "n_hold_enter": 1,
+      "n_hold_release": 1
+    },
+    {
+      "seed": 46551,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46552,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46553,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46554,
+      "base": "PORAZKA(wrong_action)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46555,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46556,
+      "base": "PORAZKA(inne)",
+      "shield": "PORAZKA",
+      "n_hold_enter": 0,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46557,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46558,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46559,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46560,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46561,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46562,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46563,
+      "base": "SUKCES",
+      "shield": "SUKCES",
+      "n_hold_enter": 0,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46564,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46565,
+      "base": "PORAZKA(wrong_action)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46566,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46567,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46568,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46569,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46570,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46571,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46572,
+      "base": "PORAZKA(wrong_action)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46573,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46574,
+      "base": "PORAZKA(inne)",
+      "shield": "PORAZKA",
+      "n_hold_enter": 0,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46575,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46576,
+      "base": "SUKCES",
+      "shield": "SUKCES",
+      "n_hold_enter": 0,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46577,
+      "base": "PORAZKA(wrong_action)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46578,
+      "base": "PORAZKA(wrong_action)",
+      "shield": "PORAZKA",
+      "n_hold_enter": 0,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46579,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46580,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46581,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46582,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46583,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46584,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46585,
+      "base": "PORAZKA(inne)",
+      "shield": "PORAZKA",
+      "n_hold_enter": 0,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46586,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46587,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46588,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46589,
+      "base": "PORAZKA(inne)",
+      "shield": "PORAZKA",
+      "n_hold_enter": 0,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46590,
+      "base": "PORAZKA(inne)",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46591,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46592,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46593,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46594,
+      "base": "PORAZKA(inne)",
+      "shield": "PORAZKA",
+      "n_hold_enter": 0,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46595,
+      "base": "SUKCES",
+      "shield": "SUKCES",
+      "n_hold_enter": 1,
+      "n_hold_release": 1
+    },
+    {
+      "seed": 46596,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46597,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46598,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    },
+    {
+      "seed": 46599,
+      "base": "SUKCES",
+      "shield": "ODMOWA(STALE_AT_DWELL)",
+      "n_hold_enter": 1,
+      "n_hold_release": 0
+    }
+  ]
+}
