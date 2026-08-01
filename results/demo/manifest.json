@@ -1,0 +1,86 @@
+{
+  "episodes": [
+    {
+      "act": "act1",
+      "seed": 46513,
+      "K": 5,
+      "A": "A0",
+      "command": "fly to the blue sphere",
+      "mask": {
+        "type": "clean"
+      },
+      "mask_seed": null,
+      "shield_mode": "shadow",
+      "wynik": "SUKCES",
+      "expect": "SUKCES",
+      "match": true,
+      "n_frames": 120
+    },
+    {
+      "act": "act2",
+      "seed": 46505,
+      "K": 8,
+      "A": "A1",
+      "command": "fly to the blue box",
+      "mask": {
+        "type": "clean"
+      },
+      "mask_seed": null,
+      "shield_mode": "apply",
+      "wynik": "SUKCES",
+      "expect": "SUKCES",
+      "match": true,
+      "n_frames": 120
+    },
+    {
+      "act": "act3",
+      "seed": 46507,
+      "K": 5,
+      "A": "A0",
+      "command": "fly to the green sphere",
+      "mask": {
+        "type": "burst",
+        "L": 5.0
+      },
+      "mask_seed": 45105,
+      "shield_mode": "shadow",
+      "wynik": "SUKCES",
+      "expect": "SUKCES",
+      "match": true,
+      "n_frames": 120
+    },
+    {
+      "act": "act4a",
+      "seed": 47425,
+      "K": 5,
+      "A": "A0",
+      "command": "fly to the blue cylinder",
+      "mask": {
+        "type": "geofence"
+      },
+      "mask_seed": null,
+      "shield_mode": "apply",
+      "wynik": "REFUSE(GEOFENCE)",
+      "expect": "REFUSE(GEOFENCE)",
+      "match": true,
+      "n_frames": 25
+    },
+    {
+      "act": "act4b",
+      "seed": 46503,
+      "K": 3,
+      "A": "A1",
+      "command": "fly to the blue sphere",
+      "mask": {
+        "type": "bernoulli",
+        "p": 0.5
+      },
+      "mask_seed": 45102,
+      "shield_mode": "apply",
+      "wynik": "REFUSE(STALE_AT_DWELL)",
+      "expect": "REFUSE(STALE_AT_DWELL)",
+      "match": true,
+      "n_frames": 110
+    }
+  ]
+}
