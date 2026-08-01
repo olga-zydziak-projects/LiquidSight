@@ -1,4 +1,4154 @@
 {
+ "46503": [
+  {
+   "k": 0,
+   "state": "SEEKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.0,
+   "values": {
+    "dist": 1.004,
+    "age_s": null,
+    "conf": null,
+    "pos": [
+     -0.73,
+     0.249
+    ],
+    "has_lock": false
+   }
+  },
+  {
+   "k": 1,
+   "state": "SEEKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.0833,
+   "values": {
+    "dist": 1.004,
+    "age_s": null,
+    "conf": 0.4444,
+    "pos": [
+     -0.73,
+     0.249
+    ],
+    "has_lock": false
+   }
+  },
+  {
+   "k": 2,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.1667,
+   "values": {
+    "dist": 1.005,
+    "age_s": 0.167,
+    "conf": 0.4444,
+    "pos": [
+     -0.731,
+     0.25
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 3,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.25,
+   "values": {
+    "dist": 1.005,
+    "age_s": 0.25,
+    "conf": 0.4444,
+    "pos": [
+     -0.732,
+     0.252
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 4,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.3333,
+   "values": {
+    "dist": 1.0,
+    "age_s": 0.333,
+    "conf": 0.4444,
+    "pos": [
+     -0.727,
+     0.257
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 5,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.4167,
+   "values": {
+    "dist": 0.984,
+    "age_s": 0.417,
+    "conf": 0.4444,
+    "pos": [
+     -0.712,
+     0.266
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 6,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.5,
+   "values": {
+    "dist": 0.954,
+    "age_s": 0.5,
+    "conf": 0.4444,
+    "pos": [
+     -0.683,
+     0.276
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 7,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.5833,
+   "values": {
+    "dist": 0.909,
+    "age_s": 0.583,
+    "conf": 0.4444,
+    "pos": [
+     -0.638,
+     0.287
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 8,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.6667,
+   "values": {
+    "dist": 0.845,
+    "age_s": 0.667,
+    "conf": 0.4444,
+    "pos": [
+     -0.576,
+     0.298
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 9,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.75,
+   "values": {
+    "dist": 0.767,
+    "age_s": 0.75,
+    "conf": 0.4444,
+    "pos": [
+     -0.497,
+     0.31
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 10,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.8333,
+   "values": {
+    "dist": 0.677,
+    "age_s": 0.833,
+    "conf": 0.4444,
+    "pos": [
+     -0.408,
+     0.32
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 11,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.9167,
+   "values": {
+    "dist": 0.58,
+    "age_s": 0.917,
+    "conf": 0.4444,
+    "pos": [
+     -0.312,
+     0.33
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 12,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": "R-B",
+   "detail": "admisja na wej\u015bciu OK",
+   "t": 1.0,
+   "values": {
+    "dist": 0.482,
+    "age_s": 1.0,
+    "conf": 0.4444,
+    "pos": [
+     -0.214,
+     0.342
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 13,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.0833,
+   "values": {
+    "dist": 0.387,
+    "age_s": 1.083,
+    "conf": 0.4444,
+    "pos": [
+     -0.119,
+     0.357
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 14,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.1667,
+   "values": {
+    "dist": 0.297,
+    "age_s": 1.167,
+    "conf": 0.4444,
+    "pos": [
+     -0.03,
+     0.375
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 15,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.25,
+   "values": {
+    "dist": 0.216,
+    "age_s": 1.25,
+    "conf": 0.4444,
+    "pos": [
+     0.053,
+     0.396
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 16,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.3333,
+   "values": {
+    "dist": 0.146,
+    "age_s": 1.333,
+    "conf": 0.4444,
+    "pos": [
+     0.131,
+     0.417
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 17,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.4167,
+   "values": {
+    "dist": 0.096,
+    "age_s": 1.417,
+    "conf": 0.4444,
+    "pos": [
+     0.203,
+     0.436
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 18,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.5,
+   "values": {
+    "dist": 0.088,
+    "age_s": 1.5,
+    "conf": 0.4444,
+    "pos": [
+     0.269,
+     0.452
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 19,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.5833,
+   "values": {
+    "dist": 0.118,
+    "age_s": 1.583,
+    "conf": 0.4444,
+    "pos": [
+     0.328,
+     0.466
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 20,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.6667,
+   "values": {
+    "dist": 0.158,
+    "age_s": 1.667,
+    "conf": 0.4444,
+    "pos": [
+     0.379,
+     0.477
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 21,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.75,
+   "values": {
+    "dist": 0.194,
+    "age_s": 1.75,
+    "conf": 0.4444,
+    "pos": [
+     0.419,
+     0.485
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 22,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.8333,
+   "values": {
+    "dist": 0.22,
+    "age_s": 1.833,
+    "conf": 0.4444,
+    "pos": [
+     0.447,
+     0.491
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 23,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.9167,
+   "values": {
+    "dist": 0.233,
+    "age_s": 1.917,
+    "conf": 0.4444,
+    "pos": [
+     0.461,
+     0.492
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 24,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.0,
+   "values": {
+    "dist": 0.233,
+    "age_s": 2.0,
+    "conf": 0.4444,
+    "pos": [
+     0.463,
+     0.49
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 25,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.0833,
+   "values": {
+    "dist": 0.222,
+    "age_s": 2.083,
+    "conf": 0.4444,
+    "pos": [
+     0.454,
+     0.484
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 26,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.1667,
+   "values": {
+    "dist": 0.204,
+    "age_s": 2.167,
+    "conf": 0.4444,
+    "pos": [
+     0.437,
+     0.477
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 27,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.25,
+   "values": {
+    "dist": 0.183,
+    "age_s": 2.25,
+    "conf": 0.4444,
+    "pos": [
+     0.417,
+     0.47
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 28,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.3333,
+   "values": {
+    "dist": 0.165,
+    "age_s": 2.333,
+    "conf": 0.4444,
+    "pos": [
+     0.399,
+     0.464
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 29,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.4167,
+   "values": {
+    "dist": 0.152,
+    "age_s": 2.417,
+    "conf": 0.4444,
+    "pos": [
+     0.384,
+     0.461
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 30,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.5,
+   "values": {
+    "dist": 0.145,
+    "age_s": 2.5,
+    "conf": 0.4444,
+    "pos": [
+     0.375,
+     0.461
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 31,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.5833,
+   "values": {
+    "dist": 0.143,
+    "age_s": 2.583,
+    "conf": 0.4444,
+    "pos": [
+     0.371,
+     0.463
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 32,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.6667,
+   "values": {
+    "dist": 0.145,
+    "age_s": 2.667,
+    "conf": 0.4444,
+    "pos": [
+     0.37,
+     0.466
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 33,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.75,
+   "values": {
+    "dist": 0.149,
+    "age_s": 2.75,
+    "conf": 0.4444,
+    "pos": [
+     0.371,
+     0.471
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 34,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.8333,
+   "values": {
+    "dist": 0.155,
+    "age_s": 2.833,
+    "conf": 0.4444,
+    "pos": [
+     0.373,
+     0.477
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 35,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.9167,
+   "values": {
+    "dist": 0.16,
+    "age_s": 2.917,
+    "conf": 0.4444,
+    "pos": [
+     0.375,
+     0.482
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 36,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.0,
+   "values": {
+    "dist": 0.163,
+    "age_s": 3.0,
+    "conf": 0.4444,
+    "pos": [
+     0.375,
+     0.487
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 37,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.0833,
+   "values": {
+    "dist": 0.164,
+    "age_s": 3.083,
+    "conf": 0.4444,
+    "pos": [
+     0.374,
+     0.489
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 38,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.1667,
+   "values": {
+    "dist": 0.163,
+    "age_s": 3.167,
+    "conf": 0.4444,
+    "pos": [
+     0.371,
+     0.49
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 39,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.25,
+   "values": {
+    "dist": 0.159,
+    "age_s": 3.25,
+    "conf": 0.4444,
+    "pos": [
+     0.368,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 40,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.3333,
+   "values": {
+    "dist": 0.155,
+    "age_s": 3.333,
+    "conf": 0.4444,
+    "pos": [
+     0.365,
+     0.485
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 41,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.4167,
+   "values": {
+    "dist": 0.151,
+    "age_s": 3.417,
+    "conf": 0.4444,
+    "pos": [
+     0.361,
+     0.482
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 42,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.5,
+   "values": {
+    "dist": 0.148,
+    "age_s": 3.5,
+    "conf": 0.4444,
+    "pos": [
+     0.358,
+     0.481
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 43,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.5833,
+   "values": {
+    "dist": 0.146,
+    "age_s": 3.583,
+    "conf": 0.4444,
+    "pos": [
+     0.355,
+     0.481
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 44,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.6667,
+   "values": {
+    "dist": 0.145,
+    "age_s": 3.667,
+    "conf": 0.4444,
+    "pos": [
+     0.352,
+     0.482
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 45,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.75,
+   "values": {
+    "dist": 0.145,
+    "age_s": 3.75,
+    "conf": 0.4444,
+    "pos": [
+     0.352,
+     0.483
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 46,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.8333,
+   "values": {
+    "dist": 0.146,
+    "age_s": 3.833,
+    "conf": 0.4444,
+    "pos": [
+     0.353,
+     0.483
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 47,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.9167,
+   "values": {
+    "dist": 0.147,
+    "age_s": 3.917,
+    "conf": 0.4444,
+    "pos": [
+     0.356,
+     0.482
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 48,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.0,
+   "values": {
+    "dist": 0.149,
+    "age_s": 4.0,
+    "conf": 0.4444,
+    "pos": [
+     0.359,
+     0.481
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 49,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.0833,
+   "values": {
+    "dist": 0.15,
+    "age_s": 4.083,
+    "conf": 0.4444,
+    "pos": [
+     0.362,
+     0.48
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 50,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.1667,
+   "values": {
+    "dist": 0.15,
+    "age_s": 4.167,
+    "conf": 0.4444,
+    "pos": [
+     0.366,
+     0.478
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 51,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.25,
+   "values": {
+    "dist": 0.151,
+    "age_s": 4.25,
+    "conf": 0.4444,
+    "pos": [
+     0.368,
+     0.477
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 52,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.3333,
+   "values": {
+    "dist": 0.151,
+    "age_s": 4.333,
+    "conf": 0.4444,
+    "pos": [
+     0.368,
+     0.476
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 53,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.4167,
+   "values": {
+    "dist": 0.151,
+    "age_s": 4.417,
+    "conf": 0.4444,
+    "pos": [
+     0.367,
+     0.478
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 54,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.5,
+   "values": {
+    "dist": 0.151,
+    "age_s": 4.5,
+    "conf": 0.4444,
+    "pos": [
+     0.363,
+     0.481
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 55,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.5833,
+   "values": {
+    "dist": 0.152,
+    "age_s": 4.583,
+    "conf": 0.4444,
+    "pos": [
+     0.359,
+     0.485
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 56,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.6667,
+   "values": {
+    "dist": 0.153,
+    "age_s": 4.667,
+    "conf": 0.4444,
+    "pos": [
+     0.356,
+     0.49
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 57,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.75,
+   "values": {
+    "dist": 0.155,
+    "age_s": 4.75,
+    "conf": 0.4444,
+    "pos": [
+     0.354,
+     0.493
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 58,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.8333,
+   "values": {
+    "dist": 0.155,
+    "age_s": 4.833,
+    "conf": 0.4444,
+    "pos": [
+     0.353,
+     0.493
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 59,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.9167,
+   "values": {
+    "dist": 0.154,
+    "age_s": 4.917,
+    "conf": 0.4444,
+    "pos": [
+     0.352,
+     0.493
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 60,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.0,
+   "values": {
+    "dist": 0.152,
+    "age_s": 5.0,
+    "conf": 0.4444,
+    "pos": [
+     0.352,
+     0.491
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 61,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.0833,
+   "values": {
+    "dist": 0.15,
+    "age_s": 5.083,
+    "conf": 0.4444,
+    "pos": [
+     0.351,
+     0.489
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 62,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.1667,
+   "values": {
+    "dist": 0.149,
+    "age_s": 5.167,
+    "conf": 0.4444,
+    "pos": [
+     0.35,
+     0.487
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 63,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.25,
+   "values": {
+    "dist": 0.147,
+    "age_s": 5.25,
+    "conf": 0.4444,
+    "pos": [
+     0.349,
+     0.487
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 64,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.3333,
+   "values": {
+    "dist": 0.147,
+    "age_s": 5.333,
+    "conf": 0.4444,
+    "pos": [
+     0.348,
+     0.487
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 65,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.4167,
+   "values": {
+    "dist": 0.146,
+    "age_s": 5.417,
+    "conf": 0.4444,
+    "pos": [
+     0.346,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 66,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.5,
+   "values": {
+    "dist": 0.146,
+    "age_s": 5.5,
+    "conf": 0.4444,
+    "pos": [
+     0.344,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 67,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.5833,
+   "values": {
+    "dist": 0.145,
+    "age_s": 5.583,
+    "conf": 0.4444,
+    "pos": [
+     0.342,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 68,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.6667,
+   "values": {
+    "dist": 0.144,
+    "age_s": 5.667,
+    "conf": 0.4444,
+    "pos": [
+     0.341,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 69,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.75,
+   "values": {
+    "dist": 0.143,
+    "age_s": 5.75,
+    "conf": 0.4444,
+    "pos": [
+     0.34,
+     0.487
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 70,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.8333,
+   "values": {
+    "dist": 0.142,
+    "age_s": 5.833,
+    "conf": 0.4444,
+    "pos": [
+     0.34,
+     0.486
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 71,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.9167,
+   "values": {
+    "dist": 0.141,
+    "age_s": 5.917,
+    "conf": 0.4444,
+    "pos": [
+     0.34,
+     0.486
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 72,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.0,
+   "values": {
+    "dist": 0.141,
+    "age_s": 6.0,
+    "conf": 0.4444,
+    "pos": [
+     0.34,
+     0.485
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 73,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "detail": "sufit twardy (age>6 s)",
+   "t": 6.0833,
+   "values": {
+    "dist": 0.141,
+    "age_s": 6.083,
+    "conf": 0.4444,
+    "pos": [
+     0.34,
+     0.485
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 74,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 6.1667,
+   "values": {
+    "dist": 0.141,
+    "age_s": 6.167,
+    "conf": 0.4444,
+    "pos": [
+     0.34,
+     0.485
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 75,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 6.25,
+   "values": {
+    "dist": 0.142,
+    "age_s": 6.25,
+    "conf": 0.4444,
+    "pos": [
+     0.339,
+     0.487
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 76,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 6.3333,
+   "values": {
+    "dist": 0.142,
+    "age_s": 6.333,
+    "conf": 0.4444,
+    "pos": [
+     0.339,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 77,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 6.4167,
+   "values": {
+    "dist": 0.142,
+    "age_s": 6.417,
+    "conf": 0.4444,
+    "pos": [
+     0.337,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 78,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 6.5,
+   "values": {
+    "dist": 0.142,
+    "age_s": 6.5,
+    "conf": 0.4444,
+    "pos": [
+     0.336,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 79,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 6.5833,
+   "values": {
+    "dist": 0.141,
+    "age_s": 6.583,
+    "conf": 0.4444,
+    "pos": [
+     0.335,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 80,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 6.6667,
+   "values": {
+    "dist": 0.141,
+    "age_s": 6.667,
+    "conf": 0.4444,
+    "pos": [
+     0.335,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 81,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 6.75,
+   "values": {
+    "dist": 0.14,
+    "age_s": 6.75,
+    "conf": 0.4444,
+    "pos": [
+     0.335,
+     0.487
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 82,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 6.8333,
+   "values": {
+    "dist": 0.138,
+    "age_s": 6.833,
+    "conf": 0.4444,
+    "pos": [
+     0.334,
+     0.486
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 83,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 6.9167,
+   "values": {
+    "dist": 0.138,
+    "age_s": 6.917,
+    "conf": 0.4444,
+    "pos": [
+     0.334,
+     0.485
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 84,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.0,
+   "values": {
+    "dist": 0.137,
+    "age_s": 7.0,
+    "conf": 0.4444,
+    "pos": [
+     0.333,
+     0.485
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 85,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.0833,
+   "values": {
+    "dist": 0.137,
+    "age_s": 7.083,
+    "conf": 0.4444,
+    "pos": [
+     0.333,
+     0.485
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 86,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.1667,
+   "values": {
+    "dist": 0.138,
+    "age_s": 7.167,
+    "conf": 0.4444,
+    "pos": [
+     0.333,
+     0.486
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 87,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.25,
+   "values": {
+    "dist": 0.14,
+    "age_s": 7.25,
+    "conf": 0.4444,
+    "pos": [
+     0.333,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 88,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.3333,
+   "values": {
+    "dist": 0.141,
+    "age_s": 7.333,
+    "conf": 0.4444,
+    "pos": [
+     0.333,
+     0.489
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 89,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.4167,
+   "values": {
+    "dist": 0.14,
+    "age_s": 7.417,
+    "conf": 0.4444,
+    "pos": [
+     0.332,
+     0.489
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 90,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.5,
+   "values": {
+    "dist": 0.139,
+    "age_s": 7.5,
+    "conf": 0.4444,
+    "pos": [
+     0.331,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 91,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.5833,
+   "values": {
+    "dist": 0.137,
+    "age_s": 7.583,
+    "conf": 0.4444,
+    "pos": [
+     0.329,
+     0.487
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 92,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.6667,
+   "values": {
+    "dist": 0.135,
+    "age_s": 7.667,
+    "conf": 0.4444,
+    "pos": [
+     0.328,
+     0.485
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 93,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.75,
+   "values": {
+    "dist": 0.134,
+    "age_s": 7.75,
+    "conf": 0.4444,
+    "pos": [
+     0.327,
+     0.484
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 94,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.8333,
+   "values": {
+    "dist": 0.134,
+    "age_s": 7.833,
+    "conf": 0.4444,
+    "pos": [
+     0.326,
+     0.484
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 95,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.9167,
+   "values": {
+    "dist": 0.134,
+    "age_s": 7.917,
+    "conf": 0.4444,
+    "pos": [
+     0.326,
+     0.485
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 96,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.0,
+   "values": {
+    "dist": 0.135,
+    "age_s": 8.0,
+    "conf": 0.4444,
+    "pos": [
+     0.326,
+     0.486
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 97,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.0833,
+   "values": {
+    "dist": 0.136,
+    "age_s": 8.0,
+    "conf": 0.4444,
+    "pos": [
+     0.326,
+     0.487
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 98,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.1667,
+   "values": {
+    "dist": 0.137,
+    "age_s": 8.0,
+    "conf": 0.4444,
+    "pos": [
+     0.326,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 99,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.25,
+   "values": {
+    "dist": 0.136,
+    "age_s": 8.0,
+    "conf": 0.4444,
+    "pos": [
+     0.326,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 100,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.3333,
+   "values": {
+    "dist": 0.137,
+    "age_s": 8.0,
+    "conf": 0.4444,
+    "pos": [
+     0.327,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 101,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.4167,
+   "values": {
+    "dist": 0.138,
+    "age_s": 8.0,
+    "conf": 0.4444,
+    "pos": [
+     0.328,
+     0.489
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 102,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.5,
+   "values": {
+    "dist": 0.139,
+    "age_s": 8.0,
+    "conf": 0.4444,
+    "pos": [
+     0.329,
+     0.489
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 103,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.5833,
+   "values": {
+    "dist": 0.139,
+    "age_s": 8.0,
+    "conf": 0.4444,
+    "pos": [
+     0.329,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 104,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.6667,
+   "values": {
+    "dist": 0.139,
+    "age_s": 8.0,
+    "conf": 0.4444,
+    "pos": [
+     0.329,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 105,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.75,
+   "values": {
+    "dist": 0.138,
+    "age_s": 8.0,
+    "conf": 0.4444,
+    "pos": [
+     0.33,
+     0.488
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 106,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.8333,
+   "values": {
+    "dist": 0.138,
+    "age_s": 8.0,
+    "conf": 0.4444,
+    "pos": [
+     0.331,
+     0.487
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 107,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.9167,
+   "values": {
+    "dist": 0.139,
+    "age_s": 8.0,
+    "conf": 0.4444,
+    "pos": [
+     0.333,
+     0.487
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 108,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.0,
+   "values": {
+    "dist": 0.139,
+    "age_s": 8.0,
+    "conf": 0.4444,
+    "pos": [
+     0.334,
+     0.486
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 109,
+   "state": "DONE",
+   "decision": "REFUSE",
+   "reason": "STALE_AT_DWELL",
+   "rule": "R-B",
+   "detail": "sufit twardy \u2014 timeout",
+   "t": 9.0833,
+   "values": {
+    "dist": 0.138,
+    "age_s": 8.0,
+    "conf": 0.4444,
+    "pos": [
+     0.336,
+     0.484
+    ],
+    "has_lock": true
+   }
+  }
+ ],
+ "46536": [
+  {
+   "k": 0,
+   "state": "SEEKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.0,
+   "values": {
+    "dist": 1.953,
+    "age_s": null,
+    "conf": null,
+    "pos": [
+     -1.042,
+     0.728
+    ],
+    "has_lock": false
+   }
+  },
+  {
+   "k": 1,
+   "state": "SEEKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.0833,
+   "values": {
+    "dist": 1.953,
+    "age_s": null,
+    "conf": 0.6227,
+    "pos": [
+     -1.042,
+     0.727
+    ],
+    "has_lock": false
+   }
+  },
+  {
+   "k": 2,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.1667,
+   "values": {
+    "dist": 1.951,
+    "age_s": 0.167,
+    "conf": 0.6227,
+    "pos": [
+     -1.041,
+     0.722
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 3,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.25,
+   "values": {
+    "dist": 1.947,
+    "age_s": 0.25,
+    "conf": 0.6227,
+    "pos": [
+     -1.037,
+     0.711
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 4,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.3333,
+   "values": {
+    "dist": 1.937,
+    "age_s": 0.333,
+    "conf": 0.6227,
+    "pos": [
+     -1.028,
+     0.698
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 5,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.4167,
+   "values": {
+    "dist": 1.919,
+    "age_s": 0.417,
+    "conf": 0.6227,
+    "pos": [
+     -1.011,
+     0.686
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 6,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.5,
+   "values": {
+    "dist": 1.892,
+    "age_s": 0.5,
+    "conf": 0.6227,
+    "pos": [
+     -0.984,
+     0.678
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 7,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.5833,
+   "values": {
+    "dist": 1.852,
+    "age_s": 0.583,
+    "conf": 0.6227,
+    "pos": [
+     -0.944,
+     0.673
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 8,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.6667,
+   "values": {
+    "dist": 1.801,
+    "age_s": 0.667,
+    "conf": 0.6227,
+    "pos": [
+     -0.893,
+     0.671
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 9,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.75,
+   "values": {
+    "dist": 1.74,
+    "age_s": 0.75,
+    "conf": 0.6227,
+    "pos": [
+     -0.833,
+     0.666
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 10,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.8333,
+   "values": {
+    "dist": 1.673,
+    "age_s": 0.833,
+    "conf": 0.6227,
+    "pos": [
+     -0.765,
+     0.659
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 11,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 0.9167,
+   "values": {
+    "dist": 1.602,
+    "age_s": 0.917,
+    "conf": 0.6227,
+    "pos": [
+     -0.695,
+     0.649
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 12,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.0,
+   "values": {
+    "dist": 1.533,
+    "age_s": 1.0,
+    "conf": 0.6227,
+    "pos": [
+     -0.626,
+     0.636
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 13,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.0833,
+   "values": {
+    "dist": 1.465,
+    "age_s": 1.083,
+    "conf": 0.4621,
+    "pos": [
+     -0.56,
+     0.622
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 14,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.1667,
+   "values": {
+    "dist": 1.397,
+    "age_s": 1.167,
+    "conf": 0.4621,
+    "pos": [
+     -0.492,
+     0.609
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 15,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.25,
+   "values": {
+    "dist": 1.327,
+    "age_s": 1.25,
+    "conf": 0.4621,
+    "pos": [
+     -0.421,
+     0.597
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 16,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.3333,
+   "values": {
+    "dist": 1.255,
+    "age_s": 1.333,
+    "conf": 0.4621,
+    "pos": [
+     -0.349,
+     0.585
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 17,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.4167,
+   "values": {
+    "dist": 1.182,
+    "age_s": 1.417,
+    "conf": 0.4621,
+    "pos": [
+     -0.276,
+     0.574
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 18,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.5,
+   "values": {
+    "dist": 1.106,
+    "age_s": 1.5,
+    "conf": 0.4621,
+    "pos": [
+     -0.201,
+     0.564
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 19,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.5833,
+   "values": {
+    "dist": 1.026,
+    "age_s": 1.583,
+    "conf": 0.4621,
+    "pos": [
+     -0.121,
+     0.557
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 20,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.6667,
+   "values": {
+    "dist": 0.941,
+    "age_s": 1.667,
+    "conf": 0.4621,
+    "pos": [
+     -0.036,
+     0.552
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 21,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.75,
+   "values": {
+    "dist": 0.853,
+    "age_s": 1.75,
+    "conf": 0.4621,
+    "pos": [
+     0.052,
+     0.551
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 22,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.8333,
+   "values": {
+    "dist": 0.763,
+    "age_s": 1.833,
+    "conf": 0.4621,
+    "pos": [
+     0.143,
+     0.552
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 23,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 1.9167,
+   "values": {
+    "dist": 0.671,
+    "age_s": 1.917,
+    "conf": 0.4621,
+    "pos": [
+     0.234,
+     0.556
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 24,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.0,
+   "values": {
+    "dist": 0.579,
+    "age_s": 2.0,
+    "conf": 0.4621,
+    "pos": [
+     0.326,
+     0.561
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 25,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "detail": "admisja na wej\u015bciu: kana\u0142 stary",
+   "t": 2.0833,
+   "values": {
+    "dist": 0.487,
+    "age_s": 2.083,
+    "conf": 0.0814,
+    "pos": [
+     0.419,
+     0.564
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 26,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": "R-B",
+   "detail": "admisja przyznana (\u015bwie\u017cy tick)",
+   "t": 2.1667,
+   "values": {
+    "dist": 0.396,
+    "age_s": 0.167,
+    "conf": 0.0814,
+    "pos": [
+     0.509,
+     0.566
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 27,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.25,
+   "values": {
+    "dist": 0.318,
+    "age_s": 0.25,
+    "conf": 0.0814,
+    "pos": [
+     0.587,
+     0.566
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 28,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.3333,
+   "values": {
+    "dist": 0.26,
+    "age_s": 0.333,
+    "conf": 0.0814,
+    "pos": [
+     0.645,
+     0.566
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 29,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.4167,
+   "values": {
+    "dist": 0.219,
+    "age_s": 0.417,
+    "conf": 0.0814,
+    "pos": [
+     0.686,
+     0.567
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 30,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.5,
+   "values": {
+    "dist": 0.188,
+    "age_s": 0.5,
+    "conf": 0.0814,
+    "pos": [
+     0.718,
+     0.571
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 31,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.5833,
+   "values": {
+    "dist": 0.16,
+    "age_s": 0.583,
+    "conf": 0.0814,
+    "pos": [
+     0.745,
+     0.577
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 32,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.6667,
+   "values": {
+    "dist": 0.134,
+    "age_s": 0.667,
+    "conf": 0.0814,
+    "pos": [
+     0.771,
+     0.583
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 33,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.75,
+   "values": {
+    "dist": 0.111,
+    "age_s": 0.75,
+    "conf": 0.0814,
+    "pos": [
+     0.795,
+     0.589
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 34,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.8333,
+   "values": {
+    "dist": 0.093,
+    "age_s": 0.833,
+    "conf": 0.0814,
+    "pos": [
+     0.814,
+     0.594
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 35,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 2.9167,
+   "values": {
+    "dist": 0.082,
+    "age_s": 0.917,
+    "conf": 0.0814,
+    "pos": [
+     0.827,
+     0.599
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 36,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.0,
+   "values": {
+    "dist": 0.078,
+    "age_s": 1.0,
+    "conf": 0.0814,
+    "pos": [
+     0.833,
+     0.604
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 37,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.0833,
+   "values": {
+    "dist": 0.08,
+    "age_s": 1.083,
+    "conf": 0.0814,
+    "pos": [
+     0.832,
+     0.61
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 38,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.1667,
+   "values": {
+    "dist": 0.089,
+    "age_s": 1.167,
+    "conf": 0.0814,
+    "pos": [
+     0.826,
+     0.616
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 39,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.25,
+   "values": {
+    "dist": 0.101,
+    "age_s": 1.25,
+    "conf": 0.0814,
+    "pos": [
+     0.816,
+     0.623
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 40,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.3333,
+   "values": {
+    "dist": 0.114,
+    "age_s": 1.333,
+    "conf": 0.0814,
+    "pos": [
+     0.804,
+     0.631
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 41,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.4167,
+   "values": {
+    "dist": 0.127,
+    "age_s": 1.417,
+    "conf": 0.0814,
+    "pos": [
+     0.794,
+     0.638
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 42,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.5,
+   "values": {
+    "dist": 0.137,
+    "age_s": 1.5,
+    "conf": 0.0814,
+    "pos": [
+     0.786,
+     0.644
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 43,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.5833,
+   "values": {
+    "dist": 0.144,
+    "age_s": 1.583,
+    "conf": 0.0814,
+    "pos": [
+     0.781,
+     0.648
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 44,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.6667,
+   "values": {
+    "dist": 0.147,
+    "age_s": 1.667,
+    "conf": 0.0814,
+    "pos": [
+     0.779,
+     0.651
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 45,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.75,
+   "values": {
+    "dist": 0.147,
+    "age_s": 1.75,
+    "conf": 0.0814,
+    "pos": [
+     0.779,
+     0.651
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 46,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.8333,
+   "values": {
+    "dist": 0.146,
+    "age_s": 1.833,
+    "conf": 0.0814,
+    "pos": [
+     0.78,
+     0.651
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 47,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 3.9167,
+   "values": {
+    "dist": 0.145,
+    "age_s": 1.917,
+    "conf": 0.0814,
+    "pos": [
+     0.78,
+     0.651
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 48,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.0,
+   "values": {
+    "dist": 0.147,
+    "age_s": 2.0,
+    "conf": 0.0814,
+    "pos": [
+     0.779,
+     0.652
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 49,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.0833,
+   "values": {
+    "dist": 0.149,
+    "age_s": 2.083,
+    "conf": 0.0814,
+    "pos": [
+     0.777,
+     0.654
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 50,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.1667,
+   "values": {
+    "dist": 0.153,
+    "age_s": 2.167,
+    "conf": 0.0814,
+    "pos": [
+     0.775,
+     0.657
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 51,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.25,
+   "values": {
+    "dist": 0.156,
+    "age_s": 2.25,
+    "conf": 0.0814,
+    "pos": [
+     0.773,
+     0.659
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 52,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.3333,
+   "values": {
+    "dist": 0.158,
+    "age_s": 2.333,
+    "conf": 0.0814,
+    "pos": [
+     0.771,
+     0.66
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 53,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.4167,
+   "values": {
+    "dist": 0.159,
+    "age_s": 2.417,
+    "conf": 0.0814,
+    "pos": [
+     0.77,
+     0.66
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 54,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.5,
+   "values": {
+    "dist": 0.159,
+    "age_s": 2.5,
+    "conf": 0.0814,
+    "pos": [
+     0.769,
+     0.66
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 55,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.5833,
+   "values": {
+    "dist": 0.16,
+    "age_s": 2.583,
+    "conf": 0.0814,
+    "pos": [
+     0.769,
+     0.66
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 56,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.6667,
+   "values": {
+    "dist": 0.16,
+    "age_s": 2.667,
+    "conf": 0.0814,
+    "pos": [
+     0.768,
+     0.66
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 57,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.75,
+   "values": {
+    "dist": 0.161,
+    "age_s": 2.75,
+    "conf": 0.0814,
+    "pos": [
+     0.768,
+     0.661
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 58,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.8333,
+   "values": {
+    "dist": 0.162,
+    "age_s": 2.833,
+    "conf": 0.0814,
+    "pos": [
+     0.768,
+     0.663
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 59,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 4.9167,
+   "values": {
+    "dist": 0.162,
+    "age_s": 2.917,
+    "conf": 0.0814,
+    "pos": [
+     0.768,
+     0.663
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 60,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.0,
+   "values": {
+    "dist": 0.163,
+    "age_s": 3.0,
+    "conf": 0.0814,
+    "pos": [
+     0.768,
+     0.664
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 61,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.0833,
+   "values": {
+    "dist": 0.163,
+    "age_s": 3.083,
+    "conf": 0.0814,
+    "pos": [
+     0.768,
+     0.664
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 62,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.1667,
+   "values": {
+    "dist": 0.162,
+    "age_s": 3.167,
+    "conf": 0.0814,
+    "pos": [
+     0.767,
+     0.662
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 63,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.25,
+   "values": {
+    "dist": 0.161,
+    "age_s": 3.25,
+    "conf": 0.0814,
+    "pos": [
+     0.767,
+     0.66
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 64,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.3333,
+   "values": {
+    "dist": 0.161,
+    "age_s": 3.333,
+    "conf": 0.0814,
+    "pos": [
+     0.766,
+     0.658
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 65,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.4167,
+   "values": {
+    "dist": 0.162,
+    "age_s": 3.417,
+    "conf": 0.0814,
+    "pos": [
+     0.764,
+     0.656
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 66,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.5,
+   "values": {
+    "dist": 0.162,
+    "age_s": 3.5,
+    "conf": 0.0814,
+    "pos": [
+     0.762,
+     0.654
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 67,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.5833,
+   "values": {
+    "dist": 0.164,
+    "age_s": 3.583,
+    "conf": 0.0814,
+    "pos": [
+     0.76,
+     0.653
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 68,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.6667,
+   "values": {
+    "dist": 0.167,
+    "age_s": 3.667,
+    "conf": 0.0814,
+    "pos": [
+     0.756,
+     0.653
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 69,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.75,
+   "values": {
+    "dist": 0.17,
+    "age_s": 3.75,
+    "conf": 0.0814,
+    "pos": [
+     0.753,
+     0.652
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 70,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.8333,
+   "values": {
+    "dist": 0.172,
+    "age_s": 3.833,
+    "conf": 0.0814,
+    "pos": [
+     0.75,
+     0.652
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 71,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 5.9167,
+   "values": {
+    "dist": 0.174,
+    "age_s": 3.917,
+    "conf": 0.0814,
+    "pos": [
+     0.749,
+     0.653
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 72,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.0,
+   "values": {
+    "dist": 0.174,
+    "age_s": 4.0,
+    "conf": 0.0814,
+    "pos": [
+     0.748,
+     0.653
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 73,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.0833,
+   "values": {
+    "dist": 0.174,
+    "age_s": 4.083,
+    "conf": 0.0814,
+    "pos": [
+     0.749,
+     0.654
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 74,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.1667,
+   "values": {
+    "dist": 0.172,
+    "age_s": 4.167,
+    "conf": 0.0814,
+    "pos": [
+     0.751,
+     0.654
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 75,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.25,
+   "values": {
+    "dist": 0.172,
+    "age_s": 4.25,
+    "conf": 0.0814,
+    "pos": [
+     0.752,
+     0.655
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 76,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.3333,
+   "values": {
+    "dist": 0.172,
+    "age_s": 4.333,
+    "conf": 0.0814,
+    "pos": [
+     0.752,
+     0.655
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 77,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.4167,
+   "values": {
+    "dist": 0.174,
+    "age_s": 4.417,
+    "conf": 0.0814,
+    "pos": [
+     0.749,
+     0.655
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 78,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.5,
+   "values": {
+    "dist": 0.176,
+    "age_s": 4.5,
+    "conf": 0.0814,
+    "pos": [
+     0.746,
+     0.653
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 79,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.5833,
+   "values": {
+    "dist": 0.178,
+    "age_s": 4.583,
+    "conf": 0.0814,
+    "pos": [
+     0.743,
+     0.65
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 80,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.6667,
+   "values": {
+    "dist": 0.18,
+    "age_s": 4.667,
+    "conf": 0.0814,
+    "pos": [
+     0.739,
+     0.647
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 81,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.75,
+   "values": {
+    "dist": 0.182,
+    "age_s": 4.75,
+    "conf": 0.0814,
+    "pos": [
+     0.737,
+     0.645
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 82,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.8333,
+   "values": {
+    "dist": 0.183,
+    "age_s": 4.833,
+    "conf": 0.0814,
+    "pos": [
+     0.735,
+     0.644
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 83,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.9167,
+   "values": {
+    "dist": 0.182,
+    "age_s": 4.917,
+    "conf": 0.0814,
+    "pos": [
+     0.735,
+     0.643
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 84,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 7.0,
+   "values": {
+    "dist": 0.181,
+    "age_s": 5.0,
+    "conf": 0.0814,
+    "pos": [
+     0.736,
+     0.642
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 85,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 7.0833,
+   "values": {
+    "dist": 0.18,
+    "age_s": 5.083,
+    "conf": 0.0814,
+    "pos": [
+     0.736,
+     0.641
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 86,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 7.1667,
+   "values": {
+    "dist": 0.181,
+    "age_s": 5.167,
+    "conf": 0.0814,
+    "pos": [
+     0.736,
+     0.64
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 87,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 7.25,
+   "values": {
+    "dist": 0.182,
+    "age_s": 5.25,
+    "conf": 0.0814,
+    "pos": [
+     0.735,
+     0.641
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 88,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 7.3333,
+   "values": {
+    "dist": 0.184,
+    "age_s": 5.333,
+    "conf": 0.0814,
+    "pos": [
+     0.733,
+     0.641
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 89,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 7.4167,
+   "values": {
+    "dist": 0.187,
+    "age_s": 5.417,
+    "conf": 0.0814,
+    "pos": [
+     0.729,
+     0.641
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 90,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 7.5,
+   "values": {
+    "dist": 0.19,
+    "age_s": 5.5,
+    "conf": 0.0814,
+    "pos": [
+     0.726,
+     0.639
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 91,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 7.5833,
+   "values": {
+    "dist": 0.192,
+    "age_s": 5.583,
+    "conf": 0.0814,
+    "pos": [
+     0.723,
+     0.637
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 92,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 7.6667,
+   "values": {
+    "dist": 0.193,
+    "age_s": 5.667,
+    "conf": 0.0814,
+    "pos": [
+     0.722,
+     0.635
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 93,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 7.75,
+   "values": {
+    "dist": 0.193,
+    "age_s": 5.75,
+    "conf": 0.0814,
+    "pos": [
+     0.722,
+     0.635
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 94,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 7.8333,
+   "values": {
+    "dist": 0.191,
+    "age_s": 5.833,
+    "conf": 0.0814,
+    "pos": [
+     0.723,
+     0.636
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 95,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 7.9167,
+   "values": {
+    "dist": 0.189,
+    "age_s": 5.917,
+    "conf": 0.0814,
+    "pos": [
+     0.726,
+     0.638
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 96,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 8.0,
+   "values": {
+    "dist": 0.187,
+    "age_s": 6.0,
+    "conf": 0.0814,
+    "pos": [
+     0.729,
+     0.639
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 97,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "detail": "sufit twardy (age>6 s)",
+   "t": 8.0833,
+   "values": {
+    "dist": 0.185,
+    "age_s": 6.083,
+    "conf": 0.0814,
+    "pos": [
+     0.732,
+     0.64
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 98,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.1667,
+   "values": {
+    "dist": 0.184,
+    "age_s": 6.167,
+    "conf": 0.0814,
+    "pos": [
+     0.732,
+     0.64
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 99,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.25,
+   "values": {
+    "dist": 0.184,
+    "age_s": 6.25,
+    "conf": 0.0814,
+    "pos": [
+     0.732,
+     0.639
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 100,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.3333,
+   "values": {
+    "dist": 0.184,
+    "age_s": 6.333,
+    "conf": 0.0814,
+    "pos": [
+     0.731,
+     0.638
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 101,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.4167,
+   "values": {
+    "dist": 0.184,
+    "age_s": 6.417,
+    "conf": 0.0814,
+    "pos": [
+     0.731,
+     0.636
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 102,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.5,
+   "values": {
+    "dist": 0.182,
+    "age_s": 6.5,
+    "conf": 0.0814,
+    "pos": [
+     0.732,
+     0.634
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 103,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.5833,
+   "values": {
+    "dist": 0.18,
+    "age_s": 6.583,
+    "conf": 0.0814,
+    "pos": [
+     0.733,
+     0.632
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 104,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.6667,
+   "values": {
+    "dist": 0.179,
+    "age_s": 6.667,
+    "conf": 0.0814,
+    "pos": [
+     0.734,
+     0.63
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 105,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.75,
+   "values": {
+    "dist": 0.178,
+    "age_s": 6.75,
+    "conf": 0.0814,
+    "pos": [
+     0.735,
+     0.629
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 106,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.8333,
+   "values": {
+    "dist": 0.179,
+    "age_s": 6.833,
+    "conf": 0.0814,
+    "pos": [
+     0.734,
+     0.629
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 107,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.9167,
+   "values": {
+    "dist": 0.18,
+    "age_s": 6.917,
+    "conf": 0.0814,
+    "pos": [
+     0.733,
+     0.63
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 108,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.0,
+   "values": {
+    "dist": 0.181,
+    "age_s": 7.0,
+    "conf": 0.0814,
+    "pos": [
+     0.733,
+     0.631
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 109,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.0833,
+   "values": {
+    "dist": 0.181,
+    "age_s": 7.083,
+    "conf": 0.0814,
+    "pos": [
+     0.732,
+     0.632
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 110,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.1667,
+   "values": {
+    "dist": 0.183,
+    "age_s": 7.167,
+    "conf": 0.0814,
+    "pos": [
+     0.731,
+     0.633
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 111,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.25,
+   "values": {
+    "dist": 0.184,
+    "age_s": 7.25,
+    "conf": 0.0814,
+    "pos": [
+     0.73,
+     0.634
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 112,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.3333,
+   "values": {
+    "dist": 0.186,
+    "age_s": 7.333,
+    "conf": 0.0814,
+    "pos": [
+     0.728,
+     0.635
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 113,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.4167,
+   "values": {
+    "dist": 0.188,
+    "age_s": 7.417,
+    "conf": 0.0814,
+    "pos": [
+     0.727,
+     0.635
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 114,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.5,
+   "values": {
+    "dist": 0.189,
+    "age_s": 7.5,
+    "conf": 0.0814,
+    "pos": [
+     0.725,
+     0.636
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 115,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.5833,
+   "values": {
+    "dist": 0.19,
+    "age_s": 7.583,
+    "conf": 0.0814,
+    "pos": [
+     0.725,
+     0.636
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 116,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.6667,
+   "values": {
+    "dist": 0.189,
+    "age_s": 7.667,
+    "conf": 0.0814,
+    "pos": [
+     0.726,
+     0.636
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 117,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.75,
+   "values": {
+    "dist": 0.187,
+    "age_s": 7.75,
+    "conf": 0.0814,
+    "pos": [
+     0.727,
+     0.635
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 118,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.8333,
+   "values": {
+    "dist": 0.186,
+    "age_s": 7.833,
+    "conf": 0.0814,
+    "pos": [
+     0.729,
+     0.634
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 119,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.9167,
+   "values": {
+    "dist": 0.184,
+    "age_s": 7.917,
+    "conf": 0.0814,
+    "pos": [
+     0.73,
+     0.635
+    ],
+    "has_lock": true
+   }
+  }
+ ],
  "46500": [
   {
    "k": 0,
@@ -38,218 +4188,218 @@
   },
   {
    "k": 2,
-   "state": "SEEKING",
+   "state": "TRACKING",
    "decision": "ALLOW",
    "reason": null,
    "rule": null,
    "t": 0.1667,
    "values": {
     "dist": 1.553,
-    "age_s": null,
+    "age_s": 0.167,
     "conf": 0.0166,
     "pos": [
      -1.022,
      0.65
     ],
-    "has_lock": false
+    "has_lock": true
    }
   },
   {
    "k": 3,
-   "state": "SEEKING",
+   "state": "TRACKING",
    "decision": "ALLOW",
    "reason": null,
    "rule": null,
    "t": 0.25,
    "values": {
     "dist": 1.547,
-    "age_s": null,
+    "age_s": 0.25,
     "conf": 0.0166,
     "pos": [
-     -1.015,
-     0.642
+     -1.014,
+     0.643
     ],
-    "has_lock": false
+    "has_lock": true
    }
   },
   {
    "k": 4,
-   "state": "SEEKING",
+   "state": "TRACKING",
    "decision": "ALLOW",
    "reason": null,
    "rule": null,
    "t": 0.3333,
    "values": {
-    "dist": 1.536,
-    "age_s": null,
+    "dist": 1.534,
+    "age_s": 0.333,
     "conf": 0.0166,
     "pos": [
-     -1.002,
-     0.632
+     -1.0,
+     0.635
     ],
-    "has_lock": false
+    "has_lock": true
    }
   },
   {
    "k": 5,
-   "state": "SEEKING",
+   "state": "TRACKING",
    "decision": "ALLOW",
    "reason": null,
    "rule": null,
    "t": 0.4167,
    "values": {
-    "dist": 1.517,
-    "age_s": null,
+    "dist": 1.511,
+    "age_s": 0.417,
     "conf": 0.0166,
     "pos": [
-     -0.981,
-     0.623
+     -0.977,
+     0.63
     ],
-    "has_lock": false
+    "has_lock": true
    }
   },
   {
    "k": 6,
-   "state": "SEEKING",
+   "state": "TRACKING",
    "decision": "ALLOW",
    "reason": null,
    "rule": null,
    "t": 0.5,
    "values": {
-    "dist": 1.488,
-    "age_s": null,
+    "dist": 1.476,
+    "age_s": 0.5,
     "conf": 0.0166,
     "pos": [
-     -0.952,
-     0.619
+     -0.941,
+     0.631
     ],
-    "has_lock": false
+    "has_lock": true
    }
   },
   {
    "k": 7,
-   "state": "SEEKING",
+   "state": "TRACKING",
    "decision": "ALLOW",
    "reason": null,
    "rule": null,
    "t": 0.5833,
    "values": {
-    "dist": 1.447,
-    "age_s": null,
+    "dist": 1.429,
+    "age_s": 0.583,
     "conf": 0.0166,
     "pos": [
-     -0.91,
-     0.623
+     -0.894,
+     0.637
     ],
-    "has_lock": false
+    "has_lock": true
    }
   },
   {
    "k": 8,
-   "state": "SEEKING",
+   "state": "TRACKING",
    "decision": "ALLOW",
    "reason": null,
    "rule": null,
    "t": 0.6667,
    "values": {
-    "dist": 1.39,
-    "age_s": null,
+    "dist": 1.37,
+    "age_s": 0.667,
     "conf": 0.0166,
     "pos": [
-     -0.855,
-     0.637
+     -0.836,
+     0.65
     ],
-    "has_lock": false
+    "has_lock": true
    }
   },
   {
    "k": 9,
-   "state": "SEEKING",
+   "state": "TRACKING",
    "decision": "ALLOW",
    "reason": null,
    "rule": null,
    "t": 0.75,
    "values": {
-    "dist": 1.317,
-    "age_s": null,
+    "dist": 1.302,
+    "age_s": 0.75,
     "conf": 0.0166,
     "pos": [
-     -0.784,
-     0.659
+     -0.77,
+     0.666
     ],
-    "has_lock": false
+    "has_lock": true
    }
   },
   {
    "k": 10,
-   "state": "SEEKING",
+   "state": "TRACKING",
    "decision": "ALLOW",
    "reason": null,
    "rule": null,
    "t": 0.8333,
    "values": {
-    "dist": 1.232,
-    "age_s": null,
+    "dist": 1.227,
+    "age_s": 0.833,
     "conf": 0.0166,
     "pos": [
-     -0.702,
-     0.683
+     -0.697,
+     0.684
     ],
-    "has_lock": false
+    "has_lock": true
    }
   },
   {
    "k": 11,
-   "state": "SEEKING",
+   "state": "TRACKING",
    "decision": "ALLOW",
    "reason": null,
    "rule": null,
    "t": 0.9167,
    "values": {
-    "dist": 1.138,
-    "age_s": null,
+    "dist": 1.146,
+    "age_s": 0.917,
     "conf": 0.0166,
     "pos": [
-     -0.61,
-     0.707
+     -0.618,
+     0.701
     ],
-    "has_lock": false
+    "has_lock": true
    }
   },
   {
    "k": 12,
-   "state": "SEEKING",
+   "state": "TRACKING",
    "decision": "ALLOW",
    "reason": null,
    "rule": null,
    "t": 1.0,
    "values": {
-    "dist": 1.04,
-    "age_s": null,
+    "dist": 1.063,
+    "age_s": 1.0,
     "conf": 0.0166,
     "pos": [
-     -0.515,
-     0.728
+     -0.537,
+     0.716
     ],
-    "has_lock": false
+    "has_lock": true
    }
   },
   {
    "k": 13,
-   "state": "SEEKING",
+   "state": "TRACKING",
    "decision": "ALLOW",
    "reason": null,
    "rule": null,
    "t": 1.0833,
    "values": {
-    "dist": 0.943,
-    "age_s": null,
-    "conf": 0.0442,
+    "dist": 0.979,
+    "age_s": 1.083,
+    "conf": 0.0307,
     "pos": [
-     -0.42,
-     0.746
+     -0.453,
+     0.727
     ],
-    "has_lock": false
+    "has_lock": true
    }
   },
   {
@@ -260,12 +4410,12 @@
    "rule": null,
    "t": 1.1667,
    "values": {
-    "dist": 0.854,
+    "dist": 0.892,
     "age_s": 0.167,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     -0.332,
-     0.761
+     -0.367,
+     0.735
     ],
     "has_lock": true
    }
@@ -278,12 +4428,12 @@
    "rule": null,
    "t": 1.25,
    "values": {
-    "dist": 0.773,
+    "dist": 0.806,
     "age_s": 0.25,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     -0.252,
-     0.773
+     -0.28,
+     0.739
     ],
     "has_lock": true
    }
@@ -296,12 +4446,12 @@
    "rule": null,
    "t": 1.3333,
    "values": {
-    "dist": 0.697,
+    "dist": 0.72,
     "age_s": 0.333,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     -0.177,
-     0.785
+     -0.193,
+     0.741
     ],
     "has_lock": true
    }
@@ -314,12 +4464,12 @@
    "rule": null,
    "t": 1.4167,
    "values": {
-    "dist": 0.623,
+    "dist": 0.635,
     "age_s": 0.417,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     -0.104,
-     0.797
+     -0.107,
+     0.744
     ],
     "has_lock": true
    }
@@ -332,12 +4482,12 @@
    "rule": null,
    "t": 1.5,
    "values": {
-    "dist": 0.548,
+    "dist": 0.549,
     "age_s": 0.5,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     -0.029,
-     0.811
+     -0.02,
+     0.75
     ],
     "has_lock": true
    }
@@ -347,15 +4497,16 @@
    "state": "TRACKING",
    "decision": "ALLOW",
    "reason": null,
-   "rule": null,
+   "rule": "R-B",
+   "detail": "admisja na wej\u015bciu OK",
    "t": 1.5833,
    "values": {
-    "dist": 0.467,
+    "dist": 0.463,
     "age_s": 0.583,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.05,
-     0.828
+     0.066,
+     0.761
     ],
     "has_lock": true
    }
@@ -368,12 +4519,12 @@
    "rule": null,
    "t": 1.6667,
    "values": {
-    "dist": 0.384,
+    "dist": 0.377,
     "age_s": 0.667,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.132,
-     0.849
+     0.151,
+     0.775
     ],
     "has_lock": true
    }
@@ -386,12 +4537,12 @@
    "rule": null,
    "t": 1.75,
    "values": {
-    "dist": 0.3,
+    "dist": 0.293,
     "age_s": 0.75,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.215,
-     0.874
+     0.233,
+     0.792
     ],
     "has_lock": true
    }
@@ -404,12 +4555,12 @@
    "rule": null,
    "t": 1.8333,
    "values": {
-    "dist": 0.221,
+    "dist": 0.214,
     "age_s": 0.833,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.295,
-     0.899
+     0.31,
+     0.811
     ],
     "has_lock": true
    }
@@ -422,12 +4573,12 @@
    "rule": null,
    "t": 1.9167,
    "values": {
-    "dist": 0.153,
+    "dist": 0.143,
     "age_s": 0.917,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.369,
-     0.923
+     0.379,
+     0.829
     ],
     "has_lock": true
    }
@@ -440,12 +4591,12 @@
    "rule": null,
    "t": 2.0,
    "values": {
-    "dist": 0.102,
+    "dist": 0.083,
     "age_s": 1.0,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
      0.438,
-     0.942
+     0.846
     ],
     "has_lock": true
    }
@@ -458,12 +4609,12 @@
    "rule": null,
    "t": 2.0833,
    "values": {
-    "dist": 0.081,
+    "dist": 0.035,
     "age_s": 1.083,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.501,
-     0.955
+     0.484,
+     0.857
     ],
     "has_lock": true
    }
@@ -476,12 +4627,12 @@
    "rule": null,
    "t": 2.1667,
    "values": {
-    "dist": 0.096,
+    "dist": 0.013,
     "age_s": 1.167,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.558,
-     0.96
+     0.519,
+     0.863
     ],
     "has_lock": true
    }
@@ -494,12 +4645,12 @@
    "rule": null,
    "t": 2.25,
    "values": {
-    "dist": 0.126,
+    "dist": 0.03,
     "age_s": 1.25,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.607,
-     0.961
+     0.541,
+     0.862
     ],
     "has_lock": true
    }
@@ -512,12 +4663,12 @@
    "rule": null,
    "t": 2.3333,
    "values": {
-    "dist": 0.156,
+    "dist": 0.041,
     "age_s": 1.333,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.648,
-     0.955
+     0.552,
+     0.857
     ],
     "has_lock": true
    }
@@ -530,12 +4681,12 @@
    "rule": null,
    "t": 2.4167,
    "values": {
-    "dist": 0.179,
+    "dist": 0.046,
     "age_s": 1.417,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.679,
-     0.946
+     0.552,
+     0.849
     ],
     "has_lock": true
    }
@@ -548,12 +4699,12 @@
    "rule": null,
    "t": 2.5,
    "values": {
-    "dist": 0.193,
+    "dist": 0.047,
     "age_s": 1.5,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.698,
-     0.934
+     0.546,
+     0.84
     ],
     "has_lock": true
    }
@@ -566,12 +4717,12 @@
    "rule": null,
    "t": 2.5833,
    "values": {
-    "dist": 0.197,
+    "dist": 0.047,
     "age_s": 1.583,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.705,
-     0.923
+     0.535,
+     0.832
     ],
     "has_lock": true
    }
@@ -584,12 +4735,12 @@
    "rule": null,
    "t": 2.6667,
    "values": {
-    "dist": 0.191,
+    "dist": 0.048,
     "age_s": 1.667,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.701,
-     0.915
+     0.521,
+     0.827
     ],
     "has_lock": true
    }
@@ -602,12 +4753,12 @@
    "rule": null,
    "t": 2.75,
    "values": {
-    "dist": 0.177,
+    "dist": 0.048,
     "age_s": 1.75,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.688,
-     0.91
+     0.509,
+     0.827
     ],
     "has_lock": true
    }
@@ -620,12 +4771,12 @@
    "rule": null,
    "t": 2.8333,
    "values": {
-    "dist": 0.16,
+    "dist": 0.047,
     "age_s": 1.833,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.671,
-     0.909
+     0.499,
+     0.831
     ],
     "has_lock": true
    }
@@ -638,12 +4789,12 @@
    "rule": null,
    "t": 2.9167,
    "values": {
-    "dist": 0.144,
+    "dist": 0.044,
     "age_s": 1.917,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.654,
-     0.912
+     0.493,
+     0.837
     ],
     "has_lock": true
    }
@@ -656,682 +4807,1515 @@
    "rule": null,
    "t": 3.0,
    "values": {
-    "dist": 0.132,
+    "dist": 0.039,
     "age_s": 2.0,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.64,
-     0.916
+     0.491,
+     0.844
     ],
     "has_lock": true
    }
   },
   {
    "k": 37,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
-   "detail": "wej\u015bcie HOLD (martwe pole + stary kana\u0142)",
+   "rule": null,
    "t": 3.0833,
    "values": {
-    "dist": 0.125,
+    "dist": 0.033,
     "age_s": 2.083,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.631,
-     0.922
+     0.491,
+     0.851
     ],
     "has_lock": true
    }
   },
   {
    "k": 38,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 3.1667,
    "values": {
-    "dist": 0.122,
+    "dist": 0.029,
     "age_s": 2.167,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.625,
-     0.926
+     0.492,
+     0.858
     ],
     "has_lock": true
    }
   },
   {
    "k": 39,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 3.25,
    "values": {
-    "dist": 0.12,
+    "dist": 0.026,
     "age_s": 2.25,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.622,
-     0.927
+     0.492,
+     0.863
     ],
     "has_lock": true
    }
   },
   {
    "k": 40,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 3.3333,
    "values": {
-    "dist": 0.119,
+    "dist": 0.025,
     "age_s": 2.333,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.622,
-     0.926
+     0.491,
+     0.866
     ],
     "has_lock": true
    }
   },
   {
    "k": 41,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 3.4167,
    "values": {
-    "dist": 0.119,
+    "dist": 0.027,
     "age_s": 2.417,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.623,
-     0.924
+     0.489,
+     0.866
     ],
     "has_lock": true
    }
   },
   {
    "k": 42,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 3.5,
    "values": {
-    "dist": 0.12,
+    "dist": 0.03,
     "age_s": 2.5,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.625,
-     0.921
+     0.487,
+     0.863
     ],
     "has_lock": true
    }
   },
   {
    "k": 43,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 3.5833,
    "values": {
-    "dist": 0.119,
+    "dist": 0.034,
     "age_s": 2.583,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.626,
-     0.918
+     0.484,
+     0.86
     ],
     "has_lock": true
    }
   },
   {
    "k": 44,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 3.6667,
    "values": {
-    "dist": 0.119,
+    "dist": 0.037,
     "age_s": 2.667,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.626,
-     0.916
+     0.482,
+     0.857
     ],
     "has_lock": true
    }
   },
   {
    "k": 45,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 3.75,
    "values": {
-    "dist": 0.117,
+    "dist": 0.039,
     "age_s": 2.75,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.625,
-     0.914
+     0.481,
+     0.855
     ],
     "has_lock": true
    }
   },
   {
    "k": 46,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 3.8333,
    "values": {
-    "dist": 0.117,
+    "dist": 0.04,
     "age_s": 2.833,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.625,
-     0.913
+     0.48,
+     0.854
     ],
     "has_lock": true
    }
   },
   {
    "k": 47,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 3.9167,
    "values": {
-    "dist": 0.116,
+    "dist": 0.041,
     "age_s": 2.917,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.624,
-     0.912
+     0.481,
+     0.853
     ],
     "has_lock": true
    }
   },
   {
    "k": 48,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 4.0,
    "values": {
-    "dist": 0.116,
+    "dist": 0.04,
     "age_s": 3.0,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.624,
-     0.911
+     0.482,
+     0.852
     ],
     "has_lock": true
    }
   },
   {
    "k": 49,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 4.0833,
    "values": {
-    "dist": 0.115,
+    "dist": 0.04,
     "age_s": 3.083,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.625,
-     0.909
+     0.484,
+     0.85
     ],
     "has_lock": true
    }
   },
   {
    "k": 50,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 4.1667,
    "values": {
-    "dist": 0.116,
+    "dist": 0.04,
     "age_s": 3.167,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.625,
-     0.907
+     0.485,
+     0.848
     ],
     "has_lock": true
    }
   },
   {
    "k": 51,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 4.25,
    "values": {
-    "dist": 0.116,
+    "dist": 0.04,
     "age_s": 3.25,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.626,
-     0.907
+     0.486,
+     0.847
     ],
     "has_lock": true
    }
   },
   {
    "k": 52,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 4.3333,
    "values": {
-    "dist": 0.118,
+    "dist": 0.041,
     "age_s": 3.333,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.628,
-     0.907
+     0.486,
+     0.846
     ],
     "has_lock": true
    }
   },
   {
    "k": 53,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 4.4167,
    "values": {
-    "dist": 0.118,
+    "dist": 0.043,
     "age_s": 3.417,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.628,
-     0.907
+     0.485,
+     0.845
     ],
     "has_lock": true
    }
   },
   {
    "k": 54,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 4.5,
    "values": {
-    "dist": 0.119,
+    "dist": 0.044,
     "age_s": 3.5,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.629,
-     0.907
+     0.484,
+     0.845
     ],
     "has_lock": true
    }
   },
   {
    "k": 55,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 4.5833,
    "values": {
-    "dist": 0.12,
+    "dist": 0.045,
     "age_s": 3.583,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.631,
-     0.906
+     0.482,
+     0.845
     ],
     "has_lock": true
    }
   },
   {
    "k": 56,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 4.6667,
    "values": {
-    "dist": 0.121,
+    "dist": 0.046,
     "age_s": 3.667,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.632,
-     0.904
+     0.481,
+     0.844
     ],
     "has_lock": true
    }
   },
   {
    "k": 57,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 4.75,
    "values": {
-    "dist": 0.122,
+    "dist": 0.047,
     "age_s": 3.75,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.633,
-     0.904
+     0.48,
+     0.844
     ],
     "has_lock": true
    }
   },
   {
    "k": 58,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 4.8333,
    "values": {
-    "dist": 0.123,
+    "dist": 0.049,
     "age_s": 3.833,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.634,
-     0.904
+     0.478,
+     0.843
     ],
     "has_lock": true
    }
   },
   {
    "k": 59,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 4.9167,
    "values": {
-    "dist": 0.124,
+    "dist": 0.05,
     "age_s": 3.917,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.635,
-     0.904
+     0.477,
+     0.843
     ],
     "has_lock": true
    }
   },
   {
    "k": 60,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 5.0,
    "values": {
-    "dist": 0.125,
+    "dist": 0.05,
     "age_s": 4.0,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.636,
-     0.903
+     0.477,
+     0.842
     ],
     "has_lock": true
    }
   },
   {
    "k": 61,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 5.0833,
    "values": {
-    "dist": 0.126,
+    "dist": 0.05,
     "age_s": 4.083,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.637,
-     0.904
+     0.477,
+     0.842
     ],
     "has_lock": true
    }
   },
   {
    "k": 62,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 5.1667,
    "values": {
-    "dist": 0.127,
+    "dist": 0.05,
     "age_s": 4.167,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.637,
-     0.905
+     0.478,
+     0.842
     ],
     "has_lock": true
    }
   },
   {
    "k": 63,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 5.25,
    "values": {
-    "dist": 0.128,
+    "dist": 0.05,
     "age_s": 4.25,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.638,
-     0.906
+     0.478,
+     0.842
     ],
     "has_lock": true
    }
   },
   {
    "k": 64,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 5.3333,
    "values": {
-    "dist": 0.129,
+    "dist": 0.049,
     "age_s": 4.333,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.639,
-     0.908
+     0.478,
+     0.843
     ],
     "has_lock": true
    }
   },
   {
    "k": 65,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 5.4167,
    "values": {
-    "dist": 0.131,
+    "dist": 0.048,
     "age_s": 4.417,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.64,
-     0.91
+     0.479,
+     0.843
     ],
     "has_lock": true
    }
   },
   {
    "k": 66,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 5.5,
    "values": {
-    "dist": 0.132,
+    "dist": 0.048,
     "age_s": 4.5,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.641,
-     0.911
+     0.479,
+     0.844
     ],
     "has_lock": true
    }
   },
   {
    "k": 67,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 5.5833,
    "values": {
-    "dist": 0.133,
+    "dist": 0.048,
     "age_s": 4.583,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.641,
-     0.912
+     0.479,
+     0.844
     ],
     "has_lock": true
    }
   },
   {
    "k": 68,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 5.6667,
    "values": {
-    "dist": 0.134,
+    "dist": 0.048,
     "age_s": 4.667,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.643,
-     0.913
+     0.478,
+     0.844
     ],
     "has_lock": true
    }
   },
   {
    "k": 69,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 5.75,
    "values": {
-    "dist": 0.134,
+    "dist": 0.048,
     "age_s": 4.75,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.643,
-     0.914
+     0.478,
+     0.844
     ],
     "has_lock": true
    }
   },
   {
    "k": 70,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 5.8333,
    "values": {
-    "dist": 0.134,
+    "dist": 0.049,
     "age_s": 4.833,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.643,
-     0.914
+     0.478,
+     0.844
     ],
     "has_lock": true
    }
   },
   {
    "k": 71,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 5.9167,
    "values": {
-    "dist": 0.133,
+    "dist": 0.048,
     "age_s": 4.917,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.642,
-     0.914
+     0.478,
+     0.845
     ],
     "has_lock": true
    }
   },
   {
    "k": 72,
-   "state": "DWELL-GUARD",
-   "decision": "HOLD",
+   "state": "TRACKING",
+   "decision": "ALLOW",
    "reason": null,
-   "rule": "R-B",
+   "rule": null,
    "t": 6.0,
    "values": {
-    "dist": 0.132,
+    "dist": 0.047,
     "age_s": 5.0,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.64,
-     0.914
+     0.478,
+     0.846
     ],
     "has_lock": true
    }
   },
   {
    "k": 73,
-   "state": "DONE",
-   "decision": "REFUSE",
-   "reason": "STALE_AT_DWELL",
-   "rule": "R-B",
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
    "t": 6.0833,
    "values": {
-    "dist": 0.13,
+    "dist": 0.046,
     "age_s": 5.083,
-    "conf": 0.0442,
+    "conf": 0.0307,
     "pos": [
-     0.638,
-     0.914
+     0.479,
+     0.846
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 74,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.1667,
+   "values": {
+    "dist": 0.046,
+    "age_s": 5.167,
+    "conf": 0.0307,
+    "pos": [
+     0.48,
+     0.846
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 75,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.25,
+   "values": {
+    "dist": 0.046,
+    "age_s": 5.25,
+    "conf": 0.0307,
+    "pos": [
+     0.48,
+     0.845
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 76,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.3333,
+   "values": {
+    "dist": 0.047,
+    "age_s": 5.333,
+    "conf": 0.0307,
+    "pos": [
+     0.479,
+     0.845
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 77,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.4167,
+   "values": {
+    "dist": 0.047,
+    "age_s": 5.417,
+    "conf": 0.0307,
+    "pos": [
+     0.478,
+     0.845
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 78,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.5,
+   "values": {
+    "dist": 0.048,
+    "age_s": 5.5,
+    "conf": 0.0307,
+    "pos": [
+     0.477,
+     0.846
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 79,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.5833,
+   "values": {
+    "dist": 0.048,
+    "age_s": 5.583,
+    "conf": 0.0307,
+    "pos": [
+     0.476,
+     0.847
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 80,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.6667,
+   "values": {
+    "dist": 0.048,
+    "age_s": 5.667,
+    "conf": 0.0307,
+    "pos": [
+     0.474,
+     0.849
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 81,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.75,
+   "values": {
+    "dist": 0.048,
+    "age_s": 5.75,
+    "conf": 0.0307,
+    "pos": [
+     0.474,
+     0.85
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 82,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.8333,
+   "values": {
+    "dist": 0.047,
+    "age_s": 5.833,
+    "conf": 0.0307,
+    "pos": [
+     0.474,
+     0.851
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 83,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 6.9167,
+   "values": {
+    "dist": 0.046,
+    "age_s": 5.917,
+    "conf": 0.0307,
+    "pos": [
+     0.475,
+     0.852
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 84,
+   "state": "TRACKING",
+   "decision": "ALLOW",
+   "reason": null,
+   "rule": null,
+   "t": 7.0,
+   "values": {
+    "dist": 0.045,
+    "age_s": 6.0,
+    "conf": 0.0307,
+    "pos": [
+     0.476,
+     0.853
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 85,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "detail": "sufit twardy (age>6 s)",
+   "t": 7.0833,
+   "values": {
+    "dist": 0.044,
+    "age_s": 6.083,
+    "conf": 0.0307,
+    "pos": [
+     0.477,
+     0.853
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 86,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.1667,
+   "values": {
+    "dist": 0.043,
+    "age_s": 6.167,
+    "conf": 0.0307,
+    "pos": [
+     0.478,
+     0.854
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 87,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.25,
+   "values": {
+    "dist": 0.042,
+    "age_s": 6.25,
+    "conf": 0.0307,
+    "pos": [
+     0.478,
+     0.854
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 88,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.3333,
+   "values": {
+    "dist": 0.041,
+    "age_s": 6.333,
+    "conf": 0.0307,
+    "pos": [
+     0.478,
+     0.855
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 89,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.4167,
+   "values": {
+    "dist": 0.041,
+    "age_s": 6.417,
+    "conf": 0.0307,
+    "pos": [
+     0.478,
+     0.856
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 90,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.5,
+   "values": {
+    "dist": 0.041,
+    "age_s": 6.5,
+    "conf": 0.0307,
+    "pos": [
+     0.478,
+     0.858
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 91,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.5833,
+   "values": {
+    "dist": 0.04,
+    "age_s": 6.583,
+    "conf": 0.0307,
+    "pos": [
+     0.477,
+     0.86
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 92,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.6667,
+   "values": {
+    "dist": 0.04,
+    "age_s": 6.667,
+    "conf": 0.0307,
+    "pos": [
+     0.478,
+     0.861
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 93,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.75,
+   "values": {
+    "dist": 0.039,
+    "age_s": 6.75,
+    "conf": 0.0307,
+    "pos": [
+     0.478,
+     0.862
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 94,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.8333,
+   "values": {
+    "dist": 0.038,
+    "age_s": 6.833,
+    "conf": 0.0307,
+    "pos": [
+     0.478,
+     0.863
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 95,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 7.9167,
+   "values": {
+    "dist": 0.038,
+    "age_s": 6.917,
+    "conf": 0.0307,
+    "pos": [
+     0.478,
+     0.863
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 96,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.0,
+   "values": {
+    "dist": 0.039,
+    "age_s": 7.0,
+    "conf": 0.0307,
+    "pos": [
+     0.478,
+     0.862
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 97,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.0833,
+   "values": {
+    "dist": 0.04,
+    "age_s": 7.083,
+    "conf": 0.0307,
+    "pos": [
+     0.478,
+     0.86
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 98,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.1667,
+   "values": {
+    "dist": 0.041,
+    "age_s": 7.167,
+    "conf": 0.0307,
+    "pos": [
+     0.477,
+     0.859
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 99,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.25,
+   "values": {
+    "dist": 0.041,
+    "age_s": 7.25,
+    "conf": 0.0307,
+    "pos": [
+     0.477,
+     0.859
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 100,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.3333,
+   "values": {
+    "dist": 0.041,
+    "age_s": 7.333,
+    "conf": 0.0307,
+    "pos": [
+     0.476,
+     0.86
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 101,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.4167,
+   "values": {
+    "dist": 0.041,
+    "age_s": 7.417,
+    "conf": 0.0307,
+    "pos": [
+     0.477,
+     0.86
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 102,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.5,
+   "values": {
+    "dist": 0.039,
+    "age_s": 7.5,
+    "conf": 0.0307,
+    "pos": [
+     0.479,
+     0.861
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 103,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.5833,
+   "values": {
+    "dist": 0.037,
+    "age_s": 7.583,
+    "conf": 0.0307,
+    "pos": [
+     0.481,
+     0.862
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 104,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.6667,
+   "values": {
+    "dist": 0.035,
+    "age_s": 7.667,
+    "conf": 0.0307,
+    "pos": [
+     0.482,
+     0.862
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 105,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.75,
+   "values": {
+    "dist": 0.035,
+    "age_s": 7.75,
+    "conf": 0.0307,
+    "pos": [
+     0.483,
+     0.862
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 106,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.8333,
+   "values": {
+    "dist": 0.035,
+    "age_s": 7.833,
+    "conf": 0.0307,
+    "pos": [
+     0.483,
+     0.861
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 107,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 8.9167,
+   "values": {
+    "dist": 0.036,
+    "age_s": 7.917,
+    "conf": 0.0307,
+    "pos": [
+     0.482,
+     0.861
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 108,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.0,
+   "values": {
+    "dist": 0.035,
+    "age_s": 8.0,
+    "conf": 0.0307,
+    "pos": [
+     0.482,
+     0.861
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 109,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.0833,
+   "values": {
+    "dist": 0.034,
+    "age_s": 8.0,
+    "conf": 0.0307,
+    "pos": [
+     0.483,
+     0.863
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 110,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.1667,
+   "values": {
+    "dist": 0.032,
+    "age_s": 8.0,
+    "conf": 0.0307,
+    "pos": [
+     0.485,
+     0.864
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 111,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.25,
+   "values": {
+    "dist": 0.03,
+    "age_s": 8.0,
+    "conf": 0.0307,
+    "pos": [
+     0.487,
+     0.865
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 112,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.3333,
+   "values": {
+    "dist": 0.029,
+    "age_s": 8.0,
+    "conf": 0.0307,
+    "pos": [
+     0.488,
+     0.864
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 113,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.4167,
+   "values": {
+    "dist": 0.029,
+    "age_s": 8.0,
+    "conf": 0.0307,
+    "pos": [
+     0.489,
+     0.862
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 114,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.5,
+   "values": {
+    "dist": 0.029,
+    "age_s": 8.0,
+    "conf": 0.0307,
+    "pos": [
+     0.491,
+     0.86
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 115,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.5833,
+   "values": {
+    "dist": 0.029,
+    "age_s": 8.0,
+    "conf": 0.0307,
+    "pos": [
+     0.492,
+     0.858
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 116,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.6667,
+   "values": {
+    "dist": 0.029,
+    "age_s": 8.0,
+    "conf": 0.0307,
+    "pos": [
+     0.494,
+     0.857
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 117,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.75,
+   "values": {
+    "dist": 0.028,
+    "age_s": 8.0,
+    "conf": 0.0307,
+    "pos": [
+     0.495,
+     0.856
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 118,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.8333,
+   "values": {
+    "dist": 0.027,
+    "age_s": 8.0,
+    "conf": 0.0307,
+    "pos": [
+     0.496,
+     0.857
+    ],
+    "has_lock": true
+   }
+  },
+  {
+   "k": 119,
+   "state": "DWELL-GUARD",
+   "decision": "HOLD",
+   "reason": null,
+   "rule": "R-B",
+   "t": 9.9167,
+   "values": {
+    "dist": 0.025,
+    "age_s": 8.0,
+    "conf": 0.0307,
+    "pos": [
+     0.497,
+     0.859
     ],
     "has_lock": true
    }
   }
- ]
+ ],
+ "_picks": {
+  "hold_refuse": 46503,
+  "hold_allow": 46536,
+  "clean_success_hold": 46500
+ }
 }

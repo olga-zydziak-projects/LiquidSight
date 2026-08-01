@@ -6,8 +6,8 @@
     "poprawne_odmowy_pct": 24.0,
     "odmowy_per_powod": {
       "NO_MATCH": 6,
-      "null": 18,
-      "STALE_AT_DWELL": 1
+      "STALE_AT_DWELL": 10,
+      "null": 9
     },
     "baza_bez_oslony": {
       "dwell": 8,
@@ -18,23 +18,23 @@
     "odstepstwa": [
       {
         "seed": 47402,
-        "refused": false,
-        "reason": null,
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
         "env_fail_type": null,
         "command": "fly to the green cylinder"
       },
       {
         "seed": 47403,
-        "refused": false,
-        "reason": null,
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
         "env_fail_type": null,
         "command": "fly to the blue box"
       },
       {
         "seed": 47404,
-        "refused": false,
-        "reason": null,
-        "env_fail_type": "dwell",
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
+        "env_fail_type": null,
         "command": "fly to the green sphere"
       },
       {
@@ -60,15 +60,15 @@
       },
       {
         "seed": 47408,
-        "refused": false,
-        "reason": null,
-        "env_fail_type": "dwell",
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
+        "env_fail_type": null,
         "command": "fly to the green sphere"
       },
       {
         "seed": 47409,
-        "refused": false,
-        "reason": null,
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
         "env_fail_type": null,
         "command": "fly to the green sphere"
       },
@@ -76,7 +76,7 @@
         "seed": 47410,
         "refused": false,
         "reason": null,
-        "env_fail_type": null,
+        "env_fail_type": "dwell",
         "command": "fly to the blue box"
       },
       {
@@ -88,8 +88,8 @@
       },
       {
         "seed": 47413,
-        "refused": false,
-        "reason": null,
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
         "env_fail_type": null,
         "command": "fly to the blue box"
       },
@@ -109,9 +109,9 @@
       },
       {
         "seed": 47416,
-        "refused": false,
-        "reason": null,
-        "env_fail_type": "wrong_lock",
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
+        "env_fail_type": null,
         "command": "fly to the red sphere"
       },
       {
@@ -130,15 +130,15 @@
       },
       {
         "seed": 47422,
-        "refused": false,
-        "reason": null,
-        "env_fail_type": "dwell",
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
+        "env_fail_type": null,
         "command": "fly to the green sphere"
       },
       {
         "seed": 47423,
-        "refused": false,
-        "reason": null,
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
         "env_fail_type": null,
         "command": "fly to the green box"
       },
@@ -182,39 +182,39 @@
         "variant": "absent",
         "K": 8,
         "command": "fly to the green cylinder",
-        "n_steps": 120,
+        "n_steps": 74,
         "env_fail_type": null,
-        "env_success": true,
-        "refused": false,
-        "reason": null,
-        "rule": null,
-        "refuse_k": null
+        "env_success": false,
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
+        "rule": "R-B",
+        "refuse_k": 73
       },
       {
         "seed": 47403,
         "variant": "absent",
         "K": 3,
         "command": "fly to the blue box",
-        "n_steps": 120,
+        "n_steps": 98,
         "env_fail_type": null,
-        "env_success": true,
-        "refused": false,
-        "reason": null,
-        "rule": null,
-        "refuse_k": null
+        "env_success": false,
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
+        "rule": "R-B",
+        "refuse_k": 97
       },
       {
         "seed": 47404,
         "variant": "absent",
         "K": 5,
         "command": "fly to the green sphere",
-        "n_steps": 120,
-        "env_fail_type": "dwell",
+        "n_steps": 74,
+        "env_fail_type": null,
         "env_success": false,
-        "refused": false,
-        "reason": null,
-        "rule": null,
-        "refuse_k": null
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
+        "rule": "R-B",
+        "refuse_k": 73
       },
       {
         "seed": 47405,
@@ -260,26 +260,26 @@
         "variant": "absent",
         "K": 8,
         "command": "fly to the green sphere",
-        "n_steps": 120,
-        "env_fail_type": "dwell",
+        "n_steps": 74,
+        "env_fail_type": null,
         "env_success": false,
-        "refused": false,
-        "reason": null,
-        "rule": null,
-        "refuse_k": null
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
+        "rule": "R-B",
+        "refuse_k": 73
       },
       {
         "seed": 47409,
         "variant": "absent",
         "K": 3,
         "command": "fly to the green sphere",
-        "n_steps": 120,
+        "n_steps": 74,
         "env_fail_type": null,
-        "env_success": true,
-        "refused": false,
-        "reason": null,
-        "rule": null,
-        "refuse_k": null
+        "env_success": false,
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
+        "rule": "R-B",
+        "refuse_k": 73
       },
       {
         "seed": 47410,
@@ -287,8 +287,8 @@
         "K": 5,
         "command": "fly to the blue box",
         "n_steps": 120,
-        "env_fail_type": null,
-        "env_success": true,
+        "env_fail_type": "dwell",
+        "env_success": false,
         "refused": false,
         "reason": null,
         "rule": null,
@@ -325,13 +325,13 @@
         "variant": "absent",
         "K": 5,
         "command": "fly to the blue box",
-        "n_steps": 120,
+        "n_steps": 74,
         "env_fail_type": null,
-        "env_success": true,
-        "refused": false,
-        "reason": null,
-        "rule": null,
-        "refuse_k": null
+        "env_success": false,
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
+        "rule": "R-B",
+        "refuse_k": 73
       },
       {
         "seed": 47414,
@@ -351,26 +351,26 @@
         "variant": "absent",
         "K": 3,
         "command": "fly to the green box",
-        "n_steps": 110,
+        "n_steps": 62,
         "env_fail_type": null,
         "env_success": false,
         "refused": true,
         "reason": "STALE_AT_DWELL",
         "rule": "R-B",
-        "refuse_k": 109
+        "refuse_k": 61
       },
       {
         "seed": 47416,
         "variant": "absent",
         "K": 5,
         "command": "fly to the red sphere",
-        "n_steps": 120,
-        "env_fail_type": "wrong_lock",
+        "n_steps": 111,
+        "env_fail_type": null,
         "env_success": false,
-        "refused": false,
-        "reason": null,
-        "rule": null,
-        "refuse_k": null
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
+        "rule": "R-B",
+        "refuse_k": 110
       },
       {
         "seed": 47417,
@@ -442,26 +442,26 @@
         "variant": "absent",
         "K": 5,
         "command": "fly to the green sphere",
-        "n_steps": 120,
-        "env_fail_type": "dwell",
+        "n_steps": 74,
+        "env_fail_type": null,
         "env_success": false,
-        "refused": false,
-        "reason": null,
-        "rule": null,
-        "refuse_k": null
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
+        "rule": "R-B",
+        "refuse_k": 73
       },
       {
         "seed": 47423,
         "variant": "absent",
         "K": 8,
         "command": "fly to the green box",
-        "n_steps": 120,
+        "n_steps": 86,
         "env_fail_type": null,
-        "env_success": true,
-        "refused": false,
-        "reason": null,
-        "rule": null,
-        "refuse_k": null
+        "env_success": false,
+        "refused": true,
+        "reason": "STALE_AT_DWELL",
+        "rule": "R-B",
+        "refuse_k": 85
       },
       {
         "seed": 47424,

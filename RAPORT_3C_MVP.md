@@ -1,198 +1,180 @@
-# RAPORT_3C_MVP — osłona zmierzona (S3c1)
+# RAPORT_3C_MVP — osłona v2 zmierzona (S3c1 → S3c1-R)
 
-**Data:** 2026-08-01. **Sesja:** S3c1. **Zakres:** implementacja osłony-wrappera nad zamrożoną
-polityką (granica 67%/10%, `ckpt/s3b2r/policy_gc5.pt`) i pomiar jej działania — dwie nogi S1
-(clean / dropout) parowane z biegiem bez osłony oraz twarda odmowa na pułapkach S2.
-Decyzje zamrożone w `DECYZJE_3C.md` (commit `52cccd8`), kalibracja parametrów w `RAPORT_S3C0.md`
-(commit `bdfa41e`). **MIERZĘ = RAPORTUJE — także wtedy, gdy osłona zachowuje się inaczej niż
-przewidziała kalibracja offline.**
+**Data:** 2026-08-01. **Sesje:** S3c1 (iter-1) + S3c1-R (poprawka R-B). **Zakres:** osłona-wrapper
+nad zamrożoną polityką (granica 67%/10%, `ckpt/s3b2r/policy_gc5.pt`) — dwie reguły admisyjne
+(R-A conf-timeout, R-B dwell-guard), geofence (R-C), no-match (R-D); pomiar parowany S1 (clean /
+dropout) i twarda odmowa na pułapkach S2. Decyzje w `DECYZJE_3C.md`, semantyka R-B v2 w
+`ANEKS_3C1_SEMANTYKA.md`, kalibracja parametrów w `RAPORT_S3C0.md` (`bdfa41e`).
+**MIERZĘ = RAPORTUJE — z pełną historią iteracji 1 i atrybucją.**
 
 ## 1. Co pokazał pomiar (streszczenie)
 
-Osłona robi dokładnie to, co obiecują jej reguły, i przy okazji obnaża, że jedna z tych reguł jest
-źle dopasowana do tej konkretnej polityki. Trzy twierdzenia, wszystkie zmierzone:
+Osłona jest czystym wrapperem: zero zmian w polityce, kanale, env, percepcji; decyzje
+deterministyczne (reguła + wartość + próg), logowane per tick. Cztery zmierzone twierdzenia:
 
-Po pierwsze, **osłona niemal eliminuje wrong-action** — na czystej nodze porażki pierwszej klasy
-spadają z 10% do 1% (9 z 10 złych locków zamienionych w odmowę), pod dropoutem z 16% do 2%. Geofence
-działa idealnie: **25/25 pułapek „cel za granicą" odrzuconych z właściwym powodem**.
+**R-C (geofence) działa idealnie:** 25/25 pułapek „cel za granicą" odrzuconych z powodem
+`GEOFENCE`, przy zerowym koszcie na scenach normalnych (cel zawsze w arenie). Reguła twarda, tania,
+gotowa.
 
-Po drugie, **cena jest znacznie wyższa, niż przewidziała kalibracja offline**. Na czystej bazie
-sukces surowy załamuje się z **67% do 9%**: osłona odmawia 83 ze 100 epizodów, wszystkie z powodu
-`STALE_AT_DWELL`. To nie jest szum — to systematyczny efekt reguły R-B (dwell-guard), którego histogramy
-z S3c0 nie mogły zobaczyć.
+**R-B po poprawce jest transparentna na czystej bazie:** sukces 67% → **63%** (63 z 67 sukcesów bazy
+zachowane), tylko 2 odmowy na 100 epizodów. To naprawa błędu iteracji 1, w której R-B jako predykat
+ciągły odrzucała 83/100 (sukces 67→9%). Poprawka: admisja **na wejściu** (jednorazowa) + twardy
+sufit 6.0 s.
 
-Po trzecie, **reguła no-match (R-D) nie broni przed halucynacją groundera**. Na pułapkach
-„obiekt nieobecny" tylko 6/25 skończyło się poprawną odmową `NO_MATCH` — bo YOLO-World pytany o
-nieobecną parę (kolor, kształt) i tak zwraca box na jakimś dystraktorze, więc lock powstaje i R-D
-nie odpala.
+**Cena transparentności: czyste wrong-locki są nieosłanialne w MVP.** Na czystej bazie wrong-action
+wraca do 10% (osłona łapie 0 z 10) — bo czysty wrong-lock ma **świeży** kanał (grounder pewnie
+zablokował się na złym obiekcie, niski age), więc R-B go nie widzi, a R-A nie ma progu conf (ROC
+płaska, AUC 0.6496). Osłona chroni przed **zamrożonym** kanałem, nie przed **pewną pomyłką**.
 
-Wnioski są słuszne i zostają jako pomiar; **żaden próg ani theta nie był strojony po obejrzeniu
-wyników** (D1–D3 zamrożone przed pomiarem).
+**R-D nie broni przed halucynacją groundera:** na pułapkach „obiekt nieobecny" tylko 6/25 poprawnych
+`NO_MATCH` — YOLO-World pytany o nieobecną parę i tak zwraca box (conf ~0.02) na dystraktorze, lock
+powstaje, R-D nie odpala; 6/25 przecieka do wrong-action.
 
-## 2. Reguły osłony i prowieniencja parametrów
+Żaden próg ani theta nie był strojony po obejrzeniu wyników (D1–D3 zamrożone; poprawka R-B to
+bug-fix semantyki, nie zmiana wartości).
 
-Osłona jest czystym wrapperem: konsumuje wyjścia (pozycja drona, wiek locka z kanału, conf z
-groundera, dystans do celu) i zwraca `ALLOW` / `HOLD` / `REFUSE(reason)` deterministycznie. Zero
-zmian w polityce, kanale, env, percepcji. Kod: `s3c1/shield.py` (maszyna stanów), 7/7 testów
-jednostkowych każdej reguły (`s3c1/test_shield.py`).
+## 2. Reguły osłony v2 i prowieniencja
+
+Kod: `s3c1/shield.py` (maszyna stanów), 8/8 testów jednostkowych (`s3c1/test_shield.py`).
 
 | reguła | warunek | akcja | parametr (prowieniencja) |
 |---|---|---|---|
 | R-A / R-D | brak locka przez T_acq | REFUSE(NO_MATCH) | **bez progu conf** — ROC z S3c0 płaska, AUC 0.6496 (`bdfa41e`); D1 |
-| R-B | dystans < 0.5 m i age_s > θ_age | HOLD; świeży tick w T_hold → ALLOW; timeout → REFUSE(STALE_AT_DWELL) | **θ_age = 2.0 s** — histogramy age-at-dwell-entry G2 (`bdfa41e`); D2 |
-| R-C | cel lub pozycja poza (arena_half − 0.2) = 1.8 m | REFUSE(GEOFENCE) | arena_half = 2.0 (config env); margines 0.2 m |
+| R-B (a) | pierwsze przekroczenie dist < 0.5 m, age_s > θ_age | HOLD; świeży tick w T_hold → admisja; timeout → REFUSE(STALE) | **θ_age = 2.0 s**; admisja NA WEJŚCIU (`ANEKS_3C1`) |
+| R-B (b) | po admisji: age_s > sufit, w dowolnym momencie | HOLD; świeży ≤ sufit → ALLOW; timeout → REFUSE(STALE) | **sufit = 6.0 s** — G2: zero sukcesów przy age>6 s |
+| R-C | cel lub pozycja poza (arena_half − 0.2) = 1.8 m | REFUSE(GEOFENCE) | arena_half = 2.0 (config env); margines 0.2 |
 | — | timeouty | — | **T_acq = T_hold = 3.0 s**; D3 |
 
-`conf` jest logowany per tick (pod overlay dema), ale nie bramkuje — bezpośrednia konsekwencja
-tego, że separacja conf poprawne-vs-błędne w S3c0 była graniczna (AUC 0.6496; progowanie
-net-negatywne). Powód `LOW_CONF_LOCK` istnieje w enumeracji, ale w MVP nigdy nie odpala.
+Księgowość **trójwynikowa** (D4): SUKCES / ODMOWA / PORAŻKA; wrong-action = porażka pierwszej klasy;
+odmowa ≠ sukces ≠ porażka; assert jednoznaczności w `shield.outcome`. Pomiar **parowany**: każdy
+seed uruchamiany dwa razy na tej samej scenie/masce (bez osłony i z osłoną). Wierność: ramię bez
+osłony na nodze A daje **sukces 67,0% / wrong-lock 10,0%** — co do liczby jak precond-R.
 
-## 3. Konstrukcja pomiaru
+## 3. Iteracja 1: pierwsza konfiguracja i co złapała (historia)
 
-Księgowość **trójwynikowa** (D4): każdy epizod kończy się jako SUKCES (dolot+dwell przy wskazanym,
-osłona ALLOW), ODMOWA (osłona zatrzymała misję z powodem) albo PORAŻKA (wrong-action / katastrofa /
-dryf bez odmowy). Wrong-action jest porażką pierwszej klasy; odmowa nie jest ani sukcesem, ani
-porażką. Assert jednoznaczności w `shield.outcome` pilnuje, że odmowa ⇔ osłona zatrzymała misję
-(bez podwójnego liczenia HOLD→ALLOW→sukces). Pomiar jest **parowany**: każdy seed uruchamiany dwa
-razy na tej samej scenie i tej samej masce dropoutu — raz bez osłony (baza), raz z osłoną.
-Że parowanie jest wierne, potwierdza ramię bez osłony na nodze A: **sukces 67,0% / wrong-lock 10,0%
-co do liczby zgadza się z precond-R** — harness odtwarza granicę 1:1.
+Iterację 1 (S3c1, commit `980160c`, artefakty w `results/s3c1/iter1/`) raportuję jawnie, bo jej
+błąd jest pouczający. R-B było tam **predykatem ciągłym** (`dist<0.5 ∧ age>θ_age` sprawdzany na
+każdym ticku) — rozjazd z `PRE_3C0 §2`, który mówi „admisja **wejścia** w dwell". Efekt na czystej
+bazie (100 ep, parowane): **SUKCES 9 / ODMOWA 83 / PORAŻKA 8**, wszystkie 83 odmowy `STALE_AT_DWELL`,
+sukces 67% → 9%.
 
-## 4. POMIAR-S1, noga A (clean, 46500–46599, 100 ep)
+Mechanizm, który iteracja 1 złapała (i to jest jej wartość jako pomiaru): **końcowy „ślepy" finisz
+z natury wchodzi w martwe pole** — cel opuszcza kadr 256² przy zbliżeniu, grounder milczy, wiek
+locka rośnie liniowo przez całą fazę zawisu. Predykat ciągły łapał ten wzrost w każdym epizodzie i
+zamrażał drona ~0.3 m od celu, dławiąc dokładnie ten kompetentny ślepy finisz, który daje 67%
+sukcesów. To nie była własność zadania, tylko rozjazd implementacji — ale ujawnił twardy fakt:
+**age rośnie przez cały terminalny dwell, nie tylko przy wejściu**, czego kalibracja offline S3c0
+(age *w chwili wejścia*, <1.25 s, 0/45 dotkniętych) nie mogła zobaczyć. Poprawka v2 czyta tę lekcję:
+sprawdź świeżość **raz, na wejściu**, a potem pozwól ślepemu finiszowi się domknąć, trzymając tylko
+twardy sufit na skrajne zamrożenie.
 
-| | baza (bez osłony) | z osłoną |
-|---|---|---|
-| SUKCES | 67 | **9** |
-| ODMOWA | 0 | **83** (wszystkie STALE_AT_DWELL) |
-| PORAŻKA | 33 (10 wrong-action + 23 inne) | **8** (1 wrong-action + 7 inne) |
-| wrong-action % | 10,0% | **1,0%** |
+## 4. POMIAR-S1 v2, noga A (clean, 46500–46599, 100 ep)
 
-Macierz konwersji (baza → osłona): sukces→odmowa **58**, sukces→sukces 9; wrong-action→odmowa **9**,
-wrong-action→porażka 1; porażka-inne→odmowa 16, porażka-inne→porażka 7. HOLD: 89 wejść, **5 powrotów
-do ALLOW**.
-
-**Osłona NIE jest transparentna na czystej bazie — i to jest główny wynik sesji.** Kalibracja S3c0
-przewidziała R-B jako uśpioną (age przy *wejściu* w dwell < 1,25 s na bazie, 0/45 epizodów
-dotkniętych). Pomiar w pętli pokazuje coś innego: **age nie jest zamrożony w momencie wejścia — rośnie
-przez całą końcową fazę „ślepego" zawisu**. Końcowe podejście z natury wchodzi w martwe pole (cel
-opuszcza kadr 256² przy zbliżeniu, grounder naturalnie zwraca no-detection), więc od chwili utraty
-widoczności wiek locka rośnie liniowo. W praktycznie każdym epizodzie przekracza θ_age = 2,0 s zanim
-dron domknie dwell — R-B wchodzi w HOLD, zamraża drona ~0,3 m od celu, kanał (nadal ślepy) się nie
-odświeża, i po T_hold = 3,0 s pada `STALE_AT_DWELL`.
-
-Oś czasu jednego epizodu (`results/s3c1/fig_os_czasu_hold.png`, seed 46500 z nogi B) pokazuje
-mechanizm w czystej postaci: dron dolatuje na **dystans 0,125 m** (wewnątrz r_goal = 0,25 — dwell
-by się domknął), ale w tej samej chwili age = 2,08 s → HOLD; przez kolejne 3 s wiek rośnie
-2,08 → 5,08 s (brak świeżego ticku w martwym polu) → REFUSE. **HOLD jest tu samobójczy**: zamraża
-dokładnie ten ślepy finisz, który jest źródłem 67% sukcesów bazy, i żąda świeżości kanału, której
-martwe pole nie może dostarczyć. Założenie R-B („stary kanał przy celu = niebezpieczny ślepy
-finisz") jest sprzeczne ze zmierzonym faktem, że ta polityka **jest kompetentna w ślepym finiszu**.
-
-Bilans netto reguły na czystej bazie: wrong-action 10 → 1 (osłona kupuje redukcję złych akcji),
-ale sukces 67 → 9 (płaci za nią prawie całą skutecznością). To jest trade-off z `PRE_3C0 §7`
-zrealizowany w skrajnej postaci — dużo mocniejszy, niż zakładało „część near-missów".
-
-## 5. POMIAR-S1, noga B (dropout p=0.5 Bernoulli, 46500–46549, 50 ep)
-
-| | baza | z osłoną |
-|---|---|---|
-| SUKCES | 22 (44,0%) | **3** (6,0%) |
-| ODMOWA | 0 | **44** (STALE_AT_DWELL 31, NO_MATCH 13) |
-| PORAŻKA | 28 (8 wrong-action + 20 inne) | **3** (1 wrong-action + 2 inne) |
-| wrong-action % | 16,0% | **2,0%** |
-
-Macierz: sukces→odmowa 19; wrong-action→odmowa 7 (2 NO_MATCH + 5 STALE), wrong-action→porażka 1;
-porażka-inne→odmowa 18 (11 NO_MATCH + 7 STALE), porażka-inne→porażka 2. HOLD: 42 wejścia, **9 powrotów
-do ALLOW** (dropout czasem dostarcza świeży tick w oknie T_hold — stąd więcej powrotów niż na czystej
-nodze). Obraz jak na nodze A, z dodatkiem `NO_MATCH`: dropout tłumi początkowe dostarczenia poza T_acq,
-więc 13 epizodów odrzuconych już na etapie akwizycji. Pod dropoutem 25 z 28 porażek bazy zamienia się
-w odmowy — osłona głównie konwertuje porażki „zamrożonego kanału" w bezpieczne abstynencje.
-
-## 6. POMIAR-S2, pułapki (47400–47449, generator w `s3c1/traps.py`)
-
-**Geofence (cel przeniesiony poza 2.0 m, 25 ep): 25/25 = 100% poprawnych odmów `GEOFENCE`.** Bez
-osłony te sceny kończą się 8× wrong_lock i 17× no_arrival (dron nie dolatuje do celu za granicą).
-R-C sprawdza pozycję celu przed startem i odrzuca natychmiast (k=0), niezależnie od percepcji —
-zachowuje się dokładnie zgodnie z projektem.
-
-**Obiekt nieobecny (komenda o parę spoza sceny, 25 ep): tylko 6/25 = 24% poprawnych `NO_MATCH`.**
-To odstępstwo od oczekiwania (100%) i wynik diagnostyczny. Rozkład: 6× NO_MATCH (poprawnie),
-10× STALE_AT_DWELL (osłona odrzuciła, ale inną regułą), 9× brak odmowy — z czego **5 skończyło się
-wrong-action** (dron doleciał i zawisł przy dystraktorze). Mechanizm: YOLO-World pytany o nieobecną
-parę (kolor, kształt) **nie zwraca no-detection — halucynuje box na jakimś obecnym dystraktorze**.
-Powstaje lock, więc R-D („brak locka przez T_acq") nie odpala; dron leci do halucynacji i albo grzęźnie
-w martwym polu (10× złapane późno przez R-B jako STALE), albo domyka wrong-action (5×). Osłona łapie
-16/25 (jakąkolwiek regułą), ale realnie niebezpieczne 5/25 przeciekają. To ta sama luka, co w S3c0/D1:
-bez użytecznego sygnału admisyjności osłona nie odróżnia „grounder wskazał właściwy obiekt" od
-„grounder zmyślił". Wszystkie 19 odstępstw wypisanych per epizod w `results/s3c1/s2_traps.json`.
-
-## 7. Księgowość trójwynikowa vs granica 67
-
-Zestawienie skutku osłony względem gołej granicy (noga A, 100 ep):
-
-| metryka | baza | osłona | kierunek |
+| | baza | osłona v2 | (iter-1) |
 |---|---|---|---|
-| SUKCES | 67% | 9% | ↓ 58 pp (cena) |
-| wrong-action (porażka I klasy) | 10% | 1% | ↓ 9 pp (zysk) |
-| ODMOWA (bezpieczne wstrzymanie) | 0% | 83% | nowa kategoria |
+| SUKCES | 67 | **63** | 9 |
+| ODMOWA | 0 | **2** (STALE) | 83 |
+| PORAŻKA | 33 (10 wrong + 23 inne) | **35** (10 wrong + 25 inne) | 8 |
+| wrong-action % | 10,0% | **10,0%** | 1,0% |
 
-Osłona kupuje redukcję wrong-action o 9 pp za cenę 58 pp sukcesu zamienionego w odmowę. Przy obecnych
-parametrach (θ_age = 2,0 s, T_hold = 3,0 s, martwe pole 0,5 m) **wymiana jest głęboko niekorzystna na
-czystym kanale** — osłona zamienia kompetentną, choć ślepą, politykę w maszynę do odmawiania. Wartość
-jest realna tylko tam, gdzie ślepy finisz faktycznie jest niepewny (dropout, zamrożony kanał) — ale
-R-B nie umie odróżnić tych dwóch sytuacji, bo obie wyglądają identycznie w jednym sygnale (rosnący
-age w martwym polu).
+Macierz konwersji: **bez zmian 95**, sukces→odmowa 1, porażka-inne→odmowa 1, wrong-action→odmowa 0.
+HOLD: 82 wejścia, 1 powrót do ALLOW.
 
-## 8. Granice osłony (co jest niewidzialne dla jej sygnałów)
+Osłona jest praktycznie **transparentna** — spełnia pre-rejestrację (A: sukces ~67, odmowy 0–3,
+wrong-action ~10). Uwaga do 82 wejść w HOLD przy zaledwie 2 odmowach: to prawie wyłącznie **sufit
+6.0 s**, który odpala późno (age przekracza 6 s dopiero po ~7 s ślepego dwellu), gdy dron jest już
+zaparkowany w r_goal — a epizod kończy się (10 s) zanim upłynie T_hold (3 s), więc HOLD-przy-celu
+domyka dwell i sukces zostaje. Oś czasu takiego epizodu (seed 46500): admisja na wejściu ze świeżym
+kanałem, dwell do celu, sufit@t=7.08 s (age 6.08, dist 0.044 m — w celu), koniec epizodu w HOLD →
+SUKCES. Sufit kosztuje więc tylko **1** czysty sukces (zamieniony w odmowę) na 100 — zgodnie z
+prowieniencją (G2: zero sukcesów przy age>6 s).
 
-**Ściana B4 jest niewidzialna dla osłony jako sygnał.** Dryf ślepego zawisu (B4) i poprawny ślepy
-finisz wyglądają identycznie z punktu widzenia kanału: w obu cel jest w martwym polu, w obu age
-rośnie. Osłona nie ma sygnału, który by je rozróżnił — może tylko odmawiać ryczałtem albo puszczać
-ryczałtem. To jest strukturalne: precyzja dwell leży w wykonawcy/warunkowaniu (ustalenie z fazy 3b),
-a osłona operuje na wyjściu kanału, nie w wykonawcy.
+**Cena: czyste wrong-locki przechodzą.** Osłona nie zamienia ani jednego z 10 wrong-locków w odmowę.
+Powód strukturalny: czysty wrong-lock to pewna pomyłka groundera przy **świeżym** kanale (niski age),
+niewidzialna dla R-B (bramka wieku) i dla R-A (brak progu conf). To jest fundamentalna granica MVP —
+patrz §7.
 
-**Admisja przez conf jest martwa — z liczbami.** ROC separacji conf poprawnych i błędnych locków
-miała AUC 0,6496 (S3c0), a replay pokazał ≈2 fałszywe odmowy sukcesu na 1 złapaną złą akcję. Dlatego
-R-A działa tylko jako timeout (NO_MATCH), i dlatego pułapka „obiekt nieobecny" przecieka: bez progu
-conf jedyny sygnał no-matchu to brak locka, a halucynujący grounder locka dostarcza. Domknięcie tej
-luki wymaga sygnału weryfikacji, którego kanał 5-dim nie niesie (F-3b-1: conf na zdegenerowanym
-wejściu jest nieinformatywny).
+## 5. POMIAR-S1 v2, noga B (dropout p=0.5, 46500–46549, 50 ep)
+
+| | baza | osłona v2 | (iter-1) |
+|---|---|---|---|
+| SUKCES | 22 (44,0%) | **15** (30,0%) | 3 |
+| ODMOWA | 0 | **22** (NO_MATCH 13, STALE 9) | 44 |
+| PORAŻKA | 28 (8 wrong + 20 inne) | **13** (5 wrong + 8 inne) | 3 |
+| wrong-action % | 16,0% | **10,0%** | 2,0% |
+
+Macierz: bez zmian 27, sukces→odmowa 6, porażka-inne→odmowa 13 (11 NO_MATCH + 2 STALE),
+wrong-action→odmowa 3. HOLD: 32 wejścia, 1 powrót do ALLOW. Pod dropoutem osłona zamienia **16 z 28
+porażek bazy w odmowy** (głównie NO_MATCH: dropout tłumi początkowe dostarczenia poza T_acq, i STALE:
+ogon zamrożonego kanału), zachowując 15 z 22 sukcesów. To jest właściwy tryb pracy osłony —
+konwersja porażek zamrożonego kanału w bezpieczne abstynencje przy akceptowalnej utracie sukcesu
+(oczekiwana pre-rejestracja nogi B: konwersja ogona zamrożonego kanału — potwierdzona).
+
+## 6. POMIAR-S2 v2, pułapki (47400–47449, generator `s3c1/traps.py`)
+
+**Geofence (25 ep): 25/25 = 100% poprawnych `GEOFENCE`.** R-C sprawdza pozycję celu przed startem
+(k=0) niezależnie od percepcji. Bez osłony te sceny to 8× wrong_lock + 17× no_arrival.
+
+**Obiekt nieobecny (25 ep): 6/25 = 24% poprawnych `NO_MATCH`** — limit, zgodny z oczekiwaniem.
+Rozkład: 6 NO_MATCH, 1 STALE, 18 bez odmowy; **6 przecieków do wrong-action** (seedy 47406, 47407,
+47411, 47416, 47418, 47424 — wypisane). Mechanizm: YOLO-World pytany o nieobecną parę (kolor,kształt)
+**halucynuje box** (conf ~0.02) na jakimś dystraktorze; lock powstaje, więc R-D („brak locka przez
+T_acq") nie odpala, dron leci do halucynacji i domyka wrong-action. To ta sama luka co czyste
+wrong-locki (§7): bez sygnału weryfikacji dopasowania osłona nie odróżnia „grounder wskazał właściwy
+obiekt" od „grounder zmyślił".
+
+## 7. Granice osłony (co jest niewidzialne dla jej sygnałów)
+
+**Czyste wrong-locki są nieosłanialne w MVP — z liczbami.** Admisja przez conf jest martwa: ROC
+separacji conf poprawnych i błędnych locków miała AUC **0.6496** (S3c0), a replay ≈2 fałszywe odmowy
+sukcesu na 1 złapaną złą akcję. Dlatego R-A działa tylko jako timeout, a wrong-lock przy świeżym
+kanale (czysta baza: 10/100; pułapka-absent: halucynacja conf ~0.02) przechodzi. Osłona chroni przed
+**zamrożonym** kanałem (STALE) i przed **geometrią** (GEOFENCE), ale nie przed **pewną pomyłką
+percepcji**.
+
+**Ściana B4 jest niewidzialna dla osłony jako sygnał.** Poprawny ślepy finisz i dryf ślepego zawisu
+(B4) wyglądają identycznie z punktu widzenia kanału (cel w martwym polu, rosnący age). R-B może tylko
+admitować na wejściu i trzymać sufit — nie ma sygnału, który rozróżni te dwa przypadki poniżej sufitu.
+Precyzja dwell leży w wykonawcy, nie na wyjściu kanału (ustalenie fazy 3b).
+
+## 8. Przyszłe mandaty (poza MVP — nie realizowane tutaj)
+
+1. **Weryfikator pierwszego locka (OWLv2).** Luka wrong-lock/halucynacji domyka się sygnałem
+   weryfikacji dopasowania, nie conf. S3b0 zmierzył OWLv2 (`google/owlv2-base-patch16-ensemble`):
+   **prec@1 0.958** (wrong-obj 0.042, no-detection 0.000), p95 **642 ms**. Jedno zapytanie **raz przy
+   admisji** (nie w pętli 12 Hz) mieści się w budżecie ~1.6 s bez dotykania kanału — druga opinia,
+   która odrzuca lock niezgodny z komendą. To adresowałoby zarówno czyste wrong-locki (§4), jak i
+   halucynację pułapek (§6).
+2. **Tłumienie dostarczeń w dwell.** Zamiast trzymać sufit na naturalnym wzroście age w martwym polu,
+   rozważyć zamrożenie kanału (brak nowych dostarczeń) po admisji — dron kończy z pamięci, osłona nie
+   reaguje na benigne starzenie.
+3. **R-D poza timeoutem** wymaga sygnału z (1) — sam „czy jest box" nie wystarcza przy open-vocab
+   grounderze, który zawsze zwraca box.
 
 ## 9. Motywacja zewnętrzna (RILA) i mapowanie na akt 4 dema
 
-Osłona-abstynencja jest odpowiedzią na klasę zagrożeń, w której percepcja jest atakowana lub
-degradowana fizycznie (RILA: ataki na sensor/scenę, zrywany strumień, wprowadzone dystraktory). W tej
-klasie właściwą odpowiedzią autonomicznego systemu nie jest „zgaduj dalej", lecz **odmów z powodem** —
-dron bezpieczny, zadanie świadomie niewykonane. Trzy zmierzone powody odmowy mapują się wprost na
-trzy sytuacje aktu 4 dema:
+Osłona-abstynencja odpowiada na klasę zagrożeń, w której percepcja jest atakowana lub degradowana
+fizycznie (RILA: ataki na sensor/scenę, zrywany strumień, wprowadzone dystraktory). Właściwą reakcją
+autonomicznego systemu nie jest „zgaduj dalej", lecz **odmów z powodem**. Trzy zmierzone powody mapują
+się na akt 4:
 
-- `GEOFENCE` — cel/trajektoria poza bezpieczną areną → twarda, natychmiastowa odmowa (100% pewna).
-- `STALE_AT_DWELL` — kanał zamrożony przy celu (dropout / martwe pole) → „nie jestem pewien pozycji".
-- `NO_MATCH` — grounder nie dostarcza locka w budżecie czasu → „nie widzę wskazanego obiektu".
+- `GEOFENCE` — cel/trajektoria poza bezpieczną areną → twarda, natychmiastowa odmowa (**zmierzone
+  25/25**).
+- `STALE_AT_DWELL` — kanał zamrożony przy celu (zabite łącze / dropout): wejście z wysokim age →
+  HOLD → REFUSE (oś czasu `results/s3c1/fig_os_czasu_hold.png`, panel HOLD→REFUSE, seed 46503);
+  przy odzyskanym ticku HOLD→ALLOW (panel drugi, seed 46536).
+- `NO_MATCH` — brak locka w budżecie (dropout tłumi akwizycję): zmierzone głównie na nodze B.
 
-Log decyzji per tick (`shield.trace`, format w `results/s3c1/traces_legB.json`) zawiera stan, regułę,
-wartości i decyzję — gotowy pod overlay. Zastrzeżenie do dema uczciwe wobec pomiaru: `STALE_AT_DWELL`
-odpala też na czystym, udanym finiszu (nie tylko pod atakiem), a `NO_MATCH` nie łapie halucynacji —
-overlay powinien pokazywać powód, nie sugerować niezawodności, której nie ma.
+Log decyzji per tick (`shield.trace`, `results/s3c1/traces_legB.json`) niesie stan, regułę, wartości
+i decyzję — gotowy pod overlay. Uczciwe zastrzeżenie do dema: `NO_MATCH` nie łapie halucynacji
+(overlay pokazuje powód, nie sugeruje niezawodności, której nie ma), a wrong-lock przy świeżym
+kanale przechodzi bez sygnału.
 
-## 10. Do decyzji człowieka (poza MVP — nie strojone tutaj)
+## 10. Figury i higiena
 
-Pomiar zamyka MVP; poniższe to materiał do decyzji, nie zmiany w tej sesji:
-
-1. **R-B jest źle dopasowana do kompetentnego ślepego finiszu.** Sam wzrost age w martwym polu nie
-   odróżnia benignego finiszu od zamrożonego kanału. Kierunki do rozważenia (nowy mandat): guard tylko
-   gdy kanał był stary *przed* wejściem w martwe pole; albo próg na *tempie* utraty świeżości zamiast
-   na bezwzględnym wieku; albo znacznie luźniejsze θ_age/T_hold skalibrowane na wzroście age w pętli
-   (nie na wieku przy wejściu). To wymaga ponownej kalibracji na logach S3c1, nie offline.
-2. **R-D nie broni przed halucynacją open-vocab groundera.** Domknięcie wymaga sygnału weryfikacji
-   dopasowania (nie samego „czy jest box"), czyli powrotu do problemu admisyjności z fazy 3b.
-3. **Geofence (R-C) jest gotowy** — 100% na pułapkach, zero kosztu na scenach normalnych (cel zawsze
-   w arenie), reguła twarda i tania.
-
-## 11. Higiena
-
-Polityka/kanał/env/percepcja/ekspert — nietknięte (czysty wrapper). Sweep G1 46600–46649 nietknięty.
-Pula pułapek 47400–47449 addytywna, poza pulami pomiarowymi. Zapisy tylko w `s3c1/` i `results/s3c1/`.
-Artefakty: `results/s3c1/{s1_legA,s1_legB,s2_traps,traces_legB}.json`,
-`results/s3c1/{fig_konwersja_nogaB,fig_os_czasu_hold}.png`; kod `s3c1/{shield,measure_s1,measure_s2,
-traps,make_figures,test_shield}.py`. Testy jednostkowe 7/7 PASS.
+Figury: `results/s3c1/fig_konwersja_nogaB.png` (macierz konwersji noga B), `results/s3c1/
+fig_os_czasu_hold.png` (oś czasu: HOLD→REFUSE i HOLD→ALLOW). Polityka/kanał/env/percepcja/ekspert —
+nietknięte (czysty wrapper); zmiana wyłącznie w semantyce R-B (bug-fix, wartości θ/T bez zmian).
+Sweep G1 46600–46649 nietknięty. Pula pułapek 47400–47449 addytywna. Iter-1 zachowana w
+`results/s3c1/iter1/`. Artefakty v2: `results/s3c1/{s1_legA,s1_legB,s2_traps,traces_legB}.json` +
+2 figury; kod `s3c1/{shield,measure_s1,measure_s2,traps,make_figures,test_shield}.py`. Testy 8/8 PASS.

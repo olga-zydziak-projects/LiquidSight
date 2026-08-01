@@ -125,22 +125,34 @@ def main():
                           f"env_fail={dv['env_fail_type']} cmd='{dv['command']}'")
             else:
                 print("odstepstwa: BRAK (100% poprawnych odmow)")
-        # --- dodatkowo: zrzut trace jednego epizodu HOLD->REFUSE(STALE) z nogi B (pod figurę osi czasu) ---
+        # --- zrzut dwóch trace z nogi B: HOLD->REFUSE(STALE) i HOLD->ALLOW (pod figury osi czasu) ---
         try:
             from s3c1.measure_s1 import run_episode, MASK_SEED_P50
             legB = os.path.join(OUT, "s1_legB.json")
-            target = None
+            traces = {}; picks = {}
+            pdrop = {}
             if os.path.exists(legB):
                 epsB = json.load(open(legB))["episodes"]
-                hold = [e for e in epsB if e.get("n_hold_enter", 0) > 0 and "STALE" in e["shield"]]
-                hold = hold or [e for e in epsB if e.get("n_hold_enter", 0) > 0]
-                if hold:
-                    target = hold[0]["seed"]
-            if target is not None:
-                rec = run_episode(env, client, model, device, target, 0.5, MASK_SEED_P50, True)
-                json.dump({str(target): rec["trace"]},
-                          open(os.path.join(OUT, "traces_legB.json"), "w"), indent=1)
-                print(f"\nTRACE zrzucony: seed {target} ({rec['wynik']}/{rec.get('refuse_reason')})")
+                refuse = [e for e in epsB if e.get("n_hold_enter", 0) > 0 and "STALE" in e["shield"]]
+                allw = [e for e in epsB if e.get("n_hold_release", 0) > 0]
+                if refuse:
+                    picks["hold_refuse"] = refuse[0]["seed"]; pdrop[refuse[0]["seed"]] = 0.5
+                if allw:
+                    picks["hold_allow"] = allw[0]["seed"]; pdrop[allw[0]["seed"]] = 0.5
+            legA = os.path.join(OUT, "s1_legA.json")
+            if os.path.exists(legA):                      # diagnostyka: czysty sukces z HOLD
+                epsA = json.load(open(legA))["episodes"]
+                sh = [e for e in epsA if e.get("n_hold_enter", 0) > 0 and e["shield"].startswith("SUKCES")]
+                if sh:
+                    picks["clean_success_hold"] = sh[0]["seed"]; pdrop[sh[0]["seed"]] = 0.0
+            for kind, seed in picks.items():
+                rec = run_episode(env, client, model, device, seed, pdrop.get(seed, 0.5), MASK_SEED_P50, True)
+                traces[str(seed)] = rec["trace"]
+                print(f"\nTRACE {kind}: seed {seed} ({rec['wynik']}/{rec.get('refuse_reason')}, "
+                      f"HOLD enter={rec.get('n_hold_enter')} release={rec.get('n_hold_release')})")
+            if traces:
+                traces["_picks"] = picks
+                json.dump(traces, open(os.path.join(OUT, "traces_legB.json"), "w"), indent=1)
         except Exception as e:
             print("zrzut trace pominiety:", e)
     finally:
