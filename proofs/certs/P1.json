@@ -1,0 +1,38 @@
+{
+  "property": "P1",
+  "verdict": "PROVED",
+  "method": "1-induction (z3)",
+  "z3_pip": "5.0.0.0",
+  "z3_lib": "5.0.0",
+  "obligations": {
+    "base": "unsat",
+    "inv_step": "unsat",
+    "P1a": "unsat",
+    "P1b": "unsat",
+    "P1c": "unsat",
+    "P1d": "unsat"
+  },
+  "constants_rational": {
+    "theta_age": "2",
+    "ceiling": "6",
+    "near": "1/2",
+    "geo_lim": "9/5",
+    "t_hold_ticks": 36,
+    "t_acq_ticks": 36,
+    "dt": "1/12"
+  },
+  "assumptions": [
+    "A-lock: entered ⇒ has_lock (monotoniczność locka, Tracker5)"
+  ],
+  "code_refs": {
+    "shield": "s3c1/shield.py:65-136 (_decide)",
+    "t_hold": "s3c1/shield.py:30 (t_hold_s=3.0, dt=1/12); :112,:131 (nierówność)"
+  },
+  "properties": {
+    "P1a": "(ALLOW ∧ has_lock ∧ entered') ⇒ age ≤ 6  (bezwarunkowe via I8)",
+    "P1b": "(geo) ⇒ REFUSE  ∧  (¬term ∧ geo) ⇒ reason=GEOFENCE  [wzmocnione]",
+    "P1c": "REFUSE ⇒ reason ∈ {NO_MATCH,STALE,GEOFENCE}",
+    "P1d": "żywy HOLD < 36 tików (=T_hold); k−start=36 ⇒ REFUSE"
+  },
+  "model_sha256": "7676fc05190b770bbbbe25a9195aa551443ded2701ba2a1e2e41dd1b873db7d8"
+}

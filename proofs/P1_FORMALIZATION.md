@@ -33,7 +33,11 @@ reason=NONE, k=0`.
 `geo_t: Bool` (= `max(|hover_x|,|hover_y|) > geo_lim`, stałe w epizodzie),
 `geo_p: Bool` (= `max(|pos_x|,|pos_y|) > geo_lim`). Predykaty pomocnicze:
 `old = has_lock ∧ age > θ_age`, `over = has_lock ∧ age > ceiling`. `valid`: `age ≥ 0 ∧ dist ≥ 0`,
-`k' = k+1`.
+`k' = k+1`, oraz **założenie środowiskowe A-lock (monotoniczność locka):** `entered ⇒ has_lock`
+(kanał `Tracker5`: po pierwszym dostarczeniu `has_lock` już nie wraca do fałszu — RECON/faza 3d;
+`entered` powstaje wyłącznie przy `has_lock`, więc raz osiągnięte implikuje trwały lock). Bez A-lock
+model dopuszczałby nierealny stan `entered ∧ ¬has_lock` (przejście do SEEKING bez reset flag) łamiący
+I5 — A-lock jest jawnym, prawdziwym w systemie założeniem, wypisanym w certyfikacie.
 
 ## 4. Relacja przejścia `τ(c, input) → (c', decision, reason')` — LUSTRO `_decide` (`shield.py:65-136`)
 Kolejność warunków (priorytet), decyzja ∈ {ALLOW, HOLD, REFUSE}:
@@ -72,20 +76,29 @@ Kolejność warunków (priorytet), decyzja ∈ {ALLOW, HOLD, REFUSE}:
 - **I5** `ch ≠ ⊥ ⇒ (admitted ∧ ¬term ∧ state = DWELL_GUARD ∧ 0 ≤ k − ch ≤ 35)`
 - **I6** `¬(eh ≠ ⊥ ∧ ch ≠ ⊥)`  (hold wejścia i hold sufitu nigdy naraz)
 - **I7** `(eh ≠ ⊥ ⇒ 0 ≤ eh ≤ k) ∧ (ch ≠ ⊥ ⇒ 0 ≤ ch ≤ k)`
+- **I8 (dostarczenie ⇒ admisja; pomocniczy do P1(a)):** `(entered ∧ ¬admitted ∧ ¬term) ⇒
+  (state = DWELL_GUARD ∧ eh ≠ ⊥)`. Znaczenie: między wejściem w martwe pole a admisją osłona
+  **HOLD-uje, nigdy nie ALLOW** — więc każde ALLOW w dwell (konsumpcja dostarczenia) implikuje
+  admisję. Dowodzony w tej SAMEJ indukcji; kompozycja z §6-P1(a) daje twierdzenie **bezwarunkowe**.
 
 ## 6. Predykaty własności P1(a)–(d) (na wyjściu `τ`, gdy `Inv(c)` ∧ `valid`)
-- **P1(b) geofence w tym samym tiku:** `(geo_t ∨ geo_p) ⇒ decision = REFUSE ∧ reason' = GEOFENCE`.
-  *(Wzmocnienie względem brzmienia PRE „∈{HOLD,REFUSE}": kod daje ZAWSZE REFUSE — dowodzimy
-  silniejsze, co spełnia dysjunkcję. Odnotowane jawnie.)*
+- **P1(b) geofence ⇒ REFUSE (WZMOCNIONE):** `(geo_t ∨ geo_p) ⇒ decision = REFUSE` (zawsze REFUSE —
+  świeże naruszenie przez R-C, stan terminalny przez latch; oba REFUSE) **∧** `(¬term ∧ (geo_t ∨
+  geo_p)) ⇒ reason' = GEOFENCE`. *Wzmocnione względem pierwotnego „∈{HOLD,REFUSE}"; PRE §3
+  zaktualizowane.*
 - **P1(c) REFUSE ma powód:** `decision = REFUSE ⇒ reason' ∈ {NO_MATCH, STALE, GEOFENCE}` (niepusty,
   wyliczony).
-- **P1(a) sufit nie przekroczony po cichu:** `(decision = ALLOW ∧ has_lock ∧ admitted') ⇒ age ≤ ceiling`.
-  *(ZAKRES: `admitted'` = po admisji. Faza DOLOTU przed admisją (`3: dist ≥ near`) legalnie ALLOW
-  przy dowolnym age — to kompetentny „ślepy finisz" (RAPORT_3C_MVP §3), świadomie POZA P1(a).
-  Brzmienie zakresu do ratyfikacji.)*
-- **P1(d) HOLD ograniczony:** `¬(eh ≠ ⊥ ∧ k − eh ≥ 36 ∧ ¬term) ∧ ¬(ch ≠ ⊥ ∧ k − ch ≥ 36 ∧ ¬term)`
-  — żaden żywy HOLD nie trwa ≥ 36 tików (= T_hold); przy k−start = 36 wymuszony REFUSE. Wynika z
-  I4/I5 utrzymanych indukcyjnie (bound ≤ 35 w stanie żywym).
+- **P1(a) sufit nie przekroczony po cichu (BEZWARUNKOWE, kompozycja z I8):**
+  `(decision = ALLOW ∧ has_lock ∧ entered') ⇒ age ≤ ceiling`. Predykat o KAŻDYM ALLOW konsumującym
+  kanał w dwell (`entered'`), **bez warunku `admitted` w treści** — I8 rozładowuje admisję
+  (`entered ∧ ALLOW ⇒ admitted`, bo `entered ∧ ¬admitted ⇒ HOLD`). Faza DOLOTU (`entered' = F`,
+  `dist ≥ near`) poza zakresem przez `entered'`, nie przez ukryty warunek — kompetentny „ślepy
+  finisz" (RAPORT_3C_MVP §3).
+- **P1(d) HOLD ograniczony (nierówność z kodu):** `¬(eh ≠ ⊥ ∧ k − eh ≥ 36 ∧ ¬term) ∧
+  ¬(ch ≠ ⊥ ∧ k − ch ≥ 36 ∧ ¬term)`. Stała **36 = T_hold/dt**: `shield.py:30` (`t_hold_s=3.0`,
+  `dt=1/12`); nierówność `(k−start)·dt ≥ t_hold` przepisana z `shield.py:112` (wejście) i `:131`
+  (sufit) jako `k−start ≥ 36`. Żaden żywy HOLD nie trwa ≥ 36 tików; przy `k−start = 36` REFUSE.
+  Wynika z I4/I5 (bound ≤ 35), utrzymanych indukcyjnie.
 
 ## 7. Zobowiązania dowodowe (1-indukcja) dla z3
 - **BAZA:** `Inv(c0)`.
@@ -96,12 +109,17 @@ Kolejność warunków (priorytet), decyzja ∈ {ALLOW, HOLD, REFUSE}:
   (wersja `z3-solver==5.0.0.0`, lib 5.0.0 — do certyfikatu), zwraca UNSAT + hash modelu; certyfikat
   w `proofs/certs/P1.json` z hashem, porównywany w CI lokalnym.
 
-## 8. Uwagi do ratyfikacji (brzmienia)
-1. **P1(b)** dowodzony jako REFUSE (silniejszy niż PRE {HOLD,REFUSE}) — OK?
-2. **P1(a)** ma zakres „po admisji"; faza dolotu (ślepy finisz) świadomie wyłączona — brzmienie OK?
-3. **P1(d)** jako „żywy HOLD < 36 tików = T_hold" (bounded), nie pełna liveness temporalna — OK?
-4. Age/dist jako **Real dokładny**, czas jako **Int** (progi 36) — zero floatów. OK?
-5. Niezmiennik I1–I7 — czy wystarczający/za mocny? (z3 rozstrzygnie po ratyfikacji; jeśli za słaby →
-   kontrprzykład, wzmacniamy; jeśli sprzeczny → SAT bazy, korygujemy.)
+## 8. Status ratyfikacji (2026-08-03)
+**RATYFIKOWANE** (człowiek) — wszystkie 4 brzmienia, z dwiema dokładkami (naniesione):
+1. **P1(a)** → dołożony niezmiennik pomocniczy **I8 „dostarczenie ⇒ admisja"** dowodzony w tej
+   samej indukcji; kompozycja daje **twierdzenie bezwarunkowe** (§5-I8, §6-P1a).
+2. **P1(b)** → wersja silniejsza (czyste REFUSE) z adnotacją „wzmocnione" (§6-P1b, PRE_DP0 §3).
+3. **P1(d)** → stała 36 z cytatem `shield.py:30/112/131`, nierówność przepisana z kodu (§6-P1d);
+   cytat trafia do certyfikatu.
+4. Age/dist Real dokładny, czas Int (progi 24/36/72) — zero floatów.
+**Backlog P5 (obowiązkowy):** przypadki brzegowe dokładnie na progach **24 / 36 / 72 tików**
+(θ_age/dt=24, T_hold=36, ceiling/dt=72) — granica float-sekundy (`age > θ`) vs int-tiki
+(`k−start ≥ 36`); konformancja pokrywa próg i ±1 tik / ±ε age.
 
-*Formalizacja gotowa. Solver NIE odpalony. Czeka na ratyfikację „jednym słowem" (PRE_DP0).*
+*Formalizacja ratyfikowana. Następny krok: `proofs/verify.py` (model z3), bieg solvera, certyfikat
+`proofs/certs/P1.json` z hashem, wersją z3 i cytatami linii.*

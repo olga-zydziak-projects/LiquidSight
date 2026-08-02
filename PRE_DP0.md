@@ -62,11 +62,15 @@ problemu shadow z v1, RECON §D). Panel osłony widoczny od **A1**. Wszystkie ep
 
 ## §3 Warstwa dowodowa — własności [PROPOZYCJA brzmień; zamrażane w PRE]
 
-- **P1 (indukcja/BMC po automacie osłony; solver z3 [F-D3])** — w żadnym osiągalnym stanie:
-  (a) brak dostarczenia przy age > sufit bez przejścia do HOLD/REFUSE; (b) naruszenie geofence ⇒
-  decyzja ∈ {HOLD, REFUSE} **w tym samym ticku**; (c) każde REFUSE niesie **niepusty** powód;
-  (d) HOLD rozstrzyga się w **≤ T_hold** (bounded model checking, T_hold=3.0 s z kodu). Obiekt =
-  automat z RECON §A (przestrzeń skończona → domykalne).
+- **P1 (indukcja po automacie osłony; solver z3 [F-D3])** — w żadnym osiągalnym stanie:
+  (a) żadne dostarczenie konsumowane w dwell przy age > sufit — **bezwarunkowo**, przez kompozycję
+  z niezmiennikiem pomocniczym **„dostarczenie ⇒ admisja"** (dowodzonym w tej samej indukcji);
+  (b) naruszenie geofence ⇒ decyzja = **REFUSE** w tym samym ticku (**wzmocnione względem
+  pierwotnego zapisu „∈{HOLD,REFUSE}"**: kod daje zawsze REFUSE, świeże naruszenie → powód GEOFENCE);
+  (c) każde REFUSE niesie **niepusty** powód (∈ {NO_MATCH, STALE, GEOFENCE}); (d) żaden żywy HOLD nie
+  trwa ≥ **36 tików = T_hold** (`shield.py:30` `t_hold_s=3.0`, `dt=1/12`; `:112`/`:131` nierówność
+  `(k−start)·dt ≥ t_hold` przepisana wprost) → rozstrzyga się w ≤ T_hold. Obiekt = automat z RECON §A
+  (przestrzeń skończona; stałe wymierne) — pełna formalizacja `proofs/P1_FORMALIZATION.md`.
 - **P2 (indukcja po dynamice; interwały + z3 [F-D3])** — stałe w modelu Z3 **wyłącznie jako dokładne
   ułamki wymierne** (zero floatów w certyfikatach): `Δt = 1/12`, `margines = 1/5`, `VEL_LIM = 1`.
   Naddatek `δ = VEL_LIM·Δt + VEL_LIM²/(2·A_min) = 1/12 + 1/(2·A_min)`; warunek `δ < margines` daje
@@ -87,6 +91,10 @@ problemu shadow z v1, RECON §D). Panel osłony widoczny od **A1**. Wszystkie ep
 - **P5 (konformancja model↔kod; property-based)** — testy wiążące `shield.py` z modelem z P1: pełne
   pokrycie przejść automatu, **równość decyzji kod ≡ model** na generowanych trajektoriach. Baner:
   „proved on model + conformance-tested implementation". **Warunek zaliczenia P1/P2** (ryzyko 1).
+  **Backlog P5 (obowiązkowy):** przypadki brzegowe **dokładnie na progach** — age = θ_age i ceiling,
+  czas = **24 / 36 / 72 tików** (θ_age/dt=24, T_hold=T_acq/dt=36, ceiling/dt=72) — granica
+  float-sekundy (`age_s > θ`) vs int-tiki (`k−start ≥ 36`); konformancja musi pokryć równość na
+  progu i tuż obok (±1 tik, ±ε age).
 
 **GRANICA DOWODU (obowiązkowa, na ekranie).** Dowód **NIE obejmuje**: (1) **percepcji** — tożsamość
 locka nie jest dowodzona; **limit 6/25** (obiekt nieobecny → halucynacja groundera) pozostaje limitem,
