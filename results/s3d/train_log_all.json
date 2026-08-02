@@ -1,0 +1,107 @@
+{
+  "hparams": {
+    "lr": 0.001,
+    "epochs": 300,
+    "batch": 32,
+    "clip": 1.0,
+    "seeds": [
+      45040,
+      45041,
+      45042,
+      45043,
+      45044
+    ]
+  },
+  "arms": {
+    "A2": [
+      {
+        "arm": "A2",
+        "seed": 45040,
+        "best_epoch": 296,
+        "best_val_mse": 0.0054942,
+        "val_rmse": 0.074123,
+        "params": 3140
+      },
+      {
+        "arm": "A2",
+        "seed": 45041,
+        "best_epoch": 299,
+        "best_val_mse": 0.0055929,
+        "val_rmse": 0.074786,
+        "params": 3140
+      },
+      {
+        "arm": "A2",
+        "seed": 45042,
+        "best_epoch": 294,
+        "best_val_mse": 0.0054667,
+        "val_rmse": 0.073937,
+        "params": 3140
+      },
+      {
+        "arm": "A2",
+        "seed": 45043,
+        "best_epoch": 299,
+        "best_val_mse": 0.0054836,
+        "val_rmse": 0.074051,
+        "params": 3140
+      },
+      {
+        "arm": "A2",
+        "seed": 45044,
+        "best_epoch": 285,
+        "best_val_mse": 0.0055913,
+        "val_rmse": 0.074775,
+        "params": 3140
+      }
+    ],
+    "A3": [
+      {
+        "arm": "A3",
+        "seed": 45040,
+        "best_epoch": 291,
+        "best_val_mse": 0.0055531,
+        "val_rmse": 0.074519,
+        "params": 3177
+      },
+      {
+        "arm": "A3",
+        "seed": 45041,
+        "best_epoch": 291,
+        "best_val_mse": 0.005226,
+        "val_rmse": 0.072291,
+        "params": 3177
+      },
+      {
+        "arm": "A3",
+        "seed": 45042,
+        "best_epoch": 297,
+        "best_val_mse": 0.0057134,
+        "val_rmse": 0.075587,
+        "params": 3177
+      },
+      {
+        "arm": "A3",
+        "seed": 45043,
+        "best_epoch": 298,
+        "best_val_mse": 0.0055108,
+        "val_rmse": 0.074235,
+        "params": 3177
+      },
+      {
+        "arm": "A3",
+        "seed": 45044,
+        "best_epoch": 287,
+        "best_val_mse": 0.0055734,
+        "val_rmse": 0.074655,
+        "params": 3177
+      }
+    ]
+  },
+  "A1_kalman": {
+    "q": 0.03,
+    "r": 0.1,
+    "rmse": 0.1338352385318281,
+    "zoh_rmse_train": 0.13420957543646708
+  }
+}

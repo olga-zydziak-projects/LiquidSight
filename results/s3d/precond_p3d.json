@@ -1,0 +1,77 @@
+{
+  "n_val": 100,
+  "mask_coverage": 0.117166668176651,
+  "zoh_rmse": 0.130882,
+  "arms": {
+    "A1": {
+      "rmse": 0.129863,
+      "beats_zoh": true,
+      "status": "PASS"
+    },
+    "A2": {
+      "per_seed": [
+        {
+          "seed": 45040,
+          "rmse": 0.074123,
+          "beats_zoh": true
+        },
+        {
+          "seed": 45041,
+          "rmse": 0.074786,
+          "beats_zoh": true
+        },
+        {
+          "seed": 45042,
+          "rmse": 0.073937,
+          "beats_zoh": true
+        },
+        {
+          "seed": 45043,
+          "rmse": 0.074051,
+          "beats_zoh": true
+        },
+        {
+          "seed": 45044,
+          "rmse": 0.074775,
+          "beats_zoh": true
+        }
+      ],
+      "median_rmse": 0.074123,
+      "beats_zoh": true,
+      "status": "PASS"
+    },
+    "A3": {
+      "per_seed": [
+        {
+          "seed": 45040,
+          "rmse": 0.074519,
+          "beats_zoh": true
+        },
+        {
+          "seed": 45041,
+          "rmse": 0.072291,
+          "beats_zoh": true
+        },
+        {
+          "seed": 45042,
+          "rmse": 0.075587,
+          "beats_zoh": true
+        },
+        {
+          "seed": 45043,
+          "rmse": 0.074235,
+          "beats_zoh": true
+        },
+        {
+          "seed": 45044,
+          "rmse": 0.074655,
+          "beats_zoh": true
+        }
+      ],
+      "median_rmse": 0.074519,
+      "beats_zoh": true,
+      "status": "PASS"
+    }
+  },
+  "escalation": null
+}

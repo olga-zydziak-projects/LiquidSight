@@ -1,0 +1,3029 @@
+{
+  "tag": "train",
+  "n": 300,
+  "seeds": [
+    48000,
+    48299
+  ],
+  "regimes": [
+    [
+      "clean",
+      0.0,
+      45200
+    ],
+    [
+      "bernoulli",
+      0.5,
+      45201
+    ],
+    [
+      "burst",
+      5.0,
+      45202
+    ]
+  ],
+  "gt_coverage": 0.16633333265781403,
+  "wall_s": 1002.5,
+  "episodes": [
+    {
+      "seed": 48000,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48001,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48002,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48003,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48004,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48005,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48006,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48007,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 18,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48008,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48009,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48010,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48011,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48012,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48013,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48014,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48015,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48016,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48017,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48018,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48019,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 24,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48020,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48021,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48022,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48023,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48024,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48025,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48026,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48027,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48028,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 15,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48029,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48030,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48031,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48032,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48033,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48034,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48035,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48036,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 18,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48037,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48038,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48039,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48040,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48041,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48042,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48043,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48044,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48045,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48046,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48047,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48048,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 24,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48049,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48050,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48051,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48052,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48053,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 18,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48054,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48055,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48056,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48057,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48058,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48059,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48060,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48061,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48062,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48063,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48064,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48065,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48066,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48067,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48068,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48069,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48070,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48071,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 24,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48072,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48073,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 15,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48074,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48075,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48076,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48077,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48078,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48079,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48080,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48081,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48082,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 15,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48083,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48084,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48085,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48086,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48087,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48088,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 18,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48089,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48090,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48091,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48092,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48093,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48094,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48095,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 15,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48096,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48097,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48098,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48099,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48100,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48101,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48102,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48103,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48104,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48105,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48106,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48107,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48108,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48109,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 24,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48110,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48111,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48112,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48113,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48114,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48115,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48116,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48117,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48118,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48119,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48120,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48121,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 27,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48122,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 27,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48123,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48124,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48125,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48126,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48127,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48128,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48129,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 24,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48130,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48131,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48132,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48133,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48134,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48135,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48136,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48137,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48138,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48139,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48140,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 18,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48141,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48142,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48143,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48144,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48145,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48146,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48147,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48148,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48149,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48150,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48151,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48152,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48153,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48154,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 18,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48155,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 15,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48156,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48157,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48158,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48159,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48160,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48161,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48162,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48163,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48164,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48165,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48166,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48167,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48168,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48169,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48170,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48171,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48172,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48173,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48174,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48175,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48176,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48177,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48178,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48179,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48180,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48181,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 24,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48182,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48183,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48184,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48185,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48186,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48187,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 15,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48188,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48189,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 24,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48190,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48191,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48192,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48193,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48194,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48195,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48196,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48197,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 24,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48198,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48199,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 15,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48200,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48201,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48202,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48203,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48204,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48205,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48206,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48207,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48208,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48209,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48210,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 27,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48211,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48212,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48213,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48214,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48215,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48216,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 27,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48217,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48218,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48219,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48220,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 18,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48221,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48222,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48223,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48224,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48225,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48226,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 18,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48227,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48228,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48229,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 18,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48230,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 24,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48231,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48232,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48233,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 18,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48234,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48235,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48236,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48237,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48238,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48239,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48240,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48241,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 18,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48242,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48243,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48244,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48245,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48246,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48247,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 24,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48248,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48249,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48250,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48251,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48252,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48253,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48254,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48255,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48256,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48257,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48258,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48259,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48260,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48261,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 27,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48262,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48263,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48264,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48265,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48266,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48267,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48268,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48269,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48270,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48271,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 27,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48272,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48273,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48274,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48275,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 20,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48276,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 24,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48277,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48278,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48279,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48280,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 24,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48281,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48282,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48283,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 25,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48284,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 23,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48285,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48286,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 26,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48287,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48288,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 19,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48289,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 22,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48290,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48291,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48292,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 24,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48293,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48294,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48295,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48296,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 21,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48297,
+      "regime": "clean",
+      "param": 0.0,
+      "mask_seed": 45200,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48298,
+      "regime": "bernoulli",
+      "param": 0.5,
+      "mask_seed": 45201,
+      "length": 120,
+      "n_gt": 17,
+      "success": true,
+      "fail_type": null
+    },
+    {
+      "seed": 48299,
+      "regime": "burst",
+      "param": 5.0,
+      "mask_seed": 45202,
+      "length": 120,
+      "n_gt": 16,
+      "success": true,
+      "fail_type": null
+    }
+  ]
+}
