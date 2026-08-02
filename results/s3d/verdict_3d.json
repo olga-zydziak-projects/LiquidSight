@@ -1,0 +1,188 @@
+{
+  "legs": {
+    "clean": {
+      "A0": 67.0,
+      "A1": 64.0,
+      "A2": 58.6,
+      "A3": 56.8
+    },
+    "p50": {
+      "A0": 39.0,
+      "A1": 37.0,
+      "A2": 34.0,
+      "A3": 33.2
+    },
+    "L5": {
+      "A0": 63.0,
+      "A1": 59.0,
+      "A2": 58.2,
+      "A3": 55.4
+    }
+  },
+  "primary": {
+    "A0": {
+      "succ_p50": 39.0,
+      "sd_p50": null,
+      "per_seed": null
+    },
+    "A1": {
+      "succ_p50": 37.0,
+      "sd_p50": null,
+      "per_seed": null
+    },
+    "A2": {
+      "succ_p50": 34.0,
+      "sd_p50": 1.4142135623730951,
+      "per_seed": {
+        "45040": 32.0,
+        "45041": 33.0,
+        "45042": 35.0,
+        "45043": 36.0,
+        "45044": 34.0
+      }
+    },
+    "A3": {
+      "succ_p50": 33.2,
+      "sd_p50": 1.7204650534085253,
+      "per_seed": {
+        "45040": 33.0,
+        "45041": 32.0,
+        "45042": 34.0,
+        "45043": 31.0,
+        "45044": 36.0
+      }
+    }
+  },
+  "verdict": {
+    "pooled_std": 1.5748015748023623,
+    "succ_A3": 33.2,
+    "max_A0_A1_A2": 39.0,
+    "delta": -5.8,
+    "verdict": "NEGATYWNY",
+    "formula": "\u0394=succ(A3)-max(A0,A1,A2) vs \u00b1pooled_std"
+  },
+  "transparency": {
+    "A1": {
+      "clean_succ": 64.0,
+      "a0_clean": 67.0,
+      "transparent": true,
+      "status": "OK"
+    },
+    "A2": {
+      "clean_succ": 58.6,
+      "a0_clean": 67.0,
+      "transparent": false,
+      "status": "NIETRANSPARENTNE"
+    },
+    "A3": {
+      "clean_succ": 56.8,
+      "a0_clean": 67.0,
+      "transparent": false,
+      "status": "NIETRANSPARENTNE"
+    }
+  },
+  "secondary": {
+    "clean": {
+      "A0": {
+        "wrong_lock_pct": 10.0,
+        "wl_decomp": {
+          "kradziez": 3,
+          "inne": 6,
+          "pierwszy_zly": 1
+        },
+        "rmse_online": null
+      },
+      "A1": {
+        "wrong_lock_pct": 8.0,
+        "wl_decomp": {
+          "inne": 5,
+          "pierwszy_zly": 1,
+          "kradziez": 2
+        },
+        "rmse_online": null
+      },
+      "A2": {
+        "wrong_lock_pct": 13.2,
+        "wl_decomp": {
+          "kradziez_total_over_seeds": 18
+        },
+        "rmse_online": null
+      },
+      "A3": {
+        "wrong_lock_pct": 11.4,
+        "wl_decomp": {
+          "kradziez_total_over_seeds": 20
+        },
+        "rmse_online": null
+      }
+    },
+    "p50": {
+      "A0": {
+        "wrong_lock_pct": 15.0,
+        "wl_decomp": {
+          "inne": 9,
+          "pierwszy_zly": 5,
+          "kradziez": 1
+        },
+        "rmse_online": null
+      },
+      "A1": {
+        "wrong_lock_pct": 13.0,
+        "wl_decomp": {
+          "inne": 8,
+          "pierwszy_zly": 4,
+          "kradziez": 1
+        },
+        "rmse_online": null
+      },
+      "A2": {
+        "wrong_lock_pct": 16.6,
+        "wl_decomp": {
+          "kradziez_total_over_seeds": 7
+        },
+        "rmse_online": null
+      },
+      "A3": {
+        "wrong_lock_pct": 14.8,
+        "wl_decomp": {
+          "kradziez_total_over_seeds": 8
+        },
+        "rmse_online": null
+      }
+    },
+    "L5": {
+      "A0": {
+        "wrong_lock_pct": 10.0,
+        "wl_decomp": {
+          "inne": 7,
+          "pierwszy_zly": 2,
+          "kradziez": 1
+        },
+        "rmse_online": null
+      },
+      "A1": {
+        "wrong_lock_pct": 10.0,
+        "wl_decomp": {
+          "inne": 5,
+          "kradziez": 2,
+          "pierwszy_zly": 3
+        },
+        "rmse_online": null
+      },
+      "A2": {
+        "wrong_lock_pct": 13.4,
+        "wl_decomp": {
+          "kradziez_total_over_seeds": 17
+        },
+        "rmse_online": null
+      },
+      "A3": {
+        "wrong_lock_pct": 11.8,
+        "wl_decomp": {
+          "kradziez_total_over_seeds": 16
+        },
+        "rmse_online": null
+      }
+    }
+  }
+}

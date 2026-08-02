@@ -1,0 +1,744 @@
+{
+  "arm": "A2",
+  "leg": "p50",
+  "filter_seed": 45040,
+  "mode": "bernoulli",
+  "param": 0.5,
+  "mask_seed": 45102,
+  "n": 100,
+  "sukces": 32,
+  "sukces_pct": 32.0,
+  "sd_binom_pp": 4.7,
+  "wrong_lock": 18,
+  "wrong_lock_pct": 18.0,
+  "wrong_lock_decomp": {
+    "inne": 11,
+    "pierwszy_zly": 6,
+    "kradziez": 1
+  },
+  "fail_types": {
+    "dwell": 18,
+    "no_arrival": 32,
+    "wrong_lock": 18
+  },
+  "rmse_online_mean": null,
+  "age_at_dwell_hist": {
+    "bins": [
+      0,
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1.01
+    ],
+    "counts": [
+      18,
+      20,
+      2,
+      0,
+      13
+    ]
+  },
+  "episodes": [
+    {
+      "seed": 46500,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.1041666641831398,
+      "rmse_online": null
+    },
+    {
+      "seed": 46501,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.0416666679084301,
+      "rmse_online": null
+    },
+    {
+      "seed": 46502,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 1.0,
+      "rmse_online": null
+    },
+    {
+      "seed": 46503,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.15625,
+      "rmse_online": null
+    },
+    {
+      "seed": 46504,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.2395833283662796,
+      "rmse_online": null
+    },
+    {
+      "seed": 46505,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.1979166716337204,
+      "rmse_online": null
+    },
+    {
+      "seed": 46506,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.1145833358168602,
+      "rmse_online": null
+    },
+    {
+      "seed": 46507,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46508,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": 1.0,
+      "rmse_online": null
+    },
+    {
+      "seed": 46509,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46510,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46511,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46512,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.1458333283662796,
+      "rmse_online": null
+    },
+    {
+      "seed": 46513,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.1354166716337204,
+      "rmse_online": null
+    },
+    {
+      "seed": 46514,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.0833333358168602,
+      "rmse_online": null
+    },
+    {
+      "seed": 46515,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46516,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 0.0625,
+      "rmse_online": null
+    },
+    {
+      "seed": 46517,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46518,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.1041666641831398,
+      "rmse_online": null
+    },
+    {
+      "seed": 46519,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46520,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46521,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.1354166716337204,
+      "rmse_online": null
+    },
+    {
+      "seed": 46522,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46523,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.1041666641831398,
+      "rmse_online": null
+    },
+    {
+      "seed": 46524,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.0625,
+      "rmse_online": null
+    },
+    {
+      "seed": 46525,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.1875,
+      "rmse_online": null
+    },
+    {
+      "seed": 46526,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.09375,
+      "rmse_online": null
+    },
+    {
+      "seed": 46527,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 1.0,
+      "rmse_online": null
+    },
+    {
+      "seed": 46528,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46529,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 0.2916666567325592,
+      "rmse_online": null
+    },
+    {
+      "seed": 46530,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46531,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 0.1145833358168602,
+      "rmse_online": null
+    },
+    {
+      "seed": 46532,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 1.0,
+      "rmse_online": null
+    },
+    {
+      "seed": 46533,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46534,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46535,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46536,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46537,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.2083333283662796,
+      "rmse_online": null
+    },
+    {
+      "seed": 46538,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.0729166641831398,
+      "rmse_online": null
+    },
+    {
+      "seed": 46539,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 1.0,
+      "rmse_online": null
+    },
+    {
+      "seed": 46540,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.21875,
+      "rmse_online": null
+    },
+    {
+      "seed": 46541,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.1458333283662796,
+      "rmse_online": null
+    },
+    {
+      "seed": 46542,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46543,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": 1.0,
+      "rmse_online": null
+    },
+    {
+      "seed": 46544,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 0.2604166567325592,
+      "rmse_online": null
+    },
+    {
+      "seed": 46545,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 0.0416666679084301,
+      "rmse_online": null
+    },
+    {
+      "seed": 46546,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 0.0833333358168602,
+      "rmse_online": null
+    },
+    {
+      "seed": 46547,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 1.0,
+      "rmse_online": null
+    },
+    {
+      "seed": 46548,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46549,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 1.0,
+      "rmse_online": null
+    },
+    {
+      "seed": 46550,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46551,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46552,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46553,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": 0.1666666716337204,
+      "rmse_online": null
+    },
+    {
+      "seed": 46554,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.1145833358168602,
+      "rmse_online": null
+    },
+    {
+      "seed": 46555,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 1.0,
+      "rmse_online": null
+    },
+    {
+      "seed": 46556,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46557,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46558,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46559,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46560,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.2083333283662796,
+      "rmse_online": null
+    },
+    {
+      "seed": 46561,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46562,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46563,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46564,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46565,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46566,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.0729166641831398,
+      "rmse_online": null
+    },
+    {
+      "seed": 46567,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46568,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46569,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 1.0,
+      "rmse_online": null
+    },
+    {
+      "seed": 46570,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46571,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46572,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 0.0625,
+      "rmse_online": null
+    },
+    {
+      "seed": 46573,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46574,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46575,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.15625,
+      "rmse_online": null
+    },
+    {
+      "seed": 46576,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.0833333358168602,
+      "rmse_online": null
+    },
+    {
+      "seed": 46577,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46578,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46579,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46580,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.0729166641831398,
+      "rmse_online": null
+    },
+    {
+      "seed": 46581,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.0833333358168602,
+      "rmse_online": null
+    },
+    {
+      "seed": 46582,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46583,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46584,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46585,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.0833333358168602,
+      "rmse_online": null
+    },
+    {
+      "seed": 46586,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.1145833358168602,
+      "rmse_online": null
+    },
+    {
+      "seed": 46587,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 1.0,
+      "rmse_online": null
+    },
+    {
+      "seed": 46588,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46589,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46590,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46591,
+      "success": false,
+      "fail_type": "no_arrival",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46592,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.0833333358168602,
+      "rmse_online": null
+    },
+    {
+      "seed": 46593,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.09375,
+      "rmse_online": null
+    },
+    {
+      "seed": 46594,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46595,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 1.0,
+      "rmse_online": null
+    },
+    {
+      "seed": 46596,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.0833333358168602,
+      "rmse_online": null
+    },
+    {
+      "seed": 46597,
+      "success": false,
+      "fail_type": "wrong_lock",
+      "age_at_dwell_entry": null,
+      "rmse_online": null
+    },
+    {
+      "seed": 46598,
+      "success": false,
+      "fail_type": "dwell",
+      "age_at_dwell_entry": 1.0,
+      "rmse_online": null
+    },
+    {
+      "seed": 46599,
+      "success": true,
+      "fail_type": null,
+      "age_at_dwell_entry": 0.0416666679084301,
+      "rmse_online": null
+    }
+  ]
+}

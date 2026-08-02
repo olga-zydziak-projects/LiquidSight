@@ -1,0 +1,4 @@
+pybullet build time: Jul 22 2026 00:14:15
+[A2_s45042_clean] sukces=60.0%±4.9 wl=15.0% rmse=None age=[41, 32, 0, 0, 0]  sha=6320e6886c62
+[A2_s45042_p50] sukces=35.0%±4.8 wl=17.0% rmse=None age=[18, 23, 3, 0, 13]  sha=7bf221bacb92
+[A2_s45042_L5] sukces=60.0%±4.9 wl=14.0% rmse=None age=[33, 34, 3, 0, 0]  sha=d77baaaeea30
