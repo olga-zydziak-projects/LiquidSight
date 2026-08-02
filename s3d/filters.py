@@ -120,17 +120,19 @@ class _LearnedFilter(nn.Module):
 
     @torch.no_grad()
     def step(self, box4, has_lock, has_delivery, age_n):
+        """Rekurencja biegnie CIĄGLE od k=0 (spójnie z forward w treningu; has_lock jest
+        monotoniczny — kanał nigdy nie wraca do no-lock po dostarczeniu). Wyjście = pass-through
+        (box4) w prefiksie no-lock; wyjście modelu po zablokowaniu."""
         box4 = np.asarray(box4, np.float32)
-        if not has_lock:
-            self.reset()
-            return box4                        # pass-through no-lock
         dev = next(self.parameters()).device
         x = torch.tensor([[box4[0], box4[1], box4[2], box4[3],
                            1.0 if has_delivery else 0.0, float(age_n)]],
                          dtype=torch.float32, device=dev)
         if self._h is None:
             self._h = self.init_hidden(1, dev)
-        out, self._h = self._tick(x, self._h)
+        out, self._h = self._tick(x, self._h)      # hidden aktualizowany zawsze
+        if not has_lock:
+            return box4                            # pass-through w prefiksie no-lock
         return out.squeeze(0).cpu().numpy().astype(np.float32)
 
 
