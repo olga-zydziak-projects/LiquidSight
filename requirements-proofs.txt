@@ -1,0 +1,2 @@
+# Faza DP — stack dowodowy (PRE_DP0 F-D3). Wersja wpisywana do kazdego certyfikatu.
+z3-solver==5.0.0.0

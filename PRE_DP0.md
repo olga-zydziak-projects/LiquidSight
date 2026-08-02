@@ -5,8 +5,22 @@
 powstaje; każda liczba na ekranie ma wpis w tabeli prowieniencji (§7). System ZAMROŻONY po S3c1-R;
 kanał bez filtra (werdykt 3d NEGATYWNY). `[PROPOZYCJA]` = do ratyfikacji człowieka.
 
-> **STATUS:** OCZEKUJE NA RATYFIKACJĘ. Etap B (budowa) nie startuje bez adnotacji „RATYFIKOWANE"
-> ręką człowieka. Do tego czasu: zero kodu produkcyjnego, zero nagrań.
+> **STATUS: RATYFIKOWANE** (człowiek, 2026-08-03). Ratyfikowany pakiet: F-D1 (APPLIED wszędzie,
+> panel od A1, bounded ≤3 re-record, scena flipująca wypada), F-D2 (artefakt P3 budowany w DP:
+> param-count = fakt strukturalny z checkpointu, bound wyłącznie z solvera), F-D3 (stack:
+> **z3-solver z pip, wersja PRZYPIĘTA w `requirements-proofs.txt` i wpisywana do każdego certyfikatu**;
+> **numpy-IBP dla P3**; **auto_LiRPA NIE bez osobnej zgody**; lokalny **PCDL+HMAC** z długiem
+> integracyjnym), zakres P3 (minimum **AutoNCP-20**; gc5 warunkowo — jeśli goły IBP da przedziały
+> bez wartości informacyjnej, gc5 dostaje status **UNPROVEN-tą-metodą** i **nic nie doinstalowujemy**),
+> F-D4/F-D5 (założenia P2 jawne; alias rozwiązywany PRZED frazą — autoryzacja zawsze widzi kanoniczny
+> spec). Etap B **autoryzowany**, kolejność §8; commit per moduł. **Formalizacja P1 wymaga ODRĘBNEJ
+> ratyfikacji** (predykaty modelu) przed pierwszym odpaleniem solvera.
+
+## Zasady nadrzędne DP (uzupełnienie ratyfikacyjne)
+
+**Certyfikaty dowodowe są jedyną kategorią nowych artefaktów, jakie faza DP produkuje; trafiają
+wyłącznie do kolumny PROVED, nigdy MEASURED.** (Nagrania to ilustracje ze zmierzonych konfiguracji,
+nie nowe artefakty-liczby; liczby-banery pochodzą z zamrożonych raportów, RECON §C.)
 
 ---
 
@@ -53,12 +67,14 @@ problemu shadow z v1, RECON §D). Panel osłony widoczny od **A1**. Wszystkie ep
   decyzja ∈ {HOLD, REFUSE} **w tym samym ticku**; (c) każde REFUSE niesie **niepusty** powód;
   (d) HOLD rozstrzyga się w **≤ T_hold** (bounded model checking, T_hold=3.0 s z kodu). Obiekt =
   automat z RECON §A (przestrzeń skończona → domykalne).
-- **P2 (indukcja po dynamice; interwały + z3 [F-D3])** — przy stałych z RECON §B
-  (VEL_LIM=1,0; Δt=1/12 s; margines osłony 0,2 m) i marginesie
-  `δ = VEL_LIM·Δt + VEL_LIM²/(2·A_min) = 0,083 + 0,5/A_min`, dron respektujący osłonę **nigdy nie
-  opuszcza ogrodzenia 2,0 m**. **Założenia jawne (F-D4):** (i) |prędkość| ≤ VEL_LIM, (ii) decel
-  ≥ A_min (stała CF2X — do wpisania w budowie, `A_min` t.ż. δ<0,2 ⇒ A_min ≥ 4,27 m/s²), (iii) osłona
-  APPLIED, (iv) projekcja pozioma. Twierdzenie **o modelu dynamiki**, nie o pełnym PyBullet.
+- **P2 (indukcja po dynamice; interwały + z3 [F-D3])** — stałe w modelu Z3 **wyłącznie jako dokładne
+  ułamki wymierne** (zero floatów w certyfikatach): `Δt = 1/12`, `margines = 1/5`, `VEL_LIM = 1`.
+  Naddatek `δ = VEL_LIM·Δt + VEL_LIM²/(2·A_min) = 1/12 + 1/(2·A_min)`; warunek `δ < margines` daje
+  **próg dokładny** `A_min = 0,5/(1/5 − 1/12) = (1/2)/(7/60) = 30/7 m/s² (≈ 4,286)`. Przy
+  `decel ≥ 30/7` dron respektujący osłonę **nigdy nie opuszcza ogrodzenia 2,0 m**. **Założenia jawne
+  (F-D4):** (i) |prędkość| ≤ VEL_LIM=1, (ii) decel ≥ A_min=30/7, (iii) osłona APPLIED, (iv) projekcja
+  pozioma. Twierdzenie **o modelu dynamiki**, nie o pełnym PyBullet; certyfikat niesie ułamki, nie
+  dziesiętne.
 - **P3 (weryfikacja sieci; IBP numpy [F-D3])** — ograniczenia wyjścia pilota dla kostki wejść.
   **[PROPOZYCJA — minimum ratyfikowalne: JEDNA sieć = AutoNCP-20 (317 param)]**, sound output-range
   jednego kroku (interval bound propagation, czysto-numpy); gc5 (28,8k, GRU) jako rozszerzenie jeśli
@@ -164,16 +180,17 @@ grounder, sweep 46600–46649, raporty, DEMO.md, paper/) — wyłącznie odczyt.
 
 ## Decyzje do ratyfikacji (z RECON §F + solvery §E)
 
-| # | decyzja | rekomendacja |
+| # | decyzja | rozstrzygnięcie ratyfikacyjne (2026-08-03) |
 |---|---|---|
-| **F-D1** | tryb osłony nagrań | **APPLIED wszędzie**, panel od A1; bounded ≤3 re-record; scena flipująca wypada |
-| **F-D2** | AutoNCP-20 317 / P3 | **artefakt dowodowy budowany w DP** (nie banner); param-count strukturalny, bound = solver |
-| **F-D3** | solver stack | **z3 (pip pin)** dla P1/P2/P5; **numpy-IBP** dla P3; **lokalny PCDL+HMAC**, dług integracyjny |
-| **F-D4** | brzmienie P2 | twierdzenie o modelu; założenia (VEL_LIM, A_min≥4,27, APPLIED, poziom) jawne |
-| **F-D5** | gramatyka↔grounder | parser produkuje frazę `"{color} {shape}"`; alias rozwijany przed frazą |
-| **P3 zakres** | ile sieci | **minimum: AutoNCP-20 (jedna)**; gc5 jako rozszerzenie warunkowe |
-| **§2 akty** | lista zamknięta A1–A5 | zatwierdzić jako zamkniętą |
-| **§8 budżet** | 7–9 sesji | zatwierdzić |
+| **F-D1** | tryb osłony nagrań | **RATYFIKOWANE:** APPLIED wszędzie, panel od A1, bounded ≤3 re-record, scena flipująca **wypada** z aktu |
+| **F-D2** | AutoNCP-20 / P3 | **RATYFIKOWANE:** artefakt P3 budowany w DP; **param-count = fakt strukturalny z checkpointu**, bound **wyłącznie z solvera** |
+| **F-D3** | solver stack | **RATYFIKOWANE:** z3-solver z pip **PRZYPIĘTY w `requirements-proofs.txt`, wersja w każdym certyfikacie**; numpy-IBP dla P3; **auto_LiRPA NIE bez osobnej zgody**; lokalny PCDL+HMAC, dług integracyjny nazwany |
+| **F-D4** | brzmienie P2 | **RATYFIKOWANE:** ułamki wymierne (Δt=1/12, margines=1/5, VEL_LIM=1), **A_min=30/7 (dokładnie)**; zero floatów w certyfikatach |
+| **F-D5** | gramatyka↔grounder | **RATYFIKOWANE:** parser produkuje `"{color} {shape}"`; **alias rozwiązywany PRZED frazą — autoryzacja widzi kanoniczny spec** |
+| **P3 zakres** | ile sieci | **RATYFIKOWANE:** minimum AutoNCP-20; **gc5 warunkowo** — jeśli goły IBP nieinformatywny → **UNPROVEN-tą-metodą**, nic nie doinstalowujemy |
+| **§2 akty** | lista zamknięta A1–A5 | **RATYFIKOWANE** (zamknięta) |
+| **§8 budżet** | 7–9 sesji | **RATYFIKOWANE** |
+| **formalizacja P1** | predykaty modelu | **ODRĘBNA ratyfikacja** przed pierwszym odpaleniem solvera (moduł 1) |
 
 ---
 
