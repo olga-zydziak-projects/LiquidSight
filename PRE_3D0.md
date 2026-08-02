@@ -6,7 +6,9 @@ pomiarem; po zobaczeniu wyników nie zmienia się progów, poziomów ani n. Syst
 **ZAMROŻONY**: polityka `ckpt/s3b2r/policy_gc5.pt`, kanał `Tracker5`, osłona v2, env, percepcja —
 nietykalne. Elementy `[PROPOZYCJA]` = decyzje projektowe do ratyfikacji człowieka.
 
-> **STATUS:** OCZEKUJE NA RATYFIKACJĘ. Etap M (pomiar) nie startuje bez dopisku „RATYFIKOWANE"
+> **STATUS:** OCZEKUJE NA RATYFIKACJĘ. Częściowo ratyfikowane (2026-08-02): **D-1 image-space**,
+> **D-3 N=100**; inity 3d zweryfikowane FREE. Pozostałe decyzje (D-2/D-4/D-5/D-6, §2, pule §4) —
+> do ratyfikacji. Etap M (pomiar) nie startuje bez dopisku „RATYFIKOWANE" obejmującego całość
 > (commit z ręki człowieka lub jawna adnotacja w tym pliku).
 
 ---
@@ -76,6 +78,15 @@ wiekiem** ostatniego dostarczenia (osłona i semantyka age nietknięte).
   (RAPORT_3B mandat, `RAPORT_3B.md:250-252`). Koszt: dokłada komponent back-projekcji (kamera/pozy),
   rozszerza zakres i ryzyko błędu projekcji, wychodzi poza „mikro-filtr". **Odrzucona:** za duży
   zakres jak na MVP pomiarowe; nazwana jako przyszły mandat.
+
+**Nota interpretacyjna (D-1, ratyfikowana — image-space).** Luka off-frame etykiety GT nie jest
+wadą wyboru image-space, lecz odzwierciedleniem **podziału pracy zmierzonego w 3b**: terminalny
+zawis w martwym polu leży w **wykonawcy** (ściana B4, `RAPORT_3B.md:110-128`), nie na wyjściu kanału
+(`RAPORT_3C_MVP.md:135-138`). Filtr 3d celuje w to, co **jest** własnością kanału — **mostkowanie
+przerw fazy dolotu pod dropoutem** — a dokładnie tam etykieta obrazowa istnieje (cel w kadrze).
+World-space (b) rozwiązywałby inny problem (gęsta etykieta w terminalu), którego filtr i tak nie
+przełoży na sukces, bo precyzja dwell nie zależy od świeżości kanału (ustalenie 3b). Stąd image-space
+mierzy **czysty** wkład filtra do zdolności, którą kanał realnie kontroluje.
 
 **Nazwane ryzyko (kuzyn F-3b-1):** polityka była uczona na semantyce **ducha ZOH**; wygładzone/
 ekstrapolowane boxy to **shift wejścia** zamrożonej polityki. Dlatego (i) **A0 jest kontrolą**, (ii)
@@ -151,6 +162,13 @@ filtra na `target5`; metryka pierwotna = **czysty sukces env** (`info["success"]
   **A0** w biegu, a liczby G2 80/66/44/30 (50 ep) są **referencją zewnętrzną**, ~13 pp optymistyczną
   vs populacja — `RAPORT_S3B4.md:17-28`]. **Parowanie:** te same epizody i maski dla każdego ramienia.
 
+**Nota porównywalności (D-3, ratyfikowana — N=100).** Werdykt kotwiczy się na **parowanym A0 w tym
+samym biegu**: wszystkie ramiona (A0/A1/A2/A3) widzą **te same 100 scen (46500–46599) i te same
+maski** na każdej nodze, więc porównywalność `Δ` jest **wewnętrzna i pełna** — niezależna od
+liczności historycznej G2. Krzywa G2 `80/66/44/30` (50 ep, 46500–46549) pozostaje **wyłącznie
+referencją zewnętrzną** i jest **~13 pp optymistyczna** vs populacja 67% (trudność wewnątrz-komórkowa
+pierwszej połowy puli, `RAPORT_S3B4.md:17-28`) — **nie jest** używana jako próg ani kotwica werdyktu.
+
 **Metryka pierwotna:** sukces na nodze **p=0.5**, uśredniony po **5 seedach filtra** (A2, A3);
 A0 i A1 — **jeden bieg** (deterministyczne).
 
@@ -219,16 +237,21 @@ Naruszenie ⇒ ramię raportowane jako **NIETRANSPARENTNE** niezależnie od wyni
 
 ## Decyzje do ratyfikacji (zebrane; z RECON §D)
 
-| # | decyzja | rekomendacja R |
-|---|---|---|
-| **D-1** | przestrzeń filtra: image-space vs world-space | **image-space** (§3a) — dosłowny drop-in, off-frame nazwane |
-| **D-2** | kadencja/maskowanie etykiety GT (off-frame=None) | etykieta 12 Hz z per-tick seg-render; off-frame maskowany w stracie i RMSE |
-| **D-3** | N/nogę oraz kotwica G2 | **N=100** na 46500–46599; kotwica = parowane A0; G2 = referencja |
-| **D-4** | maski nóg dropout | p0.5→**45102**, L5→**45105**, clean→brak (rodzina G2) |
-| **D-5** | harness bez osłony | nowy `s3d/` = szkielet `measure_s1` minus Shield; metryka = sukces env |
-| **D-6** | pooled_std jawnie | `sqrt((sd_s(A2)²+sd_s(A3)²)/2)` po 5 seedach (F3-GATE §5) |
-| **§2** | wejście/wyjście filtra + parytet A2↔A3 | `[bx,by,bw,bh,has_delivery,Δt_norm]`→`[cx,cy,w,h]`, ≤4k param ±2% |
-| **§4** | pule 3d | train 48000–48299, val 48300–48399, maski 45200–45209, init 45040–45044 |
+| # | decyzja | rekomendacja R | status |
+|---|---|---|---|
+| **D-1** | przestrzeń filtra: image-space vs world-space | **image-space** (§3a) — dosłowny drop-in, off-frame nazwane (nota interpretacyjna §3) | **RATYFIKOWANE** (człowiek, 2026-08-02) |
+| **D-2** | kadencja/maskowanie etykiety GT (off-frame=None) | etykieta 12 Hz z per-tick seg-render; off-frame maskowany w stracie i RMSE | do ratyfikacji |
+| **D-3** | N/nogę oraz kotwica G2 | **N=100** na 46500–46599; kotwica = parowane A0; G2 = referencja (nota porównywalności §6) | **RATYFIKOWANE** (człowiek, 2026-08-02) |
+| **D-4** | maski nóg dropout | p0.5→**45102**, L5→**45105**, clean→brak (rodzina G2) | do ratyfikacji |
+| **D-5** | harness bez osłony | nowy `s3d/` = szkielet `measure_s1` minus Shield; metryka = sukces env | do ratyfikacji |
+| **D-6** | pooled_std jawnie | `sqrt((sd_s(A2)²+sd_s(A3)²)/2)` po 5 seedach (F3-GATE §5) | do ratyfikacji |
+| **§2** | wejście/wyjście filtra + parytet A2↔A3 | `[bx,by,bw,bh,has_delivery,Δt_norm]`→`[cx,cy,w,h]`, ≤4k param ±2% | do ratyfikacji |
+| **§4** | pule 3d | train 48000–48299, val 48300–48399, maski 45200–45209, init 45040–45044 | **INITY ZWERYFIKOWANE FREE** (2026-08-02); reszta do ratyfikacji |
+
+**Weryfikacja pul (2026-08-02, `grep` po całym repo + kontrola kolizji z pulami rezerwowanymi):**
+init `45040–45044`, maski `45200–45209`, sceny `48000–48299` / `48300–48399` — **wszystkie FREE**,
+zero kolizji z pulami zajętymi (45xxx zajęte: 45001, 45010–45021, 45100–45107, 45150–45151; 48xxx:
+0 trafień w repo). Inity 5-seedowe **parowane A2↔A3** po indeksie (analog par. F3 45010–45019).
 
 ---
 
