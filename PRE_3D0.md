@@ -6,10 +6,10 @@ pomiarem; po zobaczeniu wyników nie zmienia się progów, poziomów ani n. Syst
 **ZAMROŻONY**: polityka `ckpt/s3b2r/policy_gc5.pt`, kanał `Tracker5`, osłona v2, env, percepcja —
 nietykalne. Elementy `[PROPOZYCJA]` = decyzje projektowe do ratyfikacji człowieka.
 
-> **STATUS:** OCZEKUJE NA RATYFIKACJĘ. Częściowo ratyfikowane (2026-08-02): **D-1 image-space**,
-> **D-3 N=100**; inity 3d zweryfikowane FREE. Pozostałe decyzje (D-2/D-4/D-5/D-6, §2, pule §4) —
-> do ratyfikacji. Etap M (pomiar) nie startuje bez dopisku „RATYFIKOWANE" obejmującego całość
-> (commit z ręki człowieka lub jawna adnotacja w tym pliku).
+> **STATUS: RATYFIKOWANE W CAŁOŚCI** (człowiek, 2026-08-02). Ratyfikowany pakiet: D-1 (image-space),
+> D-2, D-3 (N=100), D-4, D-5, D-6, §2 (parytet/we-wy), §4 (pule) oraz sekcja rozbieżności
+> `RECON_3D.md §D`. PRE_3D0 **zamknięte** — kryteria (§5 precondition, §6 werdykt/transparencja/n)
+> są odtąd niezmienne. Etap M (pomiar) **autoryzowany**.
 
 ---
 
@@ -240,13 +240,13 @@ Naruszenie ⇒ ramię raportowane jako **NIETRANSPARENTNE** niezależnie od wyni
 | # | decyzja | rekomendacja R | status |
 |---|---|---|---|
 | **D-1** | przestrzeń filtra: image-space vs world-space | **image-space** (§3a) — dosłowny drop-in, off-frame nazwane (nota interpretacyjna §3) | **RATYFIKOWANE** (człowiek, 2026-08-02) |
-| **D-2** | kadencja/maskowanie etykiety GT (off-frame=None) | etykieta 12 Hz z per-tick seg-render; off-frame maskowany w stracie i RMSE | do ratyfikacji |
+| **D-2** | kadencja/maskowanie etykiety GT (off-frame=None) | etykieta 12 Hz z per-tick seg-render; off-frame maskowany w stracie i RMSE | **RATYFIKOWANE** (2026-08-02) |
 | **D-3** | N/nogę oraz kotwica G2 | **N=100** na 46500–46599; kotwica = parowane A0; G2 = referencja (nota porównywalności §6) | **RATYFIKOWANE** (człowiek, 2026-08-02) |
-| **D-4** | maski nóg dropout | p0.5→**45102**, L5→**45105**, clean→brak (rodzina G2) | do ratyfikacji |
-| **D-5** | harness bez osłony | nowy `s3d/` = szkielet `measure_s1` minus Shield; metryka = sukces env | do ratyfikacji |
-| **D-6** | pooled_std jawnie | `sqrt((sd_s(A2)²+sd_s(A3)²)/2)` po 5 seedach (F3-GATE §5) | do ratyfikacji |
-| **§2** | wejście/wyjście filtra + parytet A2↔A3 | `[bx,by,bw,bh,has_delivery,Δt_norm]`→`[cx,cy,w,h]`, ≤4k param ±2% | do ratyfikacji |
-| **§4** | pule 3d | train 48000–48299, val 48300–48399, maski 45200–45209, init 45040–45044 | **INITY ZWERYFIKOWANE FREE** (2026-08-02); reszta do ratyfikacji |
+| **D-4** | maski nóg dropout | p0.5→**45102**, L5→**45105**, clean→brak (rodzina G2) | **RATYFIKOWANE** (2026-08-02) |
+| **D-5** | harness bez osłony | nowy `s3d/` = szkielet `measure_s1` minus Shield; metryka = sukces env | **RATYFIKOWANE** (2026-08-02) |
+| **D-6** | pooled_std jawnie | `sqrt((sd_s(A2)²+sd_s(A3)²)/2)` po 5 seedach (F3-GATE §5) | **RATYFIKOWANE** (2026-08-02) |
+| **§2** | wejście/wyjście filtra + parytet A2↔A3 | `[bx,by,bw,bh,has_delivery,Δt_norm]`→`[cx,cy,w,h]`, ≤4k param ±2% | **RATYFIKOWANE** (2026-08-02) |
+| **§4** | pule 3d | train 48000–48299, val 48300–48399, maski 45200–45209, init 45040–45044 | **RATYFIKOWANE** (2026-08-02); inity/maski/sceny zweryfikowane FREE |
 
 **Weryfikacja pul (2026-08-02, `grep` po całym repo + kontrola kolizji z pulami rezerwowanymi):**
 init `45040–45044`, maski `45200–45209`, sceny `48000–48299` / `48300–48399` — **wszystkie FREE**,
