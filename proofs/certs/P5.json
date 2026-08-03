@@ -1,0 +1,47 @@
+{
+  "property": "P5",
+  "verdict": "PASS",
+  "method": "per-tick conformance: proven-model tau ≡ shield.py (decision+reason+state)",
+  "z3_pip": "5.0.0.0",
+  "z3_lib": "5.0.0",
+  "episodes_random": 300,
+  "episodes_targeted": 10,
+  "transitions_covered": [
+    "3_admit",
+    "3_hold",
+    "3_track",
+    "4_admit",
+    "4_hold",
+    "4_refuse",
+    "5a_allow",
+    "5a_hold",
+    "5b_allow",
+    "5b_hold",
+    "5b_refuse",
+    "geo",
+    "latch",
+    "nomatch",
+    "seek"
+  ],
+  "coverage": "15/15",
+  "mismatches": 0,
+  "boundary_thresholds_ticks": [
+    24,
+    36,
+    72
+  ],
+  "alock_property_tested": {
+    "tested": true,
+    "monotonic": true,
+    "ticks_checked": 6000
+  },
+  "offbyone_regression": {
+    "entry_hold_35_HOLD": true,
+    "entry_hold_36_REFUSE": true,
+    "latch_after_refuse": true,
+    "ehs_set_while_terminal": true
+  },
+  "adversarial_alock_violating_paths": 3,
+  "binds": "P1 (proofs/certs/P1.json) — dowód dotyczy kodu, nie fikcji; A-lock pokryty testem",
+  "model_sha256": "74bfbadab102adea462c384ac323e77e66ed72269966b819b83fc4b68c1c9bd0"
+}
