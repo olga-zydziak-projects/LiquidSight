@@ -1,0 +1,192 @@
+{
+  "episodes": [
+    {
+      "act": "A1",
+      "seed": 46513,
+      "K": 5,
+      "A": "A0",
+      "command": "fly to the blue sphere",
+      "mask": {
+        "type": "clean"
+      },
+      "mask_seed": null,
+      "shield_mode": "apply",
+      "wynik": "SUKCES",
+      "expect": "SUKCES",
+      "match": true,
+      "n_frames": 120,
+      "admission": [
+        {
+          "seq": 0,
+          "prev_hash": "GENESIS",
+          "command_raw": "fly to the blue sphere",
+          "decision": "ALLOW",
+          "reason": null,
+          "spec": {
+            "action": "FLY",
+            "color": "blue",
+            "shape": "sphere"
+          },
+          "grounder_phrase": "blue sphere",
+          "sig": "b0f92ca559b96c165fe933547ddcde6df4ffcbccec76bd5f59c098aa5af53c31"
+        }
+      ],
+      "authz_chain_ok": true,
+      "attempts": 2,
+      "authz_verify": true
+    },
+    {
+      "act": "A2",
+      "seed": 46507,
+      "expect": "SUKCES",
+      "wynik": "PORAZKA(dwell)",
+      "match": false,
+      "attempts": 3,
+      "status": "DROPPED",
+      "admission": [
+        {
+          "seq": 0,
+          "prev_hash": "GENESIS",
+          "command_raw": "fly to the green sphere",
+          "decision": "ALLOW",
+          "reason": null,
+          "spec": {
+            "action": "FLY",
+            "color": "green",
+            "shape": "sphere"
+          },
+          "grounder_phrase": "green sphere",
+          "sig": "a096731bfaf3086ff164e67288a49c459aee056131139ee625bbcb770edc304f"
+        }
+      ]
+    },
+    {
+      "act": "A3a",
+      "seed": 47425,
+      "K": 5,
+      "A": "A0",
+      "command": "fly to the blue cylinder",
+      "mask": {
+        "type": "geofence"
+      },
+      "mask_seed": null,
+      "shield_mode": "apply",
+      "wynik": "REFUSE(GEOFENCE)",
+      "expect": "REFUSE(GEOFENCE)",
+      "match": true,
+      "n_frames": 24,
+      "admission": [
+        {
+          "seq": 0,
+          "prev_hash": "GENESIS",
+          "command_raw": "fly to the blue cylinder",
+          "decision": "REFUSE",
+          "reason": "GEOFENCE",
+          "spec": {
+            "action": "FLY",
+            "color": "blue",
+            "shape": "cylinder"
+          },
+          "grounder_phrase": "blue cylinder",
+          "sig": "3cf3ff0393fb9e7e8d192d922faf7e0e47f26ee061c93a7309fc841626ca1ff1"
+        }
+      ],
+      "authz_chain_ok": true,
+      "attempts": 1,
+      "authz_verify": true
+    },
+    {
+      "act": "A3b",
+      "seed": 46503,
+      "K": 3,
+      "A": "A1",
+      "command": "fly to the blue sphere",
+      "mask": {
+        "type": "bernoulli",
+        "p": 0.5
+      },
+      "mask_seed": 45102,
+      "shield_mode": "apply",
+      "wynik": "REFUSE(STALE_AT_DWELL)",
+      "expect": "REFUSE(STALE_AT_DWELL)",
+      "match": true,
+      "n_frames": 110,
+      "admission": [
+        {
+          "seq": 0,
+          "prev_hash": "GENESIS",
+          "command_raw": "fly to the blue sphere",
+          "decision": "ALLOW",
+          "reason": null,
+          "spec": {
+            "action": "FLY",
+            "color": "blue",
+            "shape": "sphere"
+          },
+          "grounder_phrase": "blue sphere",
+          "sig": "b0f92ca559b96c165fe933547ddcde6df4ffcbccec76bd5f59c098aa5af53c31"
+        }
+      ],
+      "authz_chain_ok": true,
+      "attempts": 1,
+      "authz_verify": true
+    },
+    {
+      "act": "A4",
+      "seed": 46505,
+      "K": 8,
+      "A": "A1",
+      "command": "fly to the blue box",
+      "mask": {
+        "type": "clean"
+      },
+      "mask_seed": null,
+      "shield_mode": "apply",
+      "wynik": "SUKCES",
+      "expect": "SUKCES",
+      "match": true,
+      "n_frames": 120,
+      "admission": [
+        {
+          "phase": "raw",
+          "seq": 0,
+          "prev_hash": "GENESIS",
+          "command_raw": "fly to the azure box",
+          "decision": "REFUSE",
+          "reason": "NO_MATCH",
+          "spec": null,
+          "grounder_phrase": null,
+          "sig": "1a6db02f787804c1faefcbc09ab5540a59b887993bd875e6ca37326267212b1f"
+        },
+        {
+          "phase": "learn",
+          "seq": 0,
+          "prev_hash": "GENESIS",
+          "kind": "alias",
+          "alias": "azure",
+          "canonical": "blue",
+          "klass": "color",
+          "sig": "3a17c35aff5d3649305dd8bc0b4d4f4677d2fe741dbb9d557118b2b135a2c5e4"
+        },
+        {
+          "phase": "corrected",
+          "seq": 1,
+          "prev_hash": "1a6db02f787804c1faefcbc09ab5540a59b887993bd875e6ca37326267212b1f",
+          "command_raw": "fly to the blue box",
+          "decision": "ALLOW",
+          "reason": null,
+          "spec": {
+            "action": "FLY",
+            "color": "blue",
+            "shape": "box"
+          },
+          "grounder_phrase": "blue box",
+          "sig": "435d9b416109272bb7f5853c976c993f80e050745b2c80301f57708cae90a5c9"
+        }
+      ],
+      "authz_chain_ok": true,
+      "attempts": 1,
+      "authz_verify": true
+    }
+  ]
+}

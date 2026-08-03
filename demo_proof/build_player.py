@@ -91,9 +91,14 @@ def load_certs():
 
 def build():
     manifest = {m["act"]: m for m in json.load(open(os.path.join(DEMO, "manifest.json")))["episodes"]}
-    acts = [load_act(a, manifest[a]) for a in ORDER if a in manifest]
+    # tylko akty zgodne z prowieniencją; DROPPED (flip pod APPLIED, F-D1) wypadają — jawnie
+    ok = [a for a in ORDER if a in manifest and manifest[a].get("match") and manifest[a].get("status") != "DROPPED"]
+    dropped = [{"act": a, "wynik": manifest[a].get("wynik"), "expect": manifest[a].get("expect")}
+               for a in ORDER if a in manifest and (not manifest[a].get("match") or manifest[a].get("status") == "DROPPED")]
+    acts = [load_act(a, manifest[a]) for a in ok]
     certs = load_certs()
-    data = json.dumps({"acts": acts, "certs": certs}, separators=(",", ":"), ensure_ascii=False)
+    data = json.dumps({"acts": acts, "certs": certs, "dropped": dropped},
+                      separators=(",", ":"), ensure_ascii=False)
     html = HTML.replace("/*DATA*/", "const DATA=" + data + ";")
     with open(OUT_HTML, "w") as f:
         f.write(html)
@@ -198,6 +203,7 @@ button:hover{background:#242c3d}button.on{border-color:var(--blue);color:#fff}
   <div class="card"><span class="t">v1.0 exhibit — LiquidFlight (state-loop)</span>: CfC-32 flies under 500–1300 ms gaps; failure cliff ~102 ms → ~779 ms; τ≈35 ms; Δt no behavioral edge. <b>AutoNCP-20 (317 param)</b> is the state-loop config here — this is the only place "317" appears. <span class="m">paper/NUMBERS.md · LiquidFlight RD/C01 (config: setpoint→DSL-PID 48 Hz, obs-dropout OOD axis)</span></div>
   <div class="frozen">thresholds frozen before measurement · proofs signed with z3 5.0.0 / numpy-IBP</div>
   <div class="road">next: state continuity on public anti-UAV video (CT cores vs Kalman/GRU/Mamba)</div>
+  <div class="punch" id="dropped" style="margin-top:10px;border-color:var(--red)"></div>
  </div>
 </div>
 </div>
@@ -217,7 +223,8 @@ function certCard(k,c){let v=(c.verdict||"").toUpperCase();let cls=v.indexOf("PR
  return '<div class="card"><span class="t">'+k+'</span> · <span class="'+cls+'">'+v+'</span>'
  +'<div class="m">'+(c.method||'')+'</div><div class="h">solver '+(c.solver||'')+' · hash '+(c.hash||'')+'</div>'+extra+'</div>';}
 function fillBoard(){let pr='';["P1","P2","P5","P4","A4_memory","P3"].forEach(k=>{if(DATA.certs[k])pr+=certCard(k,DATA.certs[k]);});
- $('proved').innerHTML=pr;$('measured').innerHTML=MEAS.map(x=>'<div class="card"><span class="t">'+x.t+'</span><div class="m">'+x.m+'</div><div class="h">'+x.s+'</div></div>').join('');}
+ $('proved').innerHTML=pr;$('measured').innerHTML=MEAS.map(x=>'<div class="card"><span class="t">'+x.t+'</span><div class="m">'+x.m+'</div><div class="h">'+x.s+'</div></div>').join('');
+ const dr=(DATA.dropped||[]);$('dropped').innerHTML=dr.length? ('dropped scenes (bounded re-record, shield APPLIED, rules not softened): '+dr.map(d=>d.act+' expected '+d.expect+' → got '+d.wynik).join('; ')+'. reported, not hidden — the burst-bridging aggregate is the measured G2 curve above.'):'';}
 function buildNav(){const n=$('nav');DATA.acts.forEach((a,i)=>{const b=document.createElement('button');b.textContent=a.title;
  b.onclick=()=>{showBoard(false);ai=i;fi=0;render();setActive();};n.appendChild(b);});
  const bb=document.createElement('button');bb.textContent='● proof board';bb.onclick=()=>showBoard(true);n.appendChild(bb);setActive();}

@@ -7,3 +7,7 @@ __pycache__/
 # I2: duze artefakty (odtwarzalne z seeda; nie do gita)
 data/
 ckpt/
+
+# DP: klatki nagran (duze, odtwarzalne; player osadza base64)
+results/demo_proof/**/*.jpg
+results/demo/**/*.jpg
