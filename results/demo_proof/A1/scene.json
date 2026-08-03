@@ -1,0 +1,116 @@
+{
+  "act": "A1",
+  "seed": 46513,
+  "command": "fly to the blue sphere",
+  "designated_id": 2,
+  "hover": [
+    0.8241,
+    -1.0405,
+    0.5
+  ],
+  "arena_half": 2,
+  "geo_lim": 1.8,
+  "margin": 0.2,
+  "objects": [
+    {
+      "id": 2,
+      "color": "blue",
+      "shape": "sphere",
+      "pos": [
+        0.8241,
+        -1.0405,
+        0.08
+      ],
+      "designated": true
+    },
+    {
+      "id": 3,
+      "color": "green",
+      "shape": "box",
+      "pos": [
+        0.8342,
+        -1.5824,
+        0.08
+      ],
+      "designated": false
+    },
+    {
+      "id": 4,
+      "color": "red",
+      "shape": "box",
+      "pos": [
+        0.134,
+        -1.2327,
+        0.08
+      ],
+      "designated": false
+    },
+    {
+      "id": 5,
+      "color": "red",
+      "shape": "sphere",
+      "pos": [
+        0.5529,
+        -0.2709,
+        0.08
+      ],
+      "designated": false
+    },
+    {
+      "id": 6,
+      "color": "green",
+      "shape": "box",
+      "pos": [
+        0.6381,
+        0.624,
+        0.08
+      ],
+      "designated": false
+    }
+  ],
+  "render": {
+    "colors": {
+      "red": [
+        0.85,
+        0.05,
+        0.05
+      ],
+      "green": [
+        0.05,
+        0.6,
+        0.05
+      ],
+      "blue": [
+        0.1,
+        0.2,
+        0.85
+      ]
+    },
+    "shapes": {
+      "box": {
+        "half": [
+          0.08,
+          0.08,
+          0.08
+        ]
+      },
+      "sphere": {
+        "radius": 0.08
+      },
+      "cylinder": {
+        "radius": 0.06,
+        "length": 0.16
+      }
+    }
+  },
+  "sanity": {
+    "designated_color_shape_match_command": true,
+    "command": "fly to the blue sphere",
+    "designated": "blue sphere",
+    "designated_pos": [
+      0.8241,
+      -1.0405,
+      0.08
+    ]
+  }
+}

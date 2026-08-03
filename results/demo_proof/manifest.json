@@ -33,7 +33,9 @@
       ],
       "authz_chain_ok": true,
       "attempts": 2,
-      "authz_verify": true
+      "authz_verify": true,
+      "scene_seed": 46513,
+      "scene_sha256": "31f6aa36e6d23fab5e2e55f01a602bf1759b0cd66523bcea4370c1d51a0befe1"
     },
     {
       "act": "A2",
@@ -80,7 +82,9 @@
           "wynik": "REFUSE(STALE_AT_DWELL)"
         }
       ],
-      "selection_rule": "ANEKS_DP1: ascending 46500-46549 burst-L5, first SUKCES under APPLIED"
+      "selection_rule": "ANEKS_DP1: ascending 46500-46549 burst-L5, first SUKCES under APPLIED",
+      "scene_seed": 46502,
+      "scene_sha256": "5c5bc49c832fb9e7d0d78a6358627c8decd13fd362742984f3885b5174061646"
     },
     {
       "act": "A3a",
@@ -115,7 +119,9 @@
       ],
       "authz_chain_ok": true,
       "attempts": 1,
-      "authz_verify": true
+      "authz_verify": true,
+      "scene_seed": 47425,
+      "scene_sha256": "36be18fffe5ad32425df97d67b42872386b6b2450efa4617b99d5b41c160fc51"
     },
     {
       "act": "A3b",
@@ -151,7 +157,9 @@
       ],
       "authz_chain_ok": true,
       "attempts": 1,
-      "authz_verify": true
+      "authz_verify": true,
+      "scene_seed": 46503,
+      "scene_sha256": "648bbc7a4f09ab7451d9ef149c06e976119d19612a034b93fe2a809d2ee4fb6e"
     },
     {
       "act": "A4",
@@ -208,7 +216,9 @@
       ],
       "authz_chain_ok": true,
       "attempts": 1,
-      "authz_verify": true
+      "authz_verify": true,
+      "scene_seed": 46505,
+      "scene_sha256": "4b474dace617e43e84a8f53b979c837015dd37a90461db18a827713943295e5a"
     }
   ]
 }

@@ -1,10 +1,12 @@
-"""demo_proof/build_player.py — player DP self-contained (PROVED/MEASURED + certy + konsola + mapa).
+"""demo_proof/build_player.py — player DP self-contained + widok 3D w Three.js (SZLIF-W).
 
-Rozszerza player v1: dwie kolumny prawdy PROVED (certyfikaty z hashami+wersją solvera) / MEASURED
-(liczby z raportów, RECON §C), strip konsoli/admisji (podpisane rekordy per akt), mapa granicy z
-komórką 3d (inwersja), eksponat v1.0 (CfC-32/τ/102→779 ms; „317" TYLKO tu, konfiguracja jawna),
-backdrop terenu (prezentacyjny; sieć widzi 64²). Klatki base64 inline (file:// offline). Zero
-pomiarów. Wyjście: demo_proof/liquidsight_proof.html.
+Widok 3D RE-RENDEROWANY w Three.js z odtwarzanych stanów: dron po nagranej trajektorii (trace.pos),
+scena z scene.json (obiekty kolor/kształt/pozycja BEZ zmian), skybox+atmosfera, teren z reliefem
+POZA areną (arena płaska, rider 4), światło+cienie, model drona, kamera chase, ≥720p. Geofence ze
+stałych certyfikatu P2 (rider 2). Tilt kosmetyczny z przyśpieszenia (rider 3), yaw=0.
+Panele 256²/64² ZOSTAJĄ surowymi nagranymi klatkami (kontrast „ładne dla widza / surowe dla sieci").
+Three.js inline (vendor/three.min.js). SUKCES→SUCCESS. Tooltip HOLD-at-target. Zero dotykania
+nagrań/certyfikatów/64².
 
 CLI: .venv/bin/python -m demo_proof.build_player
 """
@@ -18,6 +20,7 @@ import os
 _ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DEMO = os.path.join(_ROOT, "results", "demo_proof")
 CERTS = os.path.join(_ROOT, "proofs", "certs")
+THREE_JS = os.path.join(os.path.dirname(__file__), "vendor", "three.min.js")
 OUT_HTML = os.path.join(_ROOT, "demo_proof", "liquidsight_proof.html")
 ORDER = ["A1", "A2", "A3a", "A3b", "A4"]
 
@@ -37,7 +40,7 @@ ACTS = {
     "A3a": {"title": "Act 3 — Hard rules (geofence)",
             "banner": "target beyond arena → REFUSE(GEOFENCE) at admission — proved (P2: never leaves 2.0 m)",
             "source": "RAPORT_3C_MVP §6 (25/25) · cert P2",
-            "note": "admission refuses before launch; geometry, not perception."},
+            "note": "admission refuses before launch; geometry, not perception. the target sits outside the fence."},
     "A3b": {"title": "Act 3 — Hard rules (stale)",
             "banner": "link killed at dwell → HOLD → REFUSE(STALE). accounting: 16/28 failures → abstention, 15/22 kept",
             "source": "RAPORT_3C_MVP §5",
@@ -64,11 +67,11 @@ def mask_str(m, ms):
 
 def load_act(act, meta):
     d = os.path.join(DEMO, act)
-    n = len(glob.glob(os.path.join(d, "3d", "f*.jpg")))
-    frames = [{"d3": b64(os.path.join(d, "3d", f"f{i:03d}.jpg")),
-               "c256": b64(os.path.join(d, "cam256", f"f{i:03d}.jpg")),
+    n = len(glob.glob(os.path.join(d, "cam64", "f*.jpg")))
+    frames = [{"c256": b64(os.path.join(d, "cam256", f"f{i:03d}.jpg")),
                "c64": b64(os.path.join(d, "cam64", f"f{i:03d}.jpg"))} for i in range(n)]
     trace = json.load(open(os.path.join(d, "trace.jsonl")))["trace"]
+    scene = json.load(open(os.path.join(d, "scene.json")))
     spec = ACTS[act]
     adm = [{"phase": r.get("phase", "admit"), "cmd": r.get("command_raw", r.get("alias")),
             "decision": r.get("decision", "LEARN"), "reason": r.get("reason"),
@@ -77,16 +80,16 @@ def load_act(act, meta):
             "note": spec["note"], "command": meta["command"],
             "prov": {"pool": POOL[act], "seed": meta["seed"], "mask": mask_str(meta["mask"], meta.get("mask_seed")),
                      "outcome": meta["wynik"], "K": meta.get("K"), "A": meta.get("A"),
-                     "attempts": meta.get("attempts", 1), "authz": meta.get("authz_verify", True)},
-            "admission": adm, "frames": frames, "trace": trace}
+                     "attempts": meta.get("attempts", 1), "authz": meta.get("authz_verify", True),
+                     "sceneSha": meta.get("scene_sha256", "")[:12]},
+            "admission": adm, "frames": frames, "trace": trace, "scene": scene}
 
 
 def load_certs():
     out = {}
     for f in sorted(glob.glob(os.path.join(CERTS, "*.json"))):
         c = json.load(open(f))
-        out[c["property"]] = {"verdict": c.get("verdict"),
-                              "method": c.get("method", ""),
+        out[c["property"]] = {"verdict": c.get("verdict"), "method": c.get("method", ""),
                               "hash": (c.get("model_sha256") or c.get("ckpt_sha256", ""))[:16],
                               "solver": c.get("z3_lib") or c.get("ibp", ""),
                               "scope": c.get("verdict_scope", "")}
@@ -95,15 +98,14 @@ def load_certs():
 
 def build():
     manifest = {m["act"]: m for m in json.load(open(os.path.join(DEMO, "manifest.json")))["episodes"]}
-    # tylko akty zgodne z prowieniencją; DROPPED (flip pod APPLIED, F-D1) wypadają — jawnie
     ok = [a for a in ORDER if a in manifest and manifest[a].get("match") and manifest[a].get("status") != "DROPPED"]
     dropped = [{"act": a, "wynik": manifest[a].get("wynik"), "expect": manifest[a].get("expect")}
                for a in ORDER if a in manifest and (not manifest[a].get("match") or manifest[a].get("status") == "DROPPED")]
     acts = [load_act(a, manifest[a]) for a in ok]
     certs = load_certs()
-    data = json.dumps({"acts": acts, "certs": certs, "dropped": dropped},
-                      separators=(",", ":"), ensure_ascii=False)
-    html = HTML.replace("/*DATA*/", "const DATA=" + data + ";")
+    data = json.dumps({"acts": acts, "certs": certs, "dropped": dropped}, separators=(",", ":"), ensure_ascii=False)
+    three = open(THREE_JS).read()
+    html = (HTML.replace("/*THREE*/", three).replace("/*DATA*/", "const DATA=" + data + ";"))
     with open(OUT_HTML, "w") as f:
         f.write(html)
     sha = hashlib.sha256(open(OUT_HTML, "rb").read()).hexdigest()
@@ -124,11 +126,10 @@ h1{font-size:16px;margin:0 0 2px;letter-spacing:.3px}.sub{color:var(--dim);font-
 .banner{background:var(--panel);border:1px solid var(--edge);border-left:3px solid var(--blue);padding:9px 12px;border-radius:6px;font-size:13px;margin-bottom:10px;min-height:38px}
 .banner b{color:#fff}.src{color:var(--dim);font-size:11px;font-family:var(--mono);margin-top:3px}
 .grid{display:grid;grid-template-columns:1.7fr 1fr;gap:10px}.left{display:flex;flex-direction:column;gap:10px}
-.view3d{border:1px solid var(--edge);border-radius:6px;overflow:hidden;position:relative;
-background:linear-gradient(#1a2740 0%,#24405f 42%,#3a5a3f 42%,#243a28 100%)}
-.view3d img{width:100%;display:block;mix-blend-mode:normal}
-.tag{position:absolute;top:6px;left:8px;font-family:var(--mono);font-size:11px;color:var(--dim);background:rgba(0,0,0,.55);padding:2px 6px;border-radius:4px}
-.terr{position:absolute;bottom:6px;right:8px;font-family:var(--mono);font-size:10px;color:var(--dim);background:rgba(0,0,0,.55);padding:2px 6px;border-radius:4px}
+.view3d{border:1px solid var(--edge);border-radius:6px;overflow:hidden;position:relative;background:#0a0d13;aspect-ratio:16/9}
+.view3d canvas{width:100%!important;height:100%!important;display:block}
+.tag{position:absolute;top:6px;left:8px;font-family:var(--mono);font-size:11px;color:#cfe;background:rgba(0,0,0,.5);padding:2px 6px;border-radius:4px}
+.terr{position:absolute;bottom:6px;right:8px;font-family:var(--mono);font-size:10px;color:#cde;background:rgba(0,0,0,.5);padding:2px 6px;border-radius:4px}
 .cams{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .cam{background:var(--panel);border:1px solid var(--edge);border-radius:6px;padding:6px;text-align:center}
 .cam img{width:100%;image-rendering:pixelated;border-radius:3px}.cam .cap{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:4px}
@@ -140,8 +141,9 @@ background:linear-gradient(#1a2740 0%,#24405f 42%,#3a5a3f 42%,#243a28 100%)}
 .link-frozen{background:rgba(239,68,68,.15);color:var(--red)}.link-seeking{background:rgba(139,147,163,.15);color:var(--dim)}
 .dec-ALLOW{color:var(--green)}.dec-HOLD{color:var(--yellow)}.dec-REFUSE{color:var(--red)}
 .shieldbox{margin-top:10px;padding-top:8px;border-top:1px dashed var(--edge)}
+.tip{font-size:10.5px;color:var(--yellow);font-family:var(--mono);margin-top:5px;line-height:1.35}
 .console{margin-top:10px;background:#0a0d13;border:1px solid var(--edge);border-radius:6px;padding:8px 10px;font-family:var(--mono);font-size:11.5px}
-.console .cl{padding:2px 0}.cl .d-ALLOW{color:var(--green)}.cl .d-REFUSE{color:var(--red)}.cl .d-LEARN{color:var(--blue)}
+.cl .d-ALLOW{color:var(--green)}.cl .d-REFUSE{color:var(--red)}.cl .d-LEARN{color:var(--blue)}
 .controls{display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap}
 button{background:#1b2130;color:var(--txt);border:1px solid var(--edge);border-radius:6px;padding:6px 12px;cursor:pointer;font-size:13px}
 button:hover{background:#242c3d}button.on{border-color:var(--blue);color:#fff}
@@ -167,10 +169,10 @@ button:hover{background:#242c3d}button.on{border-color:var(--blue);color:#fff}
  <div class="banner"><span id="banner"></span><div class="src" id="src"></div></div>
  <div class="grid">
   <div class="left">
-   <div class="view3d"><span class="tag">external 3D</span><img id="v3d"><span class="terr">terrain = third-person visualization; the network sees the 64² camera</span></div>
+   <div class="view3d"><span class="tag">external 3D · re-rendered from recorded states</span><canvas id="cv"></canvas><span class="terr">terrain = third-person visualization; the network sees the 64² camera</span></div>
    <div class="cams">
-    <div class="cam"><img id="v256"><div class="cap">grounder 256² · bbox+conf</div></div>
-    <div class="cam"><img id="v64"><div class="cap">policy 64²</div></div>
+    <div class="cam"><img id="v256"><div class="cap">grounder 256² · bbox+conf (raw recorded)</div></div>
+    <div class="cam"><img id="v64"><div class="cap">policy 64² · raw recorded (what the network sees)</div></div>
    </div>
    <div class="controls"><button id="play">▶ play</button><button id="step">⟶ step</button>
     <span class="scrub"><input type="range" id="scrub" min="0" value="0"></span><button id="spd">1×</button></div>
@@ -188,6 +190,7 @@ button:hover{background:#242c3d}button.on{border-color:var(--blue);color:#fff}
      <div class="row"><span class="k">rule</span><span class="v" id="pRule"></span></div>
      <div class="row"><span class="k">decision</span><span class="v" id="pDec"></span></div>
      <div class="row"><span class="k">reason</span><span class="v" id="pReason"></span></div>
+     <div class="tip hidden" id="pTip">HOLD-at-target during blind dwell — documented behavior (RAPORT_3C)</div>
     </div>
    </div>
    <div class="prov" id="prov"></div>
@@ -211,24 +214,83 @@ button:hover{background:#242c3d}button.on{border-color:var(--blue);color:#fff}
  </div>
 </div>
 </div>
+<script>/*THREE*/</script>
 <script>
 /*DATA*/
 let ai=0,fi=0,playing=false,spd=1,timer=null;const $=id=>document.getElementById(id);
+const EN=s=>(s||'').replace(/SUKCES/g,'SUCCESS').replace(/PORAZKA/g,'FAILURE');
+// ---------- Three.js 3D re-render ----------
+let renderer,scene,camera,drone,sky,camPos=new THREE.Vector3(),camAt=new THREE.Vector3(),built=-1;
+const V=(sx,sy,sz)=>new THREE.Vector3(sx,sz,sy); // sim(x,y,z z-up) -> three(x,y,z y-up)
+function groundTexture(){const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d');
+ g.fillStyle='#3d5a34';g.fillRect(0,0,256,256);for(let i=0;i<9000;i++){const x=Math.random()*256,y=Math.random()*256,r=Math.random()*2.2;
+ const v=Math.random();g.fillStyle=v<.5?'rgba(60,92,50,.7)':v<.8?'rgba(78,110,60,.6)':'rgba(120,105,70,.5)';g.beginPath();g.arc(x,y,r,0,7);g.fill();}
+ const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(10,10);return t;}
+function skyTexture(){const c=document.createElement('canvas');c.width=16;c.height=256;const g=c.getContext('2d');
+ const grd=g.createLinearGradient(0,0,0,256);grd.addColorStop(0,'#2a5a9e');grd.addColorStop(.55,'#6f9fd0');grd.addColorStop(.72,'#bcd6ec');grd.addColorStop(1,'#d9e6d0');
+ g.fillStyle=grd;g.fillRect(0,0,16,256);return new THREE.CanvasTexture(c);}
+function terrainH(px,py){const d=Math.max(Math.abs(px),Math.abs(py));if(d<=2.4)return 0;const t=d-2.4;
+ return ((Math.sin(px*0.6)*Math.cos(py*0.55)+1)*0.5)*Math.min(t*0.55,3.2)+t*0.16;}
+function makeDrone(){const gp=new THREE.Group();
+ const body=new THREE.Mesh(new THREE.BoxGeometry(.16,.05,.16),new THREE.MeshStandardMaterial({color:0x1b1f2a,metalness:.4,roughness:.5}));body.castShadow=true;gp.add(body);
+ const arm=new THREE.MeshStandardMaterial({color:0x2b3340});const rot=new THREE.MeshStandardMaterial({color:0x0e1118});
+ [[.13,.13],[.13,-.13],[-.13,.13],[-.13,-.13]].forEach(([x,z])=>{
+  const a=new THREE.Mesh(new THREE.BoxGeometry(.02,.015,.02),arm);a.position.set(x/1.3,0,z/1.3);a.castShadow=true;gp.add(a);
+  const r=new THREE.Mesh(new THREE.CylinderGeometry(.07,.07,.012,20),rot);r.position.set(x,.03,z);r.castShadow=true;gp.add(r);});
+ const led=new THREE.Mesh(new THREE.SphereGeometry(.022,10,10),new THREE.MeshStandardMaterial({color:0x22c55e,emissive:0x22c55e,emissiveIntensity:.9}));led.position.set(.1,0,0);gp.add(led);
+ gp.scale.setScalar(1.5);return gp;}
+function shapeMesh(o){let g;const c=DATA_scene.render.shapes;
+ if(o.shape==='sphere')g=new THREE.SphereGeometry(c.sphere.radius,24,18);
+ else if(o.shape==='cylinder')g=new THREE.CylinderGeometry(c.cylinder.radius,c.cylinder.radius,c.cylinder.length,24);
+ else g=new THREE.BoxGeometry(c.box.half[0]*2,c.box.half[2]*2,c.box.half[1]*2);
+ const rgb=DATA_scene.render.colors[o.color];const m=new THREE.MeshStandardMaterial({color:new THREE.Color(rgb[0],rgb[1],rgb[2]),roughness:.55,
+  emissive:o.designated?new THREE.Color(rgb[0],rgb[1],rgb[2]):0x000000,emissiveIntensity:o.designated?.28:0});
+ const mesh=new THREE.Mesh(g,m);mesh.castShadow=true;mesh.receiveShadow=true;return mesh;}
+let DATA_scene=null;
+function squareRing(lim,color,y){const pts=[[lim,lim],[lim,-lim],[-lim,-lim],[-lim,lim],[lim,lim]].map(([x,z])=>V(x,z,y));
+ return new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color}));}
+function build3D(a){DATA_scene=a.scene;
+ if(!renderer){renderer=new THREE.WebGLRenderer({canvas:$('cv'),antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  renderer.setSize(1280,720,false);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputEncoding=THREE.sRGBEncoding;}
+ scene=new THREE.Scene();scene.background=skyTexture();scene.fog=new THREE.Fog(0xbcd6ec,14,52);
+ camera=new THREE.PerspectiveCamera(52,1280/720,0.1,120);
+ scene.add(new THREE.HemisphereLight(0xbfd4f0,0x40502f,.75));
+ const sun=new THREE.DirectionalLight(0xfff2e0,1.05);sun.position.set(6,10,4);sun.castShadow=true;
+ sun.shadow.mapSize.set(2048,2048);sun.shadow.camera.left=-6;sun.shadow.camera.right=6;sun.shadow.camera.top=6;sun.shadow.camera.bottom=-6;
+ sun.shadow.camera.near=1;sun.shadow.camera.far=40;sun.shadow.bias=-0.0004;scene.add(sun);scene.add(sun.target);
+ // teren: relief poza arena, arena plaska (rider 4)
+ const geo=new THREE.PlaneGeometry(60,60,140,140);const pos=geo.attributes.position;
+ for(let i=0;i<pos.count;i++){pos.setZ(i,terrainH(pos.getX(i),pos.getY(i)));}geo.computeVertexNormals();
+ const ground=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({map:groundTexture(),roughness:1}));
+ ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;scene.add(ground);
+ // geofence ze stalych P2 (rider 2): arena 2.0 + shield-trigger geo_lim
+ scene.add(squareRing(a.scene.arena_half,0x8b93a3,0.02));
+ scene.add(squareRing(a.scene.geo_lim,0xeab308,0.03));
+ // obiekty (kolor/ksztalt/pozycja bez zmian)
+ a.scene.objects.forEach(o=>{const m=shapeMesh(o);m.position.copy(V(o.pos[0],o.pos[1],o.pos[2]));scene.add(m);});
+ drone=makeDrone();scene.add(drone);
+ const p0=a.trace[0].pos;camPos.copy(V(p0[0]-3.3,p0[1]-0.05,1.4));built=ai;update3D(0);}
+function tiltFor(a,i){const T=a.trace;const c=T[i].pos,pv=T[Math.max(0,i-1)].pos,nx=T[Math.min(T.length-1,i+1)].pos;
+ const ax=(nx[0]-2*c[0]+pv[0]),ay=(nx[1]-2*c[1]+pv[1]);const cl=v=>Math.max(-0.22,Math.min(0.22,v*9));return {pitch:cl(-ax),roll:cl(ay)};}
+function update3D(i){const a=DATA.acts[ai];if(built!==ai)build3D(a);const p=a.trace[i].pos;
+ drone.position.copy(V(p[0],p[1],p[2]));const t=tiltFor(a,i);drone.rotation.set(t.pitch,0,t.roll); // yaw=0
+ const want=V(p[0]-3.3,p[1]-0.05,1.4);camPos.lerp(want,0.12);camera.position.copy(camPos);
+ camAt.lerp(V(p[0]+1.6,p[1],0.72),0.2);camera.lookAt(camAt);renderer.render(scene,camera);}
+// ---------- data layer (accepted) ----------
 const MEAS=[
  {t:"designation envelope",m:"67% success / 10% wrong-lock · gate 85/8 frozen, unmet",s:"RAPORT_3B · 3C_MVP §2"},
  {t:"executability ceiling",m:"GT-fed 100% — task is feasible for the executor",s:"RAPORT_3B §9"},
- {t:"broken-stream curve (G2)",m:"80 / 66 / 44 / 30 (p0/.25/.5/.75); burst L5 −4 pp vs scattered p0.5 −36 pp",s:"RAPORT_S3B4"},
+ {t:"broken-stream curve (G2)",m:"80 / 66 / 44 / 30 (p0/.25/.5/.75); burst L5 −4 pp vs scattered p0.5 −36 pp · no shield",s:"RAPORT_S3B4"},
  {t:"shield accounting (dropout)",m:"16 of 28 base failures → abstention; success kept 15/22",s:"RAPORT_3C_MVP §5"},
  {t:"geofence traps",m:"25/25 correct REFUSE(GEOFENCE)",s:"RAPORT_3C_MVP §6"},
  {t:"absent-object limit (honest)",m:"6/25 — open-vocab grounder hallucinates a box; perception is not proved",s:"RAPORT_3C_MVP §6"}];
 const PUNCH="local robustness of the network is not provable by sound IBP at this width — that is why a proved automaton (P1, P2, P5) stands between the network and actuation.";
 function certCard(k,c){let v=(c.verdict||"").toUpperCase();let cls=v.indexOf("PROV")>=0?"vp":"vu";
  let extra=(k==="P3")?('<div class="punch">'+PUNCH+'</div>'):'';
- return '<div class="card"><span class="t">'+k+'</span> · <span class="'+cls+'">'+v+'</span>'
- +'<div class="m">'+(c.method||'')+'</div><div class="h">solver '+(c.solver||'')+' · hash '+(c.hash||'')+'</div>'+extra+'</div>';}
+ return '<div class="card"><span class="t">'+k+'</span> · <span class="'+cls+'">'+v+'</span><div class="m">'+(c.method||'')+'</div><div class="h">solver '+(c.solver||'')+' · hash '+(c.hash||'')+'</div>'+extra+'</div>';}
 function fillBoard(){let pr='';["P1","P2","P5","P4","A4_memory","P3"].forEach(k=>{if(DATA.certs[k])pr+=certCard(k,DATA.certs[k]);});
  $('proved').innerHTML=pr;$('measured').innerHTML=MEAS.map(x=>'<div class="card"><span class="t">'+x.t+'</span><div class="m">'+x.m+'</div><div class="h">'+x.s+'</div></div>').join('');
- const dr=(DATA.dropped||[]);$('dropped').innerHTML=dr.length? ('dropped scenes (bounded re-record, shield APPLIED, rules not softened): '+dr.map(d=>d.act+' expected '+d.expect+' → got '+d.wynik).join('; ')+'. reported, not hidden — the burst-bridging aggregate is the measured G2 curve above.'):'';}
+ const dr=(DATA.dropped||[]);$('dropped').innerHTML=dr.length?('dropped scenes (bounded re-record, shield APPLIED, rules not softened): '+dr.map(d=>d.act+' expected '+EN(d.expect)+' → got '+EN(d.wynik)).join('; ')+'. reported, not hidden — the burst-bridging aggregate is the measured G2 curve above.'):'';}
 function buildNav(){const n=$('nav');DATA.acts.forEach((a,i)=>{const b=document.createElement('button');b.textContent=a.title;
  b.onclick=()=>{showBoard(false);ai=i;fi=0;render();setActive();};n.appendChild(b);});
  const bb=document.createElement('button');bb.textContent='● proof board';bb.onclick=()=>showBoard(true);n.appendChild(bb);setActive();}
@@ -236,19 +298,21 @@ function setActive(){[...$('nav').children].forEach((b,i)=>b.classList.toggle('o
 function showBoard(on){$('boardView').classList.toggle('hidden',!on);$('stage').classList.toggle('hidden',on);pause();
  [...$('nav').children].forEach(b=>b.classList.remove('on'));if(on){$('nav').lastChild.classList.add('on');fillBoard();}else setActive();}
 function render(){const a=DATA.acts[ai],fr=a.frames[fi]||a.frames[0],tr=a.trace[fi]||a.trace[a.trace.length-1];
+ update3D(fi);
  $('banner').innerHTML=a.banner.replace(/(\d+%|\d+\/\d+|−?\d+ ?pp|0\.\d+→?0?\.?\d*|85\/8|2\.0 m)/g,'<b>$1</b>');
  $('src').textContent='source: '+a.source;$('note').textContent=a.note;
- $('v3d').src=fr.d3;$('v256').src=fr.c256;$('v64').src=fr.c64;
+ $('v256').src=fr.c256;$('v64').src=fr.c64;
  $('pCmd').textContent='"'+a.command+'"';$('pT').textContent=tr.t.toFixed(2)+' s / '+fi;
  const lk=tr.link||'seeking';$('pLink').textContent=lk.toUpperCase();$('pLink').className='pill link-'+lk;
  $('pAge').textContent=tr.age_s==null?'':'age '+(+tr.age_s).toFixed(1)+'s';
  $('pConf').textContent=tr.conf==null?'—':(+tr.conf).toFixed(3);
  $('pWL').textContent=tr.wrong_lock?'1  ⚠ other object':'0';$('pWL').style.color=tr.wrong_lock?'var(--red)':'var(--dim)';
  $('pState').textContent=tr.state;$('pRule').textContent=tr.rule||'—';
- $('pDec').textContent=tr.decision;$('pDec').className='v dec-'+tr.decision;$('pReason').textContent=tr.reason||'—';
+ $('pDec').textContent=tr.decision;$('pDec').className='v dec-'+tr.decision;$('pReason').textContent=EN(tr.reason)||'—';
+ $('pTip').classList.toggle('hidden',!(tr.decision==='HOLD'&&tr.state==='DWELL-GUARD'));
  const c=a.admission.map(r=>'<div class="cl">▸ '+(r.phase)+': "'+(r.cmd||'')+'" → <span class="d-'+r.decision+'">'+r.decision+(r.reason?'('+r.reason+')':'')+'</span> <span style="color:var(--dim)">sig '+r.sig+'</span></div>').join('');
  $('console').innerHTML='<div style="color:var(--dim);margin-bottom:3px">CONSOLE · signed admission chain</div>'+(c||'—');
- const p=a.prov;$('prov').textContent='PROVENANCE  pool '+p.pool+' · seed '+p.seed+' · '+(p.K!=null?p.K+'/'+p.A+' · ':'')+'mask '+p.mask+' · outcome '+p.outcome+' · attempt '+p.attempts+'/3 · authz '+(p.authz?'ok':'FAIL');
+ const p=a.prov;$('prov').textContent='PROVENANCE  pool '+p.pool+' · seed '+p.seed+' · '+(p.K!=null?p.K+'/'+p.A+' · ':'')+'mask '+p.mask+' · outcome '+EN(p.outcome)+' · attempt '+p.attempts+'/3 · authz '+(p.authz?'ok':'FAIL')+' · scene '+p.sceneSha;
  $('scrub').max=a.frames.length-1;$('scrub').value=fi;}
 function tick(){const a=DATA.acts[ai];fi++;if(fi>=a.frames.length){fi=a.frames.length-1;pause();render();return;}render();}
 function play(){if(playing)return;playing=true;$('play').textContent='❚❚ pause';$('play').classList.add('on');timer=setInterval(tick,Math.round(1000/12/spd));}
@@ -258,6 +322,7 @@ $('step').onclick=()=>{pause();fi=Math.min(fi+1,DATA.acts[ai].frames.length-1);r
 $('scrub').oninput=e=>{pause();fi=+e.target.value;render();};
 $('spd').onclick=()=>{spd=spd===1?2:spd===2?0.5:1;$('spd').textContent=spd+'×';if(playing){pause();play();}};
 document.onkeydown=e=>{if(e.key===' '){e.preventDefault();$('play').click();}if(e.key==='ArrowRight')$('step').click();};
+(function(){var h=decodeURIComponent(location.hash.slice(1));if(h){var pp=h.split('/');var idx=DATA.acts.findIndex(a=>a.id===pp[0]);if(idx>=0)ai=idx;if(pp[1]!=null&&pp[1]!=='')fi=+pp[1];}})();
 buildNav();render();
 </script></body></html>"""
 
