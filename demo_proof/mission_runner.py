@@ -173,6 +173,46 @@ def smoke():
         m.client.close(); m.env.close()
 
 
+def scene_search(start=49500, limit=30):
+    """ANEKS_MC1 §C: ascending K8 z red box + blue sphere w obwiedni + relokowalny. Log odrzuconych."""
+    cfg = load_cfg(); env = make_env(cfg)
+    rejects = []
+    try:
+        for seed in range(start, start + 400):
+            K, A = scene_params(seed)
+            if K != 8:
+                rejects.append({"seed": seed, "why": "K!=8"}); continue
+            env.reset(scene_seed=seed, level="T0", scene_type="3b")
+            objs = env.scene["objects"]
+            def find(color, shape):
+                for o in objs:
+                    if o["color"] == color and o["shape"] == shape:
+                        ok, d, az = in_envelope(np.asarray(o["pos"], float))
+                        if ok:
+                            return o
+                return None
+            rb = find("red", "box"); bs = find("blue", "sphere")
+            if rb is None:
+                rejects.append({"seed": seed, "why": "brak red box w obwiedni"}); continue
+            if bs is None:
+                rejects.append({"seed": seed, "why": "brak blue sphere w obwiedni"}); continue
+            reloc = next((o for o in objs if o["id"] not in (rb["id"], bs["id"])), None)
+            if reloc is None:
+                rejects.append({"seed": seed, "why": "brak obiektu do relokacji"}); continue
+            print(f"WINNER seed={seed} K8/{A}  red box@{[round(x,2) for x in rb['pos'][:2]]}  "
+                  f"blue sphere@{[round(x,2) for x in bs['pos'][:2]]}  reloc={reloc['color']} {reloc['shape']}", flush=True)
+            print(f"odrzuconych: {len(rejects)}", flush=True)
+            for r in rejects[-8:]:
+                print(f"  reject {r['seed']}: {r['why']}", flush=True)
+            return seed, rejects
+    finally:
+        env.close()
+    print("SCENE-SEARCH FAIL — STOP"); return None, rejects
+
+
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "smoke":
+    a = sys.argv[1] if len(sys.argv) > 1 else "smoke"
+    if a == "smoke":
         smoke()
+    elif a == "scene-search":
+        scene_search()
