@@ -125,7 +125,7 @@ HTML = r"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 h1{font-size:16px;margin:0 0 2px;letter-spacing:.3px}.sub{color:var(--dim);font-size:12px;margin-bottom:10px}
 .banner{background:var(--panel);border:1px solid var(--edge);border-left:3px solid var(--blue);padding:9px 12px;border-radius:6px;font-size:13px;margin-bottom:10px;min-height:38px}
 .banner b{color:#fff}.src{color:var(--dim);font-size:11px;font-family:var(--mono);margin-top:3px}
-.grid{display:grid;grid-template-columns:1.7fr 1fr;gap:10px}.left{display:flex;flex-direction:column;gap:10px}
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:10px}.left{display:flex;flex-direction:column;gap:10px}
 .view3d{border:1px solid var(--edge);border-radius:6px;overflow:hidden;position:relative;background:#0a0d13;aspect-ratio:16/9}
 .view3d canvas{width:100%!important;height:100%!important;display:block}
 .tag{position:absolute;top:6px;left:8px;font-family:var(--mono);font-size:11px;color:#cfe;background:rgba(0,0,0,.5);padding:2px 6px;border-radius:4px}
@@ -160,6 +160,26 @@ button:hover{background:#242c3d}button.on{border-color:var(--blue);color:#fff}
 .punch{border-left:3px solid var(--yellow);padding-left:9px;color:var(--txt);font-size:12px;margin-top:5px}
 .exhibit{margin-top:14px;border-top:1px solid var(--edge);padding-top:12px}
 .frozen{color:var(--green);font-weight:600;margin-top:10px}.road{color:var(--blue);font-family:var(--mono);font-size:12px;margin-top:8px}
+.rightcol{display:flex;flex-direction:column;gap:10px}
+.instr{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.inst{position:relative;background:#0a0d13;border:1px solid var(--edge);border-radius:6px;padding:7px}
+.inst .lbl{font-family:var(--mono);font-size:9px;color:var(--dim);letter-spacing:.3px;margin-bottom:5px;text-transform:uppercase;line-height:1.25}
+.imgwrap{position:relative;border:2px solid var(--edge);border-radius:3px;overflow:hidden;transition:border-color .08s;line-height:0}
+.imgwrap img{width:100%;display:block}
+.inst.pix .imgwrap img{image-rendering:pixelated}
+.grid64{position:absolute;inset:0;pointer-events:none;
+ background-image:repeating-linear-gradient(0deg,rgba(180,200,230,.10) 0 1px,transparent 1px calc(100%/64)),repeating-linear-gradient(90deg,rgba(180,200,230,.10) 0 1px,transparent 1px calc(100%/64))}
+.rd{font-family:var(--mono);font-size:10px;color:var(--dim);margin-top:5px;display:flex;justify-content:space-between;gap:6px}
+.rd b{color:#cfe}
+.corner{position:absolute;width:9px;height:9px;border:1.5px solid rgba(207,224,255,.55);z-index:2}
+.corner.tl{top:2px;left:2px;border-right:none;border-bottom:none}.corner.tr{top:2px;right:2px;border-left:none;border-bottom:none}
+.corner.bl{bottom:2px;left:2px;border-right:none;border-top:none}.corner.br{bottom:2px;right:2px;border-left:none;border-top:none}
+.b-live{border-color:var(--green)!important}.b-stale{border-color:var(--yellow)!important}
+.b-frozen{border-color:var(--red)!important}.b-seeking{border-color:var(--edge)!important}
+.evt{position:absolute;top:4px;right:5px;font-family:var(--mono);font-size:9px;padding:1px 5px;border-radius:8px;z-index:3}
+.evt.live{background:rgba(34,197,94,.2);color:var(--green)}.evt.stale{background:rgba(234,179,8,.2);color:var(--yellow)}
+.evt.frozen{background:rgba(239,68,68,.2);color:var(--red)}.evt.seeking{background:rgba(139,147,163,.2);color:var(--dim)}
+.evt.refuse{background:rgba(234,179,8,.28);color:var(--yellow)}
 .hidden{display:none}
 </style></head><body><div class="wrap">
 <h1>LiquidSight — we prove where a proof exists, measure where it does not, refuse where neither holds</h1>
@@ -170,15 +190,11 @@ button:hover{background:#242c3d}button.on{border-color:var(--blue);color:#fff}
  <div class="grid">
   <div class="left">
    <div class="view3d"><span class="tag">external 3D · re-rendered from recorded states</span><canvas id="cv"></canvas><span class="terr">terrain = third-person visualization; the network sees the 64² camera</span></div>
-   <div class="cams">
-    <div class="cam"><img id="v256"><div class="cap">grounder 256² · bbox+conf (raw recorded)</div></div>
-    <div class="cam"><img id="v64"><div class="cap">policy 64² · raw recorded (what the network sees)</div></div>
-   </div>
    <div class="controls"><button id="play">▶ play</button><button id="step">⟶ step</button>
     <span class="scrub"><input type="range" id="scrub" min="0" value="0"></span><button id="spd">1×</button></div>
    <div class="console" id="console"></div>
   </div>
-  <div>
+  <div class="rightcol">
    <div class="panel">
     <div class="row"><span class="k">COMMAND</span><span class="v" id="pCmd"></span></div>
     <div class="row"><span class="k">t / frame</span><span class="v" id="pT"></span></div>
@@ -193,8 +209,18 @@ button:hover{background:#242c3d}button.on{border-color:var(--blue);color:#fff}
      <div class="tip hidden" id="pTip">HOLD-at-target during blind dwell — documented behavior (RAPORT_3C)</div>
     </div>
    </div>
+   <div class="instr">
+    <div class="inst" id="i256"><div class="lbl">RAW FEED · semantic cam 256²</div>
+     <div class="imgwrap" id="w256"><img id="v256"><span class="evt" id="e256"></span>
+      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span></div>
+     <div class="rd"><span id="r256a"></span><span id="r256b"></span></div></div>
+    <div class="inst pix"><div class="lbl">RAW FEED · policy input 64×64 — what the network sees</div>
+     <div class="imgwrap"><img id="v64"><div class="grid64"></div>
+      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span></div>
+     <div class="rd"><span>64×64 · nearest-neighbor</span><span id="r64"></span></div></div>
+   </div>
    <div class="prov" id="prov"></div>
-   <div class="sub" id="note" style="margin-top:8px"></div>
+   <div class="sub" id="note" style="margin-top:2px"></div>
   </div>
  </div>
 </div>
@@ -302,6 +328,18 @@ function render(){const a=DATA.acts[ai],fr=a.frames[fi]||a.frames[0],tr=a.trace[
  $('banner').innerHTML=a.banner.replace(/(\d+%|\d+\/\d+|−?\d+ ?pp|0\.\d+→?0?\.?\d*|85\/8|2\.0 m)/g,'<b>$1</b>');
  $('src').textContent='source: '+a.source;$('note').textContent=a.note;
  $('v256').src=fr.c256;$('v64').src=fr.c64;
+ // panele-instrumenty: obwódka/badge sterowane NAGRANYMI zdarzeniami z trace
+ const lk2=tr.link||'seeking';const prev=a.trace[fi-1];
+ const delivered=(fi>0&&tr.age_s!=null&&prev&&prev.age_s!=null&&tr.age_s<prev.age_s-0.05);
+ let bcls,badge,btxt;
+ if(tr.decision==='REFUSE'){bcls='b-stale';badge='refuse';btxt='REFUSE';}      // bursztyn
+ else if(delivered){bcls='b-live';badge='live';btxt='● DELIVERED';}            // zielony tick
+ else if(lk2==='frozen'){bcls='b-frozen';badge='frozen';btxt='LINK FROZEN';}   // czerwona obwódka
+ else {bcls='b-'+lk2;badge=lk2;btxt=lk2.toUpperCase();}
+ $('w256').className='imgwrap '+bcls;$('e256').className='evt '+badge;$('e256').textContent=btxt;
+ $('r256a').innerHTML='LINK <b>'+lk2.toUpperCase()+'</b>';
+ $('r256b').innerHTML='age '+(tr.age_s==null?'—':(+tr.age_s).toFixed(1)+'s')+' · conf '+(tr.conf==null?'—':(+tr.conf).toFixed(3));
+ $('r64').textContent='frame '+fi;
  $('pCmd').textContent='"'+a.command+'"';$('pT').textContent=tr.t.toFixed(2)+' s / '+fi;
  const lk=tr.link||'seeking';$('pLink').textContent=lk.toUpperCase();$('pLink').className='pill link-'+lk;
  $('pAge').textContent=tr.age_s==null?'':'age '+(+tr.age_s).toFixed(1)+'s';
