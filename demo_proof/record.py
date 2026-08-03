@@ -75,12 +75,14 @@ def build_admission(command, flow, hover=None):
     return az, mem, recs, (rec["decision"] == "ALLOW")
 
 
-def record_flight(env, client, model, device, ep, admit_records, allow_fly):
-    """Nagrywa lot APPLIED (albo statyczne klatki gdy admisja odmówiła). Zwraca meta."""
+def record_flight(env, client, model, device, ep, admit_records, allow_fly, save=True):
+    """Nagrywa lot APPLIED (albo statyczne klatki gdy admisja odmówiła). Zwraca meta.
+    save=False: tryb wyszukiwania (bez renderu 3D/klatek/trace) — tylko wynik (szybki)."""
     act, seed, mask = ep["act"], ep["seed"], ep["mask"]
     dirs = {n: os.path.join(OUT, act, n) for n in ("3d", "cam256", "cam64")}
-    for d in dirs.values():
-        os.makedirs(d, exist_ok=True)
+    if save:
+        for d in dirs.values():
+            os.makedirs(d, exist_ok=True)
     obs, info = env.reset(scene_seed=seed, level="T0", scene_type="3b")
     if mask["type"] == "geofence":
         relocate_designated_beyond_geofence(env, coord=2.2)
@@ -121,8 +123,9 @@ def record_flight(env, client, model, device, ep, admit_records, allow_fly):
     if not allow_fly:                                         # admisja odmówiła (A3a geofence) — statyka
         geo_dec = {"state": "DONE", "decision": "REFUSE", "reason": "GEOFENCE", "rule": "R-C",
                    "_age": None, "_link": "seeking"}
-        for _ in range(24):
-            dump(0, geo_dec)
+        if save:
+            for _ in range(24):
+                dump(0, geo_dec)
         wynik = "REFUSE(GEOFENCE)"
     else:
         for k in range(POLICY_STEPS):
@@ -141,7 +144,8 @@ def record_flight(env, client, model, device, ep, admit_records, allow_fly):
                 refused = dec
             elif dec["decision"] == HOLD:
                 applied = np.array([pos[0], pos[1], pos[2], 0.0, 0.0, 0.0], np.float32)
-            dump(k, dec)
+            if save:
+                dump(k, dec)
             if refused is not None:
                 break
             obs, info, done = env.step(applied)
@@ -172,7 +176,8 @@ def record_flight(env, client, model, device, ep, admit_records, allow_fly):
                  "SUKCES" if success else
                  "PORAZKA(wrong_action)" if ft == "wrong_lock" else f"PORAZKA({ft})")
 
-    json.dump({"trace": trace}, open(os.path.join(OUT, act, "trace.jsonl"), "w"))
+    if save:
+        json.dump({"trace": trace}, open(os.path.join(OUT, act, "trace.jsonl"), "w"))
     return {"act": act, "seed": seed, "K": K, "A": A, "command": command, "mask": mask,
             "mask_seed": ep["mask_seed"], "shield_mode": "apply", "wynik": wynik,
             "expect": ep["expect"], "match": wynik == ep["expect"], "n_frames": fidx,
@@ -210,6 +215,44 @@ def record_act(env, client, model, device, ep):
             "status": "DROPPED", "admission": recs}
 
 
+def search_a2(env, client, model, device):
+    """ANEKS_DP1 (regula ZAMROZONA przed przeszukaniem): kandydaci burst-L5 z 46500-46549 w
+    porzadku ROSNACYM; pierwszy SUKCES pod APPLIED wygrywa (<=3 proby/kandydata, flip
+    deterministyczny=1). 10 kolejnych porazek => STOP/eskalacja."""
+    rejects = []
+    for seed in range(46500, 46550):
+        ep = {"act": "A2", "seed": seed, "mask": {"type": "burst", "L": 5.0},
+              "mask_seed": 45105, "flow": "command", "expect": "SUKCES"}
+        obs, info = env.reset(scene_seed=seed, level="T0", scene_type="3b")
+        _, _, recs, allow = build_admission(info["command"], "command")
+        m = None
+        for attempt in range(1, MAX_ATTEMPTS + 1):
+            try:
+                m = record_flight(env, client, model, device, ep, recs, allow, save=False); break
+            except Exception as e:
+                print(f"  [search {seed}] pad {attempt}: {e}", flush=True)
+        wynik = m["wynik"] if m else "PAD"
+        if wynik == "SUKCES":
+            print(f"[search] WINNER seed={seed} SUKCES (odrzucono {len(rejects)})", flush=True)
+            return seed, rejects
+        rejects.append({"seed": seed, "wynik": wynik})
+        print(f"[search] seed={seed} -> {wynik} (odrzucony #{len(rejects)})", flush=True)
+        if len(rejects) >= 10:
+            print("!! STOP: 10 kandydatow bez SUKCESU pod APPLIED — eskalacja (sprzecznosc z G2)", flush=True)
+            return None, rejects
+    return None, rejects
+
+
+def _merge_manifest(metas):
+    mpath = os.path.join(OUT, "manifest.json")
+    prev = {m["act"]: m for m in json.load(open(mpath))["episodes"]} if os.path.exists(mpath) else {}
+    for m in metas:
+        prev[m["act"]] = m
+    order = ["A1", "A2", "A3a", "A3b", "A4"]
+    json.dump({"episodes": [prev[a] for a in order if a in prev]}, open(mpath, "w"), indent=2, ensure_ascii=False)
+    return mpath
+
+
 def main(acts):
     os.makedirs(OUT, exist_ok=True)
     device = get_device(); cfg = load_cfg(); env = make_env(cfg)
@@ -217,6 +260,18 @@ def main(acts):
     client = GrounderClient()
     out = []
     try:
+        if acts == ["search-a2"]:
+            winner, rejects = search_a2(env, client, model, device)
+            if winner is None:
+                print("A2 SELEKCJA FAIL — STOP (ANEKS_DP1 regula stopu)"); return
+            ep = {"act": "A2", "seed": winner, "mask": {"type": "burst", "L": 5.0},
+                  "mask_seed": 45105, "flow": "command", "expect": "SUKCES"}
+            m = record_act(env, client, model, device, ep)
+            m["rejected_candidates"] = rejects
+            m["selection_rule"] = "ANEKS_DP1: ascending 46500-46549 burst-L5, first SUKCES under APPLIED"
+            _merge_manifest([m])
+            print(f"\nA2 seed finalny={winner}  odrzuceni={[r['seed'] for r in rejects]}  wynik={m['wynik']} match={m['match']}")
+            return
         for ep in EPISODES:
             if acts and ep["act"] not in acts:
                 continue

@@ -27,9 +27,13 @@ ACTS = {
            "source": "RAPORT_3B · RAPORT_3C_MVP §2",
            "note": "console → parser → signed admission → flight over terrain. shield APPLIED (transparent)."},
     "A2": {"title": "Act 2 — The link",
-           "banner": "burst L5 = −4 pp vs scattered p0.5 = −36 pp — continuity is what matters",
-           "source": "RAPORT_S3B4 (G2)",
-           "note": "5 s contiguous gap: bbox freezes as ghost, age climbs, dwell still completes. shield APPLIED."},
+           "banner": "burst L5 = −4 pp vs scattered p0.5 = −36 pp — continuity is what matters "
+                     "(G2 measured on population 46500–46549, no shield)",
+           "source": "RAPORT_S3B4 (G2) · ANEKS_DP1 (seed selection)",
+           "note": "5 s contiguous gap: bbox freezes as ghost, age climbs, dwell completes under APPLIED shield. "
+                   "the seed pinned in PRE (46507) FAILED under the shield — burst covered the dwell entry, the "
+                   "shield stopped the blind finish; the same conservatism that converts 16/28 failures into "
+                   "abstention (MEASURED). seed replaced by frozen ascending rule (ANEKS_DP1)."},
     "A3a": {"title": "Act 3 — Hard rules (geofence)",
             "banner": "target beyond arena → REFUSE(GEOFENCE) at admission — proved (P2: never leaves 2.0 m)",
             "source": "RAPORT_3C_MVP §6 (25/25) · cert P2",
