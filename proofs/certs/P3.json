@@ -1,0 +1,108 @@
+{
+  "property": "P3",
+  "verdict": "PROVED",
+  "verdict_scope": "PROVED: state-bound + action-envelope (bezwarunkowe). local-robustness (ε-box): UNPROVEN-tą-metodą — goły IBP luźny ≈ pełna skala (F-D3; auto_LiRPA NIEautoryzowany; obiekt demonstracyjny units=20 = osobna eskalacja/zgoda)",
+  "local_robustness_informative": false,
+  "method": "sound numpy-IBP (no auto_LiRPA)",
+  "object": {
+    "checkpoint": "results/i3b/ckpt/A_CFC|0.001|45011.pt",
+    "arm": "A_CFC (I3b golden recipe)",
+    "cell": "CfCCell(in=78,hidden=64,backbone=69) + head(64->6)",
+    "param_count_core": 27787,
+    "param_count_core_plus_head": 28177,
+    "provenance": "results/i3b (F3 twin duel), MANIFEST_F3 gate_arms_v2 A_CFC"
+  },
+  "ts": "1/12",
+  "theorems": {
+    "state_bounded": "∀ wejście: h' ∈ [−1,1]^64 (max|h'|=1.000000); dowód strukturalny: kombinacja wypukła tanh",
+    "action_envelope": {
+      "lo": [
+        -1.9996,
+        -1.9999,
+        0.1,
+        -0.9999,
+        -0.9994,
+        -0.9243
+      ],
+      "hi": [
+        1.9997,
+        1.9999,
+        2.4,
+        0.9999,
+        0.9996,
+        0.9219
+      ],
+      "note": "przy stanie∈[−1,1]^64; bezwarunkowa koperta akcji"
+    },
+    "local_robustness": {
+      "0.01": {
+        "action_lo": [
+          -1.9096,
+          -1.959,
+          0.1005,
+          -0.9713,
+          -0.9392,
+          -0.583
+        ],
+        "action_hi": [
+          1.9167,
+          1.9536,
+          2.3958,
+          0.9662,
+          0.9474,
+          0.5806
+        ],
+        "max_width": 3.9126
+      },
+      "0.05": {
+        "action_lo": [
+          -1.9994,
+          -1.9999,
+          0.1,
+          -0.9999,
+          -0.9992,
+          -0.9143
+        ],
+        "action_hi": [
+          1.9995,
+          1.9999,
+          2.4,
+          0.9998,
+          0.9995,
+          0.9119
+        ],
+        "max_width": 3.9998
+      },
+      "0.1": {
+        "action_lo": [
+          -1.9995,
+          -1.9999,
+          0.1,
+          -0.9999,
+          -0.9994,
+          -0.9239
+        ],
+        "action_hi": [
+          1.9996,
+          1.9999,
+          2.4,
+          0.9999,
+          0.9996,
+          0.9215
+        ],
+        "max_width": 3.9998
+      }
+    }
+  },
+  "informative_vs_full_scale": true,
+  "banner_name": "liquid core (CfC recipe, units=64)",
+  "notes": [
+    "317 NIE dotyczy tego obiektu — banner '317' wyłącznie przy eksponacie v1.0 (paper/NUMBERS.md, konfiguracja state-loop); certyfikat P3 podpisany realnym param-countem swojego obiektu (27787 rdzeń).",
+    "AutoNCP-sparse-wiring: dług integracyjny (LiRPA nieautoryzowany, F-D3).",
+    "IBP jest SOUND; luźność na szerokich kostkach = znany limit metody (nie zmiękczamy)."
+  ],
+  "z3_pip": null,
+  "ibp": "numpy (sound interval arithmetic)",
+  "model_sha256": "b9f522eaba79fd768e16233699ca435a8d4868bf56f53d6d4bd875f33feb93b6",
+  "ckpt_sha256": "21c9fe9e28e820a1ccf5c5359e0dcd5e3527d762b422b3c559b2f8edc14b7c0a"
+}
