@@ -1,0 +1,100 @@
+WEBVTT
+
+00:00.000 --> 00:01.200
+▸ mission start · one continuous recording · shield APPLIED
+
+00:00.000 --> 00:01.200
+AUTHORIZATION · admit: 'fly to the red box' → ALLOW · sig 102ddb45a9f1
+
+00:00.000 --> 00:01.830
+TRANSIT · reposition to launch (executor) — not the learned pilot
+
+00:01.830 --> 00:01.920
+midcourse by executor; terminal flight by the learned pilot within its measured envelope (±25° frontal cone, 1–2 m — RAPORT_3B)
+
+00:01.920 --> 00:02.920
+LINK · delivery: 'fly to the red box' · conf 0.005
+
+00:02.920 --> 00:11.830
+LINK · delivery: 'fly to the red box' · conf 0.023
+
+00:11.830 --> 00:13.030
+PILOT · L1 dwell at red box · min 0.158 m
+
+00:11.830 --> 00:13.030
+AUTHORIZATION · admit: 'fly to the blue sphere' → ALLOW
+
+00:11.830 --> 00:14.670
+TRANSIT · reposition to launch (executor) — not the learned pilot
+
+00:14.670 --> 00:15.670
+LINK · delivery: 'fly to the blue sphere' · conf 0.563
+
+00:15.670 --> 00:17.670
+LINK · delivery: 'fly to the blue sphere' · conf 0.220
+
+00:17.670 --> 00:18.670
+LINK · delivery: 'fly to the blue sphere' · conf 0.001
+
+00:18.670 --> 00:19.670
+LINK · LINK FROZEN — burst gap, bbox held as ghost, age climbing
+
+00:19.670 --> 00:20.670
+LINK · LINK FROZEN — burst gap, bbox held as ghost, age climbing
+
+00:20.670 --> 00:21.670
+LINK · LINK FROZEN — burst gap, bbox held as ghost, age climbing
+
+00:21.670 --> 00:22.670
+LINK · LINK FROZEN — burst gap, bbox held as ghost, age climbing
+
+00:22.670 --> 00:24.580
+LINK · LINK FROZEN — burst gap, bbox held as ghost, age climbing
+
+00:24.580 --> 00:25.780
+PILOT · L2 burst bridged from memory · dwell holds · min 0.087 m
+
+00:24.580 --> 00:26.250
+SHIELD · admit: 'fly to the red sphere' → REFUSE(GEOFENCE) · proved P2 (drone never leaves 2.0 m)
+
+00:26.250 --> 00:27.450
+AUTHORIZATION · admit: 'fly to the crimson box' → REFUSE(NO_MATCH) · unknown word
+
+00:26.250 --> 00:27.450
+MEMORY · operator maps crimson→red · signed record 10a8e7f7d08d
+
+00:26.250 --> 00:27.450
+AUTHORIZATION · admit: 'fly to the red box' (canonical) → ALLOW
+
+00:26.250 --> 00:28.170
+TRANSIT · reposition to launch (executor) — not the learned pilot
+
+00:28.170 --> 00:29.170
+LINK · delivery: 'fly to the red box' · conf 0.005
+
+00:29.170 --> 00:33.170
+LINK · delivery: 'fly to the red box' · conf 0.092
+
+00:33.170 --> 00:34.170
+LINK · delivery: 'fly to the red box' · conf 0.002
+
+00:34.170 --> 00:35.170
+LINK · delivery: 'fly to the red box' · conf 0.007
+
+00:35.170 --> 00:37.170
+LINK · delivery: 'fly to the red box' · conf 0.003
+
+00:37.170 --> 00:38.080
+LINK · delivery: 'fly to the red box' · conf 0.003
+
+00:38.080 --> 00:39.280
+PILOT · L4 approach to (near) red box · min 0.42 m
+
+00:38.080 --> 00:39.280
+AUTHORIZATION · command: 'return home'
+
+00:38.080 --> 00:43.080
+TRANSIT · reposition to launch (executor) — not the learned pilot
+
+00:43.080 --> 00:43.083
+▸ landed · mission complete

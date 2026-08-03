@@ -23,9 +23,18 @@ from models.policy_gc5 import PolicyGC5  # noqa
 from train.common import get_device, load_cfg, make_env  # noqa
 from task import split_state  # noqa
 from train.s3b2r import DT, AGE_MAX, K_DEL, Tracker5, CKPT  # noqa
-from s3b3.live_grounder import TICK_EVERY, GrounderClient  # noqa
+from s3b3.live_grounder import TICK_EVERY, GrounderClient, iou  # noqa
 from s3c1.shield import Shield, HOLD, REFUSE  # noqa
 from expert.expert import HoverExpert  # noqa
+from env.scene_builder import drone_camera  # noqa
+from env.scene_attr import bbox_from_mask, COLORS as SA_COLORS, SHAPE_GEOM as SA_SHAPES  # noqa
+from s3c1.traps import relocate_designated_beyond_geofence  # noqa
+from demo.record import save_jpg, draw_bbox256  # noqa
+from demo_proof.authz import Authorizer  # noqa
+from demo_proof.memory import SemanticMemory  # noqa
+
+SAVE_EVERY = 2                                  # rider 4: klatki paneli na niższym fps (wszystkie zdarzenia w trace)
+OUT = os.path.join(_ROOT, "results", "demo_proof", "mission")
 
 Z_HOVER = 0.5
 R_GOAL = 0.25
@@ -66,6 +75,26 @@ class Mission:
         self.objects = [dict(o) for o in self.env.scene["objects"]]
         self.gk = 0                                # globalny licznik tików
         self.trace = []
+        self.events = []                           # zdarzenia pod napisy (subtitles.vtt)
+        self.save = False; self.fidx = 0; self.frame_at = {}
+        self.last256 = None; self.last_box = None; self.last_color = "#22c55e"
+        self.az = Authorizer(); self.mem = SemanticMemory(); self.admissions = []
+
+    def event(self, kind, text):
+        self.events.append({"t": round(self.gk * DT, 2), "g": self.gk, "kind": kind, "text": text})
+
+    def _save_frame(self):
+        if not self.save:
+            return
+        st = self.env.env._getDroneStateVector(0); s = split_state(st)
+        rgb64, _ = drone_camera(self.env.env.CLIENT, s["pos"], s["quat"], 64)
+        os.makedirs(os.path.join(OUT, "cam256"), exist_ok=True)
+        os.makedirs(os.path.join(OUT, "cam64"), exist_ok=True)
+        f256 = self.last256 if self.last256 is not None else np.zeros((256, 256, 3), np.uint8)
+        save_jpg(draw_bbox256(f256, self.last_box, self.last_color),
+                 os.path.join(OUT, "cam256", f"f{self.fidx:04d}.jpg"))
+        save_jpg(np.asarray(rgb64, np.uint8), os.path.join(OUT, "cam64", f"f{self.fidx:04d}.jpg"), size=(192, 192))
+        self.frame_at[self.gk] = self.fidx; self.fidx += 1
 
     def _rearm(self, hover):
         e = self.env
@@ -85,15 +114,18 @@ class Mission:
             d.update(extra)
         self.trace.append(d); self.gk += 1
 
-    def transit_home(self, home=HOME, max_ticks=60, tol=0.15):
+    def transit_home(self, home=HOME, max_ticks=80, tol=0.15):
         """SCRIPTED-TRANSIT: egzekutor + gładka rampa eksperta (HoverExpert) leci dronem do home;
         BEZ polityki (przelot w kadrze, deterministyczny). Rider 1: zero teleportu."""
         self._rearm(home)
+        self.event("TRANSIT", "reposition to launch (executor) — not the learned pilot")
         expert = HoverExpert(self._pos(), home, v_max=1.0, t_ramp_min=2.0)
         for k in range(max_ticks):
             sp = expert.setpoint(k * DT).astype(np.float32)          # [pos, vel] gładka rampa
             self._log("SCRIPTED-TRANSIT", {"state": "TRANSIT", "decision": "TRANSIT",
                       "_link": "n/a", "_age": None, "_conf": None})
+            if k % SAVE_EVERY == 0:
+                self._save_frame()
             self.env.step(sp)
             if k > 20 and float(np.linalg.norm(self._pos()[:2] - home[:2])) <= tol:
                 break
@@ -127,12 +159,15 @@ class Mission:
             if dec["decision"] == HOLD:
                 applied = np.array([pos[0], pos[1], pos[2], 0, 0, 0], np.float32)
             elif dec["decision"] == REFUSE:
-                self._log("LEARNED-LEG", dec, {"cmd": cmd}); break
+                self._log("LEARNED-LEG", dec, {"cmd": cmd}); self._save_frame()
+                self.event("REFUSE", f"REFUSE({dec['reason']}) — rule {dec['rule']}"); break
             self._log("LEARNED-LEG", dec, {"cmd": cmd})
+            if k % SAVE_EVERY == 0:
+                self._save_frame()
             obs, info, done = self.env.step(applied)
             mind = min(mind, float(np.linalg.norm(self._pos()[:2] - hover[:2])))
             if k % TICK_EVERY == 0 and info.get("rgb256") is not None:
-                t = k // TICK_EVERY
+                self.last256 = info["rgb256"]; t = k // TICK_EVERY
                 box, cf, _ = self.client.query(info["rgb256"], cmd)
                 if cf is not None:
                     conf = cf
@@ -142,12 +177,17 @@ class Mission:
                     start = (first_lock + burst_offset) if burst_offset is not None else first_lock + 1
                     window = (start, start + Lt)
                 dropped = False
-                if drop_mode == "bernoulli":
-                    rng = np.random.default_rng([mask_seed, self.seed, k]); dropped = rng.random() < drop_param
-                elif drop_mode == "burst":
+                if drop_mode == "burst":
                     dropped = window is not None and window[0] <= t < window[1]
+                    if dropped:
+                        self.event("FROZEN", "LINK FROZEN — burst gap, bbox held as ghost, age climbing")
                 if box is not None and not dropped:
-                    tr.observe(k, box)
+                    tr.observe(k, box); self.last_box = box
+                    st2 = self.env.env._getDroneStateVector(0); s2 = split_state(st2)
+                    _, seg = drone_camera(self.env.env.CLIENT, s2["pos"], s2["quat"], 256, want_seg=True)
+                    gtb = bbox_from_mask(seg, target_obj["id"])
+                    self.last_color = "#22c55e" if (gtb and iou(box, gtb) >= 0.5) else "#eab308"
+                    self.event("DELIVERY", f"delivery: '{cmd}' · conf {conf:.3f}" if conf else "delivery")
             if done:
                 break
         return {"cmd": cmd, "min_dist": round(mind, 3),
@@ -210,9 +250,111 @@ def scene_search(start=49500, limit=30):
     print("SCENE-SEARCH FAIL — STOP"); return None, rejects
 
 
+import pybullet as p  # noqa: E402
+import hashlib  # noqa: E402
+import json  # noqa: E402
+
+
+def _relocate(m, obj_id, pos, coord=2.2):
+    tx, ty = float(pos[0]), float(pos[1]); mm = max(abs(tx), abs(ty), 1e-6); s = coord / mm
+    nx, ny = tx * s, ty * s
+    p.resetBasePositionAndOrientation(int(obj_id), [nx, ny, 0.08], [0, 0, 0, 1],
+                                      physicsClientId=m.env.env.CLIENT)
+    return np.array([nx, ny])
+
+
+def _land(m, ticks=28):
+    start = m._pos()
+    exp = HoverExpert(start, np.array([HOME[0], HOME[1], 0.06]), v_max=0.6, t_ramp_min=2.0)
+    m._rearm(np.array([HOME[0], HOME[1], 0.06]))
+    for k in range(ticks):
+        m._log("SCRIPTED-TRANSIT", {"state": "LANDING", "decision": "LAND", "_link": "n/a", "_age": None, "_conf": None})
+        if k % SAVE_EVERY == 0:
+            m._save_frame()
+        m.env.step(exp.setpoint(k * DT).astype(np.float32))
+
+
+def _static_refuse(m, reason, ticks=20):
+    for _ in range(ticks):
+        m._log("ADMISSION-REFUSE", {"state": "DONE", "decision": "REFUSE", "reason": reason,
+               "rule": "R-C", "_link": "seeking", "_age": None, "_conf": None})
+        if m.gk % SAVE_EVERY == 0:
+            m._save_frame()
+
+
+def _sha(path):
+    return hashlib.sha256(open(path, "rb").read()).hexdigest()
+
+
+def mission():
+    """Pełna misja MC na scenie 49508 (ANEKS_MC1). L1-L5, APPLIED, ciągły sim, klatki+trace+events."""
+    m = Mission(49508); m.save = True
+    try:
+        rb = next(o for o in m.objects if o["color"] == "red" and o["shape"] == "box")
+        bs = next(o for o in m.objects if o["color"] == "blue" and o["shape"] == "sphere")
+        rs = next(o for o in m.objects if o["color"] == "red" and o["shape"] == "sphere")
+        reloc = _relocate(m, rs["id"], rs["pos"], 2.2); rs["pos"] = [float(reloc[0]), float(reloc[1]), 0.08]
+        m.event("MISSION", "mission start · one continuous recording · shield APPLIED")
+        results = {}
+        # L1
+        r = m.az.admit("fly to the red box"); m.admissions.append({"leg": "L1", **r})
+        m.event("ADMIT", f"admit: 'fly to the red box' → ALLOW · sig {r['sig'][:12]}")
+        m.transit_home(home=launch_for(np.asarray(rb["pos"], float)))
+        m.event("FRAME", "midcourse by executor; terminal flight by the learned pilot within its "
+                         "measured envelope (±25° frontal cone, 1–2 m — RAPORT_3B)")
+        r1 = m.fly_leg(rb, max_ticks=125); results["L1"] = r1
+        m.event("DWELL", f"L1 {'dwell at' if r1['arrived'] else 'approach to (near)'} red box · min {r1['min_dist']} m")
+        # L2 (burst L5 offset=4)
+        r = m.az.admit("fly to the blue sphere"); m.admissions.append({"leg": "L2", **r})
+        m.event("ADMIT", "admit: 'fly to the blue sphere' → ALLOW")
+        m.transit_home(home=launch_for(np.asarray(bs["pos"], float)))
+        r2 = m.fly_leg(bs, max_ticks=130, drop_mode="burst", drop_param=5.0, burst_offset=4); results["L2"] = r2
+        m.event("DWELL", f"L2 burst bridged from memory · {'dwell holds' if r2['arrived'] else 'approach (near)'} · min {r2['min_dist']} m")
+        # L3 geofence refuse (admission)
+        rg = m.az.admit("fly to the red sphere", target_xy=reloc); m.admissions.append({"leg": "L3", **rg})
+        m.event("REFUSE", "admit: 'fly to the red sphere' → REFUSE(GEOFENCE) · proved P2 (drone never leaves 2.0 m)")
+        _static_refuse(m, "GEOFENCE"); results["L3"] = {"decision": rg["decision"], "reason": rg["reason"]}
+        # L4 correction (crimson→red)
+        raw = "fly to the crimson box"
+        r0 = m.az.admit(m.mem.resolve(raw)); m.admissions.append({"leg": "L4a", **r0})
+        m.event("NO_MATCH", "admit: 'fly to the crimson box' → REFUSE(NO_MATCH) · unknown word")
+        lr = m.mem.learn("crimson", "red")
+        m.event("CORRECTION", f"operator maps crimson→red · signed record {lr['sig'][:12]}")
+        r1c = m.az.admit(m.mem.resolve(raw)); m.admissions.append({"leg": "L4b", **r1c})
+        m.event("ADMIT", "admit: 'fly to the red box' (canonical) → ALLOW")
+        m.transit_home(home=launch_for(np.asarray(rb["pos"], float)))
+        r4 = m.fly_leg(rb, max_ticks=130); results["L4"] = r4
+        m.event("DWELL", f"L4 {'dwell at' if r4['arrived'] else 'approach to (near)'} red box · min {r4['min_dist']} m")
+        # L5 return home + land
+        m.event("ADMIT", "command: 'return home'")
+        m.transit_home(home=HOME); _land(m); m.event("LANDED", "landed · mission complete")
+        _save_mission(m, results)
+    finally:
+        m.client.close(); m.env.close()
+
+
+def _save_mission(m, results):
+    os.makedirs(OUT, exist_ok=True)
+    scene = {"seed": m.seed, "K": m.K, "A": m.A, "arena_half": 2.0, "geo_lim": 1.8, "margin": 0.2,
+             "objects": [{"id": o["id"], "color": o["color"], "shape": o["shape"],
+                          "pos": [round(float(x), 4) for x in o["pos"]], "designated": bool(o["designated"])}
+                         for o in m.objects],
+             "render": {"colors": {k: list(v) for k, v in SA_COLORS.items()}, "shapes": SA_SHAPES}}
+    json.dump(scene, open(os.path.join(OUT, "scene.json"), "w"), indent=2)
+    mission = {"seed": m.seed, "scene_sha256": _sha(os.path.join(OUT, "scene.json")),
+               "n_ticks": len(m.trace), "n_frames": m.fidx, "save_every": SAVE_EVERY,
+               "results": {k: {"min_dist": v.get("min_dist"), "arrived": v.get("arrived"),
+                               "decision": v.get("decision"), "reason": v.get("reason")} for k, v in results.items()},
+               "admissions": m.admissions, "authz_ok": m.az.verify_chain() and m.mem.verify_chain(),
+               "burst_L2": {"mask_seed": 45105, "offset": 4}, "envelope": {"az_deg": 25.0, "dist_m": [1.0, 2.0]},
+               "trace": m.trace, "events": m.events, "frame_at": m.frame_at}
+    json.dump(mission, open(os.path.join(OUT, "mission.json"), "w"), indent=2, ensure_ascii=False)
+    print(f"MISSION seed={m.seed} ticks={len(m.trace)} frames={m.fidx} events={len(m.events)}", flush=True)
+    for k, v in results.items():
+        print(f"  {k}: {v}", flush=True)
+    print(f"authz_ok={mission['authz_ok']}  scene_sha={mission['scene_sha256'][:12]}", flush=True)
+
+
 if __name__ == "__main__":
     a = sys.argv[1] if len(sys.argv) > 1 else "smoke"
-    if a == "smoke":
-        smoke()
-    elif a == "scene-search":
-        scene_search()
+    {"smoke": smoke, "scene-search": scene_search, "mission": mission}[a]()

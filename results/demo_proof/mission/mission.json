@@ -1,0 +1,9213 @@
+{
+  "seed": 49508,
+  "scene_sha256": "2fc0d5cbcef74d726edf5c0c1872e6d47233b5a3d526397ce35ff3f439e722ee",
+  "n_ticks": 517,
+  "n_frames": 259,
+  "save_every": 2,
+  "results": {
+    "L1": {
+      "min_dist": 0.158,
+      "arrived": true,
+      "decision": null,
+      "reason": null
+    },
+    "L2": {
+      "min_dist": 0.087,
+      "arrived": true,
+      "decision": null,
+      "reason": null
+    },
+    "L3": {
+      "min_dist": null,
+      "arrived": null,
+      "decision": "REFUSE",
+      "reason": "GEOFENCE"
+    },
+    "L4": {
+      "min_dist": 0.42,
+      "arrived": false,
+      "decision": null,
+      "reason": null
+    }
+  },
+  "admissions": [
+    {
+      "leg": "L1",
+      "seq": 0,
+      "prev_hash": "GENESIS",
+      "command_raw": "fly to the red box",
+      "decision": "ALLOW",
+      "reason": null,
+      "spec": {
+        "action": "FLY",
+        "color": "red",
+        "shape": "box"
+      },
+      "grounder_phrase": "red box",
+      "sig": "102ddb45a9f1755728f4d03e368fc9c6d692848be6a0a6c106367a6524c15dc3"
+    },
+    {
+      "leg": "L2",
+      "seq": 1,
+      "prev_hash": "102ddb45a9f1755728f4d03e368fc9c6d692848be6a0a6c106367a6524c15dc3",
+      "command_raw": "fly to the blue sphere",
+      "decision": "ALLOW",
+      "reason": null,
+      "spec": {
+        "action": "FLY",
+        "color": "blue",
+        "shape": "sphere"
+      },
+      "grounder_phrase": "blue sphere",
+      "sig": "c68a6683f2287407e732a8c267a1183916898a210b59cb8bdb843066188fd48b"
+    },
+    {
+      "leg": "L3",
+      "seq": 2,
+      "prev_hash": "c68a6683f2287407e732a8c267a1183916898a210b59cb8bdb843066188fd48b",
+      "command_raw": "fly to the red sphere",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "spec": {
+        "action": "FLY",
+        "color": "red",
+        "shape": "sphere"
+      },
+      "grounder_phrase": "red sphere",
+      "sig": "f8caeec89b992f7c42d0b1ebbbf9c2e949a771bb2dd11b636a570792ba7e4f23"
+    },
+    {
+      "leg": "L4a",
+      "seq": 3,
+      "prev_hash": "f8caeec89b992f7c42d0b1ebbbf9c2e949a771bb2dd11b636a570792ba7e4f23",
+      "command_raw": "fly to the crimson box",
+      "decision": "REFUSE",
+      "reason": "NO_MATCH",
+      "spec": null,
+      "grounder_phrase": null,
+      "sig": "9c5be4f02734ff556344e2dfb2f7f41ad3061f98f91820725575912b9759d6b7"
+    },
+    {
+      "leg": "L4b",
+      "seq": 4,
+      "prev_hash": "9c5be4f02734ff556344e2dfb2f7f41ad3061f98f91820725575912b9759d6b7",
+      "command_raw": "fly to the red box",
+      "decision": "ALLOW",
+      "reason": null,
+      "spec": {
+        "action": "FLY",
+        "color": "red",
+        "shape": "box"
+      },
+      "grounder_phrase": "red box",
+      "sig": "8a9010fb357e28af06aa7b2d7e6dc4333faa8847296e1c4b0f34986938a48ad4"
+    }
+  ],
+  "authz_ok": true,
+  "burst_L2": {
+    "mask_seed": 45105,
+    "offset": 4
+  },
+  "envelope": {
+    "az_deg": 25.0,
+    "dist_m": [
+      1.0,
+      2.0
+    ]
+  },
+  "trace": [
+    {
+      "g": 0,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.722,
+        -0.031,
+        0.5
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 1,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.722,
+        -0.031,
+        0.5
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 2,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.722,
+        -0.031,
+        0.5
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 3,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.719,
+        -0.029,
+        0.5
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 4,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.713,
+        -0.022,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 5,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.7,
+        -0.009,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 6,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.68,
+        0.012,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 7,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.652,
+        0.04,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 8,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.618,
+        0.075,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 9,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.578,
+        0.115,
+        0.5
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 10,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.537,
+        0.159,
+        0.5
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 11,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.494,
+        0.203,
+        0.5
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 12,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.452,
+        0.247,
+        0.5
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 13,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.411,
+        0.291,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 14,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.371,
+        0.333,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 15,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.332,
+        0.374,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 16,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.294,
+        0.412,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 17,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.257,
+        0.447,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 18,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.222,
+        0.481,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 19,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.19,
+        0.513,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 20,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.161,
+        0.544,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 21,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.136,
+        0.573,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 22,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.116,
+        0.597,
+        0.501
+      ],
+      "state": "SEEKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "seeking",
+      "conf": null,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 23,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.103,
+        0.614,
+        0.512
+      ],
+      "state": "SEEKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "seeking",
+      "conf": 0.0048,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 24,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.103,
+        0.619,
+        0.522
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.17,
+      "link": "live",
+      "conf": 0.0048,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 25,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.12,
+        0.61,
+        0.521
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.25,
+      "link": "live",
+      "conf": 0.0048,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 26,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.145,
+        0.59,
+        0.518
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.33,
+      "link": "live",
+      "conf": 0.0048,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 27,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.161,
+        0.564,
+        0.515
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.42,
+      "link": "live",
+      "conf": 0.0048,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 28,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.147,
+        0.539,
+        0.513
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.5,
+      "link": "live",
+      "conf": 0.0048,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 29,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.097,
+        0.521,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.58,
+      "link": "live",
+      "conf": 0.0048,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 30,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.011,
+        0.511,
+        0.497
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.67,
+      "link": "live",
+      "conf": 0.0048,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 31,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.099,
+        0.512,
+        0.489
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.75,
+      "link": "live",
+      "conf": 0.0048,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 32,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.216,
+        0.517,
+        0.488
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.83,
+      "link": "live",
+      "conf": 0.0048,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 33,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.33,
+        0.525,
+        0.492
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.92,
+      "link": "live",
+      "conf": 0.0048,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 34,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.431,
+        0.529,
+        0.496
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.0,
+      "link": "live",
+      "conf": 0.0048,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 35,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.518,
+        0.529,
+        0.498
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.08,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 36,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.592,
+        0.523,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.17,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 37,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.66,
+        0.512,
+        0.505
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.25,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 38,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.728,
+        0.497,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.33,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 39,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.797,
+        0.482,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.42,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 40,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.867,
+        0.47,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.5,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 41,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.938,
+        0.464,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 0.58,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 42,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.006,
+        0.462,
+        0.51
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.67,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 43,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.066,
+        0.465,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.75,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 44,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.116,
+        0.471,
+        0.51
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.83,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 45,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.15,
+        0.48,
+        0.51
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.92,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 46,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.171,
+        0.491,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.0,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 47,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.18,
+        0.506,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.08,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 48,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.179,
+        0.52,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.17,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 49,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.172,
+        0.533,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.25,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 50,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.162,
+        0.542,
+        0.512
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.33,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 51,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.153,
+        0.546,
+        0.512
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.42,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 52,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.146,
+        0.548,
+        0.512
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.5,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 53,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.141,
+        0.548,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.58,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 54,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.138,
+        0.547,
+        0.51
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.67,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 55,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.138,
+        0.546,
+        0.51
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.75,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 56,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.139,
+        0.546,
+        0.51
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.83,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 57,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.14,
+        0.547,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.92,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 58,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.14,
+        0.549,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.0,
+      "link": "live",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 59,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.139,
+        0.552,
+        0.512
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.08,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 60,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.138,
+        0.554,
+        0.513
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.17,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 61,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.138,
+        0.555,
+        0.513
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.25,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 62,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.138,
+        0.555,
+        0.513
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.33,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 63,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.138,
+        0.554,
+        0.512
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.42,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 64,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.138,
+        0.553,
+        0.512
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.5,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 65,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.139,
+        0.552,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.58,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 66,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.14,
+        0.552,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.67,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 67,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.141,
+        0.552,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.75,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 68,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.141,
+        0.553,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.83,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 69,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.142,
+        0.554,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.92,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 70,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.141,
+        0.554,
+        0.512
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.0,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 71,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.139,
+        0.553,
+        0.512
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.08,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 72,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.137,
+        0.552,
+        0.512
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.17,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 73,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.135,
+        0.55,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.25,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 74,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.135,
+        0.548,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.33,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 75,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.135,
+        0.547,
+        0.51
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.42,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 76,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.135,
+        0.545,
+        0.51
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.5,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 77,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.136,
+        0.544,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.58,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 78,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.136,
+        0.544,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.67,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 79,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.136,
+        0.545,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.75,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 80,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.136,
+        0.547,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.83,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 81,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.136,
+        0.549,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.92,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 82,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.136,
+        0.551,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.0,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 83,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.138,
+        0.551,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.08,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 84,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.14,
+        0.55,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.17,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 85,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.141,
+        0.548,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.25,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 86,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.142,
+        0.545,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.33,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 87,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.142,
+        0.543,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.42,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 88,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.142,
+        0.542,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.5,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 89,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.143,
+        0.543,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.58,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 90,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.144,
+        0.543,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.67,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 91,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.146,
+        0.543,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.75,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 92,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.146,
+        0.543,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.83,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 93,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.147,
+        0.541,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.92,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 94,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.147,
+        0.539,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.0,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 95,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.147,
+        0.536,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.08,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 96,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.147,
+        0.534,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.17,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 97,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.147,
+        0.531,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.25,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 98,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.148,
+        0.53,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.33,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 99,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.149,
+        0.531,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.42,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 100,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.15,
+        0.533,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.5,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 101,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.152,
+        0.536,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.58,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 102,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.154,
+        0.54,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.67,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 103,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.156,
+        0.543,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.75,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 104,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.158,
+        0.545,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.83,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 105,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.16,
+        0.544,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.92,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 106,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.162,
+        0.542,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 6.0,
+      "link": "stale",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 107,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.163,
+        0.539,
+        0.507
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.08,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 108,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.164,
+        0.535,
+        0.507
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.17,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 109,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.164,
+        0.532,
+        0.507
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.25,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 110,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.164,
+        0.53,
+        0.507
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.33,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 111,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.165,
+        0.53,
+        0.507
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.42,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 112,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.165,
+        0.531,
+        0.508
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.5,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 113,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.166,
+        0.533,
+        0.508
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.58,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 114,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.167,
+        0.535,
+        0.508
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.67,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 115,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.169,
+        0.537,
+        0.508
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.75,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 116,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.172,
+        0.538,
+        0.508
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.83,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 117,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.175,
+        0.538,
+        0.509
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.92,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 118,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.179,
+        0.537,
+        0.509
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 7.0,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 119,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.184,
+        0.536,
+        0.509
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 7.08,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 120,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.189,
+        0.534,
+        0.509
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 7.17,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 121,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.193,
+        0.534,
+        0.509
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 7.25,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 122,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.197,
+        0.534,
+        0.51
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 7.33,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 123,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.2,
+        0.534,
+        0.51
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 7.42,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 124,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.201,
+        0.534,
+        0.51
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 7.5,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 125,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.201,
+        0.533,
+        0.51
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 7.58,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 126,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.201,
+        0.533,
+        0.51
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 7.67,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 127,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.201,
+        0.533,
+        0.511
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 7.75,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 128,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.202,
+        0.533,
+        0.511
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 7.83,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 129,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.202,
+        0.533,
+        0.511
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 7.92,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 130,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.203,
+        0.533,
+        0.511
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 8.0,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 131,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.203,
+        0.532,
+        0.512
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 8.0,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 132,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.204,
+        0.532,
+        0.512
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 8.0,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 133,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.206,
+        0.533,
+        0.512
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 8.0,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 134,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.207,
+        0.534,
+        0.512
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 8.0,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 135,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.209,
+        0.535,
+        0.512
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 8.0,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 136,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.211,
+        0.535,
+        0.513
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 8.0,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 137,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.213,
+        0.536,
+        0.513
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 8.0,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 138,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.214,
+        0.537,
+        0.513
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 8.0,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 139,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.216,
+        0.539,
+        0.513
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 8.0,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 140,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.217,
+        0.54,
+        0.513
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 8.0,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 141,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.217,
+        0.539,
+        0.514
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 8.0,
+      "link": "frozen",
+      "conf": 0.0232,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 142,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.218,
+        0.538,
+        0.514
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 143,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.219,
+        0.537,
+        0.514
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 144,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.219,
+        0.535,
+        0.514
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 145,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.217,
+        0.533,
+        0.514
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 146,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.21,
+        0.531,
+        0.514
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 147,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.196,
+        0.526,
+        0.515
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 148,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.172,
+        0.518,
+        0.515
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 149,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.137,
+        0.507,
+        0.515
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 150,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.091,
+        0.492,
+        0.514
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 151,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.036,
+        0.473,
+        0.513
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 152,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.974,
+        0.45,
+        0.513
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 153,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.907,
+        0.424,
+        0.512
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 154,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.838,
+        0.397,
+        0.512
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 155,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.766,
+        0.369,
+        0.511
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 156,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.693,
+        0.342,
+        0.511
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 157,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.618,
+        0.316,
+        0.51
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 158,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.541,
+        0.289,
+        0.51
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 159,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.462,
+        0.261,
+        0.509
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 160,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.382,
+        0.232,
+        0.509
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 161,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.3,
+        0.203,
+        0.508
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 162,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.216,
+        0.174,
+        0.508
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 163,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.131,
+        0.146,
+        0.507
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 164,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.044,
+        0.119,
+        0.506
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 165,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.042,
+        0.092,
+        0.506
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 166,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.124,
+        0.066,
+        0.505
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 167,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.201,
+        0.039,
+        0.505
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 168,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.274,
+        0.012,
+        0.504
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 169,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.343,
+        -0.014,
+        0.504
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 170,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.408,
+        -0.041,
+        0.503
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 171,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.471,
+        -0.066,
+        0.503
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 172,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.53,
+        -0.089,
+        0.503
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 173,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.585,
+        -0.112,
+        0.502
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 174,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.635,
+        -0.133,
+        0.502
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 175,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.68,
+        -0.151,
+        0.501
+      ],
+      "state": "SEEKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "seeking",
+      "conf": null,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 176,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.719,
+        -0.165,
+        0.513
+      ],
+      "state": "SEEKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "seeking",
+      "conf": 0.5634,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 177,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.748,
+        -0.17,
+        0.522
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.17,
+      "link": "live",
+      "conf": 0.5634,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 178,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.763,
+        -0.163,
+        0.525
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.25,
+      "link": "live",
+      "conf": 0.5634,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 179,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.758,
+        -0.147,
+        0.525
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.33,
+      "link": "live",
+      "conf": 0.5634,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 180,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.731,
+        -0.129,
+        0.527
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.42,
+      "link": "live",
+      "conf": 0.5634,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 181,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.685,
+        -0.116,
+        0.526
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.5,
+      "link": "live",
+      "conf": 0.5634,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 182,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.623,
+        -0.111,
+        0.522
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.58,
+      "link": "live",
+      "conf": 0.5634,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 183,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.551,
+        -0.116,
+        0.518
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.67,
+      "link": "live",
+      "conf": 0.5634,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 184,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.477,
+        -0.13,
+        0.513
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.75,
+      "link": "live",
+      "conf": 0.5634,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 185,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.404,
+        -0.152,
+        0.51
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.83,
+      "link": "live",
+      "conf": 0.5634,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 186,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.334,
+        -0.176,
+        0.51
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.92,
+      "link": "live",
+      "conf": 0.5634,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 187,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.266,
+        -0.197,
+        0.513
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.0,
+      "link": "live",
+      "conf": 0.5634,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 188,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.196,
+        -0.209,
+        0.516
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.08,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 189,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.12,
+        -0.214,
+        0.519
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.17,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 190,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.035,
+        -0.212,
+        0.522
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.25,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 191,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.056,
+        -0.205,
+        0.521
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.33,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 192,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.149,
+        -0.194,
+        0.52
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.42,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 193,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.242,
+        -0.18,
+        0.519
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 0.5,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 194,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.332,
+        -0.166,
+        0.519
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.58,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 195,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.417,
+        -0.152,
+        0.52
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.67,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 196,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.497,
+        -0.139,
+        0.521
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.75,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 197,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.572,
+        -0.126,
+        0.521
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.83,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 198,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.642,
+        -0.113,
+        0.519
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.92,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 199,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.707,
+        -0.101,
+        0.517
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.0,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 200,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.767,
+        -0.093,
+        0.518
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.08,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 201,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.82,
+        -0.089,
+        0.516
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.17,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 202,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.864,
+        -0.089,
+        0.514
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.25,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 203,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.897,
+        -0.091,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.33,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 204,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.918,
+        -0.095,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.42,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 205,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.927,
+        -0.099,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.5,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 206,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.924,
+        -0.102,
+        0.505
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.58,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 207,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.912,
+        -0.103,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.67,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 208,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.892,
+        -0.103,
+        0.499
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.75,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 209,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.868,
+        -0.101,
+        0.497
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.83,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 210,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.847,
+        -0.098,
+        0.496
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.92,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 211,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.83,
+        -0.093,
+        0.496
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.0,
+      "link": "live",
+      "conf": 0.2201,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 212,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.82,
+        -0.086,
+        0.495
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.08,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 213,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.816,
+        -0.077,
+        0.494
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.17,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 214,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.816,
+        -0.068,
+        0.493
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.25,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 215,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.818,
+        -0.059,
+        0.495
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.33,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 216,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.82,
+        -0.053,
+        0.499
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.42,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 217,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.82,
+        -0.049,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.5,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 218,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.815,
+        -0.048,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.58,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 219,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.807,
+        -0.05,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.67,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 220,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.799,
+        -0.052,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.75,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 221,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.792,
+        -0.052,
+        0.503
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.83,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 222,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.788,
+        -0.051,
+        0.504
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.92,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 223,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.785,
+        -0.049,
+        0.506
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.0,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 224,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.784,
+        -0.046,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.08,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 225,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.784,
+        -0.043,
+        0.51
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.17,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 226,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.783,
+        -0.041,
+        0.512
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.25,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 227,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.78,
+        -0.04,
+        0.513
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.33,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 228,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.776,
+        -0.039,
+        0.513
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.42,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 229,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.771,
+        -0.037,
+        0.513
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.5,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 230,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.766,
+        -0.034,
+        0.513
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.58,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 231,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.761,
+        -0.032,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.67,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 232,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.759,
+        -0.029,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.75,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 233,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.759,
+        -0.026,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.83,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 234,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.76,
+        -0.023,
+        0.505
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.92,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 235,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.761,
+        -0.02,
+        0.504
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.0,
+      "link": "live",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 236,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.763,
+        -0.018,
+        0.503
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.08,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 237,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.763,
+        -0.015,
+        0.503
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.17,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 238,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.763,
+        -0.013,
+        0.503
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.25,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 239,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.762,
+        -0.011,
+        0.503
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.33,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 240,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.761,
+        -0.008,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.42,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 241,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.76,
+        -0.006,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.5,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 242,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.76,
+        -0.003,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.58,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 243,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.76,
+        -0.001,
+        0.499
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.67,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 244,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.761,
+        0.001,
+        0.499
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.75,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 245,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.762,
+        0.002,
+        0.498
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.83,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 246,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.763,
+        0.001,
+        0.498
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.92,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 247,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.764,
+        0.0,
+        0.498
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.0,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 248,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.764,
+        0.0,
+        0.498
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.08,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 249,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.764,
+        0.002,
+        0.499
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.17,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 250,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.764,
+        0.006,
+        0.498
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.25,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 251,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.763,
+        0.009,
+        0.498
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.33,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 252,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.762,
+        0.012,
+        0.498
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.42,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 253,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.76,
+        0.014,
+        0.498
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.5,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 254,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.759,
+        0.014,
+        0.497
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.58,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 255,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.759,
+        0.015,
+        0.497
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.67,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 256,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.759,
+        0.015,
+        0.498
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.75,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 257,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.76,
+        0.016,
+        0.498
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.83,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 258,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.761,
+        0.017,
+        0.499
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.92,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 259,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.761,
+        0.018,
+        0.499
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.0,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 260,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.761,
+        0.019,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.08,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 261,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.759,
+        0.021,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.17,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 262,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.756,
+        0.022,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.25,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 263,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.752,
+        0.024,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.33,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 264,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.75,
+        0.026,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.42,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 265,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.748,
+        0.027,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.5,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 266,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.749,
+        0.028,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.58,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 267,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.75,
+        0.028,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.67,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 268,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.752,
+        0.029,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.75,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 269,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.753,
+        0.029,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.83,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 270,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.753,
+        0.029,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 4.92,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 271,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.752,
+        0.028,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.0,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 272,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.751,
+        0.029,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.08,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 273,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.75,
+        0.029,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.17,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 274,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.749,
+        0.03,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.25,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 275,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.747,
+        0.03,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.33,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 276,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.745,
+        0.03,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.42,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 277,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.743,
+        0.03,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.5,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 278,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.741,
+        0.03,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.58,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 279,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.741,
+        0.03,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.67,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 280,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.742,
+        0.03,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.75,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 281,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.744,
+        0.03,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.83,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 282,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.746,
+        0.031,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 5.92,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 283,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.748,
+        0.031,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 6.0,
+      "link": "stale",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 284,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.75,
+        0.032,
+        0.502
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.08,
+      "link": "frozen",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 285,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.752,
+        0.031,
+        0.502
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.17,
+      "link": "frozen",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 286,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.753,
+        0.031,
+        0.502
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.25,
+      "link": "frozen",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 287,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.752,
+        0.031,
+        0.502
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.33,
+      "link": "frozen",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 288,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.751,
+        0.032,
+        0.502
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.42,
+      "link": "frozen",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 289,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.749,
+        0.033,
+        0.502
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.5,
+      "link": "frozen",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 290,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.747,
+        0.033,
+        0.502
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.58,
+      "link": "frozen",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 291,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.747,
+        0.032,
+        0.502
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.67,
+      "link": "frozen",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 292,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.748,
+        0.031,
+        0.502
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.75,
+      "link": "frozen",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 293,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.749,
+        0.031,
+        0.502
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.83,
+      "link": "frozen",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 294,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 6.92,
+      "link": "frozen",
+      "conf": 0.0013,
+      "cmd": "fly to the blue sphere"
+    },
+    {
+      "g": 295,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 296,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 297,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 298,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 299,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 300,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 301,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 302,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 303,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 304,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 305,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 306,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 307,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 308,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 309,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 310,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 311,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 312,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 313,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 314,
+      "seg": "ADMISSION-REFUSE",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "DONE",
+      "decision": "REFUSE",
+      "reason": "GEOFENCE",
+      "rule": "R-C",
+      "age_s": null,
+      "link": "seeking",
+      "conf": null
+    },
+    {
+      "g": 315,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.75,
+        0.03,
+        0.502
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 316,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.75,
+        0.031,
+        0.503
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 317,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.748,
+        0.032,
+        0.503
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 318,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.744,
+        0.035,
+        0.503
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 319,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.734,
+        0.041,
+        0.503
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 320,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.716,
+        0.05,
+        0.504
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 321,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.687,
+        0.065,
+        0.504
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 322,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.647,
+        0.086,
+        0.503
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 323,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.596,
+        0.112,
+        0.503
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 324,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.54,
+        0.144,
+        0.502
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 325,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.479,
+        0.183,
+        0.502
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 326,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.418,
+        0.225,
+        0.502
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 327,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.356,
+        0.269,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 328,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.295,
+        0.313,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 329,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.236,
+        0.356,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 330,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.179,
+        0.396,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 331,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.124,
+        0.433,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 332,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.071,
+        0.466,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 333,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.02,
+        0.496,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 334,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.028,
+        0.523,
+        0.5
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 335,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.073,
+        0.547,
+        0.5
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 336,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.114,
+        0.568,
+        0.5
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 337,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.149,
+        0.588,
+        0.501
+      ],
+      "state": "SEEKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "seeking",
+      "conf": null,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 338,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.175,
+        0.602,
+        0.513
+      ],
+      "state": "SEEKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "seeking",
+      "conf": 0.0052,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 339,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.199,
+        0.609,
+        0.524
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.17,
+      "link": "live",
+      "conf": 0.0052,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 340,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.229,
+        0.61,
+        0.527
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.25,
+      "link": "live",
+      "conf": 0.0052,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 341,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.26,
+        0.607,
+        0.527
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.33,
+      "link": "live",
+      "conf": 0.0052,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 342,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.274,
+        0.605,
+        0.528
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.42,
+      "link": "live",
+      "conf": 0.0052,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 343,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.257,
+        0.612,
+        0.526
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.5,
+      "link": "live",
+      "conf": 0.0052,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 344,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.203,
+        0.631,
+        0.518
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.58,
+      "link": "live",
+      "conf": 0.0052,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 345,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.118,
+        0.664,
+        0.512
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.67,
+      "link": "live",
+      "conf": 0.0052,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 346,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        -0.015,
+        0.705,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.75,
+      "link": "live",
+      "conf": 0.0052,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 347,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.092,
+        0.749,
+        0.504
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.83,
+      "link": "live",
+      "conf": 0.0052,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 348,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.192,
+        0.791,
+        0.506
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.92,
+      "link": "live",
+      "conf": 0.0052,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 349,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.279,
+        0.828,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.0,
+      "link": "live",
+      "conf": 0.0052,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 350,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.354,
+        0.857,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.08,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 351,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.419,
+        0.88,
+        0.51
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.17,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 352,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.482,
+        0.898,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.25,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 353,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.545,
+        0.914,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.33,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 354,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.611,
+        0.926,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.42,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 355,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.679,
+        0.937,
+        0.506
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.5,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 356,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.747,
+        0.944,
+        0.503
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.58,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 357,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.812,
+        0.948,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.67,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 358,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.87,
+        0.947,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.75,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 359,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.918,
+        0.944,
+        0.499
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.83,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 360,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.953,
+        0.94,
+        0.499
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.92,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 361,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.973,
+        0.936,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.0,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 362,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.979,
+        0.932,
+        0.503
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.08,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 363,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.974,
+        0.927,
+        0.506
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.17,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 364,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.961,
+        0.92,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.25,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 365,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.946,
+        0.913,
+        0.51
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.33,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 366,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.933,
+        0.908,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.42,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 367,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.925,
+        0.907,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.5,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 368,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.923,
+        0.91,
+        0.506
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.58,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 369,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.925,
+        0.916,
+        0.504
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.67,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 370,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.931,
+        0.923,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.75,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 371,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.939,
+        0.93,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.83,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 372,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.95,
+        0.936,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.92,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 373,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.961,
+        0.941,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.0,
+      "link": "live",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 374,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.973,
+        0.944,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.08,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 375,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.985,
+        0.947,
+        0.504
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.17,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 376,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.994,
+        0.947,
+        0.506
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.25,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 377,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.001,
+        0.944,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.33,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 378,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.003,
+        0.938,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.42,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 379,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.001,
+        0.931,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.5,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 380,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.997,
+        0.923,
+        0.511
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.58,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 381,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.992,
+        0.917,
+        0.51
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.67,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 382,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.987,
+        0.913,
+        0.509
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.75,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 383,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.985,
+        0.911,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.83,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 384,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.986,
+        0.913,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.92,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 385,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.989,
+        0.915,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.0,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 386,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.993,
+        0.917,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 3.08,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 387,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        0.998,
+        0.918,
+        0.507
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 3.17,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 388,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.002,
+        0.917,
+        0.507
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 3.25,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 389,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.006,
+        0.916,
+        0.507
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 3.33,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 390,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.007,
+        0.915,
+        0.507
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 3.42,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 391,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.006,
+        0.914,
+        0.507
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 3.5,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 392,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.005,
+        0.912,
+        0.507
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 3.58,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 393,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.004,
+        0.912,
+        0.508
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 3.67,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 394,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.003,
+        0.911,
+        0.508
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 3.75,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 395,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.002,
+        0.911,
+        0.508
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 3.83,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 396,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.004,
+        0.911,
+        0.508
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 3.92,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 397,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.006,
+        0.91,
+        0.508
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 4.0,
+      "link": "stale",
+      "conf": 0.092,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 398,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.007,
+        0.91,
+        0.508
+      ],
+      "state": "DWELL-GUARD",
+      "decision": "HOLD",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 4.08,
+      "link": "stale",
+      "conf": 0.0024,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 399,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.009,
+        0.91,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": "R-B",
+      "age_s": 0.17,
+      "link": "live",
+      "conf": 0.0024,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 400,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.01,
+        0.909,
+        0.508
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.25,
+      "link": "live",
+      "conf": 0.0024,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 401,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.013,
+        0.908,
+        0.506
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.33,
+      "link": "live",
+      "conf": 0.0024,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 402,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.017,
+        0.904,
+        0.505
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.42,
+      "link": "live",
+      "conf": 0.0024,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 403,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.022,
+        0.9,
+        0.505
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.5,
+      "link": "live",
+      "conf": 0.0024,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 404,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.029,
+        0.896,
+        0.505
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.58,
+      "link": "live",
+      "conf": 0.0024,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 405,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.036,
+        0.893,
+        0.505
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.67,
+      "link": "live",
+      "conf": 0.0024,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 406,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.043,
+        0.89,
+        0.506
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.75,
+      "link": "live",
+      "conf": 0.0024,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 407,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.049,
+        0.887,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.83,
+      "link": "live",
+      "conf": 0.0024,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 408,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.051,
+        0.884,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.92,
+      "link": "live",
+      "conf": 0.0024,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 409,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.051,
+        0.88,
+        0.507
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.0,
+      "link": "live",
+      "conf": 0.0024,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 410,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.05,
+        0.876,
+        0.506
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.08,
+      "link": "live",
+      "conf": 0.0071,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 411,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.05,
+        0.873,
+        0.504
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.17,
+      "link": "live",
+      "conf": 0.0071,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 412,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.05,
+        0.87,
+        0.503
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.25,
+      "link": "live",
+      "conf": 0.0071,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 413,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.052,
+        0.87,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.33,
+      "link": "live",
+      "conf": 0.0071,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 414,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.056,
+        0.872,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.42,
+      "link": "live",
+      "conf": 0.0071,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 415,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.059,
+        0.875,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.5,
+      "link": "live",
+      "conf": 0.0071,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 416,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.063,
+        0.879,
+        0.503
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.58,
+      "link": "live",
+      "conf": 0.0071,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 417,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.065,
+        0.882,
+        0.503
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.67,
+      "link": "live",
+      "conf": 0.0071,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 418,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.065,
+        0.883,
+        0.504
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.75,
+      "link": "live",
+      "conf": 0.0071,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 419,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.063,
+        0.884,
+        0.504
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.83,
+      "link": "live",
+      "conf": 0.0071,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 420,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.06,
+        0.884,
+        0.503
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.92,
+      "link": "live",
+      "conf": 0.0071,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 421,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.058,
+        0.883,
+        0.503
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.0,
+      "link": "live",
+      "conf": 0.0071,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 422,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.058,
+        0.882,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.08,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 423,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.06,
+        0.882,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.17,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 424,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.064,
+        0.882,
+        0.499
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.25,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 425,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.067,
+        0.882,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.33,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 426,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.069,
+        0.882,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.42,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 427,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.068,
+        0.881,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.5,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 428,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.067,
+        0.881,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.58,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 429,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.065,
+        0.88,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.67,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 430,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.062,
+        0.88,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.75,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 431,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.061,
+        0.881,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.83,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 432,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.061,
+        0.882,
+        0.499
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.92,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 433,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.063,
+        0.884,
+        0.498
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.0,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 434,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.065,
+        0.886,
+        0.498
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.08,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 435,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.067,
+        0.887,
+        0.499
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.17,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 436,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.067,
+        0.889,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.25,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 437,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.065,
+        0.888,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.33,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 438,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.062,
+        0.886,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.42,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 439,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.059,
+        0.882,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.5,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 440,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.055,
+        0.879,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.58,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 441,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.052,
+        0.877,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.67,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 442,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.051,
+        0.875,
+        0.499
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.75,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 443,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.05,
+        0.876,
+        0.499
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.83,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 444,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.051,
+        0.878,
+        0.499
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 1.92,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 445,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.053,
+        0.88,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.0,
+      "link": "live",
+      "conf": 0.0033,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 446,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.055,
+        0.881,
+        0.5
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 2.08,
+      "link": "stale",
+      "conf": 0.0035,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 447,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.057,
+        0.881,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.17,
+      "link": "live",
+      "conf": 0.0035,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 448,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.058,
+        0.881,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.25,
+      "link": "live",
+      "conf": 0.0035,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 449,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.057,
+        0.88,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.33,
+      "link": "live",
+      "conf": 0.0035,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 450,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.057,
+        0.879,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.42,
+      "link": "live",
+      "conf": 0.0035,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 451,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.056,
+        0.877,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.5,
+      "link": "live",
+      "conf": 0.0035,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 452,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.055,
+        0.875,
+        0.503
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.58,
+      "link": "live",
+      "conf": 0.0035,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 453,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.055,
+        0.872,
+        0.503
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.67,
+      "link": "live",
+      "conf": 0.0035,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 454,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.055,
+        0.87,
+        0.502
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.75,
+      "link": "live",
+      "conf": 0.0035,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 455,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.056,
+        0.869,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.83,
+      "link": "live",
+      "conf": 0.0035,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 456,
+      "seg": "LEARNED-LEG",
+      "pos": [
+        1.059,
+        0.869,
+        0.501
+      ],
+      "state": "TRACKING",
+      "decision": "ALLOW",
+      "reason": null,
+      "rule": null,
+      "age_s": 0.92,
+      "link": "live",
+      "conf": 0.0035,
+      "cmd": "fly to the red box"
+    },
+    {
+      "g": 457,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.061,
+        0.87,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 458,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.063,
+        0.87,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 459,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.063,
+        0.869,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 460,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.06,
+        0.866,
+        0.502
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 461,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.05,
+        0.86,
+        0.502
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 462,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.032,
+        0.85,
+        0.502
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 463,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        1.003,
+        0.836,
+        0.502
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 464,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.964,
+        0.817,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 465,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.918,
+        0.794,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 466,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.865,
+        0.769,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 467,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.809,
+        0.741,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 468,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.75,
+        0.712,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 469,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.688,
+        0.682,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 470,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.621,
+        0.651,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 471,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.548,
+        0.619,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 472,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.471,
+        0.587,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 473,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.392,
+        0.554,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 474,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.31,
+        0.52,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 475,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.227,
+        0.487,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 476,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.144,
+        0.453,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 477,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        0.062,
+        0.419,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 478,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.02,
+        0.383,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 479,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.1,
+        0.348,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 480,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.179,
+        0.313,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 481,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.257,
+        0.279,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 482,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.332,
+        0.246,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 483,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.405,
+        0.213,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 484,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.475,
+        0.181,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 485,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.541,
+        0.151,
+        0.501
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 486,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.602,
+        0.122,
+        0.5
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 487,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.659,
+        0.096,
+        0.5
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 488,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.712,
+        0.073,
+        0.5
+      ],
+      "state": "TRANSIT",
+      "decision": "TRANSIT",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 489,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.761,
+        0.053,
+        0.5
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 490,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.806,
+        0.036,
+        0.501
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 491,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.838,
+        0.025,
+        0.5
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 492,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.851,
+        0.021,
+        0.493
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 493,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.847,
+        0.023,
+        0.48
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 494,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.831,
+        0.029,
+        0.463
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 495,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.812,
+        0.034,
+        0.445
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 496,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.796,
+        0.038,
+        0.425
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 497,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.788,
+        0.04,
+        0.402
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 498,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.788,
+        0.038,
+        0.377
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 499,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.796,
+        0.035,
+        0.35
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 500,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.81,
+        0.029,
+        0.323
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 501,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.825,
+        0.023,
+        0.295
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 502,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.841,
+        0.017,
+        0.266
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 503,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.854,
+        0.013,
+        0.238
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 504,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.864,
+        0.009,
+        0.211
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 505,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.871,
+        0.008,
+        0.184
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 506,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.876,
+        0.007,
+        0.159
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 507,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.879,
+        0.006,
+        0.135
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 508,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.881,
+        0.006,
+        0.114
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 509,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.883,
+        0.005,
+        0.095
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 510,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.886,
+        0.004,
+        0.079
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 511,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.89,
+        0.0,
+        0.067
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 512,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.894,
+        -0.004,
+        0.058
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 513,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.899,
+        -0.007,
+        0.053
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 514,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.902,
+        -0.009,
+        0.052
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 515,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.903,
+        -0.01,
+        0.053
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    },
+    {
+      "g": 516,
+      "seg": "SCRIPTED-TRANSIT",
+      "pos": [
+        -0.902,
+        -0.009,
+        0.055
+      ],
+      "state": "LANDING",
+      "decision": "LAND",
+      "reason": null,
+      "rule": null,
+      "age_s": null,
+      "link": "n/a",
+      "conf": null
+    }
+  ],
+  "events": [
+    {
+      "t": 0.0,
+      "g": 0,
+      "kind": "MISSION",
+      "text": "mission start · one continuous recording · shield APPLIED"
+    },
+    {
+      "t": 0.0,
+      "g": 0,
+      "kind": "ADMIT",
+      "text": "admit: 'fly to the red box' → ALLOW · sig 102ddb45a9f1"
+    },
+    {
+      "t": 0.0,
+      "g": 0,
+      "kind": "TRANSIT",
+      "text": "reposition to launch (executor) — not the learned pilot"
+    },
+    {
+      "t": 1.83,
+      "g": 22,
+      "kind": "FRAME",
+      "text": "midcourse by executor; terminal flight by the learned pilot within its measured envelope (±25° frontal cone, 1–2 m — RAPORT_3B)"
+    },
+    {
+      "t": 1.92,
+      "g": 23,
+      "kind": "DELIVERY",
+      "text": "delivery: 'fly to the red box' · conf 0.005"
+    },
+    {
+      "t": 2.92,
+      "g": 35,
+      "kind": "DELIVERY",
+      "text": "delivery: 'fly to the red box' · conf 0.023"
+    },
+    {
+      "t": 11.83,
+      "g": 142,
+      "kind": "DWELL",
+      "text": "L1 dwell at red box · min 0.158 m"
+    },
+    {
+      "t": 11.83,
+      "g": 142,
+      "kind": "ADMIT",
+      "text": "admit: 'fly to the blue sphere' → ALLOW"
+    },
+    {
+      "t": 11.83,
+      "g": 142,
+      "kind": "TRANSIT",
+      "text": "reposition to launch (executor) — not the learned pilot"
+    },
+    {
+      "t": 14.67,
+      "g": 176,
+      "kind": "DELIVERY",
+      "text": "delivery: 'fly to the blue sphere' · conf 0.563"
+    },
+    {
+      "t": 15.67,
+      "g": 188,
+      "kind": "DELIVERY",
+      "text": "delivery: 'fly to the blue sphere' · conf 0.220"
+    },
+    {
+      "t": 17.67,
+      "g": 212,
+      "kind": "DELIVERY",
+      "text": "delivery: 'fly to the blue sphere' · conf 0.001"
+    },
+    {
+      "t": 18.67,
+      "g": 224,
+      "kind": "FROZEN",
+      "text": "LINK FROZEN — burst gap, bbox held as ghost, age climbing"
+    },
+    {
+      "t": 19.67,
+      "g": 236,
+      "kind": "FROZEN",
+      "text": "LINK FROZEN — burst gap, bbox held as ghost, age climbing"
+    },
+    {
+      "t": 20.67,
+      "g": 248,
+      "kind": "FROZEN",
+      "text": "LINK FROZEN — burst gap, bbox held as ghost, age climbing"
+    },
+    {
+      "t": 21.67,
+      "g": 260,
+      "kind": "FROZEN",
+      "text": "LINK FROZEN — burst gap, bbox held as ghost, age climbing"
+    },
+    {
+      "t": 22.67,
+      "g": 272,
+      "kind": "FROZEN",
+      "text": "LINK FROZEN — burst gap, bbox held as ghost, age climbing"
+    },
+    {
+      "t": 24.58,
+      "g": 295,
+      "kind": "DWELL",
+      "text": "L2 burst bridged from memory · dwell holds · min 0.087 m"
+    },
+    {
+      "t": 24.58,
+      "g": 295,
+      "kind": "REFUSE",
+      "text": "admit: 'fly to the red sphere' → REFUSE(GEOFENCE) · proved P2 (drone never leaves 2.0 m)"
+    },
+    {
+      "t": 26.25,
+      "g": 315,
+      "kind": "NO_MATCH",
+      "text": "admit: 'fly to the crimson box' → REFUSE(NO_MATCH) · unknown word"
+    },
+    {
+      "t": 26.25,
+      "g": 315,
+      "kind": "CORRECTION",
+      "text": "operator maps crimson→red · signed record 10a8e7f7d08d"
+    },
+    {
+      "t": 26.25,
+      "g": 315,
+      "kind": "ADMIT",
+      "text": "admit: 'fly to the red box' (canonical) → ALLOW"
+    },
+    {
+      "t": 26.25,
+      "g": 315,
+      "kind": "TRANSIT",
+      "text": "reposition to launch (executor) — not the learned pilot"
+    },
+    {
+      "t": 28.17,
+      "g": 338,
+      "kind": "DELIVERY",
+      "text": "delivery: 'fly to the red box' · conf 0.005"
+    },
+    {
+      "t": 29.17,
+      "g": 350,
+      "kind": "DELIVERY",
+      "text": "delivery: 'fly to the red box' · conf 0.092"
+    },
+    {
+      "t": 33.17,
+      "g": 398,
+      "kind": "DELIVERY",
+      "text": "delivery: 'fly to the red box' · conf 0.002"
+    },
+    {
+      "t": 34.17,
+      "g": 410,
+      "kind": "DELIVERY",
+      "text": "delivery: 'fly to the red box' · conf 0.007"
+    },
+    {
+      "t": 35.17,
+      "g": 422,
+      "kind": "DELIVERY",
+      "text": "delivery: 'fly to the red box' · conf 0.003"
+    },
+    {
+      "t": 37.17,
+      "g": 446,
+      "kind": "DELIVERY",
+      "text": "delivery: 'fly to the red box' · conf 0.003"
+    },
+    {
+      "t": 38.08,
+      "g": 457,
+      "kind": "DWELL",
+      "text": "L4 approach to (near) red box · min 0.42 m"
+    },
+    {
+      "t": 38.08,
+      "g": 457,
+      "kind": "ADMIT",
+      "text": "command: 'return home'"
+    },
+    {
+      "t": 38.08,
+      "g": 457,
+      "kind": "TRANSIT",
+      "text": "reposition to launch (executor) — not the learned pilot"
+    },
+    {
+      "t": 43.08,
+      "g": 517,
+      "kind": "LANDED",
+      "text": "landed · mission complete"
+    }
+  ],
+  "frame_at": {
+    "1": 0,
+    "3": 1,
+    "5": 2,
+    "7": 3,
+    "9": 4,
+    "11": 5,
+    "13": 6,
+    "15": 7,
+    "17": 8,
+    "19": 9,
+    "21": 10,
+    "23": 11,
+    "25": 12,
+    "27": 13,
+    "29": 14,
+    "31": 15,
+    "33": 16,
+    "35": 17,
+    "37": 18,
+    "39": 19,
+    "41": 20,
+    "43": 21,
+    "45": 22,
+    "47": 23,
+    "49": 24,
+    "51": 25,
+    "53": 26,
+    "55": 27,
+    "57": 28,
+    "59": 29,
+    "61": 30,
+    "63": 31,
+    "65": 32,
+    "67": 33,
+    "69": 34,
+    "71": 35,
+    "73": 36,
+    "75": 37,
+    "77": 38,
+    "79": 39,
+    "81": 40,
+    "83": 41,
+    "85": 42,
+    "87": 43,
+    "89": 44,
+    "91": 45,
+    "93": 46,
+    "95": 47,
+    "97": 48,
+    "99": 49,
+    "101": 50,
+    "103": 51,
+    "105": 52,
+    "107": 53,
+    "109": 54,
+    "111": 55,
+    "113": 56,
+    "115": 57,
+    "117": 58,
+    "119": 59,
+    "121": 60,
+    "123": 61,
+    "125": 62,
+    "127": 63,
+    "129": 64,
+    "131": 65,
+    "133": 66,
+    "135": 67,
+    "137": 68,
+    "139": 69,
+    "141": 70,
+    "143": 71,
+    "145": 72,
+    "147": 73,
+    "149": 74,
+    "151": 75,
+    "153": 76,
+    "155": 77,
+    "157": 78,
+    "159": 79,
+    "161": 80,
+    "163": 81,
+    "165": 82,
+    "167": 83,
+    "169": 84,
+    "171": 85,
+    "173": 86,
+    "175": 87,
+    "176": 88,
+    "178": 89,
+    "180": 90,
+    "182": 91,
+    "184": 92,
+    "186": 93,
+    "188": 94,
+    "190": 95,
+    "192": 96,
+    "194": 97,
+    "196": 98,
+    "198": 99,
+    "200": 100,
+    "202": 101,
+    "204": 102,
+    "206": 103,
+    "208": 104,
+    "210": 105,
+    "212": 106,
+    "214": 107,
+    "216": 108,
+    "218": 109,
+    "220": 110,
+    "222": 111,
+    "224": 112,
+    "226": 113,
+    "228": 114,
+    "230": 115,
+    "232": 116,
+    "234": 117,
+    "236": 118,
+    "238": 119,
+    "240": 120,
+    "242": 121,
+    "244": 122,
+    "246": 123,
+    "248": 124,
+    "250": 125,
+    "252": 126,
+    "254": 127,
+    "256": 128,
+    "258": 129,
+    "260": 130,
+    "262": 131,
+    "264": 132,
+    "266": 133,
+    "268": 134,
+    "270": 135,
+    "272": 136,
+    "274": 137,
+    "276": 138,
+    "278": 139,
+    "280": 140,
+    "282": 141,
+    "284": 142,
+    "286": 143,
+    "288": 144,
+    "290": 145,
+    "292": 146,
+    "294": 147,
+    "296": 148,
+    "298": 149,
+    "300": 150,
+    "302": 151,
+    "304": 152,
+    "306": 153,
+    "308": 154,
+    "310": 155,
+    "312": 156,
+    "314": 157,
+    "316": 158,
+    "318": 159,
+    "320": 160,
+    "322": 161,
+    "324": 162,
+    "326": 163,
+    "328": 164,
+    "330": 165,
+    "332": 166,
+    "334": 167,
+    "336": 168,
+    "338": 169,
+    "340": 170,
+    "342": 171,
+    "344": 172,
+    "346": 173,
+    "348": 174,
+    "350": 175,
+    "352": 176,
+    "354": 177,
+    "356": 178,
+    "358": 179,
+    "360": 180,
+    "362": 181,
+    "364": 182,
+    "366": 183,
+    "368": 184,
+    "370": 185,
+    "372": 186,
+    "374": 187,
+    "376": 188,
+    "378": 189,
+    "380": 190,
+    "382": 191,
+    "384": 192,
+    "386": 193,
+    "388": 194,
+    "390": 195,
+    "392": 196,
+    "394": 197,
+    "396": 198,
+    "398": 199,
+    "400": 200,
+    "402": 201,
+    "404": 202,
+    "406": 203,
+    "408": 204,
+    "410": 205,
+    "412": 206,
+    "414": 207,
+    "416": 208,
+    "418": 209,
+    "420": 210,
+    "422": 211,
+    "424": 212,
+    "426": 213,
+    "428": 214,
+    "430": 215,
+    "432": 216,
+    "434": 217,
+    "436": 218,
+    "438": 219,
+    "440": 220,
+    "442": 221,
+    "444": 222,
+    "446": 223,
+    "448": 224,
+    "450": 225,
+    "452": 226,
+    "454": 227,
+    "456": 228,
+    "458": 229,
+    "460": 230,
+    "462": 231,
+    "464": 232,
+    "466": 233,
+    "468": 234,
+    "470": 235,
+    "472": 236,
+    "474": 237,
+    "476": 238,
+    "478": 239,
+    "480": 240,
+    "482": 241,
+    "484": 242,
+    "486": 243,
+    "488": 244,
+    "490": 245,
+    "492": 246,
+    "494": 247,
+    "496": 248,
+    "498": 249,
+    "500": 250,
+    "502": 251,
+    "504": 252,
+    "506": 253,
+    "508": 254,
+    "510": 255,
+    "512": 256,
+    "514": 257,
+    "516": 258
+  }
+}
