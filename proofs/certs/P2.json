@@ -1,0 +1,37 @@
+{
+  "property": "P2",
+  "verdict": "PROVED",
+  "method": "barrier induction + threshold (z3 NRA)",
+  "z3_pip": "5.0.0.0",
+  "z3_lib": "5.0.0",
+  "obligations": {
+    "base_start_in_fence": "unsat",
+    "step_allow": "unsat",
+    "step_brake": "unsat",
+    "safety_p_le_arena": "unsat",
+    "threshold_A_ge_amin_safe": "unsat",
+    "threshold_A_lt_amin_unsafe": "unsat"
+  },
+  "constants_rational": {
+    "VEL_LIM": "1",
+    "dt": "1/12",
+    "geo_lim": "9/5",
+    "arena_half": "2",
+    "A_min": "30/7",
+    "brake_coef_v2": "7/60"
+  },
+  "delta_exact": "geo_lim + VEL·dt + VEL²/(2·A_min) = 9/5 + 1/12 + 7/60 = 2 (= arena_half)",
+  "assumptions": [
+    "|v|≤VEL_LIM (models/policy.py:24 _scale_setpoint)",
+    "hamowanie ciągłe decel≥A_min (bariera p+v²/2A zachowana)",
+    "detekcja ≤1 tik (12 Hz, shield.step per k)",
+    "rzut na najgorszą oś poziomą"
+  ],
+  "code_refs": {
+    "vel_lim": "models/policy.py:24 (VEL_LIM=1.0)",
+    "shield_geo": "s3c1/shield.py:70-78 (R-C, geo_lim=arena_half−margin=1.8)",
+    "env_geofence": "env/liquidsight_env.py:188-190 (|pos|>2.0 katastrofa)"
+  },
+  "theorem": "Inv(p,v)=0≤v≤1 ∧ p+(7/60)v²≤2  ⇒  p≤2 (dron nie opuszcza ogrodzenia)",
+  "model_sha256": "2cef2f314da4cea44dd653246b57b0cc194061818464be92add5fd29e76c9d9e"
+}
