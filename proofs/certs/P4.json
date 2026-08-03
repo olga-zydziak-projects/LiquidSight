@@ -1,0 +1,63 @@
+{
+  "property": "P4",
+  "verdict": "PASS",
+  "method": "exhaustive grammar + property-based admission/records; HMAC-SHA256 chain",
+  "grammar": {
+    "fly": "fly to the {color} {shape}",
+    "colors": [
+      "red",
+      "green",
+      "blue"
+    ],
+    "shapes": [
+      "box",
+      "sphere",
+      "cylinder"
+    ],
+    "commands": [
+      "hold",
+      "resume",
+      "return home",
+      "abort"
+    ]
+  },
+  "properties": {
+    "P4a": "execute odmawia gdy rekord ≠ ALLOW",
+    "P4b": "fraza wykonania = fraza z rekordu ALLOW = command.replace('fly to the ','') (F-D5)",
+    "P4c": "poza gramatyką ⇒ REFUSE(NO_MATCH)",
+    "P4d": "rekord HMAC-SHA256, łańcuch weryfikowalny+odtwarzalny (bez zegara), sabotaż wykryty",
+    "geofence": "cel poza 1.8 ⇒ REFUSE(GEOFENCE) na admisji (A3ii)"
+  },
+  "checks": {
+    "P4c_out_of_grammar": {
+      "in_grammar": 13,
+      "out_grammar_refused_nomatch": 11
+    },
+    "P4b_exec_eq_admitted": {
+      "fly_specs_checked": 9,
+      "grounder_contract": "phrase == command.replace('fly to the ','')"
+    },
+    "P4a_no_mission_without_admission": {
+      "execute_refuses_non_allow": true
+    },
+    "P4d_hmac_chain": {
+      "chain_verifies": true,
+      "reproducible": true,
+      "tamper_detected": true
+    },
+    "geofence_admission": {
+      "target_beyond_arena_refused": true
+    },
+    "property_based": {
+      "random_commands": 2000,
+      "invariant": "in_grammar ⇔ ALLOW; else NO_MATCH"
+    }
+  },
+  "pcdl": "lokalny PCDL: rekord {seq,prev_hash,command_raw,decision,reason,spec,phrase,sig} + HMAC; dług integracyjny z ProofGate nazwany (PRE_DP0 §9)",
+  "code_refs": {
+    "parser": "demo_proof/language.py",
+    "authz": "demo_proof/authz.py",
+    "grounder_contract": "s3b3/grounder_server.py:40"
+  },
+  "model_sha256": "a83239fbe8eda57e1d7bbf5f6f0164bff702f37b3875817c73c32c8eaff706f8"
+}
