@@ -30,6 +30,28 @@ from expert.expert import HoverExpert  # noqa
 Z_HOVER = 0.5
 R_GOAL = 0.25
 HOME = np.array([-0.9, 0.0, Z_HOVER])          # środek regionu spawnu (in-distribution start)
+# Obwiednia (stałe zamrożone: config/env_f3.json aneks_1 — spawn_azymut_deg=25, spawn_dystans_m=[1,2])
+ENV_AZ_DEG = 25.0
+ENV_DIST = (1.0, 2.0)
+LAUNCH_R = 1.5                                  # środek [1,2] m; reguła deterministyczna
+LAUNCH_CLAMP = 1.6                              # launch musi zostać w arenie (|xy|<=1.6)
+
+
+def launch_for(target_xy):
+    """Reguła launch (deterministyczna, funkcja celu+obwiedni): L = cel − LAUNCH_R·(+x),
+    cel dokładnie +x-przed (azymut 0 ⊂ ±25°), dystans 1.5 m ⊂ [1,2]. Clamp do areny."""
+    lx = float(np.clip(target_xy[0] - LAUNCH_R, -LAUNCH_CLAMP, LAUNCH_CLAMP))
+    ly = float(np.clip(target_xy[1], -LAUNCH_CLAMP, LAUNCH_CLAMP))
+    return np.array([lx, ly, Z_HOVER])
+
+
+def in_envelope(target_xy):
+    """Czy cel jest flyable regułą launch: po launchu azymut ⊂ ±25° i dystans ⊂ [1,2]."""
+    L = launch_for(target_xy)
+    d = target_xy[:2] - L[:2]
+    dist = float(np.linalg.norm(d))
+    az = abs(np.degrees(np.arctan2(d[1], d[0])))     # względem +x
+    return (ENV_DIST[0] - 0.05 <= dist <= ENV_DIST[1] + 0.05) and (az <= ENV_AZ_DEG + 1e-6), dist, az
 
 
 class Mission:
@@ -133,19 +155,19 @@ class Mission:
 
 
 def smoke():
+    """Sweep offsetu burstu (L2): szuka offsetu dającego ARRIVED bez REFUSE (bridging w dwell)."""
     m = Mission(49502)
     print(f"scena {m.seed} K{m.K}/{m.A}", flush=True)
     try:
-        t0 = m.objects[0]
-        r1 = m.fly_leg(t0)                                    # z SPAWN
-        print(f"LEG1 spawn '{r1['cmd']}' min={r1['min_dist']} arrived={r1['arrived']}", flush=True)
-        m.transit_home()                                     # SCRIPTED-TRANSIT do home
-        hp = m._pos(); print(f"transit -> home end={[round(float(x),2) for x in hp[:2]]}", flush=True)
-        r2 = m.fly_leg(m.objects[1])                          # z HOME (in-distribution)
-        print(f"LEG2 home '{r2['cmd']}' min={r2['min_dist']} arrived={r2['arrived']} near={r2['near']}", flush=True)
-        m.transit_home()
-        r3 = m.fly_leg(m.objects[3])
-        print(f"LEG3 home '{r3['cmd']}' min={r3['min_dist']} arrived={r3['arrived']} near={r3['near']}", flush=True)
+        bs = next(o for o in m.objects if o["color"] == "blue" and o["shape"] == "sphere")
+        for off in (3, 4, 5, 6):
+            m.transit_home(home=launch_for(np.asarray(bs["pos"], float)))
+            n0 = sum(1 for d in m.trace if d["decision"] == "REFUSE")
+            rb = m.fly_leg(bs, drop_mode="burst", drop_param=5.0, burst_offset=off)
+            refused = sum(1 for d in m.trace if d["decision"] == "REFUSE") > n0
+            tag = "ARRIVED" if rb['arrived'] else "NEAR" if rb['near'] else "MISS"
+            print(f"  BURST L5 off={off} -> min={rb['min_dist']} {tag} refused={refused} "
+                  f"{'<<< CLEAN BRIDGE' if (rb['arrived'] and not refused) else ''}", flush=True)
         print(f"trace tików={len(m.trace)} (ciągły, bez teleportu)", flush=True)
     finally:
         m.client.close(); m.env.close()
