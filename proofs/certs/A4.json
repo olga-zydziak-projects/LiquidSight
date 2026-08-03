@@ -1,0 +1,41 @@
+{
+  "property": "A4_memory",
+  "verdict": "PASS",
+  "method": "property-based: alias→klasa gramatyki, podpisany rekord, rozwiązanie przed parserem",
+  "invariants": [
+    "alias→COLORS∪SHAPES (klasa znana)",
+    "zakaz nadpisania słowa gramatyki",
+    "alias rozwiązywany PRZED parserem (F-D5)",
+    "zero zmian wag/progów/gramatyki",
+    "łańcuch HMAC odtwarzalny, sabotaż wykryty"
+  ],
+  "checks": {
+    "correction_flow": {
+      "before": "NO_MATCH",
+      "after": "ALLOW",
+      "canonical_spec": "red",
+      "phrase": "red box"
+    },
+    "class_guard": {
+      "rejected_bad_targets": 3,
+      "shape_alias_ok": true
+    },
+    "chain": {
+      "verifies": true,
+      "reproducible": true,
+      "tamper_detected": true
+    },
+    "invariants": {
+      "no_policy_shield_import": true,
+      "grammar_unchanged": true,
+      "weights_untouched": true
+    }
+  },
+  "code_refs": {
+    "memory": "demo_proof/memory.py",
+    "authz": "demo_proof/authz.py",
+    "language": "demo_proof/language.py"
+  },
+  "scope_note": "MVP: alias→klasa (§5). Wariant egzemplarz-embedding = przyszły mandat, poza DP.",
+  "model_sha256": "db2480a21dcaaa06dcb5ce002e034211c11f56f95148a7afcf0120481fd9d290"
+}
